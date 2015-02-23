@@ -1,3 +1,4 @@
 exportPattern('check_.*')
 exportPattern('^[sg]et_coldr_options$')
 export('load_internal_functions')
+importFrom(checkmate, qassert, assertDirectory, assertFile)

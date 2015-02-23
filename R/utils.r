@@ -1,4 +1,5 @@
 load_internal_functions <- function(package, ...) {
+    qassert(package, 'S1')
     library(package, character.only = TRUE)
     exported_names <- ls(paste("package", package, sep = ':'), ...)
     is_exported_name_function <- vapply(exported_names, 
@@ -25,6 +26,8 @@ load_internal_functions <- function(package, ...) {
 }
 
 set_coldr_options <- function(..., reset = FALSE, overwrite = TRUE) {
+    qassert(reset, 'B1')
+    qassert(overwrite, 'B1')
     defaults <- list(max_width = 80, max_length = 300,
                      max_lines = 65, max_lines_of_code = 50,
                      max_arguments = 5, max_nesting_depth = 3,
@@ -57,6 +60,8 @@ set_coldr_options <- function(..., reset = FALSE, overwrite = TRUE) {
 }
 
 get_coldr_options <- function(..., remove_names = FALSE, flatten_list = TRUE) {
+    qassert(remove_names, 'B1')
+    qassert(flatten_list, 'B1')
     if (missing(...)) {
         option_list <- getOption('coldr')
     } else {
@@ -70,6 +75,7 @@ get_coldr_options <- function(..., remove_names = FALSE, flatten_list = TRUE) {
 }
 
 get_function_body <- function(object) {
+    qassert(object, 'f')
     lines_in_function <- capture.output(object)
     if(! any(grepl('{', lines_in_function, fixed = TRUE))){
         # treat oneliners
@@ -92,6 +98,7 @@ get_function_body <- function(object) {
 }
 
 throw <- function(message_string, system_call = sys.call(-1), ...) {
+    qassert(message_string, 's*')
     condition <- structure(
                            class = c('coldr', 'error',  'condition'),
                            list(message = message_string, call = system_call),

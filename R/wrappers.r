@@ -44,6 +44,7 @@ check_function_layout <- function(object,
 }
 
 check_functions_in_file <- function(path, ...) {
+    assertFile(path, access = 'r')
     findings <- NULL
     source_kept <- new.env(parent = globalenv())
     sys.source(path, envir = source_kept, keep.source = TRUE)
@@ -66,6 +67,7 @@ check_functions_in_file <- function(path, ...) {
 }
 
 check_file <- function(path, ...) {
+    assertFile(path, access = 'r')
     findings <- NULL
     # I know of two ways to pass arguments through a wrapper to different
     # functions: ellipsis and explicit arguments. I've used ellipsis here, to
@@ -111,6 +113,7 @@ check_file <- function(path, ...) {
 
 check_directory <- function(path, pattern = '\\.[rR]$', recursive = FALSE,
                             ...) {
+    assertDirectory(path, access = 'r')
     paths <- normalizePath(sort(list.files(path, pattern, recursive = recursive,
                                            full.names = TRUE)))
     findings <- NULL
