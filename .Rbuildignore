@@ -1,0 +1,6 @@
+\.git.*
+.*\.tar\.gz
+.*\.Rcheck
+Makefile
+provide_make_targets\.sh
+tmp_.*
