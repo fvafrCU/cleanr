@@ -1,3 +1,52 @@
+#' function checks
+#'
+#' A set of tiny functions to check that functions adhere to a layout style.
+#'
+#' A function should have a clear layout, it should
+#' \itemize{
+#'   \item not have too many arguments,
+#'   \item not have nestings too deep,
+#'   \item neither have too many lines nor
+#'   \item have too many lines of code,
+#'   \item not have lines too wide and
+#'   \item explicitly \code{\link{return}} an object.
+#' }
+#' At least this is what I think. Well, some others too.
+#'
+#' All of the functions test whether their requirement is met (some layout
+#' feature such as number of arguments, nesting depth, line width is not greater
+#' than the maximum given). In case of a fail all \code{\link{throw}} a
+#' condition of class c('coldr', 'error', 'condition').
+#'
+#' @section Warning: \code{\link{check_return}} just \code{\link{grep}}s for a
+#' for a line starting with a \code{\link{return}} statemtent (ah, see the code
+#' for the real thing).
+#' This doesn't ensure that \emph{all} \code{\link{return}} paths from the
+#' function are explicit and it may miss a \code{\link{return}} path after a
+#' semicolon.
+#' It just checks if you use \code{\link{return}} at all.
+#'
+#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
+#' @param object The function to be checked.
+#' Should have been sourced with keep.source = TRUE (see
+#' \code{\link{get_function_body}}.
+#' @param maximum The maximum against which the function is to be tested.
+#' @return invisible(TRUE), but see \emph{Details}.
+#' @name function_checks
+#' @examples 
+#' print(check_num_arguments(check_num_arguments))
+#' print(check_nesting_depth(check_nesting_depth))
+#' print(check_num_lines(check_num_lines))
+#' print(check_num_lines_of_code(check_num_lines_of_code))
+#' print(check_return(check_return))
+#' # R reformats functions on import (see 
+#' # help(get_function_body, package = 'coldr')), so we need 90 characters:
+#' print(check_line_width(check_line_width, maximum = 90))
+NULL
+
+
+#' @rdname function_checks
 check_num_arguments <- function(object,
                                 maximum = get_coldr_options('max_arguments')) {
     qassert(object, 'f')
@@ -8,6 +57,7 @@ check_num_arguments <- function(object,
     return(invisible(TRUE))
 }
 
+#' @rdname function_checks
 check_nesting_depth <- function(object,
                                 maximum = get_coldr_options('max_nesting_depth')
                                 ) {
@@ -32,6 +82,7 @@ check_nesting_depth <- function(object,
     return(invisible(TRUE))
 }
 
+#' @rdname function_checks
 check_num_lines <- function(object,
                             maximum = get_coldr_options('max_lines')) {
     qassert(object, 'f')
@@ -43,6 +94,7 @@ check_num_lines <- function(object,
     return(invisible(TRUE))
 }
 
+#' @rdname function_checks
 check_num_lines_of_code <- function(object,
                                     maximum =
                                     get_coldr_options('max_lines_of_code')) {
@@ -59,6 +111,7 @@ check_num_lines_of_code <- function(object,
     return(invisible(TRUE))
 }
 
+#' @rdname function_checks
 check_line_width <- function(object,
                             maximum = get_coldr_options('max_line_width')) {
     qassert(object, 'f')
@@ -76,6 +129,7 @@ check_line_width <- function(object,
     return(invisible(TRUE))
 }
 
+#' @rdname function_checks
 check_return <- function(object) {
     message_string <- paste('Just checking for a line starting with a return', 
                           'statement.\n  This is no check for all return paths',
@@ -89,6 +143,27 @@ check_return <- function(object) {
     return(invisible(TRUE))
 }
 
+#' check a file's layout
+#'
+#' Check for number of lines and width of lines.
+#'
+#' Some reckon a code file should not be too long and that its lines should not
+#' be too wide. On current monitors, 300 lines are about five pages.
+#' A line width of 80 seems a bit \ldots{} outdated, but maybe there's some good
+#' in it.
+#'
+#' In case of a fail the function \code{link{throw}}s a
+#' condition of class c('coldr', 'error', 'condition').
+#'
+#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
+#' @param path A path to a file, e.g. "checks.r".
+#' @param max_length The maximum number of lines accepted.
+#' @param max_width The maximum line width accepted.
+#' @return invisible(TRUE), but see \emph{Details}.
+#' @examples 
+#' print(check_file_layout(system.file('source', 'R', 'checks.r', 
+#'                                     package = 'coldr')))
 check_file_layout <- function(path,
                               max_length = get_coldr_options('max_length'),
                               max_width = get_coldr_options('max_width')) {

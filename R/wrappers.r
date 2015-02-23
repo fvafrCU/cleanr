@@ -1,3 +1,22 @@
+#' check a function's layout
+#'
+#' run all \code{\link{function_checks}} on a function.
+#'
+#' The functions catches the messages of 'coldr'-conditions \code{\link{throw}}n
+#' by \code{\link{function_checks}} and, if it caught any, \code{\link{throw}}s
+#' them.
+#'
+#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
+#' @param object The function to be checked.
+#' @param max_lines_of_code the maximum number of lines of code accepted.
+#' @param max_lines the maximum number of lines accepted.
+#' @param max_arguments the maximum number of arguments accepted.
+#' @param max_nesting_depth the maximum nesting depth accepted.
+#' @param max_line_width the maximum line width accepted.
+#' @return invisible(TRUE), but see \emph{Details}.
+#' @examples 
+#' print(check_function_layout(check_num_lines))
 check_function_layout <- function(object,
                                   max_lines_of_code =
                                   get_coldr_options('max_lines_of_code'),
@@ -43,6 +62,23 @@ check_function_layout <- function(object,
     return(invisible(TRUE))
 }
 
+#' check all functions defined in a file
+#'
+#' run all \code{\link{check_function_layout}} on a file.
+#'
+#' The functions catches the messages of 'coldr'-conditions \code{\link{throw}}n
+#' by \code{\link{check_function_layout}} and, if it caught any,
+#' \code{\link{throw}}s
+#' them.
+#'
+#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
+#' @param path A path to a file, e.g. "checks.r".
+#' @param ... Argments to be passed to \code{\link{check_function_layout}}.
+#' @return invisible(TRUE), but see \emph{Details}.
+#' @examples 
+#' print(check_functions_in_file(system.file('source', 'R', 'utils.r', 
+#'                                     package = 'coldr')))
 check_functions_in_file <- function(path, ...) {
     assertFile(path, access = 'r')
     findings <- NULL
@@ -66,6 +102,25 @@ check_functions_in_file <- function(path, ...) {
     return(invisible(TRUE))
 }
 
+#' check a file
+#'
+#' run all \code{\link{check_functions_in_file}} and
+#' \code{\link{check_file_layout}} on a file.
+#'
+#' The function catches the messages of 'coldr'-conditions \code{\link{throw}}n
+#' by \code{\link{check_functions_in_file}} and \code{\link{check_file_layout}}
+#' and, if it
+#' caught any, \code{\link{throw}}s them.
+#'
+#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
+#' @param path The path to file, e.g. "checks.r".
+#' @param ... Arguments to be passed to \code{\link{check_functions_in_file}} or
+#' \code{\link{check_file_layout}}.
+#' @return invisible(TRUE), but see \emph{Details}.
+#' @examples 
+#' print(check_file(system.file('source', 'R', 'utils.r', 
+#'                                      package = 'coldr')))
 check_file <- function(path, ...) {
     assertFile(path, access = 'r')
     findings <- NULL
@@ -111,6 +166,26 @@ check_file <- function(path, ...) {
     return(invisible(TRUE))
 }
 
+#' check a directory
+#'
+#' run all \code{\link{check_file}} on the files in a directory.
+#'
+#' The functions catches the messages of 'coldr'-conditions \code{\link{throw}}n
+#' by \code{\link{check_file}} and, if it caught any, \code{\link{throw}}s them.
+#'
+#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
+#' @param path A path to a directory to be checked, e.g. "R/".
+#' @param pattern A pattern to search files with, see \code{\link{list.files}}.
+#' @param recursive Search the directory recursively?
+#' See \code{\link{list.files}}.
+#' @param ... Arguments to be passed to \code{\link{check_file}}.
+#' @return invisible(TRUE), but see \emph{Details}.
+#' @examples 
+#' # load internal functions first.
+#' load_internal_functions('coldr')
+#' print(check_directory(system.file('source', 'R', package = 'coldr'),
+#'                       max_arguments = 6, max_width = 90))
 check_directory <- function(path, pattern = '\\.[rR]$', recursive = FALSE,
                             ...) {
     assertDirectory(path, access = 'r')
@@ -130,6 +205,24 @@ check_directory <- function(path, pattern = '\\.[rR]$', recursive = FALSE,
     return(invisible(TRUE))
 }
 
+#' tidy findings
+#'
+#' remove TRUE converted to class character from findings.
+#'
+#' \code{\link{check_directory}}, \code{\link{check_file}},
+#' \code{\link{check_functions_in_file}} and
+#' \code{\link{check_function_layout}} all collect tryCatch to collect either
+#' TRUE for a check passed or a character holding a conditions message. This
+#' function deletes the TRUEs.
+#'
+#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
+#' @param findings a character vector with possibly some elements reading 'TRUE'
+#' or a vector of TRUEs.
+#' @return a character vector without any element reading 'TRUE' or NULL.
+#' @keywords internal
+#' @examples 
+#' findings <- c('some signal caught', rep('TRUE', 3))
 tidy_findings <- function(findings) {
     if (is.logical(findings)) {
         ## findings may be all TRUE, so we set them NULL
