@@ -1,7 +1,7 @@
 Package: coldr
 Type: Package
 Title: coding less dreadfully
-Version: 0.0-1
+Version: 0.0-2
 Date: 2015-02-23
 Author: Andreas Dominik Cullmann
 Maintainer: Andreas Dominik Cullmann <dominik.cullmann@forst.bwl.de>

@@ -25,7 +25,7 @@ EOF
 chmod 700 $check_meta_info_script
 
 
-package_tools=tmp_package_tools.R
+package_tools=tmp_package_tools.r
 cat > $package_tools <<EOF
 #!/usr/bin/Rscript --vanilla
 package <- '$rpackage'
@@ -80,7 +80,7 @@ check_meta_info_script=$check_meta_info_script
 package_tools=${package_tools}
 EOF
 cat >> Makefile <<\EOF
-roxy_code=tmp_roxy.R
+roxy_code=tmp_roxy.r
 
 all: craninstall clean
 full: crancheck install clean
@@ -107,7 +107,7 @@ roxy:
 	printf "library('roxygen2')\nroxygen2::roxygenize('.', roclets = c('rd'))\n" > ${roxy_code}
 	R --vanilla CMD BATCH --vanilla ${roxy_code}
 check_demo:
-	# R CMD BATCH  demo/${rpackage}.R ## Rscript doesn't load
+	# R CMD BATCH  demo/${rpackage}.r ## Rscript doesn't load
     # methods, but we fixed that.
 	demo/${rpackage}.R
 
