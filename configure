@@ -109,7 +109,7 @@ roxy:
 check_demo:
 	# R CMD BATCH  demo/${rpackage}.r ## Rscript doesn't load
     # methods, but we fixed that.
-	demo/${rpackage}.R
+	demo/${rpackage}.r
 
 .PHONY: package_tools
 package_tools:
