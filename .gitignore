@@ -4,3 +4,4 @@ sedscr
 tmp_*
 Makefile
 *Rcheck
+package_tools/
