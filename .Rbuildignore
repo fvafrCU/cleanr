@@ -2,5 +2,5 @@
 .*\.tar\.gz
 .*\.Rcheck
 Makefile
-provide_make_targets\.sh
+configure
 tmp_.*
