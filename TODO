@@ -1,2 +1,3 @@
-add a demo
-add test using RUnit
+fix the demo.
+add test using RUnit.
+make it static or merge it into lintr.
