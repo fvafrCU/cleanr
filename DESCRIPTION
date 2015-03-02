@@ -5,7 +5,8 @@ Version: 0.0-2
 Date: 2015-02-23
 Author: Andreas Dominik Cullmann
 Maintainer: Andreas Dominik Cullmann <dominik.cullmann@forst.bwl.de>
-Description: Check your R code for some of the most common layout flaws. 
+Description: Check your R code for some of the most common layout flaws. This is
+    not a static code analyzer.
 License: BSD_3_clause + file LICENSE
 Depends:
     checkmate
