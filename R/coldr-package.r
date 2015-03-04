@@ -20,7 +20,7 @@
 #' (\url{http://cran.r-project.org/web/packages/codetools/index.html}),
 #' and 
 #' \pkg{formatR}
-#' (\href{http://cran.r-project.org/web/packages/formatR/index.html}).
+#' (\url{http://cran.r-project.org/web/packages/formatR/index.html}).
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @section Version: $Id: 21e3a57157dcd729e5bbed73ed5d84159e8ea554 $

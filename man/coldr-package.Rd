@@ -35,7 +35,7 @@ packages
 (\url{http://cran.r-project.org/web/packages/codetools/index.html}),
 and
 \pkg{formatR}
-(\href{http://cran.r-project.org/web/packages/formatR/index.html}).
+(\url{http://cran.r-project.org/web/packages/formatR/index.html}).
 }
 \keyword{package}
 
