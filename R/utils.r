@@ -46,7 +46,7 @@ load_internal_functions <- function(package, ...) {
 
 #' set options for \pkg{coldr}
 #'
-#' a convenience function for \code{link{options}}.
+#' a convenience function for \code{\link{options}}.
 #'
 #' @details the package loads a couple of options as defaults for its functions.
 #' The defaults are stored in a list element of \code{\link{options}}.
@@ -112,7 +112,7 @@ set_coldr_options <- function(..., reset = FALSE, overwrite = TRUE) {
 
 #' get options for \pkg{coldr}
 #'
-#' a convenience function for \code{link{getOptions}}.
+#' a convenience function for \code{\link{getOption}}.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
