@@ -7,6 +7,6 @@ Author: Andreas Dominik Cullmann
 Maintainer: Andreas Dominik Cullmann <dominik.cullmann@forst.bwl.de>
 Description: Check your R code for some of the most common layout flaws. This is
     not a static code analyzer.
-License: BSD_3_clause + file LICENSE
+License: file LICENSE
 Depends:
     checkmate
