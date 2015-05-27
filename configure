@@ -109,7 +109,7 @@ roxy:
 	R --vanilla CMD BATCH --vanilla ${roxy_code}
 check_demo:
 	# R CMD BATCH  demo/${rpackage}.r ## Rscript doesn't load
-    # methods, but we fixed that.
+	# methods, but we fixed that.
 	demo/${rpackage}.r
 coldr:
 	Rscript --vanilla -e 'library("coldr");load_internal_functions("coldr"); check_directory("R/")'
@@ -117,7 +117,7 @@ coldr:
 .PHONY: package_tools
 package_tools:
 	./${package_tools} # codetools needs to load the package, so we need make
-    # install first
+	# install first
 clean:
 	rm Makefile 
 	rm -rf ${rpackage}.Rcheck

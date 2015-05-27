@@ -1,8 +1,8 @@
 Package: coldr
 Type: Package
-Title: coding less dreadfully
-Version: 0.1-0
-Date: 2015-03-21
+Title: Coding less dreadfully
+Version: 0.1-1
+Date: 2015-05-27
 Author: Andreas Dominik Cullmann
 Maintainer: Andreas Dominik Cullmann <dominik.cullmann@forst.bwl.de>
 Description: Check your R code for some of the most common layout flaws. This is
@@ -10,3 +10,5 @@ Description: Check your R code for some of the most common layout flaws. This is
 License: file LICENSE
 Depends:
     checkmate
+Suggests: 
+    RUnit
