@@ -166,7 +166,7 @@ get_coldr_options <- function(..., remove_names = FALSE, flatten_list = TRUE) {
 #' get_function_body(set_coldr_options)[3:6]
 #' capture.output(body(set_coldr_options))[4:6]
 get_function_body <- function(object) {
-    qassert(object, 'f')
+    checkFunction(object)
     lines_in_function <- capture.output(object)
     if(! any(grepl('{', lines_in_function, fixed = TRUE))){
         # treat oneliners

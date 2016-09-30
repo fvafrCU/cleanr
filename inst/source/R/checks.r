@@ -49,7 +49,7 @@ NULL
 #' @rdname function_checks
 check_num_arguments <- function(object,
                                 maximum = get_coldr_options('max_arguments')) {
-    qassert(object, 'f')
+    checkFunction(object)
     qassert(maximum, 'N1')
     num_arguments <- length(formals(object))
     if (num_arguments > maximum)
@@ -61,7 +61,7 @@ check_num_arguments <- function(object,
 check_nesting_depth <- function(object,
                                 maximum = get_coldr_options('max_nesting_depth')
                                 ) {
-    qassert(object, 'f')
+    checkFunction(object)
     qassert(maximum, 'N1')
     function_body <- get_function_body(object)
     # break if no braces in function
@@ -85,7 +85,7 @@ check_nesting_depth <- function(object,
 #' @rdname function_checks
 check_num_lines <- function(object,
                             maximum = get_coldr_options('max_lines')) {
-    qassert(object, 'f')
+    checkFunction(object)
     qassert(maximum, 'N1')
     function_body <- get_function_body(object)
     num_lines  <- length(function_body)
@@ -98,7 +98,7 @@ check_num_lines <- function(object,
 check_num_lines_of_code <- function(object,
                                     maximum =
                                     get_coldr_options('max_lines_of_code')) {
-    qassert(object, 'f')
+    checkFunction(object)
     qassert(maximum, 'N1')
     function_body <- get_function_body(object)
     line_is_comment_pattern <- '^\\s*#'
@@ -114,7 +114,7 @@ check_num_lines_of_code <- function(object,
 #' @rdname function_checks
 check_line_width <- function(object,
                             maximum = get_coldr_options('max_line_width')) {
-    qassert(object, 'f')
+    checkFunction(object)
     qassert(maximum, 'N1')
     function_body <- get_function_body(object)
     line_widths <-  nchar(function_body)
@@ -135,7 +135,7 @@ check_return <- function(object) {
                           'statement.\n  This is no check for all return paths',
                           'being explicit.')
     warning(message_string)
-    qassert(object, 'f')
+    checkFunction(object)
     function_body <- body(object)  # body gives us the statements line by line,
     # some_command;   return(somewhat) will be matched by '^\\s*return\\('
     if (! any(grepl('^\\s*return\\(', function_body)))
