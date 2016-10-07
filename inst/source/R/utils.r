@@ -39,7 +39,7 @@ load_internal_functions <- function(package, ...) {
     internal_functions <- setdiff(package_functions, exported_functions)
     for (name in internal_functions) {
         assign(name, get(name, envir = package_namespace, inherits = FALSE),
-               envir = .GlobalEnv )
+               envir = parent.frame())
     }
     return(invisible(TRUE))
 }
