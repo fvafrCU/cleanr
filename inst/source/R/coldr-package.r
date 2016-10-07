@@ -13,14 +13,14 @@
 #' many lines, too wide lines, too many arguments or nestings too deep.
 #' @note This is not a static code analyzer like pylint or the like. If you're
 #' looking for a static code analyzer, check out lintr 
-#' (\url{http://cran.r-project.org/web/packages/lintr/index.html} or
+#' (\url{https://cran.r-project.org/package=lintr} or
 #' \url{https://github.com/jimhester/lintr}).
 #' @seealso packages 
 #' \pkg{codetools}
-#' (\url{http://cran.r-project.org/web/packages/codetools/index.html}),
+#' (\url{https://cran.r-project.org/package=codetools}),
 #' and 
 #' \pkg{formatR}
-#' (\url{http://cran.r-project.org/web/packages/formatR/index.html}).
+#' (\url{https://cran.r-project.org/package=formatR}).
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @section Version: $Id: 21e3a57157dcd729e5bbed73ed5d84159e8ea554 $
