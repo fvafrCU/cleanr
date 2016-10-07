@@ -1,5 +1,8 @@
 Updating cleanr documentation
 Loading cleanr
+Writing check_function_layout.Rd
+Writing check_functions_in_file.Rd
+Writing check_directory.Rd
 Setting env vars --------------------------------------------------------------
 CFLAGS  : -Wall -pedantic
 CXXFLAGS: -Wall -pedantic

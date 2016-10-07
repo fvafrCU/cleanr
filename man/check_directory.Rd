@@ -23,8 +23,9 @@ invisible(TRUE), but see \emph{Details}.
 run all \code{\link{check_file}} on the files in a directory.
 }
 \details{
-The functions catches the messages of 'cleanr'-conditions \code{\link{throw}}n
-by \code{\link{check_file}} and, if it caught any, \code{\link{throw}}s them.
+The functions catches the messages of 'cleanr'-conditions 
+\code{\link{throw}}n by \code{\link{check_file}} and, if it caught any, 
+\code{\link{throw}}s them.
 }
 \section{Version}{
  $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $

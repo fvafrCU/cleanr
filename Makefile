@@ -66,6 +66,9 @@ direct_check:
 
 
 # utils
+runit:
+	./tests/runit.R
+
 roxy:
 	R --vanilla -e 'roxygen2::roxygenize(".")'
 
@@ -84,6 +87,7 @@ check_demo:
 	# R CMD BATCH  demo/${rpackage}.r ## Rscript doesn't load
 	# methods, but we fixed that.
 	demo/${PKGNAME}.r
+
 cleanr:
 	Rscript --vanilla -e 'cleanr::load_internal_functions("cleanr"); cleanr::check_directory("R/")'
 

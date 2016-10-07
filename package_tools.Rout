@@ -6,7 +6,6 @@ package_tools/runit.R.tidy has only 20 lints. See package_tools/runit.R.tidy.lin
 
 working on utils/package_tools.R
 no lints found.
-Loading required package: checkmate
 Warning in check_return(object) :
   Just checking for a line starting with a return statement.
   This is no check for all return paths being explicit.
