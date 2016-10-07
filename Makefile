@@ -83,7 +83,7 @@ remove:
 check_demo:
 	# R CMD BATCH  demo/${rpackage}.r ## Rscript doesn't load
 	# methods, but we fixed that.
-	demo/${rpackage}.r
+	demo/${PKGNAME}.r
 coldr:
 	Rscript --vanilla -e 'coldr::load_internal_functions("coldr"); coldr::check_directory("R/")'
 
