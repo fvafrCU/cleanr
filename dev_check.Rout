@@ -1,5 +1,6 @@
 Updating coldr documentation
 Loading coldr
+Writing throw.Rd
 Setting env vars --------------------------------------------------------------
 CFLAGS  : -Wall -pedantic
 CXXFLAGS: -Wall -pedantic
@@ -11,7 +12,7 @@ Building coldr ----------------------------------------------------------------
 * checking DESCRIPTION meta-information ... OK
 * checking for LF line-endings in source and make files
 * checking for empty or unneeded directories
-* building ‘coldr_0.2.0.tar.gz’
+* building ‘coldr_0.2.1.tar.gz’
 
 Setting env vars --------------------------------------------------------------
 _R_CHECK_CRAN_INCOMING_USE_ASPELL_: TRUE
@@ -26,7 +27,7 @@ Checking coldr ----------------------------------------------------------------
 * using options ‘--no-manual --as-cran’
 * checking for file ‘coldr/DESCRIPTION’ ... OK
 * checking extension type ... Package
-* this is package ‘coldr’ version ‘0.2.0’
+* this is package ‘coldr’ version ‘0.2.1’
 * package encoding: UTF-8
 * checking package namespace information ... OK
 * checking package dependencies ... OK

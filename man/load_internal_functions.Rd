@@ -36,5 +36,4 @@ Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
 \seealso{
 \code{\link[codetools:checkUsageEnv]{checkUsageEnv in codetools}}.
 }
-\keyword{internal}
 

@@ -212,32 +212,3 @@ check_directory <- function(path, pattern = '\\.[rR]$', recursive = FALSE,
     return(invisible(TRUE))
 }
 
-#' tidy findings
-#'
-#' remove TRUE converted to class character from findings.
-#'
-#' \code{\link{check_directory}}, \code{\link{check_file}},
-#' \code{\link{check_functions_in_file}} and
-#' \code{\link{check_function_layout}} all collect tryCatch to collect either
-#' TRUE for a check passed or a character holding a conditions message. This
-#' function deletes the TRUEs.
-#'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
-#' @param findings a character vector with possibly some elements reading 'TRUE'
-#' or a vector of TRUEs.
-#' @return a character vector without any element reading 'TRUE' or NULL.
-#' @keywords internal
-#' @examples 
-#' findings <- c('some signal caught', rep('TRUE', 3))
-tidy_findings <- function(findings) {
-    if (is.logical(findings)) {
-        ## findings may be all TRUE, so we set them NULL
-        conditions <- NULL
-    } else {
-        ## findings are of class character with TRUE converted to 'TRUE', so we
-        ## remove these
-        conditions <- findings[!findings == 'TRUE']
-    }
-    return(conditions)
-}

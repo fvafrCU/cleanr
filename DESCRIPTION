@@ -1,7 +1,7 @@
 Package: coldr
 Type: Package
 Title: Coding Less Dreadfully
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: person(given = c("Andreas", "Dominik"), family = "Cullmann",
     email = "dominik.cullmann@forst.bwl.de", role = c("aut","cre"))
 Description: Check your R code for some of the most common layout flaws. This is
@@ -17,6 +17,7 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
 Collate:
+    'internals.r'
     'utils.r'
     'checks.r'
     'coldr-package.r'

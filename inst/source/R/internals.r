@@ -1,0 +1,104 @@
+#' get the body of a function
+#'
+#' \code{\link{body}} reformats the code (see \emph{Examples} and
+#' \emph{Details}). 
+#'
+#' If we want to check a function as it is coded in a file, we need to get the
+#' orginial thing as coded in the file, no optimized version.
+#' In \code{\link{sys.source}} and \code{\link{source}}, keep.source = FALSE
+#' seems to use \code{\link{body}}.
+#' So we have to do it all over after sourcing with keep.source = TRUE (in
+#' \code{\link{check_functions_in_file}}).
+#'
+#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
+#' @param object The function from which to extract the body. \cr Should have
+#' been sourced with keep.source = TRUE.
+#' @return [character(n)]\cr the function body's lines.
+#' @keywords internal
+#' @examples 
+#' source(system.file('source', 'R', 'utils.r', package = 'coldr'))
+#' require(checkmate)
+#' coldr:::get_function_body(set_coldr_options)[3:6]
+#' utils::capture.output(body(set_coldr_options))[4:6]
+get_function_body <- function(object) {
+    checkmate::checkFunction(object)
+    lines_in_function <- utils::capture.output(object)
+    if(! any(grepl('{', lines_in_function, fixed = TRUE))){
+        # treat oneliners
+        is_split_onliner <- length(lines_in_function) > 1
+        opening_line_num <- 1  + as.numeric(is_split_onliner)
+        closing_line_num  <- length(lines_in_function)
+    } else {
+        opening_line_num <- min(grep('{', lines_in_function, fixed = TRUE ))
+        closing_line_num <- max(grep('}', lines_in_function, fixed = TRUE ))
+    }
+    opening_brace_ends_line <-
+        grepl('\\{\\s*$', lines_in_function[opening_line_num])
+    if (opening_brace_ends_line)
+        opening_line_num <- opening_line_num + 1
+    closing_brace_starts_line <-
+        grepl('^\\s*\\}', lines_in_function[closing_line_num])
+    if (closing_brace_starts_line)
+        closing_line_num <- closing_line_num - 1
+    return(lines_in_function[opening_line_num:closing_line_num])
+}
+
+#' throw a condition
+#'
+#' throws a condition of class c('coldr', 'error', 'condition').
+#'
+#' We use this condition as an error dedictated to \pkg{coldr}.
+#'
+#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
+#' @keywords internal
+#' @param message_string The message to be thrown.
+#' @param system_call The call to be thrown.
+#' @param ... Arguments to be passed to \code{\link{structure}}.
+#' @return FALSE. But it doesn't return anything, it stops with a
+#' condition of class c('coldr', 'error', 'condition').
+#' @keywords internal
+#' @examples
+#' tryCatch(coldr:::throw('Hello error!'), coldr = function(e) return(e))
+throw <- function(message_string, system_call = sys.call(-1), ...) {
+    checkmate::qassert(message_string, 's*')
+    condition <- structure(
+                           class = c('coldr', 'error',  'condition'),
+                           list(message = message_string, call = system_call),
+                           ...
+                           )
+    stop(condition)
+    return(FALSE)
+}
+
+#' tidy findings
+#'
+#' remove TRUE converted to class character from findings.
+#'
+#' \code{\link{check_directory}}, \code{\link{check_file}},
+#' \code{\link{check_functions_in_file}} and
+#' \code{\link{check_function_layout}} all collect tryCatch to collect either
+#' TRUE for a check passed or a character holding a conditions message. This
+#' function deletes the TRUEs.
+#'
+#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
+#' @param findings a character vector with possibly some elements reading 'TRUE'
+#' or a vector of TRUEs.
+#' @return a character vector without any element reading 'TRUE' or NULL.
+#' @keywords internal
+#' @examples 
+#' findings <- c('some signal caught', rep('TRUE', 3))
+#' coldr:::tidy_findings(findings)
+tidy_findings <- function(findings) {
+    if (is.logical(findings)) {
+        ## findings may be all TRUE, so we set them NULL
+        conditions <- NULL
+    } else {
+        ## findings are of class character with TRUE converted to 'TRUE', so we
+        ## remove these
+        conditions <- findings[!findings == 'TRUE']
+    }
+    return(conditions)
+}
