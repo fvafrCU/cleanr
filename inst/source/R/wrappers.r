@@ -1,3 +1,6 @@
+#' @include checks.r
+NULL
+
 #' check a function's layout
 #'
 #' run all \code{\link{function_checks}} on a function.
@@ -15,6 +18,7 @@
 #' @param max_nesting_depth the maximum nesting depth accepted.
 #' @param max_line_width the maximum line width accepted.
 #' @return invisible(TRUE), but see \emph{Details}.
+#' @export 
 #' @examples 
 #' print(check_function_layout(check_num_lines))
 check_function_layout <- function(object,
@@ -76,11 +80,12 @@ check_function_layout <- function(object,
 #' @param path A path to a file, e.g. "checks.r".
 #' @param ... Argments to be passed to \code{\link{check_function_layout}}.
 #' @return invisible(TRUE), but see \emph{Details}.
+#' @export 
 #' @examples 
 #' print(check_functions_in_file(system.file('source', 'R', 'utils.r', 
 #'                                     package = 'coldr')))
 check_functions_in_file <- function(path, ...) {
-    assertFile(path, access = 'r')
+    checkmate::assertFile(path, access = 'r')
     findings <- NULL
     source_kept <- new.env(parent = globalenv())
     sys.source(path, envir = source_kept, keep.source = TRUE)
@@ -118,11 +123,12 @@ check_functions_in_file <- function(path, ...) {
 #' @param ... Arguments to be passed to \code{\link{check_functions_in_file}} or
 #' \code{\link{check_file_layout}}.
 #' @return invisible(TRUE), but see \emph{Details}.
+#' @export 
 #' @examples 
 #' print(check_file(system.file('source', 'R', 'utils.r', 
 #'                                      package = 'coldr')))
 check_file <- function(path, ...) {
-    assertFile(path, access = 'r')
+    checkmate::assertFile(path, access = 'r')
     findings <- NULL
     # I know of two ways to pass arguments through a wrapper to different
     # functions: ellipsis and explicit arguments. I've used ellipsis here, to
@@ -143,14 +149,14 @@ check_file <- function(path, ...) {
     }
     arguments <- append(list(path = path), dots)
 
-    use <- modifyList(check_file_layout_defaults, arguments)
+    use <- utils::modifyList(check_file_layout_defaults, arguments)
     arguments_to_use <- use[names(use) %in% names(check_file_layout_defaults)]
     # use only non-empty arguments
     arguments_to_use <- arguments_to_use[arguments_to_use != '']
     finding <- tryCatch(do.call("check_file_layout", arguments_to_use),
                         coldr = function(e) return(e$message))
     findings <- c(findings, finding)
-    use <- modifyList(check_functions_in_file_defaults, arguments)
+    use <- utils::modifyList(check_functions_in_file_defaults, arguments)
     arguments_to_use <- use[names(use) %in%
                             names(check_functions_in_file_defaults)]
     # use only non-empty arguments
@@ -181,6 +187,7 @@ check_file <- function(path, ...) {
 #' See \code{\link{list.files}}.
 #' @param ... Arguments to be passed to \code{\link{check_file}}.
 #' @return invisible(TRUE), but see \emph{Details}.
+#' @export 
 #' @examples 
 #' # load internal functions first.
 #' load_internal_functions('coldr')
@@ -188,7 +195,7 @@ check_file <- function(path, ...) {
 #'                       max_arguments = 6, max_width = 90))
 check_directory <- function(path, pattern = '\\.[rR]$', recursive = FALSE,
                             ...) {
-    assertDirectory(path, access = 'r')
+    checkmate::assertDirectory(path, access = 'r')
     paths <- normalizePath(sort(list.files(path, pattern, recursive = recursive,
                                            full.names = TRUE)))
     findings <- NULL

@@ -15,10 +15,11 @@
 #' @seealso \code{\link[codetools:checkUsageEnv]{checkUsageEnv in codetools}}.
 #' @return invisible(TRUE)
 #' @keywords internal
+#' @export 
 #' @examples 
 #' load_internal_functions('coldr')
 load_internal_functions <- function(package, ...) {
-    qassert(package, 'S1')
+    checkmate::qassert(package, 'S1')
     library(package, character.only = TRUE)
     exported_names <- ls(paste("package", package, sep = ':'), ...)
     is_exported_name_function <- vapply(exported_names, 
@@ -59,6 +60,7 @@ load_internal_functions <- function(package, ...) {
 #' defaults?
 #' @param ... see \code{\link{options}}.
 #' @return invisible(TRUE)
+#' @export 
 #' @examples 
 #' # R.C. Martin's Clean Code recommends monadic argument lists.
 #' set_coldr_options(max_arguments = 1) 
@@ -77,8 +79,8 @@ load_internal_functions <- function(package, ...) {
 #' set_coldr_options(reset = TRUE)
 #' get_coldr_options(flatten_list = TRUE)
 set_coldr_options <- function(..., reset = FALSE, overwrite = TRUE) {
-    qassert(reset, 'B1')
-    qassert(overwrite, 'B1')
+    checkmate::qassert(reset, 'B1')
+    checkmate::qassert(overwrite, 'B1')
     defaults <- list(max_width = 80, max_length = 300,
                      max_lines = 65, max_lines_of_code = 50,
                      max_arguments = 5, max_nesting_depth = 3,
@@ -89,7 +91,7 @@ set_coldr_options <- function(..., reset = FALSE, overwrite = TRUE) {
     else {
         set_options <- getOption('coldr')
         if (overwrite) {
-            options('coldr' = modifyList(set_options, option_list))
+            options('coldr' = utils::modifyList(set_options, option_list))
         } else {
             if (length(option_list) == 0)
                 option_list <- defaults
@@ -120,6 +122,7 @@ set_coldr_options <- function(..., reset = FALSE, overwrite = TRUE) {
 #' @param remove_names [boolean(1)]\cr Remove the names?
 #' @param flatten_list [boolean(1)]\cr Return a vetcor?
 #' @return a (possibly named) list or a vector.
+#' @export 
 #' @examples 
 #' get_coldr_options('max_lines')
 #' get_coldr_options('max_lines', remove_names = TRUE)
@@ -128,8 +131,8 @@ set_coldr_options <- function(..., reset = FALSE, overwrite = TRUE) {
 #' get_coldr_options(flatten_list = TRUE, remove_names = TRUE)
 #' get_coldr_options(c('max_lines', 'max_lines_of_code'))
 get_coldr_options <- function(..., remove_names = FALSE, flatten_list = TRUE) {
-    qassert(remove_names, 'B1')
-    qassert(flatten_list, 'B1')
+    checkmate::qassert(remove_names, 'B1')
+    checkmate::qassert(flatten_list, 'B1')
     if (missing(...)) {
         option_list <- getOption('coldr')
     } else {
@@ -164,10 +167,10 @@ get_coldr_options <- function(..., remove_names = FALSE, flatten_list = TRUE) {
 #' source(system.file('source', 'R', 'utils.r', package = 'coldr'))
 #' require(checkmate)
 #' get_function_body(set_coldr_options)[3:6]
-#' capture.output(body(set_coldr_options))[4:6]
+#' utils::capture.output(body(set_coldr_options))[4:6]
 get_function_body <- function(object) {
-    checkFunction(object)
-    lines_in_function <- capture.output(object)
+    checkmate::checkFunction(object)
+    lines_in_function <- utils::capture.output(object)
     if(! any(grepl('{', lines_in_function, fixed = TRUE))){
         # treat oneliners
         is_split_onliner <- length(lines_in_function) > 1
@@ -205,7 +208,7 @@ get_function_body <- function(object) {
 #' @examples
 #' tryCatch(coldr:::throw('Hello error!'), coldr = function(e) return(e))
 throw <- function(message_string, system_call = sys.call(-1), ...) {
-    qassert(message_string, 's*')
+    checkmate::qassert(message_string, 's*')
     condition <- structure(
                            class = c('coldr', 'error',  'condition'),
                            list(message = message_string, call = system_call),

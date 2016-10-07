@@ -1,3 +1,6 @@
+#' @include utils.r
+NULL
+
 #' function checks
 #'
 #' A set of tiny functions to check that functions adhere to a layout style.
@@ -47,10 +50,11 @@ NULL
 
 
 #' @rdname function_checks
+#' @export 
 check_num_arguments <- function(object,
                                 maximum = get_coldr_options('max_arguments')) {
-    checkFunction(object)
-    qassert(maximum, 'N1')
+    checkmate::checkFunction(object)
+    checkmate::qassert(maximum, 'N1')
     num_arguments <- length(formals(object))
     if (num_arguments > maximum)
         throw(paste('found', num_arguments, 'arguments, maximum was', maximum))
@@ -58,11 +62,12 @@ check_num_arguments <- function(object,
 }
 
 #' @rdname function_checks
+#' @export 
 check_nesting_depth <- function(object,
                                 maximum = get_coldr_options('max_nesting_depth')
                                 ) {
-    checkFunction(object)
-    qassert(maximum, 'N1')
+    checkmate::checkFunction(object)
+    checkmate::qassert(maximum, 'N1')
     function_body <- get_function_body(object)
     # break if no braces in function
     if (! any (grepl('}', function_body, fixed = TRUE))) return(invisible(TRUE))
@@ -83,10 +88,11 @@ check_nesting_depth <- function(object,
 }
 
 #' @rdname function_checks
+#' @export 
 check_num_lines <- function(object,
                             maximum = get_coldr_options('max_lines')) {
-    checkFunction(object)
-    qassert(maximum, 'N1')
+    checkmate::checkFunction(object)
+    checkmate::qassert(maximum, 'N1')
     function_body <- get_function_body(object)
     num_lines  <- length(function_body)
     if (num_lines > maximum)
@@ -95,11 +101,12 @@ check_num_lines <- function(object,
 }
 
 #' @rdname function_checks
+#' @export 
 check_num_lines_of_code <- function(object,
                                     maximum =
                                     get_coldr_options('max_lines_of_code')) {
-    checkFunction(object)
-    qassert(maximum, 'N1')
+    checkmate::checkFunction(object)
+    checkmate::qassert(maximum, 'N1')
     function_body <- get_function_body(object)
     line_is_comment_pattern <- '^\\s*#'
     lines_of_code <- grep(line_is_comment_pattern, function_body,
@@ -112,10 +119,11 @@ check_num_lines_of_code <- function(object,
 }
 
 #' @rdname function_checks
+#' @export 
 check_line_width <- function(object,
                             maximum = get_coldr_options('max_line_width')) {
-    checkFunction(object)
-    qassert(maximum, 'N1')
+    checkmate::checkFunction(object)
+    checkmate::qassert(maximum, 'N1')
     function_body <- get_function_body(object)
     line_widths <-  nchar(function_body)
     if (any(line_widths > maximum)) {
@@ -130,12 +138,13 @@ check_line_width <- function(object,
 }
 
 #' @rdname function_checks
+#' @export 
 check_return <- function(object) {
     message_string <- paste('Just checking for a line starting with a return', 
                           'statement.\n  This is no check for all return paths',
                           'being explicit.')
     warning(message_string)
-    checkFunction(object)
+    checkmate::checkFunction(object)
     function_body <- body(object)  # body gives us the statements line by line,
     # some_command;   return(somewhat) will be matched by '^\\s*return\\('
     if (! any(grepl('^\\s*return\\(', function_body)))
@@ -161,15 +170,16 @@ check_return <- function(object) {
 #' @param max_length The maximum number of lines accepted.
 #' @param max_width The maximum line width accepted.
 #' @return invisible(TRUE), but see \emph{Details}.
+#' @export 
 #' @examples 
 #' print(check_file_layout(system.file('source', 'R', 'checks.r', 
 #'                                     package = 'coldr')))
 check_file_layout <- function(path,
                               max_length = get_coldr_options('max_length'),
                               max_width = get_coldr_options('max_width')) {
-    qassert(path, 'S1')
-    qassert(max_length, 'N1')
-    qassert(max_width, 'N1')
+    checkmate::qassert(path, 'S1')
+    checkmate::qassert(max_length, 'N1')
+    checkmate::qassert(max_width, 'N1')
     file_content <- readLines(path)
     line_widths <-  nchar(file_content)
     num_lines <- length(file_content)
