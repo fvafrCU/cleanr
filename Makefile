@@ -40,7 +40,7 @@ crancheck: check
 install: check 
 	R --vanilla CMD INSTALL  ${PKGNAME}_${PKGVERS}.tar.gz && \
         printf '===== have you run\n\tmake check_demo && ' && \
-        printf 'make package_tools && make runit && make coldr\n?!\n' 
+        printf 'make package_tools && make runit && make cleanr\n?!\n' 
 
 install_bare: build_bare 
 	R --vanilla CMD INSTALL  ${PKGNAME}_${PKGVERS}.tar.gz 
@@ -84,7 +84,7 @@ check_demo:
 	# R CMD BATCH  demo/${rpackage}.r ## Rscript doesn't load
 	# methods, but we fixed that.
 	demo/${PKGNAME}.r
-coldr:
-	Rscript --vanilla -e 'coldr::load_internal_functions("coldr"); coldr::check_directory("R/")'
+cleanr:
+	Rscript --vanilla -e 'cleanr::load_internal_functions("cleanr"); cleanr::check_directory("R/")'
 
 

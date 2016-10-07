@@ -2,9 +2,9 @@
     ## called before each test case, see also .tearDown()
     print(".setUp")
 }
-library('coldr')
+library('cleanr')
 
-load_internal_functions(package = 'coldr')
+load_internal_functions(package = 'cleanr')
 
 library('RUnit')
 # Unit testing
@@ -24,17 +24,17 @@ if (interactive()) browseURL(paste0('file:', html))
 track <- tracker()
 track$init()
 tryCatch(inspect(check_file(system.file('source', 'R', 'checks.r',
-                                        package = 'coldr')),
+                                        package = 'cleanr')),
                  track = track),
          error = function(e) return(e)
          )
 tryCatch(inspect(check_file(system.file('source', 'R', 'wrappers.r',
-                                        package = 'coldr')),
+                                        package = 'cleanr')),
                  track = track),
          error = function(e) return(e)
          )
 tryCatch(inspect(check_directory(system.file('source', 'R',
-                                             package = 'coldr')),
+                                             package = 'cleanr')),
                  track = track),
          error = function(e) return(e)
          )

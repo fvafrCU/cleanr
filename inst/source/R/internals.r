@@ -17,9 +17,9 @@
 #' @return [character(n)]\cr the function body's lines.
 #' @keywords internal
 #' @examples 
-#' source(system.file('source', 'R', 'utils.r', package = 'coldr'))
+#' source(system.file('source', 'R', 'utils.r', package = 'cleanr'))
 #' require(checkmate)
-#' coldr:::get_function_body(set_coldr_options)[3:6]
+#' cleanr:::get_function_body(set_coldr_options)[3:6]
 #' utils::capture.output(body(set_coldr_options))[4:6]
 get_function_body <- function(object) {
     checkmate::checkFunction(object)
@@ -46,9 +46,9 @@ get_function_body <- function(object) {
 
 #' throw a condition
 #'
-#' throws a condition of class c('coldr', 'error', 'condition').
+#' throws a condition of class c('cleanr', 'error', 'condition').
 #'
-#' We use this condition as an error dedictated to \pkg{coldr}.
+#' We use this condition as an error dedictated to \pkg{cleanr}.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
@@ -57,14 +57,14 @@ get_function_body <- function(object) {
 #' @param system_call The call to be thrown.
 #' @param ... Arguments to be passed to \code{\link{structure}}.
 #' @return FALSE. But it doesn't return anything, it stops with a
-#' condition of class c('coldr', 'error', 'condition').
+#' condition of class c('cleanr', 'error', 'condition').
 #' @keywords internal
 #' @examples
-#' tryCatch(coldr:::throw('Hello error!'), coldr = function(e) return(e))
+#' tryCatch(cleanr:::throw('Hello error!'), cleanr = function(e) return(e))
 throw <- function(message_string, system_call = sys.call(-1), ...) {
     checkmate::qassert(message_string, 's*')
     condition <- structure(
-                           class = c('coldr', 'error',  'condition'),
+                           class = c('cleanr', 'error',  'condition'),
                            list(message = message_string, call = system_call),
                            ...
                            )
@@ -90,7 +90,7 @@ throw <- function(message_string, system_call = sys.call(-1), ...) {
 #' @keywords internal
 #' @examples 
 #' findings <- c('some signal caught', rep('TRUE', 3))
-#' coldr:::tidy_findings(findings)
+#' cleanr:::tidy_findings(findings)
 tidy_findings <- function(findings) {
     if (is.logical(findings)) {
         ## findings may be all TRUE, so we set them NULL

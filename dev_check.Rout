@@ -1,14 +1,14 @@
-Updating coldr documentation
-Loading coldr
+Updating cleanr documentation
+Loading cleanr
 Writing throw.Rd
 Setting env vars --------------------------------------------------------------
 CFLAGS  : -Wall -pedantic
 CXXFLAGS: -Wall -pedantic
-Building coldr ----------------------------------------------------------------
+Building cleanr ----------------------------------------------------------------
   --no-manual 
 
-* checking for file ‘/home/qwer/git/cyclops/fvafrcu/coldr/DESCRIPTION’ ... OK
-* preparing ‘coldr’:
+* checking for file ‘/home/qwer/git/cyclops/fvafrcu/cleanr/DESCRIPTION’ ... OK
+* preparing ‘cleanr’:
 * checking DESCRIPTION meta-information ... OK
 * checking for LF line-endings in source and make files
 * checking for empty or unneeded directories
@@ -18,16 +18,16 @@ Setting env vars --------------------------------------------------------------
 _R_CHECK_CRAN_INCOMING_USE_ASPELL_: TRUE
 _R_CHECK_CRAN_INCOMING_           : FALSE
 _R_CHECK_FORCE_SUGGESTS_          : FALSE
-Checking coldr ----------------------------------------------------------------
+Checking cleanr ----------------------------------------------------------------
   --no-manual 
 
 * using R version 3.3.1 (2016-06-21)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
-* checking for file ‘coldr/DESCRIPTION’ ... OK
+* checking for file ‘cleanr/DESCRIPTION’ ... OK
 * checking extension type ... Package
-* this is package ‘coldr’ version ‘0.2.1’
+* this is package ‘cleanr’ version ‘0.2.1’
 * package encoding: UTF-8
 * checking package namespace information ... OK
 * checking package dependencies ... OK
@@ -37,7 +37,7 @@ Checking coldr ----------------------------------------------------------------
 * checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
-* checking whether package ‘coldr’ can be installed ... OK
+* checking whether package ‘cleanr’ can be installed ... OK
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking DESCRIPTION meta-information ... OK

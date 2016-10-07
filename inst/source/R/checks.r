@@ -19,7 +19,7 @@ NULL
 #' All of the functions test whether their requirement is met (some layout
 #' feature such as number of arguments, nesting depth, line width is not greater
 #' than the maximum given). In case of a fail all \code{\link{throw}} a
-#' condition of class c('coldr', 'error', 'condition').
+#' condition of class c('cleanr', 'error', 'condition').
 #'
 #' @section Warning: \code{\link{check_return}} just \code{\link{grep}}s for a
 #' for a line starting with a \code{\link{return}} statemtent (ah, see the code
@@ -44,7 +44,7 @@ NULL
 #' print(check_num_lines_of_code(check_num_lines_of_code))
 #' print(check_return(check_return))
 #' # R reformats functions on import (see 
-#' # help(get_function_body, package = 'coldr')), so we need 90 characters:
+#' # help(get_function_body, package = 'cleanr')), so we need 90 characters:
 #' print(check_line_width(check_line_width, maximum = 90))
 NULL
 
@@ -162,7 +162,7 @@ check_return <- function(object) {
 #' in it.
 #'
 #' In case of a fail the function \code{link{throw}}s a
-#' condition of class c('coldr', 'error', 'condition').
+#' condition of class c('cleanr', 'error', 'condition').
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
@@ -173,7 +173,7 @@ check_return <- function(object) {
 #' @export 
 #' @examples 
 #' print(check_file_layout(system.file('source', 'R', 'checks.r', 
-#'                                     package = 'coldr')))
+#'                                     package = 'cleanr')))
 check_file_layout <- function(path,
                               max_length = get_coldr_options('max_length'),
                               max_width = get_coldr_options('max_width')) {

@@ -27,14 +27,14 @@ A line width of 80 seems a bit \ldots{} outdated, but maybe there's some good
 in it.
 
 In case of a fail the function \code{link{throw}}s a
-condition of class c('coldr', 'error', 'condition').
+condition of class c('cleanr', 'error', 'condition').
 }
 \section{Version}{
  $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 }
 \examples{
 print(check_file_layout(system.file('source', 'R', 'checks.r', 
-                                    package = 'coldr')))
+                                    package = 'cleanr')))
 }
 \author{
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>

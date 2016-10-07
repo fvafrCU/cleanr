@@ -48,7 +48,7 @@ for (source_file in files) {
                 tidy_lints_file, ".")
 }
 
-#% coldr
-if (basename(getwd()) == "coldr") coldr::load_internal_functions("coldr")
-coldr::set_coldr_options(max_arguments = 6)
-coldr::check_directory("R/", recursive = TRUE)
+#% cleanr
+if (basename(getwd()) == "cleanr") cleanr::load_internal_functions("cleanr")
+cleanr::set_coldr_options(max_arguments = 6)
+cleanr::check_directory("R/", recursive = TRUE)

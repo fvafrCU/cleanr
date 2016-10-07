@@ -5,7 +5,7 @@ NULL
 #'
 #' run all \code{\link{function_checks}} on a function.
 #'
-#' The functions catches the messages of 'coldr'-conditions \code{\link{throw}}n
+#' The functions catches the messages of 'cleanr'-conditions \code{\link{throw}}n
 #' by \code{\link{function_checks}} and, if it caught any, \code{\link{throw}}s
 #' them.
 #'
@@ -34,27 +34,27 @@ check_function_layout <- function(object,
     findings <- NULL
     finding <- tryCatch(check_num_arguments(object,
                                    maximum = max_arguments),
-                          coldr = function(e) return(e$message))
+                          cleanr = function(e) return(e$message))
     findings <- c(findings, finding)
     finding <- tryCatch(check_nesting_depth(object,
                                    maximum = max_nesting_depth),
-                          coldr = function(e) return(e$message))
+                          cleanr = function(e) return(e$message))
     findings <- c(findings, finding)
     finding <- tryCatch(check_line_width(object,
                                    maximum = max_line_width),
-                          coldr = function(e) return(e$message))
+                          cleanr = function(e) return(e$message))
     findings <- c(findings, finding)
     finding <- tryCatch(check_num_lines(object,
                                    maximum = max_lines),
-                          coldr = function(e) return(e$message))
+                          cleanr = function(e) return(e$message))
     findings <- c(findings, finding)
     finding <- tryCatch(check_num_lines_of_code(object,
                                        maximum = max_lines_of_code),
-                          coldr = function(e) return(e$message))
+                          cleanr = function(e) return(e$message))
 
     findings <- c(findings, finding)
     finding <- tryCatch(check_return(object),
-                          coldr = function(e) return(e$message))
+                          cleanr = function(e) return(e$message))
     findings <- c(findings, finding)
     findings <- tidy_findings(findings)
     if (! is.null(findings)) {
@@ -70,7 +70,7 @@ check_function_layout <- function(object,
 #'
 #' run all \code{\link{check_function_layout}} on a file.
 #'
-#' The functions catches the messages of 'coldr'-conditions \code{\link{throw}}n
+#' The functions catches the messages of 'cleanr'-conditions \code{\link{throw}}n
 #' by \code{\link{check_function_layout}} and, if it caught any,
 #' \code{\link{throw}}s
 #' them.
@@ -83,7 +83,7 @@ check_function_layout <- function(object,
 #' @export 
 #' @examples 
 #' print(check_functions_in_file(system.file('source', 'R', 'utils.r', 
-#'                                     package = 'coldr')))
+#'                                     package = 'cleanr')))
 check_functions_in_file <- function(path, ...) {
     checkmate::assertFile(path, access = 'r')
     findings <- NULL
@@ -94,7 +94,7 @@ check_functions_in_file <- function(path, ...) {
         if (eval(parse(text = paste('is.function(', name, ')')))) {
             command <- paste('tryCatch(check_function_layout(',
                              'source_kept$', name, ',...),',
-                             'coldr = function(e) return(e$message))')
+                             'cleanr = function(e) return(e$message))')
             finding <- eval(parse(text = command))
             findings <- c(findings, finding)
         }
@@ -112,7 +112,7 @@ check_functions_in_file <- function(path, ...) {
 #' run all \code{\link{check_functions_in_file}} and
 #' \code{\link{check_file_layout}} on a file.
 #'
-#' The function catches the messages of 'coldr'-conditions \code{\link{throw}}n
+#' The function catches the messages of 'cleanr'-conditions \code{\link{throw}}n
 #' by \code{\link{check_functions_in_file}} and \code{\link{check_file_layout}}
 #' and, if it
 #' caught any, \code{\link{throw}}s them.
@@ -126,7 +126,7 @@ check_functions_in_file <- function(path, ...) {
 #' @export 
 #' @examples 
 #' print(check_file(system.file('source', 'R', 'utils.r', 
-#'                                      package = 'coldr')))
+#'                                      package = 'cleanr')))
 check_file <- function(path, ...) {
     checkmate::assertFile(path, access = 'r')
     findings <- NULL
@@ -154,7 +154,7 @@ check_file <- function(path, ...) {
     # use only non-empty arguments
     arguments_to_use <- arguments_to_use[arguments_to_use != '']
     finding <- tryCatch(do.call("check_file_layout", arguments_to_use),
-                        coldr = function(e) return(e$message))
+                        cleanr = function(e) return(e$message))
     findings <- c(findings, finding)
     use <- utils::modifyList(check_functions_in_file_defaults, arguments)
     arguments_to_use <- use[names(use) %in%
@@ -162,7 +162,7 @@ check_file <- function(path, ...) {
     # use only non-empty arguments
     arguments_to_use <- arguments_to_use[arguments_to_use != '']
     finding <- tryCatch(do.call("check_functions_in_file", arguments_to_use),
-                        coldr = function(e) return(e$message))
+                        cleanr = function(e) return(e$message))
     findings <- c(findings, finding)
     findings <- tidy_findings(findings)
     if (! is.null(findings)) {
@@ -176,7 +176,7 @@ check_file <- function(path, ...) {
 #'
 #' run all \code{\link{check_file}} on the files in a directory.
 #'
-#' The functions catches the messages of 'coldr'-conditions \code{\link{throw}}n
+#' The functions catches the messages of 'cleanr'-conditions \code{\link{throw}}n
 #' by \code{\link{check_file}} and, if it caught any, \code{\link{throw}}s them.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
@@ -190,8 +190,8 @@ check_file <- function(path, ...) {
 #' @export 
 #' @examples 
 #' # load internal functions first.
-#' load_internal_functions('coldr')
-#' print(check_directory(system.file('source', 'R', package = 'coldr'),
+#' load_internal_functions('cleanr')
+#' print(check_directory(system.file('source', 'R', package = 'cleanr'),
 #'                       max_arguments = 6, max_width = 90))
 check_directory <- function(path, pattern = '\\.[rR]$', recursive = FALSE,
                             ...) {
@@ -201,7 +201,7 @@ check_directory <- function(path, pattern = '\\.[rR]$', recursive = FALSE,
     findings <- NULL
     for (source_file in paths) {
         finding <- tryCatch(check_file(source_file, ...),
-                            coldr = function(e) return(e$message))
+                            cleanr = function(e) return(e$message))
         findings <- c(findings, finding)
     }
     findings <- tidy_findings(findings)

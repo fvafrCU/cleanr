@@ -2,18 +2,18 @@
 % Please edit documentation in R/utils.r
 \name{set_coldr_options}
 \alias{set_coldr_options}
-\title{set options for \pkg{coldr}}
+\title{set options for \pkg{cleanr}}
 \usage{
 set_coldr_options(..., reset = FALSE, overwrite = TRUE)
 }
 \arguments{
 \item{...}{see \code{\link{options}}.}
 
-\item{reset}{[boolean(1)]\cr Reset all \pkg{coldr} options to the package's
+\item{reset}{[boolean(1)]\cr Reset all \pkg{cleanr} options to the package's
 defaults?}
 
 \item{overwrite}{[boolean(1)]\cr Overwrite options already set? Is set to
-FALSE on package loading to ensure your previously set \pkg{coldr} options
+FALSE on package loading to ensure your previously set \pkg{cleanr} options
 won't get overridden. Just ignore that argument.}
 }
 \value{
@@ -38,8 +38,8 @@ set_coldr_options(max_lines = 30, max_lines_of_code = 20)
 set_coldr_options(list(max_lines = 30, max_lines_of_code = 20))
 get_coldr_options(flatten_list = TRUE)
 # we delete all options and set some anew
-options('coldr' = NULL)
-options('coldr' = list(max_lines = 30, max_lines_of_code = 20))
+options('cleanr' = NULL)
+options('cleanr' = list(max_lines = 30, max_lines_of_code = 20))
 # fill the missing options with the package's defaults:
 set_coldr_options(overwrite = FALSE)
 get_coldr_options(flatten_list = TRUE)

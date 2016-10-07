@@ -28,7 +28,7 @@ function deletes the TRUEs.
 }
 \examples{
 findings <- c('some signal caught', rep('TRUE', 3))
-coldr:::tidy_findings(findings)
+cleanr:::tidy_findings(findings)
 }
 \author{
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>

@@ -18,7 +18,7 @@ invisible(TRUE), but see \emph{Details}.
 run all \code{\link{check_function_layout}} on a file.
 }
 \details{
-The functions catches the messages of 'coldr'-conditions \code{\link{throw}}n
+The functions catches the messages of 'cleanr'-conditions \code{\link{throw}}n
 by \code{\link{check_function_layout}} and, if it caught any,
 \code{\link{throw}}s
 them.
@@ -28,7 +28,7 @@ them.
 }
 \examples{
 print(check_functions_in_file(system.file('source', 'R', 'utils.r', 
-                                    package = 'coldr')))
+                                    package = 'cleanr')))
 }
 \author{
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>

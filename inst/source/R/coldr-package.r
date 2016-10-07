@@ -24,8 +24,8 @@
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @section Version: $Id: 21e3a57157dcd729e5bbed73ed5d84159e8ea554 $
-#' @name coldr-package
-#' @aliases coldr-package
+#' @name cleanr-package
+#' @aliases cleanr-package
 #' @docType package
 #' @keywords package
 NULL

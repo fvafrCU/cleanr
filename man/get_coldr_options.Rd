@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.r
 \name{get_coldr_options}
 \alias{get_coldr_options}
-\title{get options for \pkg{coldr}}
+\title{get options for \pkg{cleanr}}
 \usage{
 get_coldr_options(..., remove_names = FALSE, flatten_list = TRUE)
 }

@@ -1,11 +1,11 @@
 test_files <- function() {
     checkTrue(check_file(system.file('source', 'R', 'checks.r',
-                                     package = 'coldr'))
+                                     package = 'cleanr'))
     )
     checkTrue(check_file(system.file('source', 'R', 'wrappers.r',
-                                     package = 'coldr'), max_arguments = 6)
+                                     package = 'cleanr'), max_arguments = 6)
     )
     checkException(check_file(system.file('source', 'R', 'wrappers.r',
-                                     package = 'coldr'))
+                                     package = 'cleanr'))
     )
 }

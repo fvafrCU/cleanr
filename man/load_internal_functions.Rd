@@ -28,7 +28,7 @@ environment.
  $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 }
 \examples{
-load_internal_functions('coldr')
+load_internal_functions('cleanr')
 }
 \author{
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>

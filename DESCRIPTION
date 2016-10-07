@@ -1,4 +1,4 @@
-Package: coldr
+Package: cleanr
 Type: Package
 Title: Coding Less Dreadfully
 Version: 0.2.1
@@ -20,6 +20,6 @@ Collate:
     'internals.r'
     'utils.r'
     'checks.r'
-    'coldr-package.r'
+    'cleanr-package.r'
     'wrappers.r'
     'zzz.r'

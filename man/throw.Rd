@@ -15,19 +15,19 @@ throw(message_string, system_call = sys.call(-1), ...)
 }
 \value{
 FALSE. But it doesn't return anything, it stops with a
-condition of class c('coldr', 'error', 'condition').
+condition of class c('cleanr', 'error', 'condition').
 }
 \description{
-throws a condition of class c('coldr', 'error', 'condition').
+throws a condition of class c('cleanr', 'error', 'condition').
 }
 \details{
-We use this condition as an error dedictated to \pkg{coldr}.
+We use this condition as an error dedictated to \pkg{cleanr}.
 }
 \section{Version}{
  $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 }
 \examples{
-tryCatch(coldr:::throw('Hello error!'), coldr = function(e) return(e))
+tryCatch(cleanr:::throw('Hello error!'), cleanr = function(e) return(e))
 }
 \author{
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>

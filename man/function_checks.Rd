@@ -51,7 +51,7 @@ At least this is what I think. Well, some others too.
 All of the functions test whether their requirement is met (some layout
 feature such as number of arguments, nesting depth, line width is not greater
 than the maximum given). In case of a fail all \code{\link{throw}} a
-condition of class c('coldr', 'error', 'condition').
+condition of class c('cleanr', 'error', 'condition').
 }
 \section{Warning}{
  \code{\link{check_return}} just \code{\link{grep}}s for a
@@ -73,7 +73,7 @@ print(check_num_lines(check_num_lines))
 print(check_num_lines_of_code(check_num_lines_of_code))
 print(check_return(check_return))
 # R reformats functions on import (see 
-# help(get_function_body, package = 'coldr')), so we need 90 characters:
+# help(get_function_body, package = 'cleanr')), so we need 90 characters:
 print(check_line_width(check_line_width, maximum = 90))
 }
 \author{
