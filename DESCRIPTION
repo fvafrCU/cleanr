@@ -1,6 +1,6 @@
 Package: cleanr
 Type: Package
-Title: Coding Less Dreadfully
+Title: Coding cleaner
 Version: 0.2.1
 Authors@R: person(given = c("Andreas", "Dominik"), family = "Cullmann",
     email = "dominik.cullmann@forst.bwl.de", role = c("aut","cre"))
