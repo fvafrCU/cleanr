@@ -1,6 +1,6 @@
 Package: cleanr
 Type: Package
-Title: Code Cleaner
+Title: Helps You to Code Cleaner
 Version: 0.2.1
 Authors@R: person(given = c("Andreas", "Dominik"), family = "Cullmann",
     email = "dominik.cullmann@forst.bwl.de", role = c("aut","cre"))
