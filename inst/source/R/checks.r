@@ -64,8 +64,8 @@ check_num_arguments <- function(object,
 #' @rdname function_checks
 #' @export 
 check_nesting_depth <- function(object,
-                                maximum = get_cleanr_options('max_nesting_depth')
-                                ) {
+                                maximum = 
+                                    get_cleanr_options('max_nesting_depth')) {
     checkmate::checkFunction(object)
     checkmate::qassert(maximum, 'N1')
     function_body <- get_function_body(object)
