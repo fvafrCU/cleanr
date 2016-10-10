@@ -1,13 +1,14 @@
 # cleanr
-was a set of shell scripts I used to check the file layout (number of lines,
-width of lines and the like) of code files.
-Somehow it turned out to be an R package.
+is a fork of [coldr](https://github.com/fvafrcu/coldr.git),
+which was a set of shell scripts I used to check the file layout (number of 
+lines, width of lines and the like) of code files and somehow turned out to be 
+an R package.
 
-In R, try:
+# In R, try:
 
 ```R
-library("devtools")
-install_github("fvafrCU/cleanr")
-help("cleanr-package", package = "cleanr")
+if (! require("devtools")) install.packages("devtools")
+devtools::install_github("fvafrCU/coldr")
+help("coldr-package", package = "coldr")
 ```
 

@@ -1,3 +1,1 @@
-- mark coldr as deprecated
-- add a README with require install devtools
 - lint that stuff
