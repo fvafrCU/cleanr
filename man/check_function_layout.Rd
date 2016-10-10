@@ -5,11 +5,11 @@
 \title{check a function's layout}
 \usage{
 check_function_layout(object,
-  max_lines_of_code = get_coldr_options("max_lines_of_code"),
-  max_lines = get_coldr_options("max_lines"),
-  max_arguments = get_coldr_options("max_arguments"),
-  max_nesting_depth = get_coldr_options("max_nesting_depth"),
-  max_line_width = get_coldr_options("max_line_width"))
+  max_lines_of_code = get_cleanr_options("max_lines_of_code"),
+  max_lines = get_cleanr_options("max_lines"),
+  max_arguments = get_cleanr_options("max_arguments"),
+  max_nesting_depth = get_cleanr_options("max_nesting_depth"),
+  max_line_width = get_cleanr_options("max_line_width"))
 }
 \arguments{
 \item{object}{The function to be checked.}

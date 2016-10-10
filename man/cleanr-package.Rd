@@ -3,17 +3,16 @@
 \docType{package}
 \name{cleanr-package}
 \alias{cleanr-package}
-\title{coding less dreadfully}
+\title{Helps You to Code Cleaner}
 \description{
 Check your R code for some of the most common layout flaws.
 }
 \details{
 Many tried to teach us how to write code less dreadful, be it implicitly as
-\cite{B. W. Kernighan and D. M. Ritchie. The C Programming Language, Second
-Edition. Prentice-Hall, Englewood Cliffs, New Jersey, 1988} did, be it
-explicitly as
-\cite{R.C. Martin. Clean Code: A Handbook of Agile Software Craftsmanship.
-Pearson Education, 2008} did.
+B. W. Kernighan and D. M. Ritchie in \cite{The C Programming Language} did, 
+be it explicitly as
+R.C. Martin in \cite{Clean Code: A Handbook of Agile Software Craftsmanship}
+did.
 
 So we should check our code for files too long or wide, functions with too
 many lines, too wide lines, too many arguments or nestings too deep.

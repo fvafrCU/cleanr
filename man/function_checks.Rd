@@ -10,16 +10,16 @@
 \alias{function_checks}
 \title{function checks}
 \usage{
-check_num_arguments(object, maximum = get_coldr_options("max_arguments"))
+check_num_arguments(object, maximum = get_cleanr_options("max_arguments"))
 
-check_nesting_depth(object, maximum = get_coldr_options("max_nesting_depth"))
+check_nesting_depth(object, maximum = get_cleanr_options("max_nesting_depth"))
 
-check_num_lines(object, maximum = get_coldr_options("max_lines"))
+check_num_lines(object, maximum = get_cleanr_options("max_lines"))
 
 check_num_lines_of_code(object,
-  maximum = get_coldr_options("max_lines_of_code"))
+  maximum = get_cleanr_options("max_lines_of_code"))
 
-check_line_width(object, maximum = get_coldr_options("max_line_width"))
+check_line_width(object, maximum = get_cleanr_options("max_line_width"))
 
 check_return(object)
 }

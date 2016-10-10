@@ -4,8 +4,8 @@
 \alias{check_file_layout}
 \title{check a file's layout}
 \usage{
-check_file_layout(path, max_length = get_coldr_options("max_length"),
-  max_width = get_coldr_options("max_width"))
+check_file_layout(path, max_length = get_cleanr_options("max_length"),
+  max_width = get_cleanr_options("max_width"))
 }
 \arguments{
 \item{path}{A path to a file, e.g. "checks.r".}
