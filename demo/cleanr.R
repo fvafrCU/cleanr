@@ -6,10 +6,10 @@ message("If a file passes all checks, cleanr returns invisibly TRUE")
 print(suppressWarnings(check_file(file_name)))
 
 message("Show current options:")
-get_coldr_options(flatten_list = TRUE)
+get_cleanr_options(flatten_list = TRUE)
 
 message("Change an option to procude conditions:")
-set_coldr_options(max_width = get_coldr_options("max_width") - 1)
+set_cleanr_options(max_width = get_cleanr_options("max_width") - 1)
 
 message("Catch cleanr conditions:")
 print(tryCatch(suppressWarnings(check_file(file_name)),

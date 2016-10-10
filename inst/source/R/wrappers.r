@@ -23,14 +23,14 @@ NULL
 #' print(check_function_layout(check_num_lines))
 check_function_layout <- function(object,
                                   max_lines_of_code =
-                                  get_coldr_options('max_lines_of_code'),
-                                  max_lines = get_coldr_options('max_lines'),
+                                  get_cleanr_options('max_lines_of_code'),
+                                  max_lines = get_cleanr_options('max_lines'),
                                   max_arguments =
-                                  get_coldr_options('max_arguments'),
+                                  get_cleanr_options('max_arguments'),
                                   max_nesting_depth =
-                                  get_coldr_options('max_nesting_depth'),
+                                  get_cleanr_options('max_nesting_depth'),
                                   max_line_width =
-                                  get_coldr_options('max_line_width')) {
+                                  get_cleanr_options('max_line_width')) {
     findings <- NULL
     finding <- tryCatch(check_num_arguments(object,
                                    maximum = max_arguments),

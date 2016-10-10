@@ -1,6 +1,3 @@
-- update DESC with cleanr-package. Get rid of the later?
-- add DOI
-- [sg]et_coldr_options -> grep coldr
 - mark coldr as deprecated
 - add a README with require install devtools
 - lint that stuff

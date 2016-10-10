@@ -65,22 +65,22 @@ load_internal_functions <- function(package, ...) {
 #' @export 
 #' @examples 
 #' # R.C. Martin's Clean Code recommends monadic argument lists.
-#' set_coldr_options(max_arguments = 1) 
+#' set_cleanr_options(max_arguments = 1) 
 #' # R.C. Martin's Clean Code recommends functions less than 20 lines long.
-#' set_coldr_options(max_lines = 30, max_lines_of_code = 20)
+#' set_cleanr_options(max_lines = 30, max_lines_of_code = 20)
 #' # same as above:
-#' set_coldr_options(list(max_lines = 30, max_lines_of_code = 20))
-#' get_coldr_options(flatten_list = TRUE)
+#' set_cleanr_options(list(max_lines = 30, max_lines_of_code = 20))
+#' get_cleanr_options(flatten_list = TRUE)
 #' # we delete all options and set some anew
 #' options('cleanr' = NULL)
 #' options('cleanr' = list(max_lines = 30, max_lines_of_code = 20))
 #' # fill the missing options with the package's defaults:
-#' set_coldr_options(overwrite = FALSE)
-#' get_coldr_options(flatten_list = TRUE)
+#' set_cleanr_options(overwrite = FALSE)
+#' get_cleanr_options(flatten_list = TRUE)
 #' # reset to the package's defaults:
-#' set_coldr_options(reset = TRUE)
-#' get_coldr_options(flatten_list = TRUE)
-set_coldr_options <- function(..., reset = FALSE, overwrite = TRUE) {
+#' set_cleanr_options(reset = TRUE)
+#' get_cleanr_options(flatten_list = TRUE)
+set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
     checkmate::qassert(reset, 'B1')
     checkmate::qassert(overwrite, 'B1')
     defaults <- list(max_width = 80, max_length = 300,
@@ -103,11 +103,11 @@ set_coldr_options <- function(..., reset = FALSE, overwrite = TRUE) {
                                               option_list[is_option_unset]))
         }
     }
-    max_lines <- get_coldr_options('max_lines', flatten_list = TRUE)
-    max_lines_of_code <- get_coldr_options('max_lines_of_code', 
+    max_lines <- get_cleanr_options('max_lines', flatten_list = TRUE)
+    max_lines_of_code <- get_cleanr_options('max_lines_of_code', 
                                            flatten_list = TRUE)
     if (max_lines < max_lines_of_code) {
-        set_coldr_options(max_lines = max_lines_of_code)
+        set_cleanr_options(max_lines = max_lines_of_code)
         warning(paste('maximum number of lines was less than maximum number of',
                       'lines of code, resetting the former to the latter.'))
     }
@@ -126,13 +126,13 @@ set_coldr_options <- function(..., reset = FALSE, overwrite = TRUE) {
 #' @return a (possibly named) list or a vector.
 #' @export 
 #' @examples 
-#' get_coldr_options('max_lines')
-#' get_coldr_options('max_lines', remove_names = TRUE)
-#' get_coldr_options('max_lines', flatten_list = TRUE)
-#' get_coldr_options('max_lines', flatten_list = TRUE, remove_names = TRUE)
-#' get_coldr_options(flatten_list = TRUE, remove_names = TRUE)
-#' get_coldr_options(c('max_lines', 'max_lines_of_code'))
-get_coldr_options <- function(..., remove_names = FALSE, flatten_list = TRUE) {
+#' get_cleanr_options('max_lines')
+#' get_cleanr_options('max_lines', remove_names = TRUE)
+#' get_cleanr_options('max_lines', flatten_list = TRUE)
+#' get_cleanr_options('max_lines', flatten_list = TRUE, remove_names = TRUE)
+#' get_cleanr_options(flatten_list = TRUE, remove_names = TRUE)
+#' get_cleanr_options(c('max_lines', 'max_lines_of_code'))
+get_cleanr_options <- function(..., remove_names = FALSE, flatten_list = TRUE) {
     checkmate::qassert(remove_names, 'B1')
     checkmate::qassert(flatten_list, 'B1')
     if (missing(...)) {

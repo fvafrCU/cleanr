@@ -52,7 +52,7 @@ NULL
 #' @rdname function_checks
 #' @export 
 check_num_arguments <- function(object,
-                                maximum = get_coldr_options('max_arguments')) {
+                                maximum = get_cleanr_options('max_arguments')) {
     checkmate::checkFunction(object)
     checkmate::qassert(maximum, 'N1')
     num_arguments <- length(formals(object))
@@ -64,7 +64,7 @@ check_num_arguments <- function(object,
 #' @rdname function_checks
 #' @export 
 check_nesting_depth <- function(object,
-                                maximum = get_coldr_options('max_nesting_depth')
+                                maximum = get_cleanr_options('max_nesting_depth')
                                 ) {
     checkmate::checkFunction(object)
     checkmate::qassert(maximum, 'N1')
@@ -90,7 +90,7 @@ check_nesting_depth <- function(object,
 #' @rdname function_checks
 #' @export 
 check_num_lines <- function(object,
-                            maximum = get_coldr_options('max_lines')) {
+                            maximum = get_cleanr_options('max_lines')) {
     checkmate::checkFunction(object)
     checkmate::qassert(maximum, 'N1')
     function_body <- get_function_body(object)
@@ -104,7 +104,7 @@ check_num_lines <- function(object,
 #' @export 
 check_num_lines_of_code <- function(object,
                                     maximum =
-                                    get_coldr_options('max_lines_of_code')) {
+                                    get_cleanr_options('max_lines_of_code')) {
     checkmate::checkFunction(object)
     checkmate::qassert(maximum, 'N1')
     function_body <- get_function_body(object)
@@ -121,7 +121,7 @@ check_num_lines_of_code <- function(object,
 #' @rdname function_checks
 #' @export 
 check_line_width <- function(object,
-                            maximum = get_coldr_options('max_line_width')) {
+                            maximum = get_cleanr_options('max_line_width')) {
     checkmate::checkFunction(object)
     checkmate::qassert(maximum, 'N1')
     function_body <- get_function_body(object)
@@ -175,8 +175,8 @@ check_return <- function(object) {
 #' print(check_file_layout(system.file('source', 'R', 'checks.r', 
 #'                                     package = 'cleanr')))
 check_file_layout <- function(path,
-                              max_length = get_coldr_options('max_length'),
-                              max_width = get_coldr_options('max_width')) {
+                              max_length = get_cleanr_options('max_length'),
+                              max_width = get_cleanr_options('max_width')) {
     checkmate::qassert(path, 'S1')
     checkmate::qassert(max_length, 'N1')
     checkmate::qassert(max_width, 'N1')

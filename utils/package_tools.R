@@ -50,5 +50,5 @@ for (source_file in files) {
 
 #% cleanr
 if (basename(getwd()) == "cleanr") cleanr::load_internal_functions("cleanr")
-cleanr::set_coldr_options(max_arguments = 6)
+cleanr::set_cleanr_options(max_arguments = 6)
 cleanr::check_directory("R/", recursive = TRUE)

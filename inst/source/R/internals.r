@@ -19,8 +19,8 @@
 #' @examples 
 #' source(system.file('source', 'R', 'utils.r', package = 'cleanr'))
 #' require(checkmate)
-#' cleanr:::get_function_body(set_coldr_options)[3:6]
-#' utils::capture.output(body(set_coldr_options))[4:6]
+#' cleanr:::get_function_body(set_cleanr_options)[3:6]
+#' utils::capture.output(body(set_cleanr_options))[4:6]
 get_function_body <- function(object) {
     checkmate::checkFunction(object)
     lines_in_function <- utils::capture.output(object)

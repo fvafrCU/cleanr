@@ -8,7 +8,7 @@ load_internal_functions(package = 'cleanr')
 
 library('RUnit')
 # Unit testing
-package_suite <- defineTestSuite('coldr_R_code',
+package_suite <- defineTestSuite('cleanr_R_code',
                                  dirs = file.path(getwd(), 'runit'),
                                  testFileRegexp = '^.*\\.r',
                                  testFuncRegexp = '^test_+')

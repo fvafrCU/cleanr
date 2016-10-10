@@ -2,6 +2,6 @@
     if(is.character(libname) && is.character(pkgname)) {
        # soothe codetools::checkUsagePackage
     }
-    set_coldr_options(overwrite = FALSE)
+    set_cleanr_options(overwrite = FALSE)
     return(invisible(NULL))
 }
