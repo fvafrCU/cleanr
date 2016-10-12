@@ -1,26 +1,38 @@
 Updating cleanr documentation
 Loading cleanr
+Writing get_function_body.Rd
+Writing throw.Rd
+Writing tidy_findings.Rd
+Writing load_internal_functions.Rd
+Writing set_cleanr_options.Rd
+Writing get_cleanr_options.Rd
+Writing function_checks.Rd
+Writing check_file_layout.Rd
+Writing cleanr-package.Rd
 Writing check_function_layout.Rd
 Writing check_functions_in_file.Rd
+Writing check_file.Rd
 Writing check_directory.Rd
-Setting env vars --------------------------------------------------------------
+Setting env vars ---------------------------------------------------------------
 CFLAGS  : -Wall -pedantic
 CXXFLAGS: -Wall -pedantic
-Building cleanr ---------------------------------------------------------------
-  --no-manual 
+Building cleanr ----------------------------------------------------------------
 
-* checking for file ‘/home/qwer/git/cyclops/fvafrcu/cleanr/DESCRIPTION’ ... OK
+* checking for file ‘/home/nik/git/cs/fvafrcu/cleanr/DESCRIPTION’ ... OK
 * preparing ‘cleanr’:
 * checking DESCRIPTION meta-information ... OK
+* excluding invalid files
+Subdirectory 'R' contains invalid file names:
+  ‘sedscr’
 * checking for LF line-endings in source and make files
 * checking for empty or unneeded directories
 * building ‘cleanr_0.2.1.tar.gz’
 
-Setting env vars --------------------------------------------------------------
+Setting env vars ---------------------------------------------------------------
 _R_CHECK_CRAN_INCOMING_USE_ASPELL_: TRUE
 _R_CHECK_CRAN_INCOMING_           : FALSE
 _R_CHECK_FORCE_SUGGESTS_          : FALSE
-Checking cleanr ---------------------------------------------------------------
+Checking cleanr ----------------------------------------------------------------
   --no-manual 
 
 * using R version 3.3.1 (2016-06-21)

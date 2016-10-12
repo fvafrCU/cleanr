@@ -9,7 +9,7 @@ Check your R code for some of the most common layout flaws.
 }
 \details{
 Many tried to teach us how to write code less dreadful, be it implicitly as
-B. W. Kernighan and D. M. Ritchie in \cite{The C Programming Language} did, 
+B. W. Kernighan and D. M. Ritchie in \cite{The C Programming Language} did,
 be it explicitly as
 R.C. Martin in \cite{Clean Code: A Handbook of Agile Software Craftsmanship}
 did.
@@ -19,7 +19,7 @@ many lines, too wide lines, too many arguments or nestings too deep.
 }
 \note{
 This is not a static code analyzer like pylint or the like. If you're
-looking for a static code analyzer, check out lintr 
+looking for a static code analyzer, check out lintr
 (\url{https://cran.r-project.org/package=lintr} or
 \url{https://github.com/jimhester/lintr}).
 }
@@ -30,10 +30,10 @@ looking for a static code analyzer, check out lintr
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
 }
 \seealso{
-packages 
+packages
 \pkg{codetools}
 (\url{https://cran.r-project.org/package=codetools}),
-and 
+and
 \pkg{formatR}
 (\url{https://cran.r-project.org/package=formatR}).
 }

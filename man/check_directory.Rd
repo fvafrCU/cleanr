@@ -23,8 +23,8 @@ invisible(TRUE), but see \emph{Details}.
 run all \code{\link{check_file}} on the files in a directory.
 }
 \details{
-The functions catches the messages of 'cleanr'-conditions 
-\code{\link{throw}}n by \code{\link{check_file}} and, if it caught any, 
+The functions catches the messages of "cleanr"-conditions
+\code{\link{throw}}n by \code{\link{check_file}} and, if it caught any,
 \code{\link{throw}}s them.
 }
 \section{Version}{
@@ -32,8 +32,8 @@ The functions catches the messages of 'cleanr'-conditions
 }
 \examples{
 # load internal functions first.
-load_internal_functions('cleanr')
-print(check_directory(system.file('source', 'R', package = 'cleanr'),
+load_internal_functions("cleanr")
+print(check_directory(system.file("source", "R", package = "cleanr"),
                       max_arguments = 6, max_width = 90))
 }
 \author{

@@ -20,7 +20,7 @@ run all \code{\link{check_functions_in_file}} and
 \code{\link{check_file_layout}} on a file.
 }
 \details{
-The function catches the messages of 'cleanr'-conditions \code{\link{throw}}n
+The function catches the messages of "cleanr"-conditions \code{\link{throw}}n
 by \code{\link{check_functions_in_file}} and \code{\link{check_file_layout}}
 and, if it
 caught any, \code{\link{throw}}s them.
@@ -29,8 +29,8 @@ caught any, \code{\link{throw}}s them.
  $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 }
 \examples{
-print(check_file(system.file('source', 'R', 'utils.r', 
-                                     package = 'cleanr')))
+print(check_file(system.file("source", "R", "utils.r",
+                                     package = "cleanr")))
 }
 \author{
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>

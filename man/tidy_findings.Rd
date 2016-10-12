@@ -7,11 +7,11 @@
 tidy_findings(findings)
 }
 \arguments{
-\item{findings}{a character vector with possibly some elements reading 'TRUE'
+\item{findings}{a character vector with possibly some elements reading "TRUE"
 or a vector of TRUEs.}
 }
 \value{
-a character vector without any element reading 'TRUE' or NULL.
+a character vector without any element reading "TRUE" or NULL.
 }
 \description{
 remove TRUE converted to class character from findings.
@@ -27,7 +27,7 @@ function deletes the TRUEs.
  $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 }
 \examples{
-findings <- c('some signal caught', rep('TRUE', 3))
+findings <- c("some signal caught", rep("TRUE", 3))
 cleanr:::tidy_findings(findings)
 }
 \author{

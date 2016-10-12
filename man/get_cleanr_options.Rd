@@ -23,12 +23,12 @@ a convenience function for \code{\link{getOption}}.
  $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 }
 \examples{
-get_cleanr_options('max_lines')
-get_cleanr_options('max_lines', remove_names = TRUE)
-get_cleanr_options('max_lines', flatten_list = TRUE)
-get_cleanr_options('max_lines', flatten_list = TRUE, remove_names = TRUE)
+get_cleanr_options("max_lines")
+get_cleanr_options("max_lines", remove_names = TRUE)
+get_cleanr_options("max_lines", flatten_list = TRUE)
+get_cleanr_options("max_lines", flatten_list = TRUE, remove_names = TRUE)
 get_cleanr_options(flatten_list = TRUE, remove_names = TRUE)
-get_cleanr_options(c('max_lines', 'max_lines_of_code'))
+get_cleanr_options(c("max_lines", "max_lines_of_code"))
 }
 \author{
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>

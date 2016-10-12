@@ -31,7 +31,7 @@ invisible(TRUE), but see \emph{Details}.
 run all \code{\link{function_checks}} on a function.
 }
 \details{
-The functions catches the messages of 'cleanr'-conditions 
+The functions catches the messages of "cleanr"-conditions
 \code{\link{throw}}n by \code{\link{function_checks}} and, if it caught any,
 \code{\link{throw}}s them.
 }

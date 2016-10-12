@@ -29,7 +29,7 @@ So we have to do it all over after sourcing with keep.source = TRUE (in
  $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 }
 \examples{
-source(system.file('source', 'R', 'utils.r', package = 'cleanr'))
+source(system.file("source", "R", "utils.r", package = "cleanr"))
 require(checkmate)
 cleanr:::get_function_body(set_cleanr_options)[3:6]
 utils::capture.output(body(set_cleanr_options))[4:6]
