@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/transitional.dtd">
+<html><head><title>RUnit Code Inspection - Result</title>
+</head>
+<body><table border="0" width="100%" >
+<tr><th></th>
+<th></th>
+</tr>
+<tr>
+<td><a href="index.html">index</a></td>
+<td align="right"><a href="./con1.html">graph</a></td></tr>
+</table>
+<hr>
+<h2 TRUE>Result</h2>
+Function: <b>check_file</b>
+Runs: <b>2</b>
+
+<table border="1" width="100%" >
+<tr><th>line</th>
+<th>code</th>
+<th>calls</th>
+<th>time</th>
+</tr>
+<tr><td bgcolor="#D00000">1</td>
+<td bgcolor="#D00000">{</td>
+<td bgcolor="#D00000">0</td>
+<td bgcolor="#D00000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;checkmate::assertFile(path, access = "r")</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">3</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;findings <- NULL</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">4</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;dots <- list(...)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">5</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;check_file_layout_defaults <- formals(check_file_layout)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">6</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;check_functions_in_file_defaults <- append(formals(check_functions_in_file), formals(check_function_layout))</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">7</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;known_defaults <- append(check_file_layout_defaults, check_functions_in_file_defaults)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">8</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;if (!all(names(dots) %in% names(known_defaults))) {</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#D00000">9</td>
+<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;stop(paste("got unkown argument(s): ", paste(names(dots)[!names(dots) %in% names(known_defaults)], collapse = ", ")))</td>
+<td bgcolor="#D00000">0</td>
+<td bgcolor="#D00000">0</td>
+</tr>
+<tr><td bgcolor="#D00000">10</td>
+<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;}</td>
+<td bgcolor="#D00000">0</td>
+<td bgcolor="#D00000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">11</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;arguments <- append(list(path = path), dots)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">12</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;use <- utils::modifyList(check_file_layout_defaults, arguments)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">13</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;arguments_to_use <- use[names(use) %in% names(check_file_layout_defaults)]</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">14</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;arguments_to_use <- arguments_to_use[arguments_to_use != ""]</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">15</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;finding <- tryCatch(do.call("check_file_layout", arguments_to_use), cleanr = function(e) return(e$message))</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">16</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;findings <- c(findings, finding)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">17</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;use <- utils::modifyList(check_functions_in_file_defaults, arguments)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">18</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;arguments_to_use <- use[names(use) %in% names(check_functions_in_file_defaults)]</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">19</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;arguments_to_use <- arguments_to_use[arguments_to_use != ""]</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">20</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;finding <- tryCatch(do.call("check_functions_in_file", arguments_to_use), cleanr = function(e) return(e$message))</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">21</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;findings <- c(findings, finding)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0.02</td>
+</tr>
+<tr><td bgcolor="#00D000">22</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;findings <- tidy_findings(findings)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">23</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;if (!is.null(findings)) {</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">24</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;throw(paste(names(findings), findings, sep = " ", collapse = "\n"))</td>
+<td bgcolor="#00D000">1</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#D00000">25</td>
+<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;}</td>
+<td bgcolor="#D00000">0</td>
+<td bgcolor="#D00000">0</td>
+</tr>
+<tr><td bgcolor="#00D000">26</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;return(invisible(TRUE))</td>
+<td bgcolor="#00D000">1</td>
+<td bgcolor="#00D000">0</td>
+</tr>
+<tr><td bgcolor="#D00000">27</td>
+<td bgcolor="#D00000">}</td>
+<td bgcolor="#D00000">0</td>
+<td bgcolor="#D00000">0</td>
+</tr>
+</table>
+<hr>
+<table border="0" width="100%" >
+<tr><th></th>
+<th></th>
+</tr>
+<tr>
+<td><a href="index.html">index</a></td>
+<td align="right"><a href="./con1.html">graph</a></td></tr>
+</table>
+<hr>
+RUnit  0.4.31 2016-10-12 09:26:38</body>
+</html>

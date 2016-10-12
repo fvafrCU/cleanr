@@ -1,8 +1,7 @@
 Warning: found lints, see package_tools/lint_package.out
 
 working on tests/runit.R
-Warning: 40 lints found! See package_tools/runit.R.lints.
-package_tools/runit.R.tidy has only 19 lints. See package_tools/runit.R.tidy.lints.
+Warning: 9 lints found! See package_tools/runit.R.lints.
 
 working on utils/package_tools.R
 no lints found.
