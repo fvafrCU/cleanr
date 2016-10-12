@@ -19,9 +19,6 @@ a (possibly named) list or a vector.
 \description{
 a convenience function for \code{\link{getOption}}.
 }
-\section{Version}{
- $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
-}
 \examples{
 get_cleanr_options("max_lines")
 get_cleanr_options("max_lines", remove_names = TRUE)

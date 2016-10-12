@@ -24,9 +24,6 @@ producing no errors. If we want to check the source code of a package, we
 need to load the package \emph{and} be able to run all its internals in our
 environment.
 }
-\section{Version}{
- $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
-}
 \examples{
 load_internal_functions("cleanr")
 }

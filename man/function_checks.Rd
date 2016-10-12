@@ -62,10 +62,6 @@ function are explicit and it may miss a \code{\link{return}} path after a
 semicolon.
 It just checks if you use \code{\link{return}} at all.
 }
-
-\section{Version}{
- $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
-}
 \examples{
 print(check_num_arguments(check_num_arguments))
 print(check_nesting_depth(check_nesting_depth))

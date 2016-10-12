@@ -23,9 +23,6 @@ looking for a static code analyzer, check out lintr
 (\url{https://cran.r-project.org/package=lintr} or
 \url{https://github.com/jimhester/lintr}).
 }
-\section{Version}{
- $Id: 21e3a57157dcd729e5bbed73ed5d84159e8ea554 $
-}
 \author{
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
 }

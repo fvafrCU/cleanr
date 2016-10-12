@@ -25,9 +25,6 @@ seems to use \code{\link{body}}.
 So we have to do it all over after sourcing with keep.source = TRUE (in
 \code{\link{check_functions_in_file}}).
 }
-\section{Version}{
- $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
-}
 \examples{
 source(system.file("source", "R", "utils.R", package = "cleanr"))
 require(checkmate)

@@ -26,9 +26,6 @@ a convenience function for \code{\link{options}}.
 the package loads a couple of options as defaults for its functions.
 The defaults are stored in a list element of \code{\link{options}}.
 }
-\section{Version}{
- $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
-}
 \examples{
 # R.C. Martin's Clean Code recommends monadic argument lists.
 set_cleanr_options(max_arguments = 1)

@@ -29,9 +29,6 @@ in it.
 In case of a fail the function \code{link{throw}}s a
 condition of class c("cleanr", "error", "condition").
 }
-\section{Version}{
- $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
-}
 \examples{
 print(check_file_layout(system.file("source", "R", "checks.R",
                                     package = "cleanr")))
