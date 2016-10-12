@@ -33,27 +33,27 @@ check_function_layout <- function(object,
     findings <- NULL
     finding <- tryCatch(check_num_arguments(object,
                                    maximum = max_arguments),
-                          cleanr = function(e) return(e$message))
+                          cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     finding <- tryCatch(check_nesting_depth(object,
                                    maximum = max_nesting_depth),
-                          cleanr = function(e) return(e$message))
+                          cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     finding <- tryCatch(check_line_width(object,
                                    maximum = max_line_width),
-                          cleanr = function(e) return(e$message))
+                          cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     finding <- tryCatch(check_num_lines(object,
                                    maximum = max_lines),
-                          cleanr = function(e) return(e$message))
+                          cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     finding <- tryCatch(check_num_lines_of_code(object,
                                        maximum = max_lines_of_code),
-                          cleanr = function(e) return(e$message))
+                          cleanr = function(e) return(e[["message"]]))
 
     findings <- c(findings, finding)
     finding <- tryCatch(check_return(object),
-                          cleanr = function(e) return(e$message))
+                          cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     findings <- tidy_findings(findings)
     if (! is.null(findings)) {
@@ -91,7 +91,7 @@ check_functions_in_file <- function(path, ...) {
         if (eval(parse(text = paste("is.function(", name, ")")))) {
             command <- paste("tryCatch(check_function_layout(",
                              "source_kept$", name, ",...),",
-                             "cleanr = function(e) return(e$message))")
+                             "cleanr = function(e) return(e[[\"message\"]]))")
             finding <- eval(parse(text = command))
             findings <- c(findings, finding)
         }
@@ -150,7 +150,7 @@ check_file <- function(path, ...) {
     # use only non-empty arguments
     arguments_to_use <- arguments_to_use[arguments_to_use != ""]
     finding <- tryCatch(do.call("check_file_layout", arguments_to_use),
-                        cleanr = function(e) return(e$message))
+                        cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     use <- utils::modifyList(check_functions_defaults, arguments)
     arguments_to_use <- use[names(use) %in%
@@ -158,7 +158,7 @@ check_file <- function(path, ...) {
     # use only non-empty arguments
     arguments_to_use <- arguments_to_use[arguments_to_use != ""]
     finding <- tryCatch(do.call("check_functions_in_file", arguments_to_use),
-                        cleanr = function(e) return(e$message))
+                        cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     findings <- tidy_findings(findings)
     if (! is.null(findings)) {
@@ -197,7 +197,7 @@ check_directory <- function(path, pattern = "\\.[rR]$", recursive = FALSE,
     findings <- NULL
     for (source_file in paths) {
         finding <- tryCatch(check_file(source_file, ...),
-                            cleanr = function(e) return(e$message))
+                            cleanr = function(e) return(e[["message"]]))
         findings <- c(findings, finding)
     }
     findings <- tidy_findings(findings)

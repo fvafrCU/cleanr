@@ -33,8 +33,7 @@ load_internal_functions <- function(package, ...) {
     is_package_name_function <-
         vapply(package_names,
                function(x) {
-                   name_in_package  <-  paste("package_namespace$", x, sep = "")
-                   is.function(eval(parse(text = name_in_package)))
+                   is.function(get(x, envir = package_namespace))
                },
                TRUE)
     package_functions <- package_names[is_package_name_function]
