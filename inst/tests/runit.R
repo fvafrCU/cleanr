@@ -53,8 +53,8 @@ if (FALSE) {
 
         return(invisible(TRUE))
     }
-    ## TODO: for function_in_functions {if function not in names(res_track)
-    ## throw()}
+    #'# TODO: for function_in_functions {if function not in names(res_track)
+    #'# throw()}
     for (track_info in res_track) {
         check_function_coverage(track_info)
     }
