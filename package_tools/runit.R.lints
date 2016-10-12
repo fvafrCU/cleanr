@@ -1,2 +1,0 @@
-package_tools/runit.R 58 6 style Commented code should be removed.     ## TODO: for function_in_functions {if function not in names(res_track) list(c(6, 75)) commented_code_linter
-package_tools/runit.R 59 6 style Commented code should be removed.     ## throw()} list(c(6, 15)) commented_code_linter

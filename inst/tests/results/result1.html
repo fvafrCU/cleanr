@@ -47,12 +47,12 @@ Runs: <b>2</b>
 <td bgcolor="#00D000">0</td>
 </tr>
 <tr><td bgcolor="#00D000">6</td>
-<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;check_functions_in_file_defaults <- append(formals(check_functions_in_file), formals(check_function_layout))</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;check_functions_defaults <- append(formals(check_functions_in_file), formals(check_function_layout))</td>
 <td bgcolor="#00D000">2</td>
 <td bgcolor="#00D000">0</td>
 </tr>
 <tr><td bgcolor="#00D000">7</td>
-<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;known_defaults <- append(check_file_layout_defaults, check_functions_in_file_defaults)</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;known_defaults <- append(check_file_layout_defaults, check_functions_defaults)</td>
 <td bgcolor="#00D000">2</td>
 <td bgcolor="#00D000">0</td>
 </tr>
@@ -92,7 +92,7 @@ Runs: <b>2</b>
 <td bgcolor="#00D000">0</td>
 </tr>
 <tr><td bgcolor="#00D000">15</td>
-<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;finding <- tryCatch(do.call("check_file_layout", arguments_to_use), cleanr = function(e) return(e$message))</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;finding <- tryCatch(do.call("check_file_layout", arguments_to_use), cleanr = function(e) return(e[["message"]]))</td>
 <td bgcolor="#00D000">2</td>
 <td bgcolor="#00D000">0</td>
 </tr>
@@ -102,12 +102,12 @@ Runs: <b>2</b>
 <td bgcolor="#00D000">0</td>
 </tr>
 <tr><td bgcolor="#00D000">17</td>
-<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;use <- utils::modifyList(check_functions_in_file_defaults, arguments)</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;use <- utils::modifyList(check_functions_defaults, arguments)</td>
 <td bgcolor="#00D000">2</td>
 <td bgcolor="#00D000">0</td>
 </tr>
 <tr><td bgcolor="#00D000">18</td>
-<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;arguments_to_use <- use[names(use) %in% names(check_functions_in_file_defaults)]</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;arguments_to_use <- use[names(use) %in% names(check_functions_defaults)]</td>
 <td bgcolor="#00D000">2</td>
 <td bgcolor="#00D000">0</td>
 </tr>
@@ -117,14 +117,14 @@ Runs: <b>2</b>
 <td bgcolor="#00D000">0</td>
 </tr>
 <tr><td bgcolor="#00D000">20</td>
-<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;finding <- tryCatch(do.call("check_functions_in_file", arguments_to_use), cleanr = function(e) return(e$message))</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;finding <- tryCatch(do.call("check_functions_in_file", arguments_to_use), cleanr = function(e) return(e[["message"]]))</td>
 <td bgcolor="#00D000">2</td>
 <td bgcolor="#00D000">0</td>
 </tr>
 <tr><td bgcolor="#00D000">21</td>
 <td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;findings <- c(findings, finding)</td>
 <td bgcolor="#00D000">2</td>
-<td bgcolor="#00D000">0.03</td>
+<td bgcolor="#00D000">0.08</td>
 </tr>
 <tr><td bgcolor="#00D000">22</td>
 <td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;findings <- tidy_findings(findings)</td>
@@ -167,5 +167,5 @@ Runs: <b>2</b>
 <td align="right"><a href="./con1.html">graph</a></td></tr>
 </table>
 <hr>
-RUnit  0.4.31 2016-10-12 12:12:09</body>
+RUnit  0.4.31 2016-10-13 11:35:47</body>
 </html>

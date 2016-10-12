@@ -13,7 +13,9 @@ if (length(lints) > 0) {
     warning("found lints, see ", lint_file)
     writeLines(unlist(lapply(lints, paste, collapse = " ")), con = lint_file)
 } else {
-    message("Congratulations: no lints found.")
+    m <- "Congratulations: no lints found."
+    message(m)
+    writeLines(m, con = lint_file)
 }
 
 #% formatR

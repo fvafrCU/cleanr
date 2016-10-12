@@ -1,7 +1,25 @@
-Warning: found lints, see package_tools/lint_package.out
+Congratulations: no lints found.
+
+working on R/checks.R
+no lints found.
+
+working on R/cleanr-package.R
+no lints found.
+
+working on R/internals.R
+no lints found.
+
+working on R/utils.R
+no lints found.
+
+working on R/wrappers.R
+no lints found.
+
+working on R/zzz.R
+no lints found.
 
 working on tests/runit.R
-Warning: 2 lints found! See package_tools/runit.R.lints.
+no lints found.
 
 working on utils/package_tools.R
 no lints found.

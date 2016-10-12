@@ -1,0 +1,16 @@
+package_tools/utils.R.tidy 26 1 style lines should not be more than 80 characters.     is_exported_name_function <- vapply(exported_names, function(x) is.function(eval(parse(text = x))),  list(c(1, 104)) line_length_linter
+package_tools/utils.R.tidy 26 104 style Trailing whitespace is superfluous.     is_exported_name_function <- vapply(exported_names, function(x) is.function(eval(parse(text = x))),  list(c(104, 104)) trailing_whitespace_linter
+package_tools/utils.R.tidy 33 5 style Closing curly-braces should always be on their own line, unless it's followed by an else.     }, TRUE) NULL closed_curly_linter
+package_tools/utils.R.tidy 37 77 style Trailing whitespace is superfluous.         assign(name, get(name, envir = package_namespace, inherits = FALSE),  list(c(77, 77)) trailing_whitespace_linter
+package_tools/utils.R.tidy 78 71 style Trailing whitespace is superfluous.     defaults <- list(max_width = 80, max_length = 300, max_lines = 65,  list(c(71, 71)) trailing_whitespace_linter
+package_tools/utils.R.tidy 79 74 style Trailing whitespace is superfluous.         max_lines_of_code = 50, max_arguments = 5, max_nesting_depth = 3,  list(c(74, 74)) trailing_whitespace_linter
+package_tools/utils.R.tidy 82 47 style Trailing whitespace is superfluous.     if (is.null(getOption("cleanr")) || reset)  list(c(47, 47)) trailing_whitespace_linter
+package_tools/utils.R.tidy 88 42 style Trailing whitespace is superfluous.             if (length(option_list) == 0)  list(c(42, 42)) trailing_whitespace_linter
+package_tools/utils.R.tidy 91 38 style Trailing whitespace is superfluous.             if (any(is_option_unset))  list(c(38, 38)) trailing_whitespace_linter
+package_tools/utils.R.tidy 92 1 style lines should not be more than 80 characters.                 options(cleanr = append(set_options, option_list[is_option_unset])) list(c(1, 83)) line_length_linter
+package_tools/utils.R.tidy 96 1 style lines should not be more than 80 characters.     max_lines_of_code <- get_cleanr_options("max_lines_of_code", flatten_list = TRUE) list(c(1, 85)) line_length_linter
+package_tools/utils.R.tidy 99 1 style lines should not be more than 80 characters.         warning(paste("maximum number of lines was less than maximum number of",  list(c(1, 81)) line_length_linter
+package_tools/utils.R.tidy 99 81 style Trailing whitespace is superfluous.         warning(paste("maximum number of lines was less than maximum number of",  list(c(81, 81)) trailing_whitespace_linter
+package_tools/utils.R.tidy 132 22 style Trailing whitespace is superfluous.     if (flatten_list)  list(c(22, 22)) trailing_whitespace_linter
+package_tools/utils.R.tidy 134 22 style Trailing whitespace is superfluous.     if (remove_names)  list(c(22, 22)) trailing_whitespace_linter
+package_tools/utils.R.tidy 137 2 style Trailing whitespace is superfluous. }  list(c(2, 2)) trailing_whitespace_linter

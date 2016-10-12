@@ -17,12 +17,12 @@ if (interactive()) utils::browseURL(paste0("file:", html_file))
 # Coverage inspection
 track <- RUnit::tracker()
 track[["init"]]()
-tryCatch(RUnit::inspect(check_file(system.file("source", "R", "checks.r",
+tryCatch(RUnit::inspect(check_file(system.file("source", "R", "checks.R",
                                         package = "cleanr")),
                  track = track),
          error = function(e) return(e)
          )
-tryCatch(RUnit::inspect(check_file(system.file("source", "R", "wrappers.r",
+tryCatch(RUnit::inspect(check_file(system.file("source", "R", "wrappers.R",
                                         package = "cleanr")),
                  track = track),
          error = function(e) return(e)

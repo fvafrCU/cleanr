@@ -1,11 +1,10 @@
-package_tools/runit.R.tidy 8 80 style Trailing whitespace is superfluous. package_suite <- RUnit::defineTestSuite("cleanr_R_code", dirs = file.path(path,  list(c(80, 80)) trailing_whitespace_linter
-package_tools/runit.R.tidy 20 74 style Trailing whitespace is superfluous. tryCatch(RUnit::inspect(check_file(system.file("source", "R", "checks.r",  list(c(74, 74)) trailing_whitespace_linter
-package_tools/runit.R.tidy 22 76 style Trailing whitespace is superfluous. tryCatch(RUnit::inspect(check_file(system.file("source", "R", "wrappers.r",  list(c(76, 76)) trailing_whitespace_linter
-package_tools/runit.R.tidy 24 1 style lines should not be more than 80 characters. tryCatch(RUnit::inspect(check_directory(system.file("source", "R", package = "cleanr")),  list(c(1, 89)) line_length_linter
-package_tools/runit.R.tidy 24 89 style Trailing whitespace is superfluous. tryCatch(RUnit::inspect(check_directory(system.file("source", "R", package = "cleanr")),  list(c(89, 89)) trailing_whitespace_linter
-package_tools/runit.R.tidy 35 1 style lines should not be more than 80 characters.         opening_braces_only <- grepl("\\s*\\{\\s*", function_track_info[["src"]]) list(c(1, 81)) line_length_linter
-package_tools/runit.R.tidy 36 1 style lines should not be more than 80 characters.         closing_braces_only <- grepl("\\s*\\}\\s*", function_track_info[["src"]]) list(c(1, 81)) line_length_linter
-package_tools/runit.R.tidy 39 36 style Trailing whitespace is superfluous.         if (any(statements_missed))  list(c(36, 36)) trailing_whitespace_linter
-package_tools/runit.R.tidy 41 1 style Trailing whitespace is superfluous.          list(c(1, 8)) trailing_whitespace_linter
-package_tools/runit.R.tidy 44 6 style Commented code should be removed.     ## TODO: for function_in_functions {if function not in names(res_track) list(c(6, 75)) commented_code_linter
-package_tools/runit.R.tidy 45 6 style Commented code should be removed.     ## throw()} list(c(6, 15)) commented_code_linter
+package_tools/runit.R.tidy 6 80 style Trailing whitespace is superfluous. package_suite <- RUnit::defineTestSuite("cleanr_R_code", dirs = file.path(path,  list(c(80, 80)) trailing_whitespace_linter
+package_tools/runit.R.tidy 18 74 style Trailing whitespace is superfluous. tryCatch(RUnit::inspect(check_file(system.file("source", "R", "checks.R",  list(c(74, 74)) trailing_whitespace_linter
+package_tools/runit.R.tidy 20 76 style Trailing whitespace is superfluous. tryCatch(RUnit::inspect(check_file(system.file("source", "R", "wrappers.R",  list(c(76, 76)) trailing_whitespace_linter
+package_tools/runit.R.tidy 22 1 style lines should not be more than 80 characters. tryCatch(RUnit::inspect(check_directory(system.file("source", "R", package = "cleanr")),  list(c(1, 89)) line_length_linter
+package_tools/runit.R.tidy 22 89 style Trailing whitespace is superfluous. tryCatch(RUnit::inspect(check_directory(system.file("source", "R", package = "cleanr")),  list(c(89, 89)) trailing_whitespace_linter
+package_tools/runit.R.tidy 33 1 style lines should not be more than 80 characters.         opening_braces_only <- grepl("\\s*\\{\\s*", function_track_info[["src"]]) list(c(1, 81)) line_length_linter
+package_tools/runit.R.tidy 34 1 style lines should not be more than 80 characters.         closing_braces_only <- grepl("\\s*\\}\\s*", function_track_info[["src"]]) list(c(1, 81)) line_length_linter
+package_tools/runit.R.tidy 37 36 style Trailing whitespace is superfluous.         if (any(statements_missed))  list(c(36, 36)) trailing_whitespace_linter
+package_tools/runit.R.tidy 39 1 style Trailing whitespace is superfluous.          list(c(1, 8)) trailing_whitespace_linter
+package_tools/runit.R.tidy 47 2 style Trailing whitespace is superfluous. }  list(c(2, 2)) trailing_whitespace_linter

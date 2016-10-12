@@ -1,13 +1,14 @@
 Package: cleanr
 Type: Package
 Title: Helps You to Code Cleaner
-Version: 0.2.1
+Version: 1.1.2
 Authors@R: person(given = c("Andreas", "Dominik"), family = "Cullmann",
-    email = "dominik.cullmann@forst.bwl.de", role = c("aut","cre"))
+    email = "adc-r@arcor.de", role = c("aut","cre"))
 Description: Check your R code for some of the most common layout flaws.
     Many tried to teach us how to write code less dreadful, be it implicitly as
-    B. W. Kernighan and D. M. Ritchie in 'The C Programming Language' did, be it
-    explicitly as R.C. Martin in
+    B. W. Kernighan and D. M. Ritchie (1988) <ISBN:0-13-110362-8> 
+    in 'The C Programming Language' did, be it
+    explicitly as R.C. Martin (2008) <ISBN:0-13-235088-2> in 
     'Clean Code: A Handbook of Agile Software Craftsmanship' did.
     So we should check our code for files too long or wide, functions with too
     many lines, too wide lines, too many arguments or nestings too deep.
