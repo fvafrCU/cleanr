@@ -30,7 +30,6 @@ NULL
 #' It just checks if you use \code{\link{return}} at all.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 #' @param object The function to be checked.
 #' Should have been sourced with keep.source = TRUE (see
 #' \code{\link{get_function_body}}.
@@ -165,7 +164,6 @@ check_return <- function(object) {
 #' condition of class c("cleanr", "error", "condition").
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 #' @param path A path to a file, e.g. "checks.R".
 #' @param max_length The maximum number of lines accepted.
 #' @param max_width The maximum line width accepted.

@@ -11,7 +11,6 @@ NULL
 #' environment.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 #' @param package [character(1)]\cr The name of the package as a string.
 #' @param ... Arguments passed to \code{\link{ls}}, all.names = TRUE could be a
 #' good idea.
@@ -54,7 +53,6 @@ load_internal_functions <- function(package, ...) {
 #' @details the package loads a couple of options as defaults for its functions.
 #' The defaults are stored in a list element of \code{\link{options}}.
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 #' @param overwrite [boolean(1)]\cr Overwrite options already set? Is set to
 #' FALSE on package loading to ensure your previously set \pkg{cleanr} options
 #' won't get overridden. Just ignore that argument.
@@ -119,7 +117,6 @@ set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
 #' a convenience function for \code{\link{getOption}}.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 #' @param ... see \code{\link{getOption}}/
 #' @param remove_names [boolean(1)]\cr Remove the names?
 #' @param flatten_list [boolean(1)]\cr Return a vetcor?

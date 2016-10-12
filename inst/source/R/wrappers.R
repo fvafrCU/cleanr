@@ -10,7 +10,6 @@ NULL
 #' \code{\link{throw}}s them.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 #' @param object The function to be checked.
 #' @param max_lines_of_code the maximum number of lines of code accepted.
 #' @param max_lines the maximum number of lines accepted.
@@ -75,7 +74,6 @@ check_function_layout <- function(object,
 #' if it caught any, \code{\link{throw}}s them.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 #' @param path A path to a file, e.g. "checks.R".
 #' @param ... Argments to be passed to \code{\link{check_function_layout}}.
 #' @return invisible(TRUE), but see \emph{Details}.
@@ -117,7 +115,6 @@ check_functions_in_file <- function(path, ...) {
 #' caught any, \code{\link{throw}}s them.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 #' @param path The path to file, e.g. "checks.R".
 #' @param ... Arguments to be passed to \code{\link{check_functions_in_file}} or
 #' \code{\link{check_file_layout}}.
@@ -180,7 +177,6 @@ check_file <- function(path, ...) {
 #' \code{\link{throw}}s them.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
 #' @param path A path to a directory to be checked, e.g. "R/".
 #' @param pattern A pattern to search files with, see \code{\link{list.files}}.
 #' @param recursive Search the directory recursively?
