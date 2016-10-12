@@ -67,7 +67,7 @@ direct_check:
 
 # utils
 runit:
-	./tests/runit.R
+	cd ./tests/ && ./runit.R
 
 roxy:
 	R --vanilla -e 'roxygen2::roxygenize(".")'

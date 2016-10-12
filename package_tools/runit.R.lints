@@ -1,9 +1,2 @@
-package_tools/runit.R 1 1 style Variable and function names should be all lowercase. .setUp <- function() { list(c(1, 6)) camel_case_linter
-package_tools/runit.R 2 6 style Commented code should be removed.     ## called before each test case, see also .tearDown() list(c(6, 57)) commented_code_linter
-package_tools/runit.R 11 18 style Variable and function names should be all lowercase. package_suite <- defineTestSuite("cleanr_R_code", list(c(18, 32)) camel_case_linter
-package_tools/runit.R 16 16 style Variable and function names should be all lowercase. test_result <- runTestSuite(package_suite) list(c(16, 27)) camel_case_linter
-package_tools/runit.R 17 1 style Variable and function names should be all lowercase. printTextProtocol(test_result, showDetails = TRUE) list(c(1, 17)) camel_case_linter
-package_tools/runit.R 19 1 style Variable and function names should be all lowercase. printHTMLProtocol(test_result, fileName = html_file) list(c(1, 17)) camel_case_linter
-package_tools/runit.R 42 1 style Variable and function names should be all lowercase. printHTML.trackInfo(res_track) list(c(1, 19)) camel_case_linter
-package_tools/runit.R 63 6 style Commented code should be removed.     ## TODO: for function_in_functions {if function not in names(res_track) list(c(6, 75)) commented_code_linter
-package_tools/runit.R 64 6 style Commented code should be removed.     ## throw()} list(c(6, 15)) commented_code_linter
+package_tools/runit.R 58 6 style Commented code should be removed.     ## TODO: for function_in_functions {if function not in names(res_track) list(c(6, 75)) commented_code_linter
+package_tools/runit.R 59 6 style Commented code should be removed.     ## throw()} list(c(6, 15)) commented_code_linter
