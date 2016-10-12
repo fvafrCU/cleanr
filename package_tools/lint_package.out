@@ -1,0 +1,138 @@
+inst/source/R/internals.r 27 7 style Place a space before left parenthesis, except in a function call.     if(! any(grepl("{", lines_in_function, fixed = TRUE))){ NULL spaces_left_parentheses_linter
+inst/source/R/internals.r 27 7 style Place a space before left parenthesis, except in a function call.     if(! any(grepl("{", lines_in_function, fixed = TRUE))){ NULL spaces_left_parentheses_linter
+inst/source/R/utils.r 101 15 style Place a space before left parenthesis, except in a function call.             if(any(is_option_unset)) NULL spaces_left_parentheses_linter
+inst/source/R/utils.r 101 15 style Place a space before left parenthesis, except in a function call.             if(any(is_option_unset)) NULL spaces_left_parentheses_linter
+inst/source/R/utils.r 149 1 style Trailing blank lines are superfluous.  NULL trailing_blank_lines_linter
+inst/source/R/utils.r 149 1 style Trailing blank lines are superfluous.  NULL trailing_blank_lines_linter
+inst/source/R/wrappers.r 137 7 style Commented code should be removed.     # checkfile <- function(path, check_file_layout_args = list(...), ...). list(c(7, 75)) commented_code_linter
+inst/source/R/wrappers.r 137 7 style Commented code should be removed.     # checkfile <- function(path, check_file_layout_args = list(...), ...). list(c(7, 75)) commented_code_linter
+inst/source/R/wrappers.r 140 5 style Variable and function names should not be longer than 30 characters.     check_functions_in_file_defaults <- append(formals(check_functions_in_file), list(c(5, 36)) object_length_linter
+inst/source/R/wrappers.r 140 5 style Variable and function names should not be longer than 30 characters.     check_functions_in_file_defaults <- append(formals(check_functions_in_file), list(c(5, 36)) object_length_linter
+inst/source/R/wrappers.r 143 30 style Variable and function names should not be longer than 30 characters.                              check_functions_in_file_defaults) list(c(30, 61)) object_length_linter
+inst/source/R/wrappers.r 143 30 style Variable and function names should not be longer than 30 characters.                              check_functions_in_file_defaults) list(c(30, 61)) object_length_linter
+inst/source/R/wrappers.r 158 30 style Variable and function names should not be longer than 30 characters.     use <- utils::modifyList(check_functions_in_file_defaults, arguments) list(c(30, 61)) object_length_linter
+inst/source/R/wrappers.r 158 30 style Variable and function names should not be longer than 30 characters.     use <- utils::modifyList(check_functions_in_file_defaults, arguments) list(c(30, 61)) object_length_linter
+inst/source/R/wrappers.r 160 35 style Variable and function names should not be longer than 30 characters.                             names(check_functions_in_file_defaults)] list(c(35, 66)) object_length_linter
+inst/source/R/wrappers.r 160 35 style Variable and function names should not be longer than 30 characters.                             names(check_functions_in_file_defaults)] list(c(35, 66)) object_length_linter
+inst/source/R/wrappers.r 214 1 style Trailing blank lines are superfluous.  NULL trailing_blank_lines_linter
+inst/source/R/wrappers.r 214 1 style Trailing blank lines are superfluous.  NULL trailing_blank_lines_linter
+inst/source/R/zzz.r 2 7 style Place a space before left parenthesis, except in a function call.     if(is.character(libname) && is.character(pkgname)) { NULL spaces_left_parentheses_linter
+inst/source/R/zzz.r 2 7 style Place a space before left parenthesis, except in a function call.     if(is.character(libname) && is.character(pkgname)) { NULL spaces_left_parentheses_linter
+inst/tests/runit/directories.r 2 5 style Variable and function names should be all lowercase.     checkTrue(check_directory(system.file('source', 'R', package = 'cleanr'), list(c(5, 13)) camel_case_linter
+inst/tests/runit/directories.r 2 5 style Variable and function names should be all lowercase.     checkTrue(check_directory(system.file('source', 'R', package = 'cleanr'), list(c(5, 13)) camel_case_linter
+inst/tests/runit/directories.r 2 43 style Only use double-quotes.     checkTrue(check_directory(system.file('source', 'R', package = 'cleanr'), list(c(43, 50)) single_quotes_linter
+inst/tests/runit/directories.r 2 43 style Only use double-quotes.     checkTrue(check_directory(system.file('source', 'R', package = 'cleanr'), list(c(43, 50)) single_quotes_linter
+inst/tests/runit/directories.r 2 53 style Only use double-quotes.     checkTrue(check_directory(system.file('source', 'R', package = 'cleanr'), list(c(53, 55)) single_quotes_linter
+inst/tests/runit/directories.r 2 53 style Only use double-quotes.     checkTrue(check_directory(system.file('source', 'R', package = 'cleanr'), list(c(53, 55)) single_quotes_linter
+inst/tests/runit/directories.r 2 68 style Only use double-quotes.     checkTrue(check_directory(system.file('source', 'R', package = 'cleanr'), list(c(68, 75)) single_quotes_linter
+inst/tests/runit/directories.r 2 68 style Only use double-quotes.     checkTrue(check_directory(system.file('source', 'R', package = 'cleanr'), list(c(68, 75)) single_quotes_linter
+inst/tests/runit/files.r 2 5 style Variable and function names should be all lowercase.     checkTrue(check_file(system.file('source', 'R', 'checks.r', list(c(5, 13)) camel_case_linter
+inst/tests/runit/files.r 2 5 style Variable and function names should be all lowercase.     checkTrue(check_file(system.file('source', 'R', 'checks.r', list(c(5, 13)) camel_case_linter
+inst/tests/runit/files.r 2 38 style Only use double-quotes.     checkTrue(check_file(system.file('source', 'R', 'checks.r', list(c(38, 45)) single_quotes_linter
+inst/tests/runit/files.r 2 38 style Only use double-quotes.     checkTrue(check_file(system.file('source', 'R', 'checks.r', list(c(38, 45)) single_quotes_linter
+inst/tests/runit/files.r 2 48 style Only use double-quotes.     checkTrue(check_file(system.file('source', 'R', 'checks.r', list(c(48, 50)) single_quotes_linter
+inst/tests/runit/files.r 2 48 style Only use double-quotes.     checkTrue(check_file(system.file('source', 'R', 'checks.r', list(c(48, 50)) single_quotes_linter
+inst/tests/runit/files.r 2 53 style Only use double-quotes.     checkTrue(check_file(system.file('source', 'R', 'checks.r', list(c(53, 62)) single_quotes_linter
+inst/tests/runit/files.r 2 53 style Only use double-quotes.     checkTrue(check_file(system.file('source', 'R', 'checks.r', list(c(53, 62)) single_quotes_linter
+inst/tests/runit/files.r 3 48 style Only use double-quotes.                                      package = 'cleanr')) list(c(48, 55)) single_quotes_linter
+inst/tests/runit/files.r 3 48 style Only use double-quotes.                                      package = 'cleanr')) list(c(48, 55)) single_quotes_linter
+inst/tests/runit/files.r 5 5 style Variable and function names should be all lowercase.     checkTrue(check_file(system.file('source', 'R', 'wrappers.r', list(c(5, 13)) camel_case_linter
+inst/tests/runit/files.r 5 5 style Variable and function names should be all lowercase.     checkTrue(check_file(system.file('source', 'R', 'wrappers.r', list(c(5, 13)) camel_case_linter
+inst/tests/runit/files.r 5 38 style Only use double-quotes.     checkTrue(check_file(system.file('source', 'R', 'wrappers.r', list(c(38, 45)) single_quotes_linter
+inst/tests/runit/files.r 5 38 style Only use double-quotes.     checkTrue(check_file(system.file('source', 'R', 'wrappers.r', list(c(38, 45)) single_quotes_linter
+inst/tests/runit/files.r 5 48 style Only use double-quotes.     checkTrue(check_file(system.file('source', 'R', 'wrappers.r', list(c(48, 50)) single_quotes_linter
+inst/tests/runit/files.r 5 48 style Only use double-quotes.     checkTrue(check_file(system.file('source', 'R', 'wrappers.r', list(c(48, 50)) single_quotes_linter
+inst/tests/runit/files.r 5 53 style Only use double-quotes.     checkTrue(check_file(system.file('source', 'R', 'wrappers.r', list(c(53, 64)) single_quotes_linter
+inst/tests/runit/files.r 5 53 style Only use double-quotes.     checkTrue(check_file(system.file('source', 'R', 'wrappers.r', list(c(53, 64)) single_quotes_linter
+inst/tests/runit/files.r 6 48 style Only use double-quotes.                                      package = 'cleanr'), max_arguments = 6) list(c(48, 55)) single_quotes_linter
+inst/tests/runit/files.r 6 48 style Only use double-quotes.                                      package = 'cleanr'), max_arguments = 6) list(c(48, 55)) single_quotes_linter
+inst/tests/runit/files.r 8 5 style Variable and function names should be all lowercase.     checkException(check_file(system.file('source', 'R', 'wrappers.r', list(c(5, 18)) camel_case_linter
+inst/tests/runit/files.r 8 5 style Variable and function names should be all lowercase.     checkException(check_file(system.file('source', 'R', 'wrappers.r', list(c(5, 18)) camel_case_linter
+inst/tests/runit/files.r 8 43 style Only use double-quotes.     checkException(check_file(system.file('source', 'R', 'wrappers.r', list(c(43, 50)) single_quotes_linter
+inst/tests/runit/files.r 8 43 style Only use double-quotes.     checkException(check_file(system.file('source', 'R', 'wrappers.r', list(c(43, 50)) single_quotes_linter
+inst/tests/runit/files.r 8 53 style Only use double-quotes.     checkException(check_file(system.file('source', 'R', 'wrappers.r', list(c(53, 55)) single_quotes_linter
+inst/tests/runit/files.r 8 53 style Only use double-quotes.     checkException(check_file(system.file('source', 'R', 'wrappers.r', list(c(53, 55)) single_quotes_linter
+inst/tests/runit/files.r 8 58 style Only use double-quotes.     checkException(check_file(system.file('source', 'R', 'wrappers.r', list(c(58, 69)) single_quotes_linter
+inst/tests/runit/files.r 8 58 style Only use double-quotes.     checkException(check_file(system.file('source', 'R', 'wrappers.r', list(c(58, 69)) single_quotes_linter
+inst/tests/runit/files.r 9 48 style Only use double-quotes.                                      package = 'cleanr')) list(c(48, 55)) single_quotes_linter
+inst/tests/runit/files.r 9 48 style Only use double-quotes.                                      package = 'cleanr')) list(c(48, 55)) single_quotes_linter
+inst/tests/runit.R 1 1 style Variable and function names should be all lowercase. .setUp <- function() { list(c(1, 6)) camel_case_linter
+inst/tests/runit.R 1 1 style Variable and function names should be all lowercase. .setUp <- function() { list(c(1, 6)) camel_case_linter
+inst/tests/runit.R 2 6 style Commented code should be removed.     ## called before each test case, see also .tearDown() list(c(6, 57)) commented_code_linter
+inst/tests/runit.R 2 6 style Commented code should be removed.     ## called before each test case, see also .tearDown() list(c(6, 57)) commented_code_linter
+inst/tests/runit.R 5 9 style Only use double-quotes. library('cleanr') list(c(9, 16)) single_quotes_linter
+inst/tests/runit.R 5 9 style Only use double-quotes. library('cleanr') list(c(9, 16)) single_quotes_linter
+inst/tests/runit.R 7 35 style Only use double-quotes. load_internal_functions(package = 'cleanr') list(c(35, 42)) single_quotes_linter
+inst/tests/runit.R 7 35 style Only use double-quotes. load_internal_functions(package = 'cleanr') list(c(35, 42)) single_quotes_linter
+inst/tests/runit.R 9 9 style Only use double-quotes. library('RUnit') list(c(9, 15)) single_quotes_linter
+inst/tests/runit.R 9 9 style Only use double-quotes. library('RUnit') list(c(9, 15)) single_quotes_linter
+inst/tests/runit.R 11 18 style Variable and function names should be all lowercase. package_suite <- defineTestSuite('cleanr_R_code', list(c(18, 32)) camel_case_linter
+inst/tests/runit.R 11 18 style Variable and function names should be all lowercase. package_suite <- defineTestSuite('cleanr_R_code', list(c(18, 32)) camel_case_linter
+inst/tests/runit.R 11 34 style Only use double-quotes. package_suite <- defineTestSuite('cleanr_R_code', list(c(34, 48)) single_quotes_linter
+inst/tests/runit.R 11 34 style Only use double-quotes. package_suite <- defineTestSuite('cleanr_R_code', list(c(34, 48)) single_quotes_linter
+inst/tests/runit.R 12 60 style Only use double-quotes.                                  dirs = file.path(getwd(), 'runit'), list(c(60, 66)) single_quotes_linter
+inst/tests/runit.R 12 60 style Only use double-quotes.                                  dirs = file.path(getwd(), 'runit'), list(c(60, 66)) single_quotes_linter
+inst/tests/runit.R 13 51 style Only use double-quotes.                                  testFileRegexp = '^.*\\.r', list(c(51, 59)) single_quotes_linter
+inst/tests/runit.R 13 51 style Only use double-quotes.                                  testFileRegexp = '^.*\\.r', list(c(51, 59)) single_quotes_linter
+inst/tests/runit.R 14 51 style Only use double-quotes.                                  testFuncRegexp = '^test_+') list(c(51, 59)) single_quotes_linter
+inst/tests/runit.R 14 51 style Only use double-quotes.                                  testFuncRegexp = '^test_+') list(c(51, 59)) single_quotes_linter
+inst/tests/runit.R 16 16 style Variable and function names should be all lowercase. test_result <- runTestSuite(package_suite) list(c(16, 27)) camel_case_linter
+inst/tests/runit.R 16 16 style Variable and function names should be all lowercase. test_result <- runTestSuite(package_suite) list(c(16, 27)) camel_case_linter
+inst/tests/runit.R 17 1 style Variable and function names should be all lowercase. printTextProtocol(test_result, showDetails = TRUE) list(c(1, 17)) camel_case_linter
+inst/tests/runit.R 17 1 style Variable and function names should be all lowercase. printTextProtocol(test_result, showDetails = TRUE) list(c(1, 17)) camel_case_linter
+inst/tests/runit.R 18 40 style Only use double-quotes. html_file <- paste(package_suite$name, 'html', sep = '.') list(c(40, 45)) single_quotes_linter
+inst/tests/runit.R 18 40 style Only use double-quotes. html_file <- paste(package_suite$name, 'html', sep = '.') list(c(40, 45)) single_quotes_linter
+inst/tests/runit.R 18 54 style Only use double-quotes. html_file <- paste(package_suite$name, 'html', sep = '.') list(c(54, 56)) single_quotes_linter
+inst/tests/runit.R 18 54 style Only use double-quotes. html_file <- paste(package_suite$name, 'html', sep = '.') list(c(54, 56)) single_quotes_linter
+inst/tests/runit.R 19 1 style Variable and function names should be all lowercase. printHTMLProtocol(test_result, fileName = html_file) list(c(1, 17)) camel_case_linter
+inst/tests/runit.R 19 1 style Variable and function names should be all lowercase. printHTMLProtocol(test_result, fileName = html_file) list(c(1, 17)) camel_case_linter
+inst/tests/runit.R 21 37 style Only use double-quotes. if (interactive()) browseURL(paste0('file:', html)) list(c(37, 43)) single_quotes_linter
+inst/tests/runit.R 21 37 style Only use double-quotes. if (interactive()) browseURL(paste0('file:', html)) list(c(37, 43)) single_quotes_linter
+inst/tests/runit.R 26 41 style Only use double-quotes. tryCatch(inspect(check_file(system.file('source', 'R', 'checks.r', list(c(41, 48)) single_quotes_linter
+inst/tests/runit.R 26 41 style Only use double-quotes. tryCatch(inspect(check_file(system.file('source', 'R', 'checks.r', list(c(41, 48)) single_quotes_linter
+inst/tests/runit.R 26 51 style Only use double-quotes. tryCatch(inspect(check_file(system.file('source', 'R', 'checks.r', list(c(51, 53)) single_quotes_linter
+inst/tests/runit.R 26 51 style Only use double-quotes. tryCatch(inspect(check_file(system.file('source', 'R', 'checks.r', list(c(51, 53)) single_quotes_linter
+inst/tests/runit.R 26 56 style Only use double-quotes. tryCatch(inspect(check_file(system.file('source', 'R', 'checks.r', list(c(56, 65)) single_quotes_linter
+inst/tests/runit.R 26 56 style Only use double-quotes. tryCatch(inspect(check_file(system.file('source', 'R', 'checks.r', list(c(56, 65)) single_quotes_linter
+inst/tests/runit.R 27 51 style Only use double-quotes.                                         package = 'cleanr')), list(c(51, 58)) single_quotes_linter
+inst/tests/runit.R 27 51 style Only use double-quotes.                                         package = 'cleanr')), list(c(51, 58)) single_quotes_linter
+inst/tests/runit.R 31 41 style Only use double-quotes. tryCatch(inspect(check_file(system.file('source', 'R', 'wrappers.r', list(c(41, 48)) single_quotes_linter
+inst/tests/runit.R 31 41 style Only use double-quotes. tryCatch(inspect(check_file(system.file('source', 'R', 'wrappers.r', list(c(41, 48)) single_quotes_linter
+inst/tests/runit.R 31 51 style Only use double-quotes. tryCatch(inspect(check_file(system.file('source', 'R', 'wrappers.r', list(c(51, 53)) single_quotes_linter
+inst/tests/runit.R 31 51 style Only use double-quotes. tryCatch(inspect(check_file(system.file('source', 'R', 'wrappers.r', list(c(51, 53)) single_quotes_linter
+inst/tests/runit.R 31 56 style Only use double-quotes. tryCatch(inspect(check_file(system.file('source', 'R', 'wrappers.r', list(c(56, 67)) single_quotes_linter
+inst/tests/runit.R 31 56 style Only use double-quotes. tryCatch(inspect(check_file(system.file('source', 'R', 'wrappers.r', list(c(56, 67)) single_quotes_linter
+inst/tests/runit.R 32 51 style Only use double-quotes.                                         package = 'cleanr')), list(c(51, 58)) single_quotes_linter
+inst/tests/runit.R 32 51 style Only use double-quotes.                                         package = 'cleanr')), list(c(51, 58)) single_quotes_linter
+inst/tests/runit.R 36 46 style Only use double-quotes. tryCatch(inspect(check_directory(system.file('source', 'R', list(c(46, 53)) single_quotes_linter
+inst/tests/runit.R 36 46 style Only use double-quotes. tryCatch(inspect(check_directory(system.file('source', 'R', list(c(46, 53)) single_quotes_linter
+inst/tests/runit.R 36 56 style Only use double-quotes. tryCatch(inspect(check_directory(system.file('source', 'R', list(c(56, 58)) single_quotes_linter
+inst/tests/runit.R 36 56 style Only use double-quotes. tryCatch(inspect(check_directory(system.file('source', 'R', list(c(56, 58)) single_quotes_linter
+inst/tests/runit.R 37 56 style Only use double-quotes.                                              package = 'cleanr')), list(c(56, 63)) single_quotes_linter
+inst/tests/runit.R 37 56 style Only use double-quotes.                                              package = 'cleanr')), list(c(56, 63)) single_quotes_linter
+inst/tests/runit.R 41 20 style Variable and function names should be all lowercase. res_track <- track$getTrackInfo() list(c(20, 31)) camel_case_linter
+inst/tests/runit.R 41 20 style Variable and function names should be all lowercase. res_track <- track$getTrackInfo() list(c(20, 31)) camel_case_linter
+inst/tests/runit.R 42 1 style Variable and function names should be all lowercase. printHTML.trackInfo(res_track) list(c(1, 19)) camel_case_linter
+inst/tests/runit.R 42 1 style Variable and function names should be all lowercase. printHTML.trackInfo(res_track) list(c(1, 19)) camel_case_linter
+inst/tests/runit.R 44 24 style Only use double-quotes. html_file <- file.path('results', 'index.html') list(c(24, 32)) single_quotes_linter
+inst/tests/runit.R 44 24 style Only use double-quotes. html_file <- file.path('results', 'index.html') list(c(24, 32)) single_quotes_linter
+inst/tests/runit.R 44 35 style Only use double-quotes. html_file <- file.path('results', 'index.html') list(c(35, 46)) single_quotes_linter
+inst/tests/runit.R 44 35 style Only use double-quotes. html_file <- file.path('results', 'index.html') list(c(35, 46)) single_quotes_linter
+inst/tests/runit.R 46 37 style Only use double-quotes. if (interactive()) browseURL(paste0('file:', html)) list(c(37, 43)) single_quotes_linter
+inst/tests/runit.R 46 37 style Only use double-quotes. if (interactive()) browseURL(paste0('file:', html)) list(c(37, 43)) single_quotes_linter
+inst/tests/runit.R 48 3 style Place a space before left parenthesis, except in a function call. if(FALSE){ NULL spaces_left_parentheses_linter
+inst/tests/runit.R 48 3 style Place a space before left parenthesis, except in a function call. if(FALSE){ NULL spaces_left_parentheses_linter
+inst/tests/runit.R 51 38 style Only use double-quotes.         opening_braces_only <- grepl('\\s*\\{\\s*', function_track_info$src) list(c(38, 50)) single_quotes_linter
+inst/tests/runit.R 51 38 style Only use double-quotes.         opening_braces_only <- grepl('\\s*\\{\\s*', function_track_info$src) list(c(38, 50)) single_quotes_linter
+inst/tests/runit.R 52 38 style Only use double-quotes.         closing_braces_only <- grepl('\\s*\\}\\s*', function_track_info$src) list(c(38, 50)) single_quotes_linter
+inst/tests/runit.R 52 38 style Only use double-quotes.         closing_braces_only <- grepl('\\s*\\}\\s*', function_track_info$src) list(c(38, 50)) single_quotes_linter
+inst/tests/runit.R 55 48 style Only use double-quotes.         if (any(statements_missed)) stop(paste('missed line ', list(c(48, 61)) single_quotes_linter
+inst/tests/runit.R 55 48 style Only use double-quotes.         if (any(statements_missed)) stop(paste('missed line ', list(c(48, 61)) single_quotes_linter
+inst/tests/runit.R 56 73 style Trailing whitespace is superfluous.                                                which(statements_missed),  list(c(73, 73)) trailing_whitespace_linter
+inst/tests/runit.R 56 73 style Trailing whitespace is superfluous.                                                which(statements_missed),  list(c(73, 73)) trailing_whitespace_linter
+inst/tests/runit.R 57 54 style Only use double-quotes.                                                sep = '')) list(54:55) single_quotes_linter
+inst/tests/runit.R 57 54 style Only use double-quotes.                                                sep = '')) list(54:55) single_quotes_linter
+inst/tests/runit.R 61 6 style Commented code should be removed.     ## TODO: for function_in_functions {if function not in names(res_track) list(c(6, 75)) commented_code_linter
+inst/tests/runit.R 61 6 style Commented code should be removed.     ## TODO: for function_in_functions {if function not in names(res_track) list(c(6, 75)) commented_code_linter
+inst/tests/runit.R 62 6 style Commented code should be removed.     ## throw()} list(c(6, 15)) commented_code_linter
+inst/tests/runit.R 62 6 style Commented code should be removed.     ## throw()} list(c(6, 15)) commented_code_linter
