@@ -1,4 +1,4 @@
-#' @include internals.r
+#' @include internals.R
 NULL
 
 #' load a package's internals

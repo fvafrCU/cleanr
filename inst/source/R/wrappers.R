@@ -1,4 +1,4 @@
-#' @include checks.r
+#' @include checks.R
 NULL
 
 #' check a function's layout
@@ -76,12 +76,12 @@ check_function_layout <- function(object,
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
-#' @param path A path to a file, e.g. "checks.r".
+#' @param path A path to a file, e.g. "checks.R".
 #' @param ... Argments to be passed to \code{\link{check_function_layout}}.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @export
 #' @examples
-#' print(check_functions_in_file(system.file("source", "R", "utils.r",
+#' print(check_functions_in_file(system.file("source", "R", "utils.R",
 #'                                     package = "cleanr")))
 check_functions_in_file <- function(path, ...) {
     checkmate::assertFile(path, access = "r")
@@ -118,13 +118,13 @@ check_functions_in_file <- function(path, ...) {
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
-#' @param path The path to file, e.g. "checks.r".
+#' @param path The path to file, e.g. "checks.R".
 #' @param ... Arguments to be passed to \code{\link{check_functions_in_file}} or
 #' \code{\link{check_file_layout}}.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @export
 #' @examples
-#' print(check_file(system.file("source", "R", "utils.r",
+#' print(check_file(system.file("source", "R", "utils.R",
 #'                                      package = "cleanr")))
 check_file <- function(path, ...) {
     checkmate::assertFile(path, access = "r")

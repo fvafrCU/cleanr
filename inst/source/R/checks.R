@@ -1,4 +1,4 @@
-#' @include utils.r
+#' @include utils.R
 NULL
 
 #' function checks
@@ -166,13 +166,13 @@ check_return <- function(object) {
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @section Version: $Id: 01015ff091d53e47fc1caa95805585b6e3911ba5 $
-#' @param path A path to a file, e.g. "checks.r".
+#' @param path A path to a file, e.g. "checks.R".
 #' @param max_length The maximum number of lines accepted.
 #' @param max_width The maximum line width accepted.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @export
 #' @examples
-#' print(check_file_layout(system.file("source", "R", "checks.r",
+#' print(check_file_layout(system.file("source", "R", "checks.R",
 #'                                     package = "cleanr")))
 check_file_layout <- function(path,
                               max_length = get_cleanr_options("max_length"),

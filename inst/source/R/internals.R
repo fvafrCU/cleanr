@@ -17,7 +17,7 @@
 #' @return [character(n)]\cr the function body's lines.
 #' @keywords internal
 #' @examples
-#' source(system.file("source", "R", "utils.r", package = "cleanr"))
+#' source(system.file("source", "R", "utils.R", package = "cleanr"))
 #' require(checkmate)
 #' cleanr:::get_function_body(set_cleanr_options)[3:6]
 #' utils::capture.output(body(set_cleanr_options))[4:6]
