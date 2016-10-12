@@ -130,17 +130,17 @@ check_file <- function(path, ...) {
     checkmate::assertFile(path, access = "r")
     findings <- NULL
     # I know of two ways to pass arguments through a wrapper to different
-    # functions: ellipsis and explicit arguments. I"ve used ellipsis here, to
+    # functions: ellipsis and explicit arguments. I've used ellipsis here, to
     # avoid using ellipsis eating unused arguments down the line, I filter the
     # ellpsis. This is quite a massacre.
     # TODO: refactor with named list as argument containers for functions, i.e.
-    # checkfile <- function(path, check_file_layout_args = list(...), ...).
+    # arguments (path, check_file_layout_args = list(...), ...).
     dots <- list(...)
     check_file_layout_defaults <- formals(check_file_layout)
-    check_functions_in_file_defaults <- append(formals(check_functions_in_file),
+    check_functions_defaults <- append(formals(check_functions_in_file),
                                             formals(check_function_layout))
     known_defaults <- append(check_file_layout_defaults,
-                             check_functions_in_file_defaults)
+                             check_functions_defaults)
     if (! all(names(dots) %in% names(known_defaults))) {
         stop(paste("got unkown argument(s): ",
                    paste(names(dots)[! names(dots) %in% names(known_defaults)],
@@ -155,9 +155,9 @@ check_file <- function(path, ...) {
     finding <- tryCatch(do.call("check_file_layout", arguments_to_use),
                         cleanr = function(e) return(e$message))
     findings <- c(findings, finding)
-    use <- utils::modifyList(check_functions_in_file_defaults, arguments)
+    use <- utils::modifyList(check_functions_defaults, arguments)
     arguments_to_use <- use[names(use) %in%
-                            names(check_functions_in_file_defaults)]
+                            names(check_functions_defaults)]
     # use only non-empty arguments
     arguments_to_use <- arguments_to_use[arguments_to_use != ""]
     finding <- tryCatch(do.call("check_functions_in_file", arguments_to_use),
@@ -211,4 +211,3 @@ check_directory <- function(path, pattern = "\\.[rR]$", recursive = FALSE,
     }
     return(invisible(TRUE))
 }
-

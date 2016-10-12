@@ -98,7 +98,7 @@ set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
             if (length(option_list) == 0)
                 option_list <- defaults
             is_option_unset <- !(names(option_list) %in% names(set_options))
-            if(any(is_option_unset))
+            if (any(is_option_unset))
                 options("cleanr" = append(set_options,
                                               option_list[is_option_unset]))
         }
@@ -146,4 +146,3 @@ get_cleanr_options <- function(..., remove_names = FALSE, flatten_list = TRUE) {
     if (remove_names) names(option_list)  <- NULL
     return(option_list)
 }
-

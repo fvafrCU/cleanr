@@ -24,7 +24,7 @@
 get_function_body <- function(object) {
     checkmate::checkFunction(object)
     lines_in_function <- utils::capture.output(object)
-    if(! any(grepl("{", lines_in_function, fixed = TRUE))){
+    if (! any(grepl("{", lines_in_function, fixed = TRUE))){
         # treat oneliners
         is_split_onliner <- length(lines_in_function) > 1
         opening_line_num <- 1  + as.numeric(is_split_onliner)
