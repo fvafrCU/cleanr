@@ -8,7 +8,7 @@ an R package.
 
 ```R
 if (! require("devtools")) install.packages("devtools")
-devtools::install_github("fvafrCU/coldr")
-help("coldr-package", package = "coldr")
+devtools::install_github("fvafrCU/cleanr")
+help("cleanr-package", package = "cleanr")
 ```
 
