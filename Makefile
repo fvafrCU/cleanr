@@ -37,7 +37,7 @@ craninstall: crancheck
 	${R} --vanilla CMD INSTALL  ${PKGNAME}_${PKGVERS}.tar.gz
 
 crancheck: build 
-	export _R_CHECK_FORCE_SUGGESTS_=FALSE && \
+	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
         ${R} CMD check --as-cran ${PKGNAME}_${PKGVERS}.tar.gz 
 
 install: check 
@@ -49,12 +49,12 @@ install_bare: build_bare
 	${R} --vanilla CMD INSTALL  ${PKGNAME}_${PKGVERS}.tar.gz 
 
 check_bare: build_bare 
-	export _R_CHECK_FORCE_SUGGESTS_=FALSE && \
+	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
         ${R} --vanilla CMD check --no-examples ${PKGNAME}_${PKGVERS}.tar.gz && \
         printf '===== run\n\tmake install\n!!\n'
 
 check: build 
-	export _R_CHECK_FORCE_SUGGESTS_=FALSE && \
+	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
         ${R} --vanilla CMD check ${PKGNAME}_${PKGVERS}.tar.gz && \
         printf '===== run\n\tmake install\n!!\n'
 
