@@ -20,7 +20,9 @@ License: BSD_2_clause + file LICENSE
 Imports:
     checkmate
 Suggests:
-    RUnit
+    RUnit,
+    knitr,
+    rmarkdown
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
@@ -31,3 +33,4 @@ Collate:
     'cleanr-package.R'
     'wrappers.R'
     'zzz.R'
+VignetteBuilder: knitr
