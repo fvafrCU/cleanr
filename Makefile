@@ -42,7 +42,7 @@ crancheck: build
 
 install: check 
 	${R} --vanilla CMD INSTALL  ${PKGNAME}_${PKGVERS}.tar.gz && \
-        printf '===== have you run\n\tmake check_demo && ' && \
+        printf '===== have you run\n\tmake demo && ' && \
         printf 'make package_tools && make runit && make cleanr\n?!\n' 
 
 install_bare: build_bare 
@@ -69,31 +69,42 @@ direct_check:
 
 
 # utils
+
+.PHONY: roxy
+roxy:
+	${R} --vanilla -e 'roxygen2::roxygenize(".")'
+
+.PHONY: utils
+utils: runit cleanr package_tools
+
+
+.PHONY: runit
 runit:
 	cd ./tests/ && ./runit.R
 
-roxy:
-	${R} --vanilla -e 'roxygen2::roxygenize(".")'
+.PHONY: cleanr
+cleanr:
+	${Rscript} --vanilla -e 'cleanr::load_internal_functions("cleanr"); cleanr::check_directory("R/", max_arguments = 6)'
 
 .PHONY: package_tools
 package_tools:
 	Rscript --vanilla ${package_tools_file} > package_tools.Rout 2>&1 
 
+.PHONY: clean
 clean:
 	rm -rf ${PKGNAME}.Rcheck
 
+.PHONY: remove
 remove:
 	 ${R} --vanilla CMD REMOVE  ${PKGNAME}
 
 # specifics
-check_demo:
+.PHONY: demo
+demo:
 	# R CMD BATCH  demo/${rpackage}.r ## Rscript doesn't load
 	# methods, but we fixed that.
-	demo/${PKGNAME}.r
+	demo/${PKGNAME}.R
 
-.PHONY: cleanr
-cleanr:
-	${Rscript} --vanilla -e 'cleanr::load_internal_functions("cleanr"); cleanr::check_directory("R/", max_arguments = 6)'
 
 .PHONY: dependencies
 dependencies:

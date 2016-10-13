@@ -1,6 +1,6 @@
 #!/usr/bin/Rscript --vanilla
 library("cleanr")
-file_name <- system.file("source", "R", "utils.r", package = "cleanr")
+file_name <- system.file("source", "R", "utils.R", package = "cleanr")
 
 message("If a file passes all checks, cleanr returns invisibly TRUE")
 print(suppressWarnings(check_file(file_name)))
