@@ -38,7 +38,7 @@ craninstall: crancheck
 
 crancheck: build 
 	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
-        ${R} CMD check --as-cran ${PKGNAME}_${PKGVERS}.tar.gz 
+        ${R} --vanilla CMD check --as-cran ${PKGNAME}_${PKGVERS}.tar.gz 
 
 install: check 
 	${R} --vanilla CMD INSTALL  ${PKGNAME}_${PKGVERS}.tar.gz && \
