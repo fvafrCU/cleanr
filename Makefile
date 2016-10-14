@@ -82,7 +82,7 @@ utils: runit cleanr package_tools
 
 .PHONY: runit
 runit:
-	cd ./tests/ && ./runit.R
+	cd ./tests/ && ${Rscript} --vanilla ./runit.R
 
 .PHONY: cleanr
 cleanr:
