@@ -6,8 +6,8 @@ PKGSRC  := $(shell basename `pwd`)
 temp_file := $(shell tempfile)
 package_tools_file := utils/package_tools.R
 
-R := /usr/local/bin/R-devel
-Rscript := /usr/local/bin/Rscript-devel
+R := R-devel
+Rscript := Rscript-devel
 
 # devtools
 dev_all: dev_test dev_check
