@@ -4,4 +4,3 @@ package_tools/internals.R.tidy 38 1 style lines should not be more than 80 chara
 package_tools/internals.R.tidy 39 35 style Trailing whitespace is superfluous.     if (closing_brace_starts_line)  list(c(35, 35)) trailing_whitespace_linter
 package_tools/internals.R.tidy 62 1 style lines should not be more than 80 characters.     condition <- structure(class = c("cleanr", "error", "condition"), list(message = message_string,  list(c(1, 101)) line_length_linter
 package_tools/internals.R.tidy 62 101 style Trailing whitespace is superfluous.     condition <- structure(class = c("cleanr", "error", "condition"), list(message = message_string,  list(c(101, 101)) trailing_whitespace_linter
-package_tools/internals.R.tidy 96 2 style Trailing whitespace is superfluous. }  list(c(2, 2)) trailing_whitespace_linter

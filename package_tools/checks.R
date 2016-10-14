@@ -151,49 +151,66 @@ check_return <- function(object) {
     return(invisible(TRUE))
 }
 
-#' check a file's layout
+#' file checks
 #'
-#' Check for number of lines and width of lines.
+#' A set of tiny functions to check that files adhere to a layout style.
 #'
-#' Some reckon a code file should not be too long and that its lines should not
-#' be too wide. On current monitors, 300 lines are about five pages.
-#' A line width of 80 seems a bit \ldots{} outdated, but maybe there's some good
-#' in it.
+#' A file should have a clear layout, it should
+#' \itemize{
+#'   \item mot have too many lines and
+#'   \item not have lines too wide.
+#' }
+#' At least this is what I think. Well, some others too.
 #'
-#' In case of a fail the function \code{link{throw}}s a
+#' All of the functions test whether their requirement is met. 
+#' In case of a fail all \code{\link{throw}} a
 #' condition of class c("cleanr", "error", "condition").
 #'
+#'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @param path A path to a file, e.g. "checks.R".
-#' @param max_length The maximum number of lines accepted.
-#' @param max_width The maximum line width accepted.
+#' @param path The path to the file to be checked.
+#' @param maximum The maximum against which the file is to be tested.
 #' @return invisible(TRUE), but see \emph{Details}.
-#' @export
+#' @name file_checks
 #' @examples
-#' print(check_file_layout(system.file("source", "R", "checks.R",
+#' print(check_file_width(system.file("source", "R", "checks.R",
 #'                                     package = "cleanr")))
-check_file_layout <- function(path,
-                              max_length = get_cleanr_options("max_length"),
-                              max_width = get_cleanr_options("max_width")) {
+#' print(check_file_length(system.file("source", "R", "checks.R",
+#'                                     package = "cleanr"), maximum = 300))
+NULL
+
+#' @rdname file_checks
+#' @export
+check_file_width <- function(path,
+                            maximum = get_cleanr_options("max_file_width")) {
     checkmate::qassert(path, "S1")
-    checkmate::qassert(max_length, "N1")
-    checkmate::qassert(max_width, "N1")
+    checkmate::qassert(maximum, "N1")
     file_content <- readLines(path)
     line_widths <-  nchar(file_content)
-    num_lines <- length(file_content)
-    if (num_lines > max_length) {
-        throw(paste(path, ": ",
-                         num_lines, " lines in file.",
-                         sep = "" )
-        )
-    }
-    if (any(line_widths > max_width)) {
-        long_lines_index <- line_widths > max_width
-        throw(paste(path, ": line ",
+    if (any(line_widths > maximum)) {
+        long_lines_index <- line_widths > maximum
+        throw(paste0(path, ": line ",
                          seq(along = file_content)[long_lines_index],
                          " counts ", line_widths[long_lines_index],
                          " characters.",
-                         sep = "")
+                         collapse = "\n")
+        )
+    }
+    return(invisible(TRUE))
+}
+
+#' @rdname file_checks
+#' @export
+check_file_length <- function(path,
+                            maximum = get_cleanr_options("max_line_width")) {
+    checkmate::qassert(path, "S1")
+    checkmate::qassert(maximum, "N1")
+    file_content <- readLines(path)
+    num_lines <- length(file_content)
+    if (num_lines > maximum) {
+        throw(paste0(path, ": ",
+                         num_lines, " lines in file.",
+                         collapse = "\n")
         )
     }
     return(invisible(TRUE))

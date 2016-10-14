@@ -51,6 +51,44 @@ check_function_layout <- function(object, max_lines_of_code = get_cleanr_options
     return(invisible(TRUE))
 }
 
+#' check a file's layout
+#'
+#' Check for number of lines and width of lines.
+#'
+#' Some reckon a code file should not be too long and that its lines should not
+#' be too wide. On current monitors, 300 lines are about five pages.
+#' A line width of 80 seems a bit \ldots{} outdated, but maybe there's some good
+#' in it.
+#'
+#' In case of a fail the function \code{link{throw}}s a
+#' condition of class c('cleanr', 'error', 'condition').
+#'
+#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @param path A path to a file, e.g. 'checks.R'.
+#' @param max_file_length The maximum number of lines accepted.
+#' @param max_file_width The maximum line width accepted.
+#' @return invisible(TRUE), but see \emph{Details}.
+#' @export
+#' @examples
+#' print(check_file_layout(system.file('source', 'R', 'checks.R',
+#'                                     package = 'cleanr')))
+check_file_layout <- function(path, max_file_length = get_cleanr_options("max_file_length"), 
+    max_file_width = get_cleanr_options("max_file_width")) {
+    findings <- NULL
+    finding <- tryCatch(check_file_width(path, maximum = max_file_width), 
+        cleanr = function(e) return(e[["message"]]))
+    findings <- c(findings, finding)
+    finding <- tryCatch(check_file_length(path, maximum = max_file_length), 
+        cleanr = function(e) return(e[["message"]]))
+    
+    findings <- c(findings, finding)
+    findings <- tidy_findings(findings)
+    if (!is.null(findings)) {
+        throw(paste0(findings, collapse = "\n"))
+    }
+    return(invisible(TRUE))
+}
+
 #' check all functions defined in a file
 #'
 #' run all \code{\link{check_function_layout}} on a file.
@@ -168,7 +206,7 @@ check_file <- function(path, ...) {
 #' # load internal functions first.
 #' load_internal_functions('cleanr')
 #' print(check_directory(system.file('source', 'R', package = 'cleanr'),
-#'                       max_arguments = 6, max_width = 90))
+#'                       max_arguments = 6, max_file_width = 90))
 check_directory <- function(path, pattern = "\\.[rR]$", recursive = FALSE, 
     ...) {
     checkmate::assertDirectory(path, access = "r")
@@ -184,4 +222,4 @@ check_directory <- function(path, pattern = "\\.[rR]$", recursive = FALSE,
         throw(paste(path, names(findings), findings, sep = " ", collapse = "\n"))
     }
     return(invisible(TRUE))
-} 
+}

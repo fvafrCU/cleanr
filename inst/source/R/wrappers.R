@@ -87,9 +87,9 @@ check_function_layout <- function(object,
 #' print(check_file_layout(system.file("source", "R", "checks.R",
 #'                                     package = "cleanr")))
 check_file_layout <- function(path,
-                              max_file_length = 
+                              max_file_length =
                                   get_cleanr_options("max_file_length"),
-                              max_file_width = 
+                              max_file_width =
                                   get_cleanr_options("max_file_width")) {
     findings <- NULL
     finding <- tryCatch(check_file_width(path,

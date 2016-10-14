@@ -1,1 +1,0 @@
-package_tools/cleanr-package.R.tidy 29 5 style Trailing whitespace is superfluous. NULL  list(c(5, 5)) trailing_whitespace_linter

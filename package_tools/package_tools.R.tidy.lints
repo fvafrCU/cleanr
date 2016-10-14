@@ -11,4 +11,3 @@ package_tools/package_tools.R.tidy 40 94 style Trailing whitespace is superfluou
 package_tools/package_tools.R.tidy 45 75 style Trailing whitespace is superfluous.         warning(length(code_lints), " lints found! See ", code_lints_file,  list(c(75, 75)) trailing_whitespace_linter
 package_tools/package_tools.R.tidy 48 49 style Trailing whitespace is superfluous.     if (length(code_lints) > length(tidy_lints))  list(c(49, 49)) trailing_whitespace_linter
 package_tools/package_tools.R.tidy 49 77 style Trailing whitespace is superfluous.         message(tidy_file, " has only ", length(tidy_lints), " lints. See ",  list(c(77, 77)) trailing_whitespace_linter
-package_tools/package_tools.R.tidy 56 48 style Trailing whitespace is superfluous. cleanr::check_directory("R/", recursive = TRUE)  list(c(48, 48)) trailing_whitespace_linter

@@ -206,7 +206,6 @@ check_file_length <- function(path,
     checkmate::qassert(path, "S1")
     checkmate::qassert(maximum, "N1")
     file_content <- readLines(path)
-    line_widths <-  nchar(file_content)
     num_lines <- length(file_content)
     if (num_lines > maximum) {
         throw(paste0(path, ": ",
@@ -216,4 +215,3 @@ check_file_length <- function(path,
     }
     return(invisible(TRUE))
 }
-

@@ -14,4 +14,3 @@ package_tools/runit.R.tidy 37 1 style lines should not be more than 80 character
 package_tools/runit.R.tidy 38 1 style lines should not be more than 80 characters.             closing_braces_only <- grepl("\\s*\\}\\s*", function_track_info[["src"]]) list(c(1, 85)) line_length_linter
 package_tools/runit.R.tidy 41 40 style Trailing whitespace is superfluous.             if (any(statements_missed))  list(c(40, 40)) trailing_whitespace_linter
 package_tools/runit.R.tidy 43 1 style Trailing whitespace is superfluous.              list(c(1, 12)) trailing_whitespace_linter
-package_tools/runit.R.tidy 54 2 style Trailing whitespace is superfluous. }  list(c(2, 2)) trailing_whitespace_linter

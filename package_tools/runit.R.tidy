@@ -51,4 +51,4 @@ if (requireNamespace("RUnit", quietly = TRUE)) {
     }
 } else {
     warning("Package RUnit is not available!")
-} 
+}

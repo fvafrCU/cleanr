@@ -1,1 +1,0 @@
-package_tools/zzz.R.tidy 7 2 style Trailing whitespace is superfluous. }  list(c(2, 2)) trailing_whitespace_linter
