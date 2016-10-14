@@ -9,7 +9,7 @@ message("Show current options:")
 get_cleanr_options(flatten_list = TRUE)
 
 message("Change an option to procude conditions:")
-set_cleanr_options(max_width = get_cleanr_options("max_width") - 1)
+set_cleanr_options(max_file_width = get_cleanr_options("max_file_width") - 1)
 
 message("Catch cleanr conditions:")
 print(tryCatch(suppressWarnings(check_file(file_name)),

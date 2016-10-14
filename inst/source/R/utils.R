@@ -80,7 +80,7 @@ load_internal_functions <- function(package, ...) {
 set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
     checkmate::qassert(reset, "B1")
     checkmate::qassert(overwrite, "B1")
-    defaults <- list(max_width = 80, max_length = 300,
+    defaults <- list(max_file_width = 80, max_file_length = 300,
                      max_lines = 65, max_lines_of_code = 50,
                      max_arguments = 5, max_nesting_depth = 3,
                      max_line_width = 80)

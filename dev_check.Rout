@@ -4,28 +4,35 @@ Setting env vars ---------------------------------------------------------------
 CFLAGS  : -Wall -pedantic
 CXXFLAGS: -Wall -pedantic
 Building cleanr ----------------------------------------------------------------
+  --no-resave-data --no-manual 
 
 * checking for file ‘/home/nik/git/cs/fvafrcu/cleanr/DESCRIPTION’ ... OK
 * preparing ‘cleanr’:
 * checking DESCRIPTION meta-information ... OK
+* installing the package to build vignettes
+* creating vignettes ... OK
+Warning: ‘inst/doc’ files
+    ‘cleanr_Introduction.Rmd’, ‘cleanr_Introduction.html’,  ‘cleanr_Introduction.R’
+  ignored as vignettes have been rebuilt.
+  Run R CMD build with --no-build-vignettes to prevent rebuilding.
 * checking for LF line-endings in source and make files
 * checking for empty or unneeded directories
-* building ‘cleanr_0.2.1.tar.gz’
+* building ‘cleanr_1.0.0.tar.gz’
 
 Setting env vars ---------------------------------------------------------------
 _R_CHECK_CRAN_INCOMING_USE_ASPELL_: TRUE
 _R_CHECK_CRAN_INCOMING_           : FALSE
 _R_CHECK_FORCE_SUGGESTS_          : FALSE
 Checking cleanr ----------------------------------------------------------------
-  --no-manual 
+  --as-cran --timings --no-manual 
 
-* using R version 3.3.1 (2016-06-21)
+* using R Under development (unstable) (2016-10-13 r71518)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
 * checking for file ‘cleanr/DESCRIPTION’ ... OK
 * checking extension type ... Package
-* this is package ‘cleanr’ version ‘0.2.1’
+* this is package ‘cleanr’ version ‘1.0.0’
 * package encoding: UTF-8
 * checking package namespace information ... OK
 * checking package dependencies ... OK
@@ -38,6 +45,7 @@ Checking cleanr ----------------------------------------------------------------
 * checking whether package ‘cleanr’ can be installed ... OK
 * checking installed package size ... OK
 * checking package directory ... OK
+* checking ‘build’ directory ... OK
 * checking DESCRIPTION meta-information ... OK
 * checking top-level files ... OK
 * checking for left-over files ... OK
@@ -50,7 +58,6 @@ Checking cleanr ----------------------------------------------------------------
 * checking whether the package can be unloaded cleanly ... OK
 * checking whether the namespace can be loaded with stated dependencies ... OK
 * checking whether the namespace can be unloaded cleanly ... OK
-* checking loading without being on the library search path ... OK
 * checking dependencies in R code ... OK
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
@@ -65,11 +72,16 @@ Checking cleanr ----------------------------------------------------------------
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
+* checking installed files from ‘inst/doc’ ... OK
+* checking files in ‘vignettes’ ... OK
 * checking examples ... OK
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ...
   Running ‘runit.R’
  OK
+* checking for unstated dependencies in vignettes ... OK
+* checking package vignettes in ‘inst/doc’ ... OK
+* checking re-building of vignette outputs ... OK
 * DONE
 
 Status: OK

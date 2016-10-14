@@ -1,6 +1,6 @@
 test_directories <- function() {
     RUnit::checkTrue(check_directory(system.file("source", "R",
                                                      package = "cleanr"),
-                    max_arguments = 6, max_width = 100)
+                    max_arguments = 6, max_file_width = 100)
     )
 }
