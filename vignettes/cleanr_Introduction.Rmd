@@ -1,41 +1,43 @@
 ---
 title: "An Introduction to cleanr"
 author: "Andreas Dominik Cullmann"
-date: 2016-10-13, 17:54:01
+date: 2016-10-14, 14:44:56
+bibliography: biblio.bib
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-Package cleanr checks your code for some of the most common layout flaws.
-Currently, these include:
+# BLAH
+Check your R code for some of the most common layout flaws.
 
-- width of files
-- length of files
-- number of lines of functions
-- number of lines of code of functions
-- number of arguments of functions
-- nesting depth
+Many tried to teach us how to write code less dreadful, be it implicitly as
+@KR did,
+be it explicitly as
+@cc
+did.
 
+So we should check our code for files too long or wide, functions with too
+many lines, too wide lines, too many arguments or nestings too deep.
 
-
-```{r}
+After loading the package:
+```{r, eval = FALSE}
+library("cleanr")
+```
+```{r, echo = FALSE}
 library("cleanr")
 set_cleanr_options(reset = TRUE)
-file_name <- system.file("source", "R", "utils.R", package = "cleanr")
-
-message("If a file passes all checks, cleanr returns invisibly TRUE")
-print(suppressWarnings(check_file(file_name)))
-
-message("Show current options:")
-get_cleanr_options(flatten_list = TRUE)
-
-message("Change an option to procude conditions:")
-set_cleanr_options(max_width = get_cleanr_options("max_width") - 1)
-
-message("Catch cleanr conditions:")
-print(tryCatch(suppressWarnings(check_file(file_name)),
-               cleanr = function(e) return(e)))
 
 ```
+
+we pick a file we want to check:
+```{r}
+file_name <- system.file("source", "R", "utils.R", package = "cleanr")
+
+```
+
+```{r}
+# dir first
+```
+# References
