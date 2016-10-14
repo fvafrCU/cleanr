@@ -29,6 +29,8 @@ dev_check:
 	${Rscript} --vanilla -e 'devtools::check()' > ${temp_file} 2>&1; \
 	grep -v ".*'/" ${temp_file} | grep -v ".*/tmp/R.*" > dev_check.Rout 
 
+dev_vignettes:
+	${Rscript} --vanilla -e 'devtools::build_vignettes()'
 
 # R CMD 
 all: craninstall clean
@@ -108,5 +110,5 @@ demo:
 
 .PHONY: dependencies
 dependencies:
-	${Rscript} --vanilla -e 'deps <-c("RUnit", "checkmate", "roxygen2", "lintr"); for (dep in deps) {if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/")}'
+	${Rscript} --vanilla -e 'deps <-c("knitr", "devtools", "rmarkdown", "RUnit", "checkmate", "roxygen2", "lintr"); for (dep in deps) {if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/")}'
 
