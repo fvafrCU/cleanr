@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fvafrcu/cleanr.svg?branch=master)](https://travis-ci.org/fvafrcu/cleanr)
+
 # cleanr
 is a fork of [coldr](https://github.com/fvafrcu/coldr.git),
 which was a set of shell scripts I used to check the file layout (number of 
