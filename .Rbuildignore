@@ -12,3 +12,4 @@
 ^utils$
 ^package_tools$
 TODO.md
+^\.travis\.yml$
