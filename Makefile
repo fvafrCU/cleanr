@@ -72,6 +72,10 @@ direct_check:
 
 # utils
 
+.PHONY: coverage
+coverage:
+	${R} --vanilla -e 'covr::package_coverage(".")'
+
 .PHONY: roxy
 roxy:
 	${R} --vanilla -e 'roxygen2::roxygenize(".")'
