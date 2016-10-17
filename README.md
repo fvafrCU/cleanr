@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/fvafrcu/cleanr.svg?branch=master)](https://travis-ci.org/fvafrcu/cleanr)
+[![Build Status](https://travis-ci.org/fvafrCU/cleanr.svg?branch=master)](https://travis-ci.org/fvafrCU/cleanr)
 
 # cleanr
 is a fork of [coldr](https://github.com/fvafrcu/coldr.git),
