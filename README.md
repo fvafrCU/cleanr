@@ -4,22 +4,19 @@
 # cleanr
 Check your R code for some of the most common layout flaws.
 
+# Introduction
+Please read the [vignette](http://htmlpreview.github.io/?https://github.com/fvafrCU/cleanr/blob/master/inst/doc/cleanr_Introduction.html)
+or, after installation, the help page:
+```R
+help("cleanr-package", package = "cleanr")
+# vignette("cleanr_Introduction", package = "cleanr")
+```
 
 # Installation
 
 ```R
 if (! require("devtools")) install.packages("devtools")
 devtools::install_github("fvafrCU/cleanr")
-```
-
-# Introduction
-Please see
-```R
-help("cleanr-package", package = "cleanr")
-```
-and 
-```R
-vignette("cleanr_Introduction", package = "cleanr")
 ```
 
 # cleanr is a fork 
