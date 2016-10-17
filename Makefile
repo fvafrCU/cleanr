@@ -74,7 +74,7 @@ direct_check:
 
 .PHONY: coverage
 coverage:
-	${R} --vanilla -e 'covr::package_coverage(".")'
+	${R} --vanilla -e 'covr::package_coverage(path = ".", function_exclusions = "\\.onLoad")'
 
 .PHONY: roxy
 roxy:
