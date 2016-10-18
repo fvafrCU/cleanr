@@ -74,7 +74,7 @@ direct_check:
 
 .PHONY: coverage
 coverage:
-	${R} --vanilla -e 'covr::package_coverage(path = ".", function_exclusions = "\\.onLoad")'
+	${Rscript} --vanilla -e 'co <- covr::package_coverage(path = ".", function_exclusions = "\\.onLoad"); covr::zero_coverage(co); print(co)'
 
 .PHONY: roxy
 roxy:
@@ -115,5 +115,5 @@ demo:
 
 .PHONY: dependencies
 dependencies:
-	${Rscript} --vanilla -e 'deps <-c("knitr", "devtools", "rmarkdown", "RUnit", "checkmate", "roxygen2", "lintr"); for (dep in deps) {if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/")}'
+	${Rscript} --vanilla -e 'deps <-c("covr", "knitr", "devtools", "rmarkdown", "RUnit", "checkmate", "roxygen2", "lintr"); for (dep in deps) {if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/")}'
 
