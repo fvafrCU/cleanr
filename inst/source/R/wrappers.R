@@ -57,8 +57,7 @@ check_function_layout <- function(object,
     findings <- c(findings, finding)
     findings <- tidy_findings(findings)
     if (! is.null(findings)) {
-        function_name <- sub("source_kept$", "", deparse(substitute(object)),
-                             fixed = TRUE)
+        function_name <- deparse(substitute(object))
         throw(paste(function_name, names(findings),
                     findings, sep = " ", collapse = "\n"))
     }
@@ -130,12 +129,13 @@ check_functions_in_file <- function(path, ...) {
     source_kept <- new.env(parent = globalenv())
     sys.source(path, envir = source_kept, keep.source = TRUE)
     for (name in ls(envir = source_kept, all.names = TRUE)) {
-        eval(parse(text = paste(name, " <- source_kept$", name, sep = "")))
-        if (eval(parse(text = paste("is.function(", name, ")")))) {
-            command <- paste("tryCatch(check_function_layout(",
-                             "source_kept$", name, ",...),",
-                             "cleanr = function(e) return(e[[\"message\"]]))")
-            finding <- eval(parse(text = command))
+        assign(name, get(name, envir = source_kept))
+        if (is.function(get(name))) {
+            print(name)
+            finding <- 
+                tryCatch(check_function_layout(get(name, 
+                                                   envir = source_kept), ...),
+                         cleanr = function(e) return(e[["message"]]))
             findings <- c(findings, finding)
         }
     }
