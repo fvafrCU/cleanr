@@ -1,11 +1,11 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/transitional.dtd">
-<html><head><title>RUNIT TEST PROTOCOL--Fri Oct 14 15:09:44 2016</title>
+<html><head><title>RUNIT TEST PROTOCOL--Wed Oct 19 09:13:07 2016</title>
 </head>
-<body><h1 TRUE>RUNIT TEST PROTOCOL--Fri Oct 14 15:09:44 2016</h1>
-<p>Number of test functions: 2</p>
+<body><h1 TRUE>RUNIT TEST PROTOCOL--Wed Oct 19 09:13:07 2016</h1>
+<p>Number of test functions: 4</p>
 <p>Number of errors: 0</p>
-<p>Number of failures: 0</p>
+<p style=color:red>Number of failures: 1</p>
 <hr>
 <h3 TRUE>1 Test suite</h3>
 <table border="1" width="60%" >
@@ -15,15 +15,31 @@
 <th width="20%">Failures</th>
 </tr>
 <tr><td><a href="#cleanr_R_code">cleanr_R_code</a></td>
-<td>2</td>
+<td>4</td>
 <td>0</td>
-<td>0</td>
+<td bgcolor="red">1</td>
+</tr>
+</table>
+<hr>
+<h3 TRUE>Failures</h3>
+<table border="1" width="100%" >
+<tr><th width="30%">Test suite : test function</th>
+<th width="70%">message</th>
+</tr>
+<tr><td><a href="#cleanr_R_code__home_nik_git_cs_fvafrcu_cleanr_inst_tests_runit_options.r_test_options">cleanr_R_code : test_options</a></td>
+<td>Error in RUnit::checkIdentical(get_cleanr_options(), c(max_lines = 40,  : 
+  FALSE 
+ 
+</td>
 </tr>
 </table>
 <hr>
 <h3 TRUE>Details</h3>
 <p><a name="cleanr_R_code"><h5 TRUE>Test Suite: cleanr_R_code</h5>
-</a>Test function regexp: ^test_+<br/>Test file regexp: ^.*\.r<br/>Involved directory:<br/>/home/nik/git/cs/fvafrcu/cleanr/inst/tests/runit<br/><ul><li><a href="/home/nik/git/cs/fvafrcu/cleanr/inst/tests/runit/directories.r">Test file: directories.r</a><ul><li><a name="cleanr_R_code__home_nik_git_cs_fvafrcu_cleanr_inst_tests_runit_directories.r_test_directories">test_directories: (1 checks) ... OK (0.05 seconds)<br/></a></li></ul></li><li><a href="/home/nik/git/cs/fvafrcu/cleanr/inst/tests/runit/files.r">Test file: files.r</a><ul><li><a name="cleanr_R_code__home_nik_git_cs_fvafrcu_cleanr_inst_tests_runit_files.r_test_files">test_files: (3 checks) ... OK (0.04 seconds)<br/></a></li></ul></li></ul><hr>
+</a>Test function regexp: ^test_+<br/>Test file regexp: ^.*\.r<br/>Involved directory:<br/>/home/nik/git/cs/fvafrcu/cleanr/inst/tests/runit<br/><ul><li><a href="/home/nik/git/cs/fvafrcu/cleanr/inst/tests/runit/directories.r">Test file: directories.r</a><ul><li><a name="cleanr_R_code__home_nik_git_cs_fvafrcu_cleanr_inst_tests_runit_directories.r_test_directories">test_directories: (2 checks) ... OK (0.11 seconds)<br/></a></li></ul></li><li><a href="/home/nik/git/cs/fvafrcu/cleanr/inst/tests/runit/files.r">Test file: files.r</a><ul><li><a name="cleanr_R_code__home_nik_git_cs_fvafrcu_cleanr_inst_tests_runit_files.r_test_files">test_files: (7 checks) ... OK (0.1 seconds)<br/></a></li></ul></li><li><a href="/home/nik/git/cs/fvafrcu/cleanr/inst/tests/runit/functions.r">Test file: functions.r</a><ul><li><a name="cleanr_R_code__home_nik_git_cs_fvafrcu_cleanr_inst_tests_runit_functions.r_test_internals">test_internals: (1 checks) ... OK (0 seconds)<br/></a></li></ul></li><li><a href="/home/nik/git/cs/fvafrcu/cleanr/inst/tests/runit/options.r">Test file: options.r</a><ul><li><a name="cleanr_R_code__home_nik_git_cs_fvafrcu_cleanr_inst_tests_runit_options.r_test_options"><u style=color:red>test_options: FAILURE !! (check number 8)  </u></a>Error in RUnit::checkIdentical(get_cleanr_options(), c(max_lines = 40,  : 
+  FALSE 
+ 
+<br/></li></ul></li></ul><hr>
 <table border="0" width="80%" >
 <tr><th>Name</th>
 <th>Value</th>
