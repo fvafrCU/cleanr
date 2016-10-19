@@ -5,7 +5,8 @@ if (requireNamespace("RUnit", quietly = TRUE)) {
 
     path <- getwd()
     # Unit testing
-    package_suite <- RUnit::defineTestSuite("cleanr_R_code",
+    name <- "cleanr_R_code"
+    package_suite <- RUnit::defineTestSuite(name,
                                             dirs = file.path(path, "runit"),
                                             testFileRegexp = "^.*\\.r",
                                             testFuncRegexp = "^test_+")
@@ -15,6 +16,13 @@ if (requireNamespace("RUnit", quietly = TRUE)) {
     html_file <- file.path(path, paste0(package_suite[["name"]], ".html"))
     RUnit::printHTMLProtocol(test_result, fileName = html_file)
     if (interactive()) utils::browseURL(paste0("file:", html_file))
+    if(test_result[[name]][["nErr"]] + test_result[[name]][["nFail"]])
+    {
+        message("\n========\nRUnit test result is:")
+        print(test_result)
+        message("========\n")
+        stop("RUnit failed")
+    }
 
     # Coverage inspection
     track <- RUnit::tracker()

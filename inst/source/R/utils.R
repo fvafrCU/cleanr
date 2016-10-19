@@ -100,11 +100,13 @@ set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
                                               option_list[is_option_unset]))
         }
     }
-    max_lines <- get_cleanr_options("max_lines", flatten_list = TRUE)
+    max_lines <- get_cleanr_options("max_lines", flatten_list = TRUE, 
+                                    remove_names = TRUE)
     max_lines_of_code <- get_cleanr_options("max_lines_of_code",
-                                           flatten_list = TRUE)
+                                           flatten_list = TRUE, 
+                                           remove_names = TRUE)
     if (max_lines < max_lines_of_code) {
-        set_cleanr_options(max_lines = max_lines_of_code)
+        set_cleanr_options("max_lines" = max_lines_of_code)
         warning(paste("maximum number of lines was less than maximum number of",
                       "lines of code, resetting the former to the latter."))
     }
