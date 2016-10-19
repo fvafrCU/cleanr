@@ -10,6 +10,7 @@
 ^.*\.Rcheck/
 ^utils/
 ^utils$
-^package_tools$
 TODO.md
+lintr_output/
+formatR_output/
 ^\.travis\.yml$

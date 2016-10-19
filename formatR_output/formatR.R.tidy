@@ -1,22 +1,10 @@
 if (interactive()) setwd(dirname(getwd()))
 options(warn = 1)  # make warnings appear immediately
 
-output_directory <- "package_tools"
+output_directory <- "formatR_output"
 unlink(output_directory, recursive = TRUE)
 dir.create(output_directory)
 
-
-# % lintr
-lints <- lintr::lint_package(path = ".")
-lint_file <- file.path(output_directory, "lint_package.out")
-if (length(lints) > 0) {
-    warning("found lints, see ", lint_file)
-    writeLines(unlist(lapply(lints, paste, collapse = " ")), con = lint_file)
-} else {
-    m <- "Congratulations: no lints found."
-    message(m)
-    writeLines(m, con = lint_file)
-}
 
 # % formatR
 files <- list.files(c("R", "utils", "tests"), ".*\\.R", full.names = TRUE, 
@@ -50,7 +38,3 @@ for (source_file in files) {
             tidy_lints_file, ".")
 }
 
-# % cleanr
-if (basename(getwd()) == "cleanr") cleanr::load_internal_functions("cleanr")
-cleanr::set_cleanr_options(max_arguments = 6)
-cleanr::check_directory("R/", recursive = TRUE)

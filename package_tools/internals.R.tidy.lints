@@ -1,6 +1,0 @@
-package_tools/internals.R.tidy 35 1 style lines should not be more than 80 characters.     opening_brace_ends_line <- grepl("\\{\\s*$", lines_in_function[opening_line_num]) list(c(1, 85)) line_length_linter
-package_tools/internals.R.tidy 36 33 style Trailing whitespace is superfluous.     if (opening_brace_ends_line)  list(c(33, 33)) trailing_whitespace_linter
-package_tools/internals.R.tidy 38 1 style lines should not be more than 80 characters.     closing_brace_starts_line <- grepl("^\\s*\\}", lines_in_function[closing_line_num]) list(c(1, 87)) line_length_linter
-package_tools/internals.R.tidy 39 35 style Trailing whitespace is superfluous.     if (closing_brace_starts_line)  list(c(35, 35)) trailing_whitespace_linter
-package_tools/internals.R.tidy 62 1 style lines should not be more than 80 characters.     condition <- structure(class = c("cleanr", "error", "condition"), list(message = message_string,  list(c(1, 101)) line_length_linter
-package_tools/internals.R.tidy 62 101 style Trailing whitespace is superfluous.     condition <- structure(class = c("cleanr", "error", "condition"), list(message = message_string,  list(c(101, 101)) trailing_whitespace_linter

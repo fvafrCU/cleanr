@@ -1,0 +1,14 @@
+formatR_output/formatR.R.tidy 10 75 style Trailing whitespace is superfluous. files <- list.files(c("R", "utils", "tests"), ".*\\.R", full.names = TRUE,  list(c(75, 75)) trailing_whitespace_linter
+formatR_output/formatR.R.tidy 19 1 style lines should not be more than 80 characters.     formatR::tidy_source(code_file, arrow = TRUE, width.cutoff = 70, file = tidy_file) list(c(1, 86)) line_length_linter
+formatR_output/formatR.R.tidy 20 75 style Trailing whitespace is superfluous.     tidy_lints <- lintr::lint(tidy_file, linters = lintr::default_linters,  list(c(75, 75)) trailing_whitespace_linter
+formatR_output/formatR.R.tidy 22 32 style Trailing whitespace is superfluous.     if (length(tidy_lints) > 0)  list(c(32, 32)) trailing_whitespace_linter
+formatR_output/formatR.R.tidy 23 1 style lines should not be more than 80 characters.         writeLines(unlist(lapply(tidy_lints, paste, collapse = " ")), con = paste0(tidy_file,  list(c(1, 94)) line_length_linter
+formatR_output/formatR.R.tidy 23 94 style Trailing whitespace is superfluous.         writeLines(unlist(lapply(tidy_lints, paste, collapse = " ")), con = paste0(tidy_file,  list(c(94, 94)) trailing_whitespace_linter
+formatR_output/formatR.R.tidy 25 75 style Trailing whitespace is superfluous.     code_lints <- lintr::lint(code_file, linters = lintr::default_linters,  list(c(75, 75)) trailing_whitespace_linter
+formatR_output/formatR.R.tidy 27 32 style Trailing whitespace is superfluous.     if (length(code_lints) > 0)  list(c(32, 32)) trailing_whitespace_linter
+formatR_output/formatR.R.tidy 28 1 style lines should not be more than 80 characters.         writeLines(unlist(lapply(code_lints, paste, collapse = " ")), con = paste0(code_file,  list(c(1, 94)) line_length_linter
+formatR_output/formatR.R.tidy 28 94 style Trailing whitespace is superfluous.         writeLines(unlist(lapply(code_lints, paste, collapse = " ")), con = paste0(code_file,  list(c(94, 94)) trailing_whitespace_linter
+formatR_output/formatR.R.tidy 33 75 style Trailing whitespace is superfluous.         warning(length(code_lints), " lints found! See ", code_lints_file,  list(c(75, 75)) trailing_whitespace_linter
+formatR_output/formatR.R.tidy 36 49 style Trailing whitespace is superfluous.     if (length(code_lints) > length(tidy_lints))  list(c(49, 49)) trailing_whitespace_linter
+formatR_output/formatR.R.tidy 37 77 style Trailing whitespace is superfluous.         message(tidy_file, " has only ", length(tidy_lints), " lints. See ",  list(c(77, 77)) trailing_whitespace_linter
+formatR_output/formatR.R.tidy 40 1 style Trailing blank lines are superfluous.  NULL trailing_blank_lines_linter

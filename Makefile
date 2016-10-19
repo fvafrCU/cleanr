@@ -4,10 +4,13 @@ PKGVERS := $(shell sed -n "s/Version: *\([^ ]*\)/\1/p" DESCRIPTION)
 PKGSRC  := $(shell basename `pwd`)
 
 temp_file := $(shell tempfile)
-package_tools_file := utils/package_tools.R
+lintr_script := utils/lintr.R
+formatR_script := utils/formatR.R
 
 R := R-devel
 Rscript := Rscript-devel
+
+all: dev_check dev_test dev_vignettes crancheck utils
 
 # devtools
 dev_all: dev_test dev_check
@@ -19,11 +22,6 @@ dev_test:
 	${Rscript} --vanilla -e 'devtools::test()' >  ${temp_file} 2>&1; \
 	sed -n -e '/^DONE.*/q;p' < ${temp_file} > dev_test.Rout 
 
-dev_test_change:
-	rm ${temp_file} || TRUE; \
-	${Rscript} --vanilla ${test_changes_file} >  ${temp_file} 2>&1; \
-	sed -n -e '/^DONE.*/q;p' < ${temp_file} > dev_test_change.Rout 
-
 dev_check: runit
 	rm ${temp_file} || TRUE; \
 	${Rscript} --vanilla -e 'devtools::check()' > ${temp_file} 2>&1; \
@@ -33,19 +31,17 @@ dev_vignettes:
 	${Rscript} --vanilla -e 'devtools::build_vignettes()'
 
 # R CMD 
-all: craninstall clean
-
 craninstall: crancheck
 	${R} --vanilla CMD INSTALL  ${PKGNAME}_${PKGVERS}.tar.gz
 
-crancheck: build 
+crancheck: build  runit
 	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
         ${R} --vanilla CMD check --as-cran ${PKGNAME}_${PKGVERS}.tar.gz 
 
 install: check 
 	${R} --vanilla CMD INSTALL  ${PKGNAME}_${PKGVERS}.tar.gz && \
         printf '===== have you run\n\tmake demo && ' && \
-        printf 'make package_tools && make runit && make cleanr\n?!\n' 
+        printf 'make utils\n?!\n' 
 
 install_bare: build_bare 
 	${R} --vanilla CMD INSTALL  ${PKGNAME}_${PKGVERS}.tar.gz 
@@ -77,7 +73,7 @@ roxy:
 	${R} --vanilla -e 'roxygen2::roxygenize(".")'
 
 .PHONY: utils
-utils: runit cleanr package_tools coverage
+utils: runit cleanr formatR lintr coverage
 
 .PHONY: coverage
 coverage:
@@ -92,10 +88,15 @@ runit:
 cleanr:
 	${Rscript} --vanilla -e 'cleanr::load_internal_functions("cleanr"); cleanr::check_directory("R/", max_arguments = 6)'
 
-.PHONY: package_tools
-package_tools:
+.PHONY: lintr
+lintr:
 	rm inst/doc/*.R || true
-	${Rscript} --vanilla ${package_tools_file} > package_tools.Rout 2>&1 
+	${Rscript} --vanilla ${lintr_script} > lintr.Rout 2>&1 
+
+.PHONY: formatR
+formatR:
+	rm inst/doc/*.R || true
+	${Rscript} --vanilla ${formatR_script} > formatR.Rout 2>&1 
 
 .PHONY: clean
 clean:

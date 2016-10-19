@@ -26,7 +26,7 @@ get_function_body <- function(object) {
     captured_function <- utils::capture.output(object)
     # if the function is not defined in the global envirnoment, the envirnoment
     # will be added to capture.output()
-    lines_in_function <- captured_function[! grepl("<environment:\\.*", 
+    lines_in_function <- captured_function[! grepl("<environment:\\.*",
                                                    captured_function)]
     if (! any(grepl("{", lines_in_function, fixed = TRUE))){
         # treat oneliners

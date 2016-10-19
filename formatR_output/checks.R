@@ -208,10 +208,7 @@ check_file_length <- function(path,
     file_content <- readLines(path)
     num_lines <- length(file_content)
     if (num_lines > maximum) {
-        throw(paste0(path, ": ",
-                         num_lines, " lines in file.",
-                         collapse = "\n")
-        )
+        throw(paste0(path, ": ", num_lines, " lines in file.", collapse = "\n"))
     }
     return(invisible(TRUE))
 }

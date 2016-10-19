@@ -6,9 +6,7 @@ test_internals <- function() {
     RUnit::checkIdentical(result, expectation)
 }
 test_functions_in_file <- function() {
-    RUnit::checkTrue(check_functions_in_file(system.file("source", "R", "checks.R",
-                                                         package = "cleanr")))
-    RUnit::checkException(check_functions_in_file(system.file("source", "R", "checks.R",
-                                                         package = "cleanr"),
-                                                  max_line_width = 10))
+    file <- system.file("source", "R", "checks.R", package = "cleanr")
+    RUnit::checkTrue(check_functions_in_file(file))
+    RUnit::checkException(check_functions_in_file(file, max_line_width = 10))
 }

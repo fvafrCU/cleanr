@@ -132,8 +132,8 @@ check_functions_in_file <- function(path, ...) {
         assign(name, get(name, envir = source_kept))
         if (is.function(get(name))) {
             print(name)
-            finding <- 
-                tryCatch(check_function_layout(get(name, 
+            finding <-
+                tryCatch(check_function_layout(get(name,
                                                    envir = source_kept), ...),
                          cleanr = function(e) return(e[["message"]]))
             findings <- c(findings, finding)
@@ -188,7 +188,7 @@ check_file <- function(path, ...) {
     }
     arguments <- append(list(path = path), dots)
 
-    use <- utils::modifyList(check_file_layout_defaults, arguments, 
+    use <- utils::modifyList(check_file_layout_defaults, arguments,
                              keep.null = TRUE)
     arguments_to_use <- use[names(use) %in% names(check_file_layout_defaults)]
     # use only non-empty arguments
@@ -196,7 +196,7 @@ check_file <- function(path, ...) {
     finding <- tryCatch(do.call("check_file_layout", arguments_to_use),
                         cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
-    use <- utils::modifyList(check_functions_defaults, arguments, 
+    use <- utils::modifyList(check_functions_defaults, arguments,
                              keep.null = TRUE)
     arguments_to_use <- use[names(use) %in%
                             names(check_functions_defaults)]

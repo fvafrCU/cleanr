@@ -12,7 +12,7 @@ Building cleanr ----------------------------------------------------------------
 * installing the package to build vignettes
 * creating vignettes ... OK
 Warning: ‘inst/doc’ files
-    ‘cleanr_Introduction.Rmd’, ‘cleanr_Introduction.html’,  ‘cleanr_Introduction.R’
+    ‘cleanr_Introduction.Rmd’, ‘cleanr_Introduction.html’
   ignored as vignettes have been rebuilt.
   Run R CMD build with --no-build-vignettes to prevent rebuilding.
 * checking for LF line-endings in source and make files
@@ -47,7 +47,9 @@ Checking cleanr ----------------------------------------------------------------
 * checking package directory ... OK
 * checking ‘build’ directory ... OK
 * checking DESCRIPTION meta-information ... OK
-* checking top-level files ... OK
+* checking top-level files ... NOTE
+Non-standard files/directories found at top level:
+  ‘formatR_output’ ‘lintr_output’
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
@@ -84,8 +86,13 @@ Checking cleanr ----------------------------------------------------------------
 * checking re-building of vignette outputs ... OK
 * DONE
 
-Status: OK
+Status: 1 NOTE
+See
+for details.
+
 
 R CMD check results
-0 errors | 0 warnings | 0 notes
-
+0 errors | 0 warnings | 1 note 
+checking top-level files ... NOTE
+Non-standard files/directories found at top level:
+  ‘formatR_output’ ‘lintr_output’

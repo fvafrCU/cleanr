@@ -18,24 +18,25 @@ NULL
 #' @return invisible(TRUE)
 #' @export
 #' @examples
-#' load_internal_functions('cleanr')
+#' load_internal_functions("cleanr")
 load_internal_functions <- function(package, ...) {
     checkmate::qassert(package, "S1")
     library(package, character.only = TRUE)
     exported_names <- ls(paste("package", package, sep = ":"), ...)
-    is_exported_name_function <- vapply(exported_names, function(x) is.function(eval(parse(text = x))), 
-        TRUE)
+    is_exported_name_function <- vapply(exported_names,
+                                        function(x) is.function(get(x)), TRUE)
     exported_functions <- exported_names[is_exported_name_function]
     package_namespace <- asNamespace(package)
     package_names <- ls(envir = package_namespace)
-    is_package_name_function <- vapply(package_names, function(x) {
-        is.function(get(x, envir = package_namespace))
-    }, TRUE)
+    is_package_name_function <-
+        vapply(package_names,
+               function(x) is.function(get(x, envir = package_namespace)),
+               TRUE)
     package_functions <- package_names[is_package_name_function]
     internal_functions <- setdiff(package_functions, exported_functions)
     for (name in internal_functions) {
-        assign(name, get(name, envir = package_namespace, inherits = FALSE), 
-            envir = parent.frame())
+        assign(name, get(name, envir = package_namespace, inherits = FALSE),
+               envir = parent.frame())
     }
     return(invisible(TRUE))
 }
@@ -64,8 +65,8 @@ load_internal_functions <- function(package, ...) {
 #' set_cleanr_options(list(max_lines = 30, max_lines_of_code = 20))
 #' get_cleanr_options(flatten_list = TRUE)
 #' # we delete all options and set some anew
-#' options('cleanr' = NULL)
-#' options('cleanr' = list(max_lines = 30, max_lines_of_code = 20))
+#' options("cleanr" = NULL)
+#' options("cleanr" = list(max_lines = 30, max_lines_of_code = 20))
 #' # fill the missing options with the package's defaults:
 #' set_cleanr_options(overwrite = FALSE)
 #' get_cleanr_options(flatten_list = TRUE)
@@ -75,29 +76,35 @@ load_internal_functions <- function(package, ...) {
 set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
     checkmate::qassert(reset, "B1")
     checkmate::qassert(overwrite, "B1")
-    defaults <- list(max_file_width = 80, max_file_length = 300, max_lines = 65, 
-        max_lines_of_code = 50, max_arguments = 5, max_nesting_depth = 3, 
-        max_line_width = 80)
+    defaults <- list(max_file_width = 80, max_file_length = 300,
+                     max_lines = 65, max_lines_of_code = 50,
+                     max_arguments = 5, max_nesting_depth = 3,
+                     max_line_width = 80)
     option_list <- list(...)
-    if (is.null(getOption("cleanr")) || reset) 
-        options(cleanr = defaults) else {
+    if (is.null(getOption("cleanr")) || reset)
+        options("cleanr" = defaults)
+    else {
         set_options <- getOption("cleanr")
         if (overwrite) {
-            options(cleanr = utils::modifyList(set_options, option_list))
+            options("cleanr" = utils::modifyList(set_options, option_list))
         } else {
-            if (length(option_list) == 0) 
+            if (length(option_list) == 0)
                 option_list <- defaults
             is_option_unset <- !(names(option_list) %in% names(set_options))
-            if (any(is_option_unset)) 
-                options(cleanr = append(set_options, option_list[is_option_unset]))
+            if (any(is_option_unset))
+                options("cleanr" = append(set_options,
+                                              option_list[is_option_unset]))
         }
     }
-    max_lines <- get_cleanr_options("max_lines", flatten_list = TRUE)
-    max_lines_of_code <- get_cleanr_options("max_lines_of_code", flatten_list = TRUE)
+    max_lines <- get_cleanr_options("max_lines", flatten_list = TRUE,
+                                    remove_names = TRUE)
+    max_lines_of_code <- get_cleanr_options("max_lines_of_code",
+                                           flatten_list = TRUE,
+                                           remove_names = TRUE)
     if (max_lines < max_lines_of_code) {
-        set_cleanr_options(max_lines = max_lines_of_code)
-        warning(paste("maximum number of lines was less than maximum number of", 
-            "lines of code, resetting the former to the latter."))
+        set_cleanr_options("max_lines" = max_lines_of_code)
+        warning(paste("maximum number of lines was less than maximum number of",
+                      "lines of code, resetting the former to the latter."))
     }
     return(invisible(TRUE))
 }
@@ -113,12 +120,12 @@ set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
 #' @return a (possibly named) list or a vector.
 #' @export
 #' @examples
-#' get_cleanr_options('max_lines')
-#' get_cleanr_options('max_lines', remove_names = TRUE)
-#' get_cleanr_options('max_lines', flatten_list = TRUE)
-#' get_cleanr_options('max_lines', flatten_list = TRUE, remove_names = TRUE)
+#' get_cleanr_options("max_lines")
+#' get_cleanr_options("max_lines", remove_names = TRUE)
+#' get_cleanr_options("max_lines", flatten_list = TRUE)
+#' get_cleanr_options("max_lines", flatten_list = TRUE, remove_names = TRUE)
 #' get_cleanr_options(flatten_list = TRUE, remove_names = TRUE)
-#' get_cleanr_options(c('max_lines', 'max_lines_of_code'))
+#' get_cleanr_options(c("max_lines", "max_lines_of_code"))
 get_cleanr_options <- function(..., remove_names = FALSE, flatten_list = TRUE) {
     checkmate::qassert(remove_names, "B1")
     checkmate::qassert(flatten_list, "B1")
@@ -127,11 +134,9 @@ get_cleanr_options <- function(..., remove_names = FALSE, flatten_list = TRUE) {
     } else {
         option_names <- as.vector(...)
         options_set <- getOption("cleanr")
-        option_list <- options_set[names(options_set) %in% option_names]
+        option_list  <- options_set[names(options_set) %in% option_names]
     }
-    if (flatten_list) 
-        option_list <- unlist(option_list)
-    if (remove_names) 
-        names(option_list) <- NULL
+    if (flatten_list) option_list <-  unlist(option_list)
+    if (remove_names) names(option_list)  <- NULL
     return(option_list)
 }

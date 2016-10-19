@@ -22,7 +22,12 @@
 #' utils::capture.output(body(set_cleanr_options))[4:6]
 get_function_body <- function(object) {
     checkmate::checkFunction(object)
-    lines_in_function <- utils::capture.output(object)
+    checkmate::checkFunction(object)
+    captured_function <- utils::capture.output(object)
+    # if the function is not defined in the global envirnoment, the envirnoment
+    # will be added to capture.output()
+    lines_in_function <- captured_function[! grepl("<environment:\\.*",
+                                                   captured_function)]
     if (! any(grepl("{", lines_in_function, fixed = TRUE))){
         # treat oneliners
         is_split_onliner <- length(lines_in_function) > 1
@@ -67,6 +72,8 @@ throw <- function(message_string, system_call = sys.call(-1), ...) {
                            ...
                            )
     stop(condition)
+    # The following return is owed to cleanr: not having a return is an error,
+    # even if you never get there. So this will never be reached by coverage.
     return(FALSE)
 }
 
