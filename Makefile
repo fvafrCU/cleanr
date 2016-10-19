@@ -72,16 +72,16 @@ direct_check:
 
 # utils
 
-.PHONY: coverage
-coverage:
-	${Rscript} --vanilla -e 'co <- covr::package_coverage(path = ".", function_exclusions = "\\.onLoad"); covr::zero_coverage(co); print(co)'
-
 .PHONY: roxy
 roxy:
 	${R} --vanilla -e 'roxygen2::roxygenize(".")'
 
 .PHONY: utils
-utils: runit cleanr package_tools
+utils: runit cleanr package_tools coverage
+
+.PHONY: coverage
+coverage:
+	${Rscript} --vanilla -e 'co <- covr::package_coverage(path = ".", function_exclusions = "\\.onLoad"); covr::zero_coverage(co); print(co)'
 
 
 .PHONY: runit
