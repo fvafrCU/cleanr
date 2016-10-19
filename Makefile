@@ -24,7 +24,7 @@ dev_test_change:
 	${Rscript} --vanilla ${test_changes_file} >  ${temp_file} 2>&1; \
 	sed -n -e '/^DONE.*/q;p' < ${temp_file} > dev_test_change.Rout 
 
-dev_check:
+dev_check: runit
 	rm ${temp_file} || TRUE; \
 	${Rscript} --vanilla -e 'devtools::check()' > ${temp_file} 2>&1; \
 	grep -v ".*'/" ${temp_file} | grep -v ".*/tmp/R.*" > dev_check.Rout 
@@ -50,12 +50,12 @@ install: check
 install_bare: build_bare 
 	${R} --vanilla CMD INSTALL  ${PKGNAME}_${PKGVERS}.tar.gz 
 
-check_bare: build_bare 
+check_bare: build_bare runit
 	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
         ${R} --vanilla CMD check --no-examples ${PKGNAME}_${PKGVERS}.tar.gz && \
         printf '===== run\n\tmake install\n!!\n'
 
-check: build 
+check: build runit
 	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
         ${R} --vanilla CMD check ${PKGNAME}_${PKGVERS}.tar.gz && \
         printf '===== run\n\tmake install\n!!\n'
