@@ -24,17 +24,13 @@ load_internal_functions <- function(package, ...) {
     library(package, character.only = TRUE)
     exported_names <- ls(paste("package", package, sep = ":"), ...)
     is_exported_name_function <- vapply(exported_names,
-                                   function(x)
-                                       is.function(eval(parse(text = x))),
-                                       TRUE)
+                                        function(x) is.function(get(x)), TRUE)
     exported_functions <- exported_names[is_exported_name_function]
     package_namespace <- asNamespace(package)
     package_names <- ls(envir = package_namespace)
     is_package_name_function <-
         vapply(package_names,
-               function(x) {
-                   is.function(get(x, envir = package_namespace))
-               },
+               function(x) is.function(get(x, envir = package_namespace)),
                TRUE)
     package_functions <- package_names[is_package_name_function]
     internal_functions <- setdiff(package_functions, exported_functions)
