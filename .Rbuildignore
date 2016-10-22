@@ -11,6 +11,6 @@
 ^utils/
 ^utils$
 TODO.md
-lintr_output/
-formatR_output/
+lintr_output
+formatR_output
 ^\.travis\.yml$

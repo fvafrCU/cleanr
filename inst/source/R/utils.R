@@ -1,6 +1,32 @@
 #' @include internals.R
 NULL
 
+#' test if an object is not false
+#'
+#' Sometimes you need to know whether or not an object exists and is not set to
+#' FALSE (and possibly not NULL).
+#'
+#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @param object The object to be tested.
+#' @param null_is_false [boolean(1)]\cr Should NULL be treated as FALSE?
+#' @return TRUE if the object is set to something different than FALSE, FALSE
+#' otherwhise.
+#' @export
+#' @examples
+#' a  <- 1
+#' is_not_false(a)
+is_not_false <- function(object, null_is_false = TRUE) {
+    checkmate::qassert(null_is_false, "B1")
+    condition <-  exists(deparse(substitute(object))) && object != FALSE
+    if (isTRUE(null_is_false))
+        condition <- condition && ! is.null(object)
+    if (condition)
+        result <- TRUE
+    else
+        result <- FALSE
+    return(result)
+}
+
 #' load a package's internals
 #'
 #' load objects not exported from a package's namespace.
