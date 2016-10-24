@@ -4,12 +4,14 @@
 \alias{is_not_false}
 \title{test if an object is not false}
 \usage{
-is_not_false(object, null_is_false = TRUE)
+is_not_false(object, null_is_false = TRUE, ...)
 }
 \arguments{
 \item{object}{The object to be tested.}
 
 \item{null_is_false}{[boolean(1)]\cr Should NULL be treated as FALSE?}
+
+\item{...}{Parameters passed to \code{\link{exists}}. See Details.}
 }
 \value{
 TRUE if the object is set to something different than FALSE, FALSE
@@ -18,6 +20,10 @@ otherwhise.
 \description{
 Sometimes you need to know whether or not an object exists and is not set to
 FALSE (and possibly not NULL).
+}
+\details{
+The ellispis was implemented to enable RUnit testing. I do not know of any
+other use.
 }
 \examples{
 a  <- 1

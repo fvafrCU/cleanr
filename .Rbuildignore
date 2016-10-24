@@ -14,3 +14,4 @@ TODO.md
 lintr_output
 formatR_output
 ^\.travis\.yml$
+^\.lintr$

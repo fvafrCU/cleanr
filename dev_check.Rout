@@ -1,12 +1,13 @@
 Updating cleanr documentation
 Loading cleanr
+Writing is_not_false.Rd
 Setting env vars ---------------------------------------------------------------
 CFLAGS  : -Wall -pedantic
 CXXFLAGS: -Wall -pedantic
 Building cleanr ----------------------------------------------------------------
   --no-resave-data --no-manual 
 
-* checking for file ‘/home/qwer/git/cyclops/fvafrcu/cleanr/DESCRIPTION’ ... OK
+* checking for file ‘/home/nik/git/cs/fvafrcu/cleanr/DESCRIPTION’ ... OK
 * preparing ‘cleanr’:
 * checking DESCRIPTION meta-information ... OK
 * installing the package to build vignettes
@@ -26,7 +27,7 @@ _R_CHECK_FORCE_SUGGESTS_          : FALSE
 Checking cleanr ----------------------------------------------------------------
   --as-cran --timings --no-manual 
 
-* using R Under development (unstable) (2016-10-12 r71504)
+* using R Under development (unstable) (2016-10-13 r71518)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -39,7 +40,11 @@ Checking cleanr ----------------------------------------------------------------
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
-* checking for hidden files and directories ... OK
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  .lintr
+These were most likely included in error. See section ‘Package
+structure’ in the ‘Writing R Extensions’ manual.
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking whether package ‘cleanr’ can be installed ... OK
@@ -84,8 +89,15 @@ Checking cleanr ----------------------------------------------------------------
 * checking re-building of vignette outputs ... OK
 * DONE
 
-Status: OK
+Status: 1 NOTE
+See
+for details.
+
 
 R CMD check results
-0 errors | 0 warnings | 0 notes
-
+0 errors | 0 warnings | 1 note 
+checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  .lintr
+These were most likely included in error. See section ‘Package
+structure’ in the ‘Writing R Extensions’ manual.
