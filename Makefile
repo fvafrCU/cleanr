@@ -82,7 +82,7 @@ coverage:
 
 .PHONY: runit
 runit:
-	cd ./tests/ && ${Rscript} --vanilla ./runit.R
+	cd ./tests/ && ${Rscript} --vanilla ./runit.R || printf "\nMaybe your installation is stale? \nTry\n\tmake install_bare\n\n"
 
 .PHONY: cleanr
 cleanr:
