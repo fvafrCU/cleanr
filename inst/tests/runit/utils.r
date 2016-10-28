@@ -43,4 +43,3 @@ test_is_not_false <- function() {
     RUnit::checkTrue(is_not_false(a, null_is_false = FALSE, envir = .GlobalEnv))
     # End Exclude Linting
 }
-
