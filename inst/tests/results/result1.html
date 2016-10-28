@@ -96,60 +96,60 @@ Runs: <b>2</b>
 <td bgcolor="#00D000">2</td>
 <td bgcolor="#00D000">0</td>
 </tr>
-<tr><td bgcolor="#D00000">16</td>
-<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;findings <- c(findings, finding)</td>
-<td bgcolor="#D00000">0</td>
-<td bgcolor="#D00000">0</td>
+<tr><td bgcolor="#00D000">16</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;findings <- c(findings, finding)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
 </tr>
-<tr><td bgcolor="#D00000">17</td>
-<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;use <- utils::modifyList(check_functions_defaults, arguments, keep.null = TRUE)</td>
-<td bgcolor="#D00000">0</td>
-<td bgcolor="#D00000">0</td>
+<tr><td bgcolor="#00D000">17</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;use <- utils::modifyList(check_functions_defaults, arguments, keep.null = TRUE)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
 </tr>
-<tr><td bgcolor="#D00000">18</td>
-<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;arguments_to_use <- use[names(use) %in% names(check_functions_defaults)]</td>
-<td bgcolor="#D00000">0</td>
-<td bgcolor="#D00000">0</td>
+<tr><td bgcolor="#00D000">18</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;arguments_to_use <- use[names(use) %in% names(check_functions_defaults)]</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
 </tr>
-<tr><td bgcolor="#D00000">19</td>
-<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;arguments_to_use <- arguments_to_use[arguments_to_use != ""]</td>
-<td bgcolor="#D00000">0</td>
-<td bgcolor="#D00000">0</td>
+<tr><td bgcolor="#00D000">19</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;arguments_to_use <- arguments_to_use[arguments_to_use != ""]</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
 </tr>
-<tr><td bgcolor="#D00000">20</td>
-<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;finding <- tryCatch(do.call("check_functions_in_file", arguments_to_use), cleanr = function(e) return(e[["message"]]))</td>
-<td bgcolor="#D00000">0</td>
-<td bgcolor="#D00000">0</td>
+<tr><td bgcolor="#00D000">20</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;finding <- tryCatch(do.call("check_functions_in_file", arguments_to_use), cleanr = function(e) return(e[["message"]]))</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
 </tr>
-<tr><td bgcolor="#D00000">21</td>
-<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;findings <- c(findings, finding)</td>
-<td bgcolor="#D00000">0</td>
-<td bgcolor="#D00000">0</td>
+<tr><td bgcolor="#00D000">21</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;findings <- c(findings, finding)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0.08</td>
 </tr>
-<tr><td bgcolor="#D00000">22</td>
-<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;findings <- tidy_findings(findings)</td>
-<td bgcolor="#D00000">0</td>
-<td bgcolor="#D00000">0</td>
+<tr><td bgcolor="#00D000">22</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;findings <- tidy_findings(findings)</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
 </tr>
-<tr><td bgcolor="#D00000">23</td>
-<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;if (!is.null(findings)) {</td>
-<td bgcolor="#D00000">0</td>
-<td bgcolor="#D00000">0</td>
+<tr><td bgcolor="#00D000">23</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;if (!is.null(findings)) {</td>
+<td bgcolor="#00D000">2</td>
+<td bgcolor="#00D000">0</td>
 </tr>
-<tr><td bgcolor="#D00000">24</td>
-<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;throw(paste(names(findings), findings, sep = " ", collapse = "\n"))</td>
-<td bgcolor="#D00000">0</td>
-<td bgcolor="#D00000">0</td>
+<tr><td bgcolor="#00D000">24</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;throw(paste(names(findings), findings, sep = " ", collapse = "\n"))</td>
+<td bgcolor="#00D000">1</td>
+<td bgcolor="#00D000">0</td>
 </tr>
 <tr><td bgcolor="#D00000">25</td>
 <td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;}</td>
 <td bgcolor="#D00000">0</td>
 <td bgcolor="#D00000">0</td>
 </tr>
-<tr><td bgcolor="#D00000">26</td>
-<td bgcolor="#D00000">&ensp;&ensp;&ensp;&ensp;return(invisible(TRUE))</td>
-<td bgcolor="#D00000">0</td>
-<td bgcolor="#D00000">0</td>
+<tr><td bgcolor="#00D000">26</td>
+<td bgcolor="#00D000">&ensp;&ensp;&ensp;&ensp;return(invisible(TRUE))</td>
+<td bgcolor="#00D000">1</td>
+<td bgcolor="#00D000">0</td>
 </tr>
 <tr><td bgcolor="#D00000">27</td>
 <td bgcolor="#D00000">}</td>
@@ -167,5 +167,5 @@ Runs: <b>2</b>
 <td align="right"><a href="./con1.html">graph</a></td></tr>
 </table>
 <hr>
-RUnit  0.4.31 2016-10-28 09:12:22</body>
+RUnit  0.4.31 2016-10-28 12:06:06</body>
 </html>

@@ -26,4 +26,5 @@ test_options <- function() {
     set_cleanr_options(max_lines_of_code = 40, overwrite = TRUE)
     RUnit::checkIdentical(get_cleanr_options(),
                           c(max_lines = 40, max_lines_of_code = 40))
+    set_cleanr_options(reset = TRUE)
 }
