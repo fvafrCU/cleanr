@@ -25,7 +25,7 @@ dev_test:
 dev_check: runit
 	rm ${temp_file} || TRUE; \
 	${Rscript} --vanilla -e 'devtools::check()' > ${temp_file} 2>&1; \
-	grep -v ".*'/" ${temp_file} | grep -v ".*/tmp/R.*" > dev_check.Rout 
+	grep -v ".*'/" ${temp_file} | grep -v ".*‘/" > dev_check.Rout 
 
 dev_vignettes:
 	${Rscript} --vanilla -e 'devtools::build_vignettes()'

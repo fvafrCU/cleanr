@@ -6,7 +6,6 @@ CXXFLAGS: -Wall -pedantic
 Building cleanr ----------------------------------------------------------------
   --no-resave-data --no-manual 
 
-* checking for file ‘/home/qwer/git/cyclops/fvafrcu/cleanr/DESCRIPTION’ ... OK
 * preparing ‘cleanr’:
 * checking DESCRIPTION meta-information ... OK
 * installing the package to build vignettes
