@@ -30,3 +30,20 @@ test_files <- function() {
                                      silly_thing = 10)
     )
 }
+
+test_directories <- function() {
+    RUnit::checkException(check_directory(system.file("source", "R",
+                                                     package = "cleanr"),
+                     max_file_length = 0)
+    )
+    RUnit::checkTrue(check_directory(system.file("source", "R",
+                                                     package = "cleanr"),
+                    max_arguments = 6, max_file_width = 100)
+    )
+}
+
+test_functions_in_file <- function() {
+    file <- system.file("source", "R", "checks.R", package = "cleanr")
+    RUnit::checkTrue(check_functions_in_file(file))
+    RUnit::checkException(check_functions_in_file(file, max_line_width = 10))
+}
