@@ -102,7 +102,7 @@ tidy_findings <- function(findings) {
     } else {
         ## findings are of class character with TRUE converted to "TRUE", so we
         ## remove these
-        conditions <- findings[!findings == "TRUE"]
+        conditions <- findings[! findings == "TRUE"]
     }
     return(conditions)
 }
