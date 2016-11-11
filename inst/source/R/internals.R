@@ -28,6 +28,9 @@ get_function_body <- function(object) {
     # will be added to capture.output()
     lines_in_function <- captured_function[! grepl("<environment:\\.*",
                                                    captured_function)]
+    # remove the byte code
+    lines_in_function <- lines_in_function[! grepl("<bytecode:\\.*",
+                                                   lines_in_function)]
     if (! any(grepl("{", lines_in_function, fixed = TRUE))){
         # treat oneliners
         is_split_onliner <- length(lines_in_function) > 1
