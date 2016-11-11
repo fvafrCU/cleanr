@@ -21,14 +21,17 @@ check_num_lines_of_code(object,
 
 check_line_width(object, maximum = get_cleanr_options("max_line_width"))
 
-check_return(object)
+check_return(object, check_return = get_cleanr_options("check_return"))
 }
 \arguments{
 \item{object}{The function to be checked.
 Should have been sourced with keep.source = TRUE (see
 \code{\link{get_function_body}}.}
 
-\item{maximum}{The maximum against which the function is to be tested.}
+\item{maximum}{The maximum against which the function is to be tested. See
+\code{\link{check_function_layout}} and  \code{\link{check_file_layout}}.}
+
+\item{check_return}{See \code{\link{check_function_layout}}}
 }
 \value{
 invisible(TRUE), but see \emph{Details}.

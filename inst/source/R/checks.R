@@ -33,7 +33,9 @@ NULL
 #' @param object The function to be checked.
 #' Should have been sourced with keep.source = TRUE (see
 #' \code{\link{get_function_body}}.
-#' @param maximum The maximum against which the function is to be tested.
+#' @param maximum The maximum against which the function is to be tested. See
+#' \code{\link{check_function_layout}} and  \code{\link{check_file_layout}}.
+#' @param check_return See \code{\link{check_function_layout}}
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @name function_checks
 #' @examples
@@ -52,11 +54,14 @@ NULL
 #' @export
 check_num_arguments <- function(object,
                                 maximum = get_cleanr_options("max_arguments")) {
-    checkmate::checkFunction(object)
-    checkmate::qassert(maximum, "N1")
-    num_arguments <- length(formals(object))
-    if (num_arguments > maximum)
-        throw(paste("found", num_arguments, "arguments, maximum was", maximum))
+    if (is_not_false(maximum, where = environment())) {
+        checkmate::checkFunction(object)
+        checkmate::qassert(maximum, "N1")
+        num_arguments <- length(formals(object))
+        if (num_arguments > maximum)
+            throw(paste("found", num_arguments, "arguments, maximum was",
+                        maximum))
+    }
     return(invisible(TRUE))
 }
 
@@ -64,25 +69,28 @@ check_num_arguments <- function(object,
 #' @export
 check_nesting_depth <- function(object,
                                 maximum =
-                                    get_cleanr_options("max_nesting_depth")) {
-    checkmate::checkFunction(object)
-    checkmate::qassert(maximum, "N1")
-    function_body <- get_function_body(object)
-    # break if no braces in function
-    if (! any (grepl("}", function_body, fixed = TRUE))) return(invisible(TRUE))
-    braces <- paste(gsub("\\", "",
-                         gsub("[^\\{\\}]", "", function_body),
-                         fixed = TRUE),
-                    collapse = "")
-    # the first (opening) brace is from the function definition,
-    # so we skip it via substring
-    consectutive_openings <- strsplit(substring(braces, 2), "}",
-                                      fixed = TRUE)[[1]]
-    nesting_depths <- nchar(consectutive_openings)
-    nesting_depth <- max(nesting_depths)
-    if (nesting_depth > maximum)
-        throw(paste("found nesting depth ", nesting_depth, ", maximum was ",
-                    maximum, sep = ""))
+                                get_cleanr_options("max_nesting_depth")) {
+    if (is_not_false(maximum, where = environment())) {
+        checkmate::checkFunction(object)
+        checkmate::qassert(maximum, "N1")
+        function_body <- get_function_body(object)
+        # break if no braces in function
+        if (! any (grepl("}", function_body, fixed = TRUE)))
+            return(invisible(TRUE))
+        braces <- paste(gsub("\\", "",
+                             gsub("[^\\{\\}]", "", function_body),
+                             fixed = TRUE),
+                        collapse = "")
+        # the first (opening) brace is from the function definition,
+        # so we skip it via substring
+        consectutive_openings <- strsplit(substring(braces, 2), "}",
+                                          fixed = TRUE)[[1]]
+        nesting_depths <- nchar(consectutive_openings)
+        nesting_depth <- max(nesting_depths)
+        if (nesting_depth > maximum)
+            throw(paste0("found nesting depth ", nesting_depth,
+                         ", maximum was ", maximum))
+    }
     return(invisible(TRUE))
 }
 
@@ -90,12 +98,14 @@ check_nesting_depth <- function(object,
 #' @export
 check_num_lines <- function(object,
                             maximum = get_cleanr_options("max_lines")) {
-    checkmate::checkFunction(object)
-    checkmate::qassert(maximum, "N1")
-    function_body <- get_function_body(object)
-    num_lines  <- length(function_body)
-    if (num_lines > maximum)
-        throw(paste("found", num_lines, "lines, maximum was", maximum))
+    if (is_not_false(maximum, where = environment())) {
+        checkmate::checkFunction(object)
+        checkmate::qassert(maximum, "N1")
+        function_body <- get_function_body(object)
+        num_lines  <- length(function_body)
+        if (num_lines > maximum)
+            throw(paste("found", num_lines, "lines, maximum was", maximum))
+    }
     return(invisible(TRUE))
 }
 
@@ -104,50 +114,60 @@ check_num_lines <- function(object,
 check_num_lines_of_code <- function(object,
                                     maximum =
                                     get_cleanr_options("max_lines_of_code")) {
-    checkmate::checkFunction(object)
-    checkmate::qassert(maximum, "N1")
-    function_body <- get_function_body(object)
-    line_is_comment_pattern <- "^\\s*#"
-    lines_of_code <- grep(line_is_comment_pattern, function_body,
-                          value = TRUE, invert = TRUE)
-    num_lines_of_code <-  length(lines_of_code)
-    if (num_lines_of_code > maximum)
-        throw(paste("found", num_lines_of_code, "lines of code, maximum was",
-                    maximum))
-    return(invisible(TRUE))
-}
-
-#' @rdname function_checks
-#' @export
-check_line_width <- function(object,
-                            maximum = get_cleanr_options("max_line_width")) {
-    checkmate::checkFunction(object)
-    checkmate::qassert(maximum, "N1")
-    function_body <- get_function_body(object)
-    line_widths <-  nchar(function_body)
-    if (any(line_widths > maximum)) {
-        long_lines_index <- line_widths > maximum
-        long_lines <- seq(along = function_body)[long_lines_index]
-        throw(paste("line ", long_lines, ": found width ",
-                    line_widths[long_lines_index], " maximum was ", maximum,
-                    sep = "", collapse = "\n")
-        )
+    if (is_not_false(maximum, where = environment())) {
+        checkmate::checkFunction(object)
+        checkmate::qassert(maximum, "N1")
+        function_body <- get_function_body(object)
+        line_is_comment_pattern <- "^\\s*#"
+        lines_of_code <- grep(line_is_comment_pattern, function_body,
+                              value = TRUE, invert = TRUE)
+        num_lines_of_code <-  length(lines_of_code)
+        if (num_lines_of_code > maximum)
+            throw(paste("found", num_lines_of_code,
+                        "lines of code, maximum was", maximum))
     }
     return(invisible(TRUE))
 }
 
 #' @rdname function_checks
 #' @export
-check_return <- function(object) {
-    message_string <- paste("Just checking for a line starting with a return",
-                          "statement.\n  This is no check for all return paths",
-                          "being explicit.")
-    warning(message_string)
-    checkmate::checkFunction(object)
-    function_body <- body(object)  # body gives us the statements line by line,
-    # some_command;   return(somewhat) will be matched by "^\\s*return\\("
-    if (! any(grepl("^\\s*return\\(", function_body)))
-        throw("found no return() statement at all.")
+check_line_width <- function(object,
+                             maximum = get_cleanr_options("max_line_width")) {
+    if (is_not_false(maximum, where = environment())) {
+        checkmate::checkFunction(object)
+        checkmate::qassert(maximum, "N1")
+        function_body <- get_function_body(object)
+        line_widths <-  nchar(function_body)
+        if (any(line_widths > maximum)) {
+            long_lines_index <- line_widths > maximum
+            long_lines <- seq(along = function_body)[long_lines_index]
+            throw(paste("line ", long_lines, ": found width ",
+                        line_widths[long_lines_index], " maximum was ", maximum,
+                        sep = "", collapse = "\n")
+            )
+        }
+    }
+    return(invisible(TRUE))
+}
+
+#' @rdname function_checks
+#' @export
+check_return <- function(object,
+                         check_return = get_cleanr_options("check_return")) {
+    if (is_not_false(check_return, where = environment())) {
+        checkmate::checkFunction(object)
+        message_string <- paste("Just checking for a line starting with a ",
+                                "return statement.\n",
+                                "This is no check for all return paths ",
+                                "being explicit.")
+        warning(message_string)
+        checkmate::checkFunction(object)
+        function_body <- body(object)  # body gives us the statements line
+        # by line, some_command;   return(somewhat) will be matched
+        # by: ^\\s*return\\(
+        if (! any(grepl("^\\s*return\\(", function_body)))
+            throw("found no return() statement at all.")
+    }
     return(invisible(TRUE))
 }
 
@@ -162,7 +182,7 @@ check_return <- function(object) {
 #' }
 #' At least this is what I think. Well, some others too.
 #'
-#' All of the functions test whether their requirement is met. 
+#' All of the functions test whether their requirement is met.
 #' In case of a fail all \code{\link{throw}} a
 #' condition of class c("cleanr", "error", "condition").
 #'
@@ -182,19 +202,21 @@ NULL
 #' @rdname file_checks
 #' @export
 check_file_width <- function(path,
-                            maximum = get_cleanr_options("max_file_width")) {
-    checkmate::qassert(path, "S1")
-    checkmate::qassert(maximum, "N1")
-    file_content <- readLines(path)
-    line_widths <-  nchar(file_content)
-    if (any(line_widths > maximum)) {
-        long_lines_index <- line_widths > maximum
-        throw(paste0(path, ": line ",
+                             maximum = get_cleanr_options("max_file_width")) {
+    if (is_not_false(maximum, where = environment())) {
+        checkmate::qassert(path, "S1")
+        checkmate::qassert(maximum, "N1")
+        file_content <- readLines(path)
+        line_widths <-  nchar(file_content)
+        if (any(line_widths > maximum)) {
+            long_lines_index <- line_widths > maximum
+            throw(paste0(path, ": line ",
                          seq(along = file_content)[long_lines_index],
                          " counts ", line_widths[long_lines_index],
                          " characters.",
                          collapse = "\n")
-        )
+            )
+        }
     }
     return(invisible(TRUE))
 }
@@ -202,13 +224,16 @@ check_file_width <- function(path,
 #' @rdname file_checks
 #' @export
 check_file_length <- function(path,
-                            maximum = get_cleanr_options("max_line_width")) {
-    checkmate::qassert(path, "S1")
-    checkmate::qassert(maximum, "N1")
-    file_content <- readLines(path)
-    num_lines <- length(file_content)
-    if (num_lines > maximum) {
-        throw(paste0(path, ": ", num_lines, " lines in file.", collapse = "\n"))
+                              maximum = get_cleanr_options("max_file_length")) {
+    if (is_not_false(maximum, where = environment())) {
+        checkmate::qassert(path, "S1")
+        checkmate::qassert(maximum, "N1")
+        file_content <- readLines(path)
+        num_lines <- length(file_content)
+        if (num_lines > maximum) {
+            throw(paste0(path, ": ", num_lines, " lines in file.",
+                         collapse = "\n"))
+        }
     }
     return(invisible(TRUE))
 }

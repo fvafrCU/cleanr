@@ -9,7 +9,8 @@ check_function_layout(object,
   max_lines = get_cleanr_options("max_lines"),
   max_arguments = get_cleanr_options("max_arguments"),
   max_nesting_depth = get_cleanr_options("max_nesting_depth"),
-  max_line_width = get_cleanr_options("max_line_width"))
+  max_line_width = get_cleanr_options("max_line_width"),
+  check_return = get_cleanr_options("check_return"))
 }
 \arguments{
 \item{object}{The function to be checked.}
@@ -23,6 +24,8 @@ check_function_layout(object,
 \item{max_nesting_depth}{the maximum nesting depth accepted.}
 
 \item{max_line_width}{the maximum line width accepted.}
+
+\item{check_return}{Should the function be tested to have an explicit return?}
 }
 \value{
 invisible(TRUE), but see \emph{Details}.

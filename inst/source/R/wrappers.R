@@ -16,6 +16,7 @@ NULL
 #' @param max_arguments the maximum number of arguments accepted.
 #' @param max_nesting_depth the maximum nesting depth accepted.
 #' @param max_line_width the maximum line width accepted.
+#' @param check_return Should the function be tested to have an explicit return?
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @export
 #' @examples
@@ -29,7 +30,10 @@ check_function_layout <- function(object,
                                   max_nesting_depth =
                                   get_cleanr_options("max_nesting_depth"),
                                   max_line_width =
-                                  get_cleanr_options("max_line_width")) {
+                                  get_cleanr_options("max_line_width"),
+                                  check_return =
+                                  get_cleanr_options("check_return")
+                                  ) {
     findings <- NULL
     finding <- tryCatch(check_num_arguments(object,
                                    maximum = max_arguments),
@@ -52,7 +56,7 @@ check_function_layout <- function(object,
                           cleanr = function(e) return(e[["message"]]))
 
     findings <- c(findings, finding)
-    finding <- tryCatch(check_return(object),
+    finding <- tryCatch(check_return(object, check_return = check_return),
                           cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     findings <- tidy_findings(findings)
@@ -233,7 +237,8 @@ check_file <- function(path, ...) {
 #' # load internal functions first.
 #' load_internal_functions("cleanr")
 #' print(check_directory(system.file("source", "R", package = "cleanr"),
-#'                       max_arguments = 6, max_file_width = 90))
+#'                       max_arguments = 7, max_file_width = 90,
+#'                       check_return = FALSE))
 check_directory <- function(path, pattern = "\\.[rR]$", recursive = FALSE,
                             ...) {
     checkmate::assertDirectory(path, access = "r")

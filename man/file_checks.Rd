@@ -8,7 +8,7 @@
 \usage{
 check_file_width(path, maximum = get_cleanr_options("max_file_width"))
 
-check_file_length(path, maximum = get_cleanr_options("max_line_width"))
+check_file_length(path, maximum = get_cleanr_options("max_file_length"))
 }
 \arguments{
 \item{path}{The path to the file to be checked.}
@@ -29,7 +29,7 @@ A file should have a clear layout, it should
 }
 At least this is what I think. Well, some others too.
 
-All of the functions test whether their requirement is met. 
+All of the functions test whether their requirement is met.
 In case of a fail all \code{\link{throw}} a
 condition of class c("cleanr", "error", "condition").
 }

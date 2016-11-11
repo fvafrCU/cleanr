@@ -112,7 +112,7 @@ set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
     defaults <- list(max_file_width = 80, max_file_length = 300,
                      max_lines = 65, max_lines_of_code = 50,
                      max_arguments = 5, max_nesting_depth = 3,
-                     max_line_width = 80)
+                     max_line_width = 80, check_return = TRUE)
     option_list <- list(...)
     if (is.null(getOption("cleanr")) || reset)
         options("cleanr" = defaults)
