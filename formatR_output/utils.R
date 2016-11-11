@@ -23,8 +23,7 @@ is_not_false <- function(object, null_is_false = TRUE, ...) {
     checkmate::qassert(null_is_false, "B1")
     condition <- exists(deparse(substitute(object)), ...)
     if (isTRUE(null_is_false)) {
-        # is.null(FALSE) returns FALSE so we implicitly test for object != FALSE
-        condition <- condition && ! is.null(object)
+        condition <- condition && ! is.null(object) && object != FALSE
     } else {
         condition <- condition && (is.null(object) || object != FALSE)
     }
@@ -113,7 +112,7 @@ set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
     defaults <- list(max_file_width = 80, max_file_length = 300,
                      max_lines = 65, max_lines_of_code = 50,
                      max_arguments = 5, max_nesting_depth = 3,
-                     max_line_width = 80)
+                     max_line_width = 80, check_return = TRUE)
     option_list <- list(...)
     if (is.null(getOption("cleanr")) || reset)
         options("cleanr" = defaults)

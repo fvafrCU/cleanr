@@ -75,9 +75,6 @@ throw <- function(message_string, system_call = sys.call(-1), ...) {
                            ...
                            )
     stop(condition)
-    # The following return is owed to cleanr: not having a return is an error,
-    # even if you never get there. So this will never be reached by coverage.
-    return(FALSE)
 }
 
 #' tidy findings
