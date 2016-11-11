@@ -23,8 +23,7 @@ is_not_false <- function(object, null_is_false = TRUE, ...) {
     checkmate::qassert(null_is_false, "B1")
     condition <- exists(deparse(substitute(object)), ...)
     if (isTRUE(null_is_false)) {
-        # is.null(FALSE) returns FALSE so we implicitly test for object != FALSE
-        condition <- condition && ! is.null(object)
+        condition <- condition && ! is.null(object) && object != FALSE
     } else {
         condition <- condition && (is.null(object) || object != FALSE)
     }
