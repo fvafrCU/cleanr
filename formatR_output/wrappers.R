@@ -11,12 +11,12 @@ NULL
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @param object The function to be checked.
-#' @param max_lines_of_code the maximum number of lines of code accepted.
-#' @param max_lines the maximum number of lines accepted.
-#' @param max_arguments the maximum number of arguments accepted.
-#' @param max_nesting_depth the maximum nesting depth accepted.
-#' @param max_line_width the maximum line width accepted.
-#' @param check_return Should the function be tested to have an explicit return?
+#' @param max_lines_of_code See \code{link{check_num_lines_of_code}}.
+#' @param max_lines See \code{link{check_num_lines}}.
+#' @param max_arguments See \code{link{check_num_arguments}}.
+#' @param max_nesting_depth See \code{link{check_nesting_depth}}.
+#' @param max_line_width See \code{link{check_line_width}}.
+#' @param check_return See \code{link{check_return}}.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @export
 #' @examples
@@ -36,23 +36,23 @@ check_function_layout <- function(object,
                                   ) {
     findings <- NULL
     finding <- tryCatch(check_num_arguments(object,
-                                   maximum = max_arguments),
+                                   max_arguments = max_arguments),
                           cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     finding <- tryCatch(check_nesting_depth(object,
-                                   maximum = max_nesting_depth),
+                                   max_nesting_depth = max_nesting_depth),
                           cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     finding <- tryCatch(check_line_width(object,
-                                   maximum = max_line_width),
+                                   max_line_width = max_line_width),
                           cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     finding <- tryCatch(check_num_lines(object,
-                                   maximum = max_lines),
+                                   max_lines = max_lines),
                           cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     finding <- tryCatch(check_num_lines_of_code(object,
-                                       maximum = max_lines_of_code),
+                                       max_lines_of_code = max_lines_of_code),
                           cleanr = function(e) return(e[["message"]]))
 
     findings <- c(findings, finding)
@@ -82,8 +82,8 @@ check_function_layout <- function(object,
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @param path A path to a file, e.g. "checks.R".
-#' @param max_file_length The maximum number of lines accepted.
-#' @param max_file_width The maximum line width accepted.
+#' @param max_file_length See \code{link{check_file_length}}.
+#' @param max_file_width See \code{link{check_file_width}}.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @export
 #' @examples
@@ -96,11 +96,11 @@ check_file_layout <- function(path,
                                   get_cleanr_options("max_file_width")) {
     findings <- NULL
     finding <- tryCatch(check_file_width(path,
-                                   maximum = max_file_width),
+                                   max_file_width = max_file_width),
                           cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     finding <- tryCatch(check_file_length(path,
-                                   maximum = max_file_length),
+                                   max_file_length = max_file_length),
                           cleanr = function(e) return(e[["message"]]))
 
     findings <- c(findings, finding)

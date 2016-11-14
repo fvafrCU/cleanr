@@ -7,7 +7,8 @@
 set_cleanr_options(..., reset = FALSE, overwrite = TRUE)
 }
 \arguments{
-\item{...}{see \code{\link{options}}.}
+\item{...}{see \code{\link{options}}. See \code{\link{function_checks}} and
+\code{\link{function_checks}} for options to be set with \pkg{cleanr}.}
 
 \item{reset}{[boolean(1)]\cr Reset all \pkg{cleanr} options to the package's
 defaults?}

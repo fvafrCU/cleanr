@@ -10,7 +10,7 @@ formatR_script := utils/formatR.R
 R := R-devel
 Rscript := Rscript-devel
 
-all: dev_check dev_test dev_vignettes crancheck utils
+all: install_bare dev_check dev_test dev_vignettes crancheck utils
 
 # devtools
 dev_all: dev_test dev_check

@@ -11,9 +11,9 @@ check_file_layout(path,
 \arguments{
 \item{path}{A path to a file, e.g. "checks.R".}
 
-\item{max_file_length}{The maximum number of lines accepted.}
+\item{max_file_length}{See \code{link{check_file_length}}.}
 
-\item{max_file_width}{The maximum line width accepted.}
+\item{max_file_width}{See \code{link{check_file_width}}.}
 }
 \value{
 invisible(TRUE), but see \emph{Details}.

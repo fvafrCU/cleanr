@@ -16,7 +16,7 @@ NULL
 #' }
 #' At least this is what I think. Well, some others too.
 #'
-#' All of the functions test whether their requirement is met (some layout
+#' Most of the functions test whether their requirement is met (some layout
 #' feature such as number of arguments, nesting depth, line width is not greater
 #' than the maximum given). In case of a fail all \code{\link{throw}} a
 #' condition of class c("cleanr", "error", "condition").
@@ -33,9 +33,6 @@ NULL
 #' @param object The function to be checked.
 #' Should have been sourced with keep.source = TRUE (see
 #' \code{\link{get_function_body}}.
-#' @param maximum The maximum against which the function is to be tested. See
-#' \code{\link{check_function_layout}} and  \code{\link{check_file_layout}}.
-#' @param check_return See \code{\link{check_function_layout}}
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @name function_checks
 #' @examples
@@ -46,33 +43,34 @@ NULL
 #' print(check_return(check_return))
 #' # R reformats functions on import (see
 #' # help(get_function_body, package = "cleanr")), so we need 90 characters:
-#' print(check_line_width(check_line_width, maximum = 90))
+#' print(check_line_width(check_line_width, max_line_width = 90))
 NULL
 
 
 #' @rdname function_checks
+#' @param max_arguments The maximum number of arguments accepted.
 #' @export
 check_num_arguments <- function(object,
-                                maximum = get_cleanr_options("max_arguments")) {
-    if (is_not_false(maximum, where = environment())) {
+                                max_arguments = gco("max_arguments")) {
+    if (is_not_false(max_arguments, where = environment())) {
         checkmate::checkFunction(object)
-        checkmate::qassert(maximum, "N1")
+        checkmate::qassert(max_arguments, "N1")
         num_arguments <- length(formals(object))
-        if (num_arguments > maximum)
-            throw(paste("found", num_arguments, "arguments, maximum was",
-                        maximum))
+        if (num_arguments > max_arguments)
+            throw(paste("found", num_arguments, "arguments, max_arguments was",
+                        max_arguments))
     }
     return(invisible(TRUE))
 }
 
 #' @rdname function_checks
+#' @param max_nesting_depth The maximum nesting depth accepted.
 #' @export
 check_nesting_depth <- function(object,
-                                maximum =
-                                get_cleanr_options("max_nesting_depth")) {
-    if (is_not_false(maximum, where = environment())) {
+                                max_nesting_depth = gco("max_nesting_depth")) {
+    if (is_not_false(max_nesting_depth, where = environment())) {
         checkmate::checkFunction(object)
-        checkmate::qassert(maximum, "N1")
+        checkmate::qassert(max_nesting_depth, "N1")
         function_body <- get_function_body(object)
         # break if no braces in function
         if (! any (grepl("}", function_body, fixed = TRUE)))
@@ -87,62 +85,67 @@ check_nesting_depth <- function(object,
                                           fixed = TRUE)[[1]]
         nesting_depths <- nchar(consectutive_openings)
         nesting_depth <- max(nesting_depths)
-        if (nesting_depth > maximum)
+        if (nesting_depth > max_nesting_depth)
             throw(paste0("found nesting depth ", nesting_depth,
-                         ", maximum was ", maximum))
+                         ", max_nesting_depth was ", max_nesting_depth))
     }
     return(invisible(TRUE))
 }
 
 #' @rdname function_checks
+#' @param max_lines The maximum number of lines accepted.
+
 #' @export
-check_num_lines <- function(object,
-                            maximum = get_cleanr_options("max_lines")) {
-    if (is_not_false(maximum, where = environment())) {
+check_num_lines <- function(object, max_lines = gco("max_lines")) {
+    if (is_not_false(max_lines, where = environment())) {
         checkmate::checkFunction(object)
-        checkmate::qassert(maximum, "N1")
+        checkmate::qassert(max_lines, "N1")
         function_body <- get_function_body(object)
         num_lines  <- length(function_body)
-        if (num_lines > maximum)
-            throw(paste("found", num_lines, "lines, maximum was", maximum))
+        if (num_lines > max_lines)
+            throw(paste("found", num_lines, "lines, max_lines was", max_lines))
     }
     return(invisible(TRUE))
 }
 
 #' @rdname function_checks
+#' @param max_lines_of_code The maximum number of lines of code accepted.
 #' @export
 check_num_lines_of_code <- function(object,
-                                    maximum =
-                                    get_cleanr_options("max_lines_of_code")) {
-    if (is_not_false(maximum, where = environment())) {
+                                    max_lines_of_code =
+                                        gco("max_lines_of_code")) {
+    if (is_not_false(max_lines_of_code, where = environment())) {
         checkmate::checkFunction(object)
-        checkmate::qassert(maximum, "N1")
+        checkmate::qassert(max_lines_of_code, "N1")
         function_body <- get_function_body(object)
         line_is_comment_pattern <- "^\\s*#"
         lines_of_code <- grep(line_is_comment_pattern, function_body,
                               value = TRUE, invert = TRUE)
         num_lines_of_code <-  length(lines_of_code)
-        if (num_lines_of_code > maximum)
+        if (num_lines_of_code > max_lines_of_code)
             throw(paste("found", num_lines_of_code,
-                        "lines of code, maximum was", maximum))
+                        "lines of code, max_lines_of_code was",
+                        max_lines_of_code))
     }
     return(invisible(TRUE))
 }
 
 #' @rdname function_checks
+#' @param max_line_width The maximum line width accepted.
 #' @export
 check_line_width <- function(object,
-                             maximum = get_cleanr_options("max_line_width")) {
-    if (is_not_false(maximum, where = environment())) {
+                             max_line_width = gco("max_line_width")) {
+    if (is_not_false(max_line_width, where = environment())) {
         checkmate::checkFunction(object)
-        checkmate::qassert(maximum, "N1")
+        checkmate::qassert(max_line_width, "N1")
         function_body <- get_function_body(object)
         line_widths <-  nchar(function_body)
-        if (any(line_widths > maximum)) {
-            long_lines_index <- line_widths > maximum
+        if (any(line_widths > max_line_width)) {
+            long_lines_index <- line_widths > max_line_width
             long_lines <- seq(along = function_body)[long_lines_index]
             throw(paste("line ", long_lines, ": found width ",
-                        line_widths[long_lines_index], " maximum was ", maximum,
+                        line_widths[long_lines_index], " max_line_width was ",
+                        max_line_width,
                         sep = "", collapse = "\n")
             )
         }
@@ -151,9 +154,10 @@ check_line_width <- function(object,
 }
 
 #' @rdname function_checks
+#' @param check_return See \code{\link{check_function_layout}}
 #' @export
 check_return <- function(object,
-                         check_return = get_cleanr_options("check_return")) {
+                         check_return = gco("check_return")) {
     if (is_not_false(check_return, where = environment())) {
         checkmate::checkFunction(object)
         message_string <- paste("Just checking for a line starting with a ",
@@ -189,27 +193,28 @@ check_return <- function(object,
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @param path The path to the file to be checked.
-#' @param maximum The maximum against which the file is to be tested.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @name file_checks
 #' @examples
 #' print(check_file_width(system.file("source", "R", "checks.R",
 #'                                     package = "cleanr")))
 #' print(check_file_length(system.file("source", "R", "checks.R",
-#'                                     package = "cleanr"), maximum = 300))
+#'                                     package = "cleanr"),
+#'                                     max_file_length = 300))
 NULL
 
 #' @rdname file_checks
+#' @param max_file_width The maximum line width accepted.
 #' @export
 check_file_width <- function(path,
-                             maximum = get_cleanr_options("max_file_width")) {
-    if (is_not_false(maximum, where = environment())) {
+                             max_file_width = gco("max_file_width")) {
+    if (is_not_false(max_file_width, where = environment())) {
         checkmate::qassert(path, "S1")
-        checkmate::qassert(maximum, "N1")
+        checkmate::qassert(max_file_width, "N1")
         file_content <- readLines(path)
         line_widths <-  nchar(file_content)
-        if (any(line_widths > maximum)) {
-            long_lines_index <- line_widths > maximum
+        if (any(line_widths > max_file_width)) {
+            long_lines_index <- line_widths > max_file_width
             throw(paste0(path, ": line ",
                          seq(along = file_content)[long_lines_index],
                          " counts ", line_widths[long_lines_index],
@@ -222,15 +227,16 @@ check_file_width <- function(path,
 }
 
 #' @rdname file_checks
+#' @param max_file_length The maximum number of lines accepted.
 #' @export
 check_file_length <- function(path,
-                              maximum = get_cleanr_options("max_file_length")) {
-    if (is_not_false(maximum, where = environment())) {
+                              max_file_length = gco("max_file_length")) {
+    if (is_not_false(max_file_length, where = environment())) {
         checkmate::qassert(path, "S1")
-        checkmate::qassert(maximum, "N1")
+        checkmate::qassert(max_file_length, "N1")
         file_content <- readLines(path)
         num_lines <- length(file_content)
-        if (num_lines > maximum) {
+        if (num_lines > max_file_length) {
             throw(paste0(path, ": ", num_lines, " lines in file.",
                          collapse = "\n"))
         }

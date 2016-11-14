@@ -1,4 +1,4 @@
-- give an overview over the options somewhere central (get_cleanr_options) and
-  link help pages there or the other way round
+- justify the option defaults
+- consider using a documented option defaults object.
 - finish vignette
 - document disabling logic (parameter/option is NULL or FALSE)

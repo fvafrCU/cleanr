@@ -6,14 +6,16 @@
 \alias{file_checks}
 \title{file checks}
 \usage{
-check_file_width(path, maximum = get_cleanr_options("max_file_width"))
+check_file_width(path, max_file_width = gco("max_file_width"))
 
-check_file_length(path, maximum = get_cleanr_options("max_file_length"))
+check_file_length(path, max_file_length = gco("max_file_length"))
 }
 \arguments{
 \item{path}{The path to the file to be checked.}
 
-\item{maximum}{The maximum against which the file is to be tested.}
+\item{max_file_width}{The maximum line width accepted.}
+
+\item{max_file_length}{The maximum number of lines accepted.}
 }
 \value{
 invisible(TRUE), but see \emph{Details}.
@@ -37,7 +39,8 @@ condition of class c("cleanr", "error", "condition").
 print(check_file_width(system.file("source", "R", "checks.R",
                                     package = "cleanr")))
 print(check_file_length(system.file("source", "R", "checks.R",
-                                    package = "cleanr"), maximum = 300))
+                                    package = "cleanr"),
+                                    max_file_length = 300))
 }
 \author{
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>

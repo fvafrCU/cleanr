@@ -10,26 +10,32 @@
 \alias{function_checks}
 \title{function checks}
 \usage{
-check_num_arguments(object, maximum = get_cleanr_options("max_arguments"))
+check_num_arguments(object, max_arguments = gco("max_arguments"))
 
-check_nesting_depth(object, maximum = get_cleanr_options("max_nesting_depth"))
+check_nesting_depth(object, max_nesting_depth = gco("max_nesting_depth"))
 
-check_num_lines(object, maximum = get_cleanr_options("max_lines"))
+check_num_lines(object, max_lines = gco("max_lines"))
 
-check_num_lines_of_code(object,
-  maximum = get_cleanr_options("max_lines_of_code"))
+check_num_lines_of_code(object, max_lines_of_code = gco("max_lines_of_code"))
 
-check_line_width(object, maximum = get_cleanr_options("max_line_width"))
+check_line_width(object, max_line_width = gco("max_line_width"))
 
-check_return(object, check_return = get_cleanr_options("check_return"))
+check_return(object, check_return = gco("check_return"))
 }
 \arguments{
 \item{object}{The function to be checked.
 Should have been sourced with keep.source = TRUE (see
 \code{\link{get_function_body}}.}
 
-\item{maximum}{The maximum against which the function is to be tested. See
-\code{\link{check_function_layout}} and  \code{\link{check_file_layout}}.}
+\item{max_arguments}{The maximum number of arguments accepted.}
+
+\item{max_nesting_depth}{The maximum nesting depth accepted.}
+
+\item{max_lines}{The maximum number of lines accepted.}
+
+\item{max_lines_of_code}{The maximum number of lines of code accepted.}
+
+\item{max_line_width}{The maximum line width accepted.}
 
 \item{check_return}{See \code{\link{check_function_layout}}}
 }
@@ -51,7 +57,7 @@ A function should have a clear layout, it should
 }
 At least this is what I think. Well, some others too.
 
-All of the functions test whether their requirement is met (some layout
+Most of the functions test whether their requirement is met (some layout
 feature such as number of arguments, nesting depth, line width is not greater
 than the maximum given). In case of a fail all \code{\link{throw}} a
 condition of class c("cleanr", "error", "condition").
@@ -73,7 +79,7 @@ print(check_num_lines_of_code(check_num_lines_of_code))
 print(check_return(check_return))
 # R reformats functions on import (see
 # help(get_function_body, package = "cleanr")), so we need 90 characters:
-print(check_line_width(check_line_width, maximum = 90))
+print(check_line_width(check_line_width, max_line_width = 90))
 }
 \author{
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>

@@ -86,7 +86,8 @@ load_internal_functions <- function(package, ...) {
 #' won't get overridden. Just ignore that argument.
 #' @param reset [boolean(1)]\cr Reset all \pkg{cleanr} options to the package's
 #' defaults?
-#' @param ... see \code{\link{options}}.
+#' @param ... see \code{\link{options}}. See \code{\link{function_checks}} and
+#' \code{\link{function_checks}} for options to be set with \pkg{cleanr}.
 #' @return invisible(TRUE)
 #' @export
 #' @examples
@@ -173,3 +174,8 @@ get_cleanr_options <- function(..., remove_names = FALSE, flatten_list = TRUE) {
     if (remove_names) names(option_list)  <- NULL
     return(option_list)
 }
+
+#' @rdname get_cleanr_options
+#' @export
+#' @note \code{gco} is just an alias for \code{get_cleanr_options}.
+gco <- get_cleanr_options

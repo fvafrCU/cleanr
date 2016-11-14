@@ -15,17 +15,17 @@ check_function_layout(object,
 \arguments{
 \item{object}{The function to be checked.}
 
-\item{max_lines_of_code}{the maximum number of lines of code accepted.}
+\item{max_lines_of_code}{See \code{link{check_num_lines_of_code}}.}
 
-\item{max_lines}{the maximum number of lines accepted.}
+\item{max_lines}{See \code{link{check_num_lines}}.}
 
-\item{max_arguments}{the maximum number of arguments accepted.}
+\item{max_arguments}{See \code{link{check_num_arguments}}.}
 
-\item{max_nesting_depth}{the maximum nesting depth accepted.}
+\item{max_nesting_depth}{See \code{link{check_nesting_depth}}.}
 
-\item{max_line_width}{the maximum line width accepted.}
+\item{max_line_width}{See \code{link{check_line_width}}.}
 
-\item{check_return}{Should the function be tested to have an explicit return?}
+\item{check_return}{See \code{link{check_return}}.}
 }
 \value{
 invisible(TRUE), but see \emph{Details}.

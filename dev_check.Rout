@@ -1,5 +1,8 @@
 Updating cleanr documentation
 Loading cleanr
+Writing get_cleanr_options.Rd
+Writing function_checks.Rd
+Writing file_checks.Rd
 Setting env vars ---------------------------------------------------------------
 CFLAGS  : -Wall -pedantic
 CXXFLAGS: -Wall -pedantic
@@ -25,7 +28,7 @@ _R_CHECK_FORCE_SUGGESTS_          : FALSE
 Checking cleanr ----------------------------------------------------------------
   --as-cran --timings --no-manual 
 
-* using R Under development (unstable) (2016-11-10 r71645)
+* using R Under development (unstable) (2016-11-13 r71655)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
@@ -34,7 +37,9 @@ Checking cleanr ----------------------------------------------------------------
 * this is package ‘cleanr’ version ‘1.0.0’
 * package encoding: UTF-8
 * checking package namespace information ... OK
-* checking package dependencies ... OK
+* checking package dependencies ...Warning: unable to access index for repository https://bioconductor.org/packages/3.5/data/annotation/src/contrib:
+  cannot download all files
+ OK
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
