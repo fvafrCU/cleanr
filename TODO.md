@@ -1,4 +1,3 @@
-- justify the option defaults
 - consider using a documented option defaults object.
 - finish vignette
 - document disabling logic (parameter/option is NULL or FALSE)

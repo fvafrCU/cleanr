@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{load_internal_functions}
 \alias{load_internal_functions}
-\title{load a package's internals}
+\title{Load a Package's Internals}
 \usage{
 load_internal_functions(package, ...)
 }
@@ -16,7 +16,7 @@ good idea.}
 invisible(TRUE)
 }
 \description{
-load objects not exported from a package's namespace.
+Load objects not exported from a package's namespace.
 }
 \details{
 The files to be checked get sourced, which means they have to contain R code

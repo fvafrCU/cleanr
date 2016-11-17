@@ -1,7 +1,7 @@
 #' @include internals.R
 NULL
 
-#' test if an object is not false
+#' Test if an Object is not False
 #'
 #' Sometimes you need to know whether or not an object exists and is not set to
 #' FALSE (and possibly not NULL).
@@ -32,9 +32,9 @@ is_not_false <- function(object, null_is_false = TRUE, ...) {
     return(result)
 }
 
-#' load a package's internals
+#' Load a Package's Internals
 #'
-#' load objects not exported from a package's namespace.
+#' Load objects not exported from a package's namespace.
 #'
 #' The files to be checked get sourced, which means they have to contain R code
 #' producing no errors. If we want to check the source code of a package, we
@@ -70,11 +70,11 @@ load_internal_functions <- function(package, ...) {
     return(invisible(TRUE))
 }
 
-#' set options for \pkg{cleanr}
+#' Set Options for \pkg{cleanr}
 #'
-#' a convenience function for \code{\link{options}}.
+#' A convenience function for \code{\link{options}}.
 #'
-#' @details the package loads a couple of options as defaults for its functions.
+#' @details The package loads a couple of options as defaults for its functions.
 #' The defaults are stored in a list element of \code{\link{options}}.
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @param overwrite [boolean(1)]\cr Overwrite options already set? Is set to
@@ -84,6 +84,11 @@ load_internal_functions <- function(package, ...) {
 #' defaults?
 #' @param ... see \code{\link{options}}. See \code{\link{function_checks}} and
 #' \code{\link{function_checks}} for options to be set with \pkg{cleanr}.
+#' Use \code{\link{get_cleanr_options}} to get the current values. Current
+#' defaults are:
+#' \Sexpr[results=verbatim]{cat(paste(names(cleanr::gco()), 
+#'                                    cleanr::gco(flatten_list = FALSE),
+#'                                    sep = '=', collapse = '\n'))}
 #' @return invisible(TRUE)
 #' @export
 #' @examples
@@ -134,9 +139,9 @@ set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
     return(invisible(TRUE))
 }
 
-#' get options for \pkg{cleanr}
+#' Get options for \pkg{cleanr}
 #'
-#' a convenience function for \code{\link{getOption}}.
+#' A convenience function for \code{\link{getOption}}.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @param ... see \code{\link{getOption}}/

@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{is_not_false}
 \alias{is_not_false}
-\title{test if an object is not false}
+\title{Test if an Object is not False}
 \usage{
 is_not_false(object, null_is_false = TRUE, ...)
 }

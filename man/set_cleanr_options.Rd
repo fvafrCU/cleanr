@@ -2,13 +2,18 @@
 % Please edit documentation in R/utils.R
 \name{set_cleanr_options}
 \alias{set_cleanr_options}
-\title{set options for \pkg{cleanr}}
+\title{Set Options for \pkg{cleanr}}
 \usage{
 set_cleanr_options(..., reset = FALSE, overwrite = TRUE)
 }
 \arguments{
 \item{...}{see \code{\link{options}}. See \code{\link{function_checks}} and
-\code{\link{function_checks}} for options to be set with \pkg{cleanr}.}
+\code{\link{function_checks}} for options to be set with \pkg{cleanr}.
+Use \code{\link{get_cleanr_options}} to get the current values. Current
+defaults are:
+\Sexpr[results=verbatim]{cat(paste(names(cleanr::gco()), 
+                                   cleanr::gco(flatten_list = FALSE),
+                                   sep = "=", collapse = "\n"))}}
 
 \item{reset}{[boolean(1)]\cr Reset all \pkg{cleanr} options to the package's
 defaults?}
@@ -21,10 +26,10 @@ won't get overridden. Just ignore that argument.}
 invisible(TRUE)
 }
 \description{
-a convenience function for \code{\link{options}}.
+A convenience function for \code{\link{options}}.
 }
 \details{
-the package loads a couple of options as defaults for its functions.
+The package loads a couple of options as defaults for its functions.
 The defaults are stored in a list element of \code{\link{options}}.
 }
 \examples{

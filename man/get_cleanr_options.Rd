@@ -3,7 +3,7 @@
 \name{get_cleanr_options}
 \alias{gco}
 \alias{get_cleanr_options}
-\title{get options for \pkg{cleanr}}
+\title{Get options for \pkg{cleanr}}
 \usage{
 get_cleanr_options(..., remove_names = FALSE, flatten_list = TRUE)
 
@@ -20,7 +20,7 @@ gco(..., remove_names = FALSE, flatten_list = TRUE)
 a (possibly named) list or a vector.
 }
 \description{
-a convenience function for \code{\link{getOption}}.
+A convenience function for \code{\link{getOption}}.
 }
 \note{
 \code{gco} is just an alias for \code{get_cleanr_options}.

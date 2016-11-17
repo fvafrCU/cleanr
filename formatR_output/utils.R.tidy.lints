@@ -4,17 +4,17 @@ formatR_output/utils.R.tidy 57 89 style Trailing whitespace is superfluous.     
 formatR_output/utils.R.tidy 62 1 style lines should not be more than 80 characters.     is_package_name_function <- vapply(package_names, function(x) is.function(get(x,  list(c(1, 85)) line_length_linter
 formatR_output/utils.R.tidy 62 85 style Trailing whitespace is superfluous.     is_package_name_function <- vapply(package_names, function(x) is.function(get(x,  list(c(85, 85)) trailing_whitespace_linter
 formatR_output/utils.R.tidy 67 77 style Trailing whitespace is superfluous.         assign(name, get(name, envir = package_namespace, inherits = FALSE),  list(c(77, 77)) trailing_whitespace_linter
-formatR_output/utils.R.tidy 109 1 style lines should not be more than 80 characters.     defaults <- list(max_file_width = 80, max_file_length = 300, max_lines = 65,  list(c(1, 81)) line_length_linter
-formatR_output/utils.R.tidy 109 81 style Trailing whitespace is superfluous.     defaults <- list(max_file_width = 80, max_file_length = 300, max_lines = 65,  list(c(81, 81)) trailing_whitespace_linter
-formatR_output/utils.R.tidy 110 74 style Trailing whitespace is superfluous.         max_lines_of_code = 50, max_arguments = 5, max_nesting_depth = 3,  list(c(74, 74)) trailing_whitespace_linter
-formatR_output/utils.R.tidy 113 47 style Trailing whitespace is superfluous.     if (is.null(getOption("cleanr")) || reset)  list(c(47, 47)) trailing_whitespace_linter
-formatR_output/utils.R.tidy 119 42 style Trailing whitespace is superfluous.             if (length(option_list) == 0)  list(c(42, 42)) trailing_whitespace_linter
-formatR_output/utils.R.tidy 122 38 style Trailing whitespace is superfluous.             if (any(is_option_unset))  list(c(38, 38)) trailing_whitespace_linter
-formatR_output/utils.R.tidy 123 1 style lines should not be more than 80 characters.                 options(cleanr = append(set_options, option_list[is_option_unset])) list(c(1, 83)) line_length_linter
-formatR_output/utils.R.tidy 126 1 style lines should not be more than 80 characters.     max_lines <- get_cleanr_options("max_lines", flatten_list = TRUE, remove_names = TRUE) list(c(1, 90)) line_length_linter
-formatR_output/utils.R.tidy 127 1 style lines should not be more than 80 characters.     max_lines_of_code <- get_cleanr_options("max_lines_of_code", flatten_list = TRUE,  list(c(1, 86)) line_length_linter
-formatR_output/utils.R.tidy 127 86 style Trailing whitespace is superfluous.     max_lines_of_code <- get_cleanr_options("max_lines_of_code", flatten_list = TRUE,  list(c(86, 86)) trailing_whitespace_linter
-formatR_output/utils.R.tidy 131 1 style lines should not be more than 80 characters.         warning(paste("maximum number of lines was less than maximum number of",  list(c(1, 81)) line_length_linter
-formatR_output/utils.R.tidy 131 81 style Trailing whitespace is superfluous.         warning(paste("maximum number of lines was less than maximum number of",  list(c(81, 81)) trailing_whitespace_linter
-formatR_output/utils.R.tidy 164 22 style Trailing whitespace is superfluous.     if (flatten_list)  list(c(22, 22)) trailing_whitespace_linter
-formatR_output/utils.R.tidy 166 22 style Trailing whitespace is superfluous.     if (remove_names)  list(c(22, 22)) trailing_whitespace_linter
+formatR_output/utils.R.tidy 114 1 style lines should not be more than 80 characters.     defaults <- list(max_file_width = 80, max_file_length = 300, max_lines = 65,  list(c(1, 81)) line_length_linter
+formatR_output/utils.R.tidy 114 81 style Trailing whitespace is superfluous.     defaults <- list(max_file_width = 80, max_file_length = 300, max_lines = 65,  list(c(81, 81)) trailing_whitespace_linter
+formatR_output/utils.R.tidy 115 74 style Trailing whitespace is superfluous.         max_lines_of_code = 50, max_arguments = 5, max_nesting_depth = 3,  list(c(74, 74)) trailing_whitespace_linter
+formatR_output/utils.R.tidy 118 47 style Trailing whitespace is superfluous.     if (is.null(getOption("cleanr")) || reset)  list(c(47, 47)) trailing_whitespace_linter
+formatR_output/utils.R.tidy 124 42 style Trailing whitespace is superfluous.             if (length(option_list) == 0)  list(c(42, 42)) trailing_whitespace_linter
+formatR_output/utils.R.tidy 127 38 style Trailing whitespace is superfluous.             if (any(is_option_unset))  list(c(38, 38)) trailing_whitespace_linter
+formatR_output/utils.R.tidy 128 1 style lines should not be more than 80 characters.                 options(cleanr = append(set_options, option_list[is_option_unset])) list(c(1, 83)) line_length_linter
+formatR_output/utils.R.tidy 131 1 style lines should not be more than 80 characters.     max_lines <- get_cleanr_options("max_lines", flatten_list = TRUE, remove_names = TRUE) list(c(1, 90)) line_length_linter
+formatR_output/utils.R.tidy 132 1 style lines should not be more than 80 characters.     max_lines_of_code <- get_cleanr_options("max_lines_of_code", flatten_list = TRUE,  list(c(1, 86)) line_length_linter
+formatR_output/utils.R.tidy 132 86 style Trailing whitespace is superfluous.     max_lines_of_code <- get_cleanr_options("max_lines_of_code", flatten_list = TRUE,  list(c(86, 86)) trailing_whitespace_linter
+formatR_output/utils.R.tidy 136 1 style lines should not be more than 80 characters.         warning(paste("maximum number of lines was less than maximum number of",  list(c(1, 81)) line_length_linter
+formatR_output/utils.R.tidy 136 81 style Trailing whitespace is superfluous.         warning(paste("maximum number of lines was less than maximum number of",  list(c(81, 81)) trailing_whitespace_linter
+formatR_output/utils.R.tidy 169 22 style Trailing whitespace is superfluous.     if (flatten_list)  list(c(22, 22)) trailing_whitespace_linter
+formatR_output/utils.R.tidy 171 22 style Trailing whitespace is superfluous.     if (remove_names)  list(c(22, 22)) trailing_whitespace_linter
