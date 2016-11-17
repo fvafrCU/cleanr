@@ -3,9 +3,8 @@
 language: R
 sudo: false
 cache: packages
-r_github_packages:
-  - jimhester/covr
-  - jimhester/lintr
+r_packages:
+  - covr
 
 after_success:
-  - Rscript -e 'covr::codecov(path = ".", function_exclusions = "\\.onLoad")'
+  - Rscript -e 'library(covr); codecov(function_exclusions = "\\.onLoad")'
