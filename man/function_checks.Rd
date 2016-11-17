@@ -8,7 +8,7 @@
 \alias{check_num_lines_of_code}
 \alias{check_return}
 \alias{function_checks}
-\title{function checks}
+\title{Function Checks}
 \usage{
 check_num_arguments(object, max_arguments = gco("max_arguments"))
 
@@ -25,27 +25,35 @@ check_return(object, check_return = gco("check_return"))
 \arguments{
 \item{object}{The function to be checked.
 Should have been sourced with keep.source = TRUE (see
-\code{\link{get_function_body}}.}
+\code{\link{get_function_body}}).}
 
-\item{max_arguments}{The maximum number of arguments accepted.}
+\item{max_arguments}{The maximum number of arguments accepted. 
+Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+\code{FALSE} to disable the check.}
 
 \item{max_nesting_depth}{The maximum nesting depth accepted.}
 
-\item{max_lines}{The maximum number of lines accepted.}
+\item{max_lines}{The maximum number of lines accepted.
+Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+\code{FALSE} to disable the check.}
 
-\item{max_lines_of_code}{The maximum number of lines of code accepted.}
+\item{max_lines_of_code}{The maximum number of lines of code accepted.
+Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+\code{FALSE} to disable the check.}
 
-\item{max_line_width}{The maximum line width accepted.}
+\item{max_line_width}{The maximum line width accepted.
+Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+\code{FALSE} to disable the check.}
 
-\item{check_return}{See \code{\link{check_function_layout}}}
+\item{check_return}{See \code{\link{check_function_layout}}
+Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+\code{FALSE} to disable the check.}
 }
 \value{
 invisible(TRUE), but see \emph{Details}.
 }
 \description{
 A set of tiny functions to check that functions adhere to a layout style.
-}
-\details{
 A function should have a clear layout, it should
 \itemize{
   \item not have too many arguments,
@@ -56,10 +64,12 @@ A function should have a clear layout, it should
   \item explicitly \code{\link{return}} an object.
 }
 At least this is what I think. Well, some others too.
-
 Most of the functions test whether their requirement is met (some layout
 feature such as number of arguments, nesting depth, line width is not greater
-than the maximum given). In case of a fail all \code{\link{throw}} a
+than the maximum given).
+}
+\details{
+In case of a fail the functions \code{\link{throw}} a
 condition of class c("cleanr", "error", "condition").
 }
 \section{Warning}{

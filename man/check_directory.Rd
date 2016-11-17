@@ -2,7 +2,7 @@
 % Please edit documentation in R/wrappers.R
 \name{check_directory}
 \alias{check_directory}
-\title{check a directory}
+\title{Check a Directory}
 \usage{
 check_directory(path, pattern = "\\\\.[rR]$", recursive = FALSE, ...)
 }

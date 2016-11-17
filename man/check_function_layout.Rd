@@ -2,7 +2,7 @@
 % Please edit documentation in R/wrappers.R
 \name{check_function_layout}
 \alias{check_function_layout}
-\title{check a function's layout}
+\title{Check a Function's Layout}
 \usage{
 check_function_layout(object,
   max_lines_of_code = get_cleanr_options("max_lines_of_code"),
@@ -15,17 +15,17 @@ check_function_layout(object,
 \arguments{
 \item{object}{The function to be checked.}
 
-\item{max_lines_of_code}{See \code{link{check_num_lines_of_code}}.}
+\item{max_lines_of_code}{See \code{\link{check_num_lines_of_code}}.}
 
-\item{max_lines}{See \code{link{check_num_lines}}.}
+\item{max_lines}{See \code{\link{check_num_lines}}.}
 
-\item{max_arguments}{See \code{link{check_num_arguments}}.}
+\item{max_arguments}{See \code{\link{check_num_arguments}}.}
 
-\item{max_nesting_depth}{See \code{link{check_nesting_depth}}.}
+\item{max_nesting_depth}{See \code{\link{check_nesting_depth}}.}
 
-\item{max_line_width}{See \code{link{check_line_width}}.}
+\item{max_line_width}{See \code{\link{check_line_width}}.}
 
-\item{check_return}{See \code{link{check_return}}.}
+\item{check_return}{See \code{\link{check_return}}.}
 }
 \value{
 invisible(TRUE), but see \emph{Details}.

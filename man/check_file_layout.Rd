@@ -2,7 +2,7 @@
 % Please edit documentation in R/wrappers.R
 \name{check_file_layout}
 \alias{check_file_layout}
-\title{check a file's layout}
+\title{Check a File's Layout}
 \usage{
 check_file_layout(path,
   max_file_length = get_cleanr_options("max_file_length"),
@@ -11,9 +11,9 @@ check_file_layout(path,
 \arguments{
 \item{path}{A path to a file, e.g. "checks.R".}
 
-\item{max_file_length}{See \code{link{check_file_length}}.}
+\item{max_file_length}{See \code{\link{check_file_length}}.}
 
-\item{max_file_width}{See \code{link{check_file_width}}.}
+\item{max_file_width}{See \code{\link{check_file_width}}.}
 }
 \value{
 invisible(TRUE), but see \emph{Details}.
@@ -22,12 +22,7 @@ invisible(TRUE), but see \emph{Details}.
 Check for number of lines and width of lines.
 }
 \details{
-Some reckon a code file should not be too long and that its lines should not
-be too wide. On current monitors, 300 lines are about five pages.
-A line width of 80 seems a bit \ldots{} outdated, but maybe there's some good
-in it.
-
-In case of a fail the function \code{link{throw}}s a
+In case of a fail the function \code{\link{throw}}s a
 condition of class c("cleanr", "error", "condition").
 }
 \examples{

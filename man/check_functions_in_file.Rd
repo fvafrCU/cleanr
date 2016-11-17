@@ -2,7 +2,7 @@
 % Please edit documentation in R/wrappers.R
 \name{check_functions_in_file}
 \alias{check_functions_in_file}
-\title{check all functions defined in a file}
+\title{Check All Functions Defined in a File}
 \usage{
 check_functions_in_file(path, ...)
 }

@@ -1,8 +1,5 @@
 Updating cleanr documentation
 Loading cleanr
-Writing is_not_false.Rd
-Writing load_internal_functions.Rd
-Writing get_cleanr_options.Rd
 Setting env vars ---------------------------------------------------------------
 CFLAGS  : -Wall -pedantic
 CXXFLAGS: -Wall -pedantic

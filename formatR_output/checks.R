@@ -1,10 +1,12 @@
+#' @include internals.R
+NULL
+
 #' @include utils.R
 NULL
 
-#' function checks
+#' Function Checks
 #'
 #' A set of tiny functions to check that functions adhere to a layout style.
-#'
 #' A function should have a clear layout, it should
 #' \itemize{
 #'   \item not have too many arguments,
@@ -15,10 +17,11 @@ NULL
 #'   \item explicitly \code{\link{return}} an object.
 #' }
 #' At least this is what I think. Well, some others too.
-#'
 #' Most of the functions test whether their requirement is met (some layout
 #' feature such as number of arguments, nesting depth, line width is not greater
-#' than the maximum given). In case of a fail all \code{\link{throw}} a
+#' than the maximum given). 
+#'
+#' In case of a fail the functions \code{\link{throw}} a
 #' condition of class c("cleanr", "error", "condition").
 #'
 #' @section Warning: \code{\link{check_return}} just \code{\link{grep}}s for a
@@ -32,7 +35,7 @@ NULL
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @param object The function to be checked.
 #' Should have been sourced with keep.source = TRUE (see
-#' \code{\link{get_function_body}}.
+#' \code{\link{get_function_body}}).
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @name function_checks
 #' @examples
@@ -48,7 +51,9 @@ NULL
 
 
 #' @rdname function_checks
-#' @param max_arguments The maximum number of arguments accepted.
+#' @param max_arguments The maximum number of arguments accepted. 
+#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' \code{FALSE} to disable the check.
 #' @export
 check_num_arguments <- function(object,
                                 max_arguments = gco("max_arguments")) {
@@ -94,6 +99,8 @@ check_nesting_depth <- function(object,
 
 #' @rdname function_checks
 #' @param max_lines The maximum number of lines accepted.
+#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' \code{FALSE} to disable the check.
 
 #' @export
 check_num_lines <- function(object, max_lines = gco("max_lines")) {
@@ -110,6 +117,8 @@ check_num_lines <- function(object, max_lines = gco("max_lines")) {
 
 #' @rdname function_checks
 #' @param max_lines_of_code The maximum number of lines of code accepted.
+#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' \code{FALSE} to disable the check.
 #' @export
 check_num_lines_of_code <- function(object,
                                     max_lines_of_code =
@@ -132,6 +141,8 @@ check_num_lines_of_code <- function(object,
 
 #' @rdname function_checks
 #' @param max_line_width The maximum line width accepted.
+#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' \code{FALSE} to disable the check.
 #' @export
 check_line_width <- function(object,
                              max_line_width = gco("max_line_width")) {
@@ -155,6 +166,8 @@ check_line_width <- function(object,
 
 #' @rdname function_checks
 #' @param check_return See \code{\link{check_function_layout}}
+#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' \code{FALSE} to disable the check.
 #' @export
 check_return <- function(object,
                          check_return = gco("check_return")) {
@@ -175,10 +188,9 @@ check_return <- function(object,
     return(invisible(TRUE))
 }
 
-#' file checks
+#' File Checks
 #'
 #' A set of tiny functions to check that files adhere to a layout style.
-#'
 #' A file should have a clear layout, it should
 #' \itemize{
 #'   \item mot have too many lines and
@@ -205,6 +217,8 @@ NULL
 
 #' @rdname file_checks
 #' @param max_file_width The maximum line width accepted.
+#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' \code{FALSE} to disable the check.
 #' @export
 check_file_width <- function(path,
                              max_file_width = gco("max_file_width")) {
@@ -228,6 +242,8 @@ check_file_width <- function(path,
 
 #' @rdname file_checks
 #' @param max_file_length The maximum number of lines accepted.
+#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' \code{FALSE} to disable the check.
 #' @export
 check_file_length <- function(path,
                               max_file_length = gco("max_file_length")) {

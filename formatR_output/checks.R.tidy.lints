@@ -1,26 +1,26 @@
-formatR_output/checks.R.tidy 58 43 style Trailing whitespace is superfluous.         if (num_arguments > max_arguments)  list(c(43, 43)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 59 80 style Trailing whitespace is superfluous.             throw(paste("found", num_arguments, "arguments, max_arguments was",  list(c(80, 80)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 68 1 style lines should not be more than 80 characters. check_nesting_depth <- function(object, max_nesting_depth = gco("max_nesting_depth")) { list(c(1, 87)) line_length_linter
-formatR_output/checks.R.tidy 74 59 style Trailing whitespace is superfluous.         if (!any(grepl("}", function_body, fixed = TRUE)))  list(c(59, 59)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 76 77 style Trailing whitespace is superfluous.         braces <- paste(gsub("\\", "", gsub("[^\\{\\}]", "", function_body),  list(c(77, 77)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 80 1 style lines should not be more than 80 characters.         consectutive_openings <- strsplit(substring(braces, 2), "}", fixed = TRUE)[[1]] list(c(1, 87)) line_length_linter
-formatR_output/checks.R.tidy 83 47 style Trailing whitespace is superfluous.         if (nesting_depth > max_nesting_depth)  list(c(47, 47)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 84 1 style lines should not be more than 80 characters.             throw(paste0("found nesting depth ", nesting_depth, ", max_nesting_depth was ",  list(c(1, 92)) line_length_linter
-formatR_output/checks.R.tidy 84 92 style Trailing whitespace is superfluous.             throw(paste0("found nesting depth ", nesting_depth, ", max_nesting_depth was ",  list(c(92, 92)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 100 35 style Trailing whitespace is superfluous.         if (num_lines > max_lines)  list(c(35, 35)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 109 1 style lines should not be more than 80 characters. check_num_lines_of_code <- function(object, max_lines_of_code = gco("max_lines_of_code")) { list(c(1, 91)) line_length_linter
-formatR_output/checks.R.tidy 115 1 style lines should not be more than 80 characters.         lines_of_code <- grep(line_is_comment_pattern, function_body, value = TRUE,  list(c(1, 84)) line_length_linter
-formatR_output/checks.R.tidy 115 84 style Trailing whitespace is superfluous.         lines_of_code <- grep(line_is_comment_pattern, function_body, value = TRUE,  list(c(84, 84)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 118 51 style Trailing whitespace is superfluous.         if (num_lines_of_code > max_lines_of_code)  list(c(51, 51)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 119 1 style lines should not be more than 80 characters.             throw(paste("found", num_lines_of_code, "lines of code, max_lines_of_code was",  list(c(1, 92)) line_length_linter
-formatR_output/checks.R.tidy 119 92 style Trailing whitespace is superfluous.             throw(paste("found", num_lines_of_code, "lines of code, max_lines_of_code was",  list(c(92, 92)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 137 1 style lines should not be more than 80 characters.             throw(paste("line ", long_lines, ": found width ", line_widths[long_lines_index],  list(c(1, 94)) line_length_linter
-formatR_output/checks.R.tidy 137 94 style Trailing whitespace is superfluous.             throw(paste("line ", long_lines, ": found width ", line_widths[long_lines_index],  list(c(94, 94)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 138 1 style lines should not be more than 80 characters.                 " max_line_width was ", max_line_width, sep = "", collapse = "\n")) list(c(1, 83)) line_length_linter
-formatR_output/checks.R.tidy 150 77 style Trailing whitespace is superfluous.         message_string <- paste("Just checking for a line starting with a ",  list(c(77, 77)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 151 77 style Trailing whitespace is superfluous.             "return statement.\n", "This is no check for all return paths ",  list(c(77, 77)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 158 58 style Trailing whitespace is superfluous.         if (!any(grepl("^\\s*return\\(", function_body)))  list(c(58, 58)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 203 1 style lines should not be more than 80 characters.             throw(paste0(path, ": line ", seq(along = file_content)[long_lines_index],  list(c(1, 87)) line_length_linter
-formatR_output/checks.R.tidy 203 87 style Trailing whitespace is superfluous.             throw(paste0(path, ": line ", seq(along = file_content)[long_lines_index],  list(c(87, 87)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 204 75 style Trailing whitespace is superfluous.                 " counts ", line_widths[long_lines_index], " characters.",  list(c(75, 75)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 221 1 style lines should not be more than 80 characters.             throw(paste0(path, ": ", num_lines, " lines in file.", collapse = "\n")) list(c(1, 84)) line_length_linter
+formatR_output/checks.R.tidy 63 43 style Trailing whitespace is superfluous.         if (num_arguments > max_arguments)  list(c(43, 43)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 64 80 style Trailing whitespace is superfluous.             throw(paste("found", num_arguments, "arguments, max_arguments was",  list(c(80, 80)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 73 1 style lines should not be more than 80 characters. check_nesting_depth <- function(object, max_nesting_depth = gco("max_nesting_depth")) { list(c(1, 87)) line_length_linter
+formatR_output/checks.R.tidy 79 59 style Trailing whitespace is superfluous.         if (!any(grepl("}", function_body, fixed = TRUE)))  list(c(59, 59)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 81 77 style Trailing whitespace is superfluous.         braces <- paste(gsub("\\", "", gsub("[^\\{\\}]", "", function_body),  list(c(77, 77)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 85 1 style lines should not be more than 80 characters.         consectutive_openings <- strsplit(substring(braces, 2), "}", fixed = TRUE)[[1]] list(c(1, 87)) line_length_linter
+formatR_output/checks.R.tidy 88 47 style Trailing whitespace is superfluous.         if (nesting_depth > max_nesting_depth)  list(c(47, 47)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 89 1 style lines should not be more than 80 characters.             throw(paste0("found nesting depth ", nesting_depth, ", max_nesting_depth was ",  list(c(1, 92)) line_length_linter
+formatR_output/checks.R.tidy 89 92 style Trailing whitespace is superfluous.             throw(paste0("found nesting depth ", nesting_depth, ", max_nesting_depth was ",  list(c(92, 92)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 107 35 style Trailing whitespace is superfluous.         if (num_lines > max_lines)  list(c(35, 35)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 118 1 style lines should not be more than 80 characters. check_num_lines_of_code <- function(object, max_lines_of_code = gco("max_lines_of_code")) { list(c(1, 91)) line_length_linter
+formatR_output/checks.R.tidy 124 1 style lines should not be more than 80 characters.         lines_of_code <- grep(line_is_comment_pattern, function_body, value = TRUE,  list(c(1, 84)) line_length_linter
+formatR_output/checks.R.tidy 124 84 style Trailing whitespace is superfluous.         lines_of_code <- grep(line_is_comment_pattern, function_body, value = TRUE,  list(c(84, 84)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 127 51 style Trailing whitespace is superfluous.         if (num_lines_of_code > max_lines_of_code)  list(c(51, 51)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 128 1 style lines should not be more than 80 characters.             throw(paste("found", num_lines_of_code, "lines of code, max_lines_of_code was",  list(c(1, 92)) line_length_linter
+formatR_output/checks.R.tidy 128 92 style Trailing whitespace is superfluous.             throw(paste("found", num_lines_of_code, "lines of code, max_lines_of_code was",  list(c(92, 92)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 148 1 style lines should not be more than 80 characters.             throw(paste("line ", long_lines, ": found width ", line_widths[long_lines_index],  list(c(1, 94)) line_length_linter
+formatR_output/checks.R.tidy 148 94 style Trailing whitespace is superfluous.             throw(paste("line ", long_lines, ": found width ", line_widths[long_lines_index],  list(c(94, 94)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 149 1 style lines should not be more than 80 characters.                 " max_line_width was ", max_line_width, sep = "", collapse = "\n")) list(c(1, 83)) line_length_linter
+formatR_output/checks.R.tidy 163 77 style Trailing whitespace is superfluous.         message_string <- paste("Just checking for a line starting with a ",  list(c(77, 77)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 164 77 style Trailing whitespace is superfluous.             "return statement.\n", "This is no check for all return paths ",  list(c(77, 77)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 171 58 style Trailing whitespace is superfluous.         if (!any(grepl("^\\s*return\\(", function_body)))  list(c(58, 58)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 217 1 style lines should not be more than 80 characters.             throw(paste0(path, ": line ", seq(along = file_content)[long_lines_index],  list(c(1, 87)) line_length_linter
+formatR_output/checks.R.tidy 217 87 style Trailing whitespace is superfluous.             throw(paste0(path, ": line ", seq(along = file_content)[long_lines_index],  list(c(87, 87)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 218 75 style Trailing whitespace is superfluous.                 " counts ", line_widths[long_lines_index], " characters.",  list(c(75, 75)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 237 1 style lines should not be more than 80 characters.             throw(paste0(path, ": ", num_lines, " lines in file.", collapse = "\n")) list(c(1, 84)) line_length_linter

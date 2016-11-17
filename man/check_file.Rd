@@ -2,7 +2,7 @@
 % Please edit documentation in R/wrappers.R
 \name{check_file}
 \alias{check_file}
-\title{check a file}
+\title{Check a File}
 \usage{
 check_file(path, ...)
 }

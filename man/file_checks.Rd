@@ -4,7 +4,7 @@
 \alias{check_file_length}
 \alias{check_file_width}
 \alias{file_checks}
-\title{file checks}
+\title{File Checks}
 \usage{
 check_file_width(path, max_file_width = gco("max_file_width"))
 
@@ -13,24 +13,27 @@ check_file_length(path, max_file_length = gco("max_file_length"))
 \arguments{
 \item{path}{The path to the file to be checked.}
 
-\item{max_file_width}{The maximum line width accepted.}
+\item{max_file_width}{The maximum line width accepted.
+Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+\code{FALSE} to disable the check.}
 
-\item{max_file_length}{The maximum number of lines accepted.}
+\item{max_file_length}{The maximum number of lines accepted.
+Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+\code{FALSE} to disable the check.}
 }
 \value{
 invisible(TRUE), but see \emph{Details}.
 }
 \description{
 A set of tiny functions to check that files adhere to a layout style.
-}
-\details{
 A file should have a clear layout, it should
 \itemize{
   \item mot have too many lines and
   \item not have lines too wide.
 }
 At least this is what I think. Well, some others too.
-
+}
+\details{
 All of the functions test whether their requirement is met.
 In case of a fail all \code{\link{throw}} a
 condition of class c("cleanr", "error", "condition").

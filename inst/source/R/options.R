@@ -2,7 +2,7 @@
 #'
 #' A convenience function for \code{\link{options}}.
 #'
-#' @details \pkg{cleanr} loads a couple of options as defaults for its 
+#' \pkg{cleanr} loads a couple of options as defaults for its 
 #' functions.
 #' The defaults are stored in a list element of \code{\link{options}}.
 #' All checks (see code{\link{function_checks}} and \code{\link{file_checks}}
@@ -112,4 +112,3 @@ get_cleanr_options <- function(..., remove_names = FALSE, flatten_list = TRUE) {
 #' @export
 #' @note \code{gco} is just an alias for \code{get_cleanr_options}.
 gco <- get_cleanr_options
-

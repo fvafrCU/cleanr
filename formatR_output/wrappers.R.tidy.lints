@@ -16,27 +16,27 @@ formatR_output/wrappers.R.tidy 41 96 style Trailing whitespace is superfluous.  
 formatR_output/wrappers.R.tidy 43 1 style Trailing whitespace is superfluous.      list(c(1, 4)) trailing_whitespace_linter
 formatR_output/wrappers.R.tidy 45 75 style Trailing whitespace is superfluous.     finding <- tryCatch(check_return(object, check_return = check_return),  list(c(75, 75)) trailing_whitespace_linter
 formatR_output/wrappers.R.tidy 51 73 style Trailing whitespace is superfluous.         throw(paste(function_name, names(findings), findings, sep = " ",  list(c(73, 73)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 78 1 style lines should not be more than 80 characters. check_file_layout <- function(path, max_file_length = get_cleanr_options("max_file_length"),  list(c(1, 93)) line_length_linter
-formatR_output/wrappers.R.tidy 78 93 style Trailing whitespace is superfluous. check_file_layout <- function(path, max_file_length = get_cleanr_options("max_file_length"),  list(c(93, 93)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 81 1 style lines should not be more than 80 characters.     finding <- tryCatch(check_file_width(path, max_file_width = max_file_width),  list(c(1, 81)) line_length_linter
-formatR_output/wrappers.R.tidy 81 81 style Trailing whitespace is superfluous.     finding <- tryCatch(check_file_width(path, max_file_width = max_file_width),  list(c(81, 81)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 84 1 style lines should not be more than 80 characters.     finding <- tryCatch(check_file_length(path, max_file_length = max_file_length),  list(c(1, 84)) line_length_linter
-formatR_output/wrappers.R.tidy 84 84 style Trailing whitespace is superfluous.     finding <- tryCatch(check_file_length(path, max_file_length = max_file_length),  list(c(84, 84)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 86 1 style Trailing whitespace is superfluous.      list(c(1, 4)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 120 1 style lines should not be more than 80 characters.             finding <- tryCatch(check_function_layout(get(name, envir = source_kept),  list(c(1, 86)) line_length_linter
-formatR_output/wrappers.R.tidy 120 86 style Trailing whitespace is superfluous.             finding <- tryCatch(check_function_layout(get(name, envir = source_kept),  list(c(86, 86)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 127 1 style lines should not be more than 80 characters.         throw(paste(path, names(findings), findings, sep = " ", collapse = "\n")) list(c(1, 81)) line_length_linter
-formatR_output/wrappers.R.tidy 162 73 style Trailing whitespace is superfluous.     check_functions_defaults <- append(formals(check_functions_in_file),  list(c(73, 73)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 164 1 style lines should not be more than 80 characters.     known_defaults <- append(check_file_layout_defaults, check_functions_defaults) list(c(1, 82)) line_length_linter
-formatR_output/wrappers.R.tidy 166 1 style lines should not be more than 80 characters.         stop(paste("got unkown argument(s): ", paste(names(dots)[!names(dots) %in%  list(c(1, 83)) line_length_linter
-formatR_output/wrappers.R.tidy 166 83 style Trailing whitespace is superfluous.         stop(paste("got unkown argument(s): ", paste(names(dots)[!names(dots) %in%  list(c(83, 83)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 170 1 style Trailing whitespace is superfluous.      list(c(1, 4)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 171 1 style lines should not be more than 80 characters.     use <- utils::modifyList(check_file_layout_defaults, arguments, keep.null = TRUE) list(c(1, 85)) line_length_linter
-formatR_output/wrappers.R.tidy 175 72 style Trailing whitespace is superfluous.     finding <- tryCatch(do.call("check_file_layout", arguments_to_use),  list(c(72, 72)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 178 1 style lines should not be more than 80 characters.     use <- utils::modifyList(check_functions_defaults, arguments, keep.null = TRUE) list(c(1, 83)) line_length_linter
-formatR_output/wrappers.R.tidy 182 78 style Trailing whitespace is superfluous.     finding <- tryCatch(do.call("check_functions_in_file", arguments_to_use),  list(c(78, 78)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 214 75 style Trailing whitespace is superfluous. check_directory <- function(path, pattern = "\\.[rR]$", recursive = FALSE,  list(c(75, 75)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 217 1 style lines should not be more than 80 characters.     paths <- normalizePath(sort(list.files(path, pattern, recursive = recursive,  list(c(1, 81)) line_length_linter
-formatR_output/wrappers.R.tidy 217 81 style Trailing whitespace is superfluous.     paths <- normalizePath(sort(list.files(path, pattern, recursive = recursive,  list(c(81, 81)) trailing_whitespace_linter
-formatR_output/wrappers.R.tidy 221 1 style lines should not be more than 80 characters.         finding <- tryCatch(check_file(source_file, ...), cleanr = function(e) return(e[["message"]])) list(c(1, 102)) line_length_linter
-formatR_output/wrappers.R.tidy 226 1 style lines should not be more than 80 characters.         throw(paste(path, names(findings), findings, sep = " ", collapse = "\n")) list(c(1, 81)) line_length_linter
+formatR_output/wrappers.R.tidy 73 1 style lines should not be more than 80 characters. check_file_layout <- function(path, max_file_length = get_cleanr_options("max_file_length"),  list(c(1, 93)) line_length_linter
+formatR_output/wrappers.R.tidy 73 93 style Trailing whitespace is superfluous. check_file_layout <- function(path, max_file_length = get_cleanr_options("max_file_length"),  list(c(93, 93)) trailing_whitespace_linter
+formatR_output/wrappers.R.tidy 76 1 style lines should not be more than 80 characters.     finding <- tryCatch(check_file_width(path, max_file_width = max_file_width),  list(c(1, 81)) line_length_linter
+formatR_output/wrappers.R.tidy 76 81 style Trailing whitespace is superfluous.     finding <- tryCatch(check_file_width(path, max_file_width = max_file_width),  list(c(81, 81)) trailing_whitespace_linter
+formatR_output/wrappers.R.tidy 79 1 style lines should not be more than 80 characters.     finding <- tryCatch(check_file_length(path, max_file_length = max_file_length),  list(c(1, 84)) line_length_linter
+formatR_output/wrappers.R.tidy 79 84 style Trailing whitespace is superfluous.     finding <- tryCatch(check_file_length(path, max_file_length = max_file_length),  list(c(84, 84)) trailing_whitespace_linter
+formatR_output/wrappers.R.tidy 81 1 style Trailing whitespace is superfluous.      list(c(1, 4)) trailing_whitespace_linter
+formatR_output/wrappers.R.tidy 115 1 style lines should not be more than 80 characters.             finding <- tryCatch(check_function_layout(get(name, envir = source_kept),  list(c(1, 86)) line_length_linter
+formatR_output/wrappers.R.tidy 115 86 style Trailing whitespace is superfluous.             finding <- tryCatch(check_function_layout(get(name, envir = source_kept),  list(c(86, 86)) trailing_whitespace_linter
+formatR_output/wrappers.R.tidy 122 1 style lines should not be more than 80 characters.         throw(paste(path, names(findings), findings, sep = " ", collapse = "\n")) list(c(1, 81)) line_length_linter
+formatR_output/wrappers.R.tidy 157 73 style Trailing whitespace is superfluous.     check_functions_defaults <- append(formals(check_functions_in_file),  list(c(73, 73)) trailing_whitespace_linter
+formatR_output/wrappers.R.tidy 159 1 style lines should not be more than 80 characters.     known_defaults <- append(check_file_layout_defaults, check_functions_defaults) list(c(1, 82)) line_length_linter
+formatR_output/wrappers.R.tidy 161 1 style lines should not be more than 80 characters.         stop(paste("got unkown argument(s): ", paste(names(dots)[!names(dots) %in%  list(c(1, 83)) line_length_linter
+formatR_output/wrappers.R.tidy 161 83 style Trailing whitespace is superfluous.         stop(paste("got unkown argument(s): ", paste(names(dots)[!names(dots) %in%  list(c(83, 83)) trailing_whitespace_linter
+formatR_output/wrappers.R.tidy 165 1 style Trailing whitespace is superfluous.      list(c(1, 4)) trailing_whitespace_linter
+formatR_output/wrappers.R.tidy 166 1 style lines should not be more than 80 characters.     use <- utils::modifyList(check_file_layout_defaults, arguments, keep.null = TRUE) list(c(1, 85)) line_length_linter
+formatR_output/wrappers.R.tidy 170 72 style Trailing whitespace is superfluous.     finding <- tryCatch(do.call("check_file_layout", arguments_to_use),  list(c(72, 72)) trailing_whitespace_linter
+formatR_output/wrappers.R.tidy 173 1 style lines should not be more than 80 characters.     use <- utils::modifyList(check_functions_defaults, arguments, keep.null = TRUE) list(c(1, 83)) line_length_linter
+formatR_output/wrappers.R.tidy 177 78 style Trailing whitespace is superfluous.     finding <- tryCatch(do.call("check_functions_in_file", arguments_to_use),  list(c(78, 78)) trailing_whitespace_linter
+formatR_output/wrappers.R.tidy 209 75 style Trailing whitespace is superfluous. check_directory <- function(path, pattern = "\\.[rR]$", recursive = FALSE,  list(c(75, 75)) trailing_whitespace_linter
+formatR_output/wrappers.R.tidy 212 1 style lines should not be more than 80 characters.     paths <- normalizePath(sort(list.files(path, pattern, recursive = recursive,  list(c(1, 81)) line_length_linter
+formatR_output/wrappers.R.tidy 212 81 style Trailing whitespace is superfluous.     paths <- normalizePath(sort(list.files(path, pattern, recursive = recursive,  list(c(81, 81)) trailing_whitespace_linter
+formatR_output/wrappers.R.tidy 216 1 style lines should not be more than 80 characters.         finding <- tryCatch(check_file(source_file, ...), cleanr = function(e) return(e[["message"]])) list(c(1, 102)) line_length_linter
+formatR_output/wrappers.R.tidy 221 1 style lines should not be more than 80 characters.         throw(paste(path, names(findings), findings, sep = " ", collapse = "\n")) list(c(1, 81)) line_length_linter

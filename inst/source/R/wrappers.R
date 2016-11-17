@@ -1,7 +1,7 @@
 #' @include checks.R
 NULL
 
-#' check a function's layout
+#' Check a Function's Layout
 #'
 #' run all \code{\link{function_checks}} on a function.
 #'
@@ -11,12 +11,12 @@ NULL
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @param object The function to be checked.
-#' @param max_lines_of_code See \code{link{check_num_lines_of_code}}.
-#' @param max_lines See \code{link{check_num_lines}}.
-#' @param max_arguments See \code{link{check_num_arguments}}.
-#' @param max_nesting_depth See \code{link{check_nesting_depth}}.
-#' @param max_line_width See \code{link{check_line_width}}.
-#' @param check_return See \code{link{check_return}}.
+#' @param max_lines_of_code See \code{\link{check_num_lines_of_code}}.
+#' @param max_lines See \code{\link{check_num_lines}}.
+#' @param max_arguments See \code{\link{check_num_arguments}}.
+#' @param max_nesting_depth See \code{\link{check_nesting_depth}}.
+#' @param max_line_width See \code{\link{check_line_width}}.
+#' @param check_return See \code{\link{check_return}}.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @export
 #' @examples
@@ -68,22 +68,17 @@ check_function_layout <- function(object,
     return(invisible(TRUE))
 }
 
-#' check a file's layout
+#' Check a File's Layout
 #'
 #' Check for number of lines and width of lines.
 #'
-#' Some reckon a code file should not be too long and that its lines should not
-#' be too wide. On current monitors, 300 lines are about five pages.
-#' A line width of 80 seems a bit \ldots{} outdated, but maybe there's some good
-#' in it.
-#'
-#' In case of a fail the function \code{link{throw}}s a
+#' In case of a fail the function \code{\link{throw}}s a
 #' condition of class c("cleanr", "error", "condition").
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @param path A path to a file, e.g. "checks.R".
-#' @param max_file_length See \code{link{check_file_length}}.
-#' @param max_file_width See \code{link{check_file_width}}.
+#' @param max_file_length See \code{\link{check_file_length}}.
+#' @param max_file_width See \code{\link{check_file_width}}.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @export
 #' @examples
@@ -111,7 +106,7 @@ check_file_layout <- function(path,
     return(invisible(TRUE))
 }
 
-#' check all functions defined in a file
+#' Check All Functions Defined in a File
 #'
 #' run all \code{\link{check_function_layout}} on a file.
 #'
@@ -151,7 +146,7 @@ check_functions_in_file <- function(path, ...) {
     return(invisible(TRUE))
 }
 
-#' check a file
+#' Check a File
 #'
 #' run all \code{\link{check_functions_in_file}} and
 #' \code{\link{check_file_layout}} on a file.
@@ -217,7 +212,7 @@ check_file <- function(path, ...) {
     return(invisible(TRUE))
 }
 
-#' check a directory
+#' Check a Directory
 #'
 #' run all \code{\link{check_file}} on the files in a directory.
 #'
