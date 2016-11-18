@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to cleanr"
 author: "Andreas Dominik Cullmann"
-date: 2016-10-17, 12:44:39
+date: 2016-11-18, 15:41:03
 bibliography: biblio.bib
 output: rmarkdown::html_vignette
 vignette: >
@@ -10,7 +10,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 # 
-Coding is an art but most of the code we write is more or less dreadful.
+Coding is an art, but most of the code we write is more or less dreadful.
 Many tried to teach us how to write code less dreadful, be it implicitly as
 @KR did,
 be it explicitly as
@@ -24,25 +24,19 @@ reformat it using [formatR](https://CRAN.R-project.org/package=formatR).
 This package tries to help you with your code`s layout:
 it checks our code for files too long or wide, functions with too
 many lines, too wide lines, too many arguments or nestings too deep.
+Note that i&szlig;t's *not* a static code analyser like 
+[lintr]( https://CRAN.R-project.org/package=lintr).
 
 
-After loading the package:
-```{r, eval = FALSE}
-library("cleanr")
-```
 ```{r, echo = FALSE}
-library("cleanr")
-set_cleanr_options(reset = TRUE)
+cleanr::set_cleanr_options(reset = TRUE)
 
 ```
-
-we pick a file we want to check:
+You can use it to check all files in a directory:
 ```{r}
-file_name <- system.file("source", "R", "utils.R", package = "cleanr")
+library(cleanr)
+directory <- system.file("source", "R", package = "cleanr")
+#check_directory(directory)
 
-```
-
-```{r}
-# dir first
 ```
 # References

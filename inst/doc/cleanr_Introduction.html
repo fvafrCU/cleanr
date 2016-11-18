@@ -69,20 +69,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">An Introduction to cleanr</h1>
 <h4 class="author"><em>Andreas Dominik Cullmann</em></h4>
-<h4 class="date"><em>2016-10-17, 12:44:39</em></h4>
+<h4 class="date"><em>2016-11-18, 15:41:03</em></h4>
 
 
 
 <div id="section" class="section level1">
 <h1></h1>
-<p>Coding is an art but most of the code we write is more or less dreadful. Many tried to teach us how to write code less dreadful, be it implicitly as <span class="citation">Kernighan and Ritchie (<a href="#ref-KR">1988</a>)</span> did, be it explicitly as <span class="citation">Martin (<a href="#ref-cc">2008</a>)</span> did.</p>
+<p>Coding is an art, but most of the code we write is more or less dreadful. Many tried to teach us how to write code less dreadful, be it implicitly as <span class="citation">Kernighan and Ritchie (<a href="#ref-KR">1988</a>)</span> did, be it explicitly as <span class="citation">Martin (<a href="#ref-cc">2008</a>)</span> did.</p>
 <p>If you are concerned about your coding style, you will probably want to lint your codes with <a href="https://CRAN.R-project.org/package=lintr">lintr</a> or even reformat it using <a href="https://CRAN.R-project.org/package=formatR">formatR</a>.</p>
-<p>This package tries to help you with your code`s layout: it checks our code for files too long or wide, functions with too many lines, too wide lines, too many arguments or nestings too deep.</p>
-<p>After loading the package:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;cleanr&quot;</span>)</code></pre></div>
-<p>we pick a file we want to check:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">file_name &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;source&quot;</span>, <span class="st">&quot;R&quot;</span>, <span class="st">&quot;utils.R&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;cleanr&quot;</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># dir first</span></code></pre></div>
+<p>This package tries to help you with your code`s layout: it checks our code for files too long or wide, functions with too many lines, too wide lines, too many arguments or nestings too deep. Note that ißt’s <em>not</em> a static code analyser like <a href="https://CRAN.R-project.org/package=lintr">lintr</a>.</p>
+<p>You can use it to check all files in a directory:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(cleanr)
+directory &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;source&quot;</span>, <span class="st">&quot;R&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;cleanr&quot;</span>)
+<span class="co">#check_directory(directory)</span></code></pre></div>
 <div class="references">
 <h1 id="references" class="unnumbered">References</h1>
 <div id="ref-KR">
