@@ -69,7 +69,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">An Introduction to cleanr</h1>
 <h4 class="author"><em>Andreas Dominik Cullmann</em></h4>
-<h4 class="date"><em>2016-11-18, 15:41:03</em></h4>
+<h4 class="date"><em>2016-11-24, 16:25:37</em></h4>
 
 
 
@@ -79,9 +79,49 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>If you are concerned about your coding style, you will probably want to lint your codes with <a href="https://CRAN.R-project.org/package=lintr">lintr</a> or even reformat it using <a href="https://CRAN.R-project.org/package=formatR">formatR</a>.</p>
 <p>This package tries to help you with your code`s layout: it checks our code for files too long or wide, functions with too many lines, too wide lines, too many arguments or nestings too deep. Note that ißt’s <em>not</em> a static code analyser like <a href="https://CRAN.R-project.org/package=lintr">lintr</a>.</p>
 <p>You can use it to check all files in a directory:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(cleanr)
-directory &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;source&quot;</span>, <span class="st">&quot;R&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;cleanr&quot;</span>)
-<span class="co">#check_directory(directory)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">directory &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;tests&quot;</span>, <span class="st">&quot;runit&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;cleanr&quot;</span>)
+cleanr::<span class="kw">set_cleanr_options</span>(<span class="dt">check_return =</span> <span class="ot">FALSE</span>)
+<span class="kw">print</span>(cleanr::<span class="kw">check_directory</span>(directory))</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cleanr::<span class="kw">get_cleanr_options</span>(<span class="dt">flatten_list =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<pre><code>## $max_file_width
+## [1] 80
+## 
+## $max_file_length
+## [1] 300
+## 
+## $max_lines
+## [1] 65
+## 
+## $max_lines_of_code
+## [1] 50
+## 
+## $max_arguments
+## [1] 5
+## 
+## $max_nesting_depth
+## [1] 3
+## 
+## $max_line_width
+## [1] 80
+## 
+## $check_return
+## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(tools::<span class="kw">assertCondition</span>(cleanr::<span class="kw">check_directory</span>(directory, 
+                                                     <span class="dt">max_file_width =</span> <span class="dv">79</span>), 
+                             <span class="kw">c</span>(<span class="st">&quot;cleanr&quot;</span>, <span class="st">&quot;error&quot;</span>,  <span class="st">&quot;condition&quot;</span>))
+)</code></pre></div>
+<pre><code>## [[1]]
+## &lt;cleanr in cleanr::check_directory(directory, max_file_width = 79): /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit   /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/checks.r: line 3 counts 80 characters.
+## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit   /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 41 counts 80 characters.
+## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 45 counts 80 characters.
+## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 49 counts 80 characters.&gt;
+## 
+## [[2]]
+## &lt;cleanr in cleanr::check_directory(directory, max_file_width = 79): /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit   /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/checks.r: line 3 counts 80 characters.
+## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit   /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 41 counts 80 characters.
+## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 45 counts 80 characters.
+## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 49 counts 80 characters.&gt;</code></pre>
 <div class="references">
 <h1 id="references" class="unnumbered">References</h1>
 <div id="ref-KR">

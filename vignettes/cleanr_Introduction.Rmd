@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to cleanr"
 author: "Andreas Dominik Cullmann"
-date: 2016-11-18, 15:41:03
+date: 2016-11-24, 16:25:37
 bibliography: biblio.bib
 output: rmarkdown::html_vignette
 vignette: >
@@ -34,9 +34,14 @@ cleanr::set_cleanr_options(reset = TRUE)
 ```
 You can use it to check all files in a directory:
 ```{r}
-library(cleanr)
-directory <- system.file("source", "R", package = "cleanr")
-#check_directory(directory)
+directory <- system.file("tests", "runit", package = "cleanr")
+cleanr::set_cleanr_options(check_return = FALSE)
+print(cleanr::check_directory(directory))
+cleanr::get_cleanr_options(flatten_list = FALSE)
+print(tools::assertCondition(cleanr::check_directory(directory, 
+                                                     max_file_width = 79), 
+                             c("cleanr", "error",  "condition"))
+)
 
 ```
 # References

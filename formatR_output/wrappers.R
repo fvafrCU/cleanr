@@ -131,7 +131,6 @@ check_functions_in_file <- function(path, ...) {
     for (name in ls(envir = source_kept, all.names = TRUE)) {
         assign(name, get(name, envir = source_kept))
         if (is.function(get(name))) {
-            print(name)
             finding <-
                 tryCatch(check_function_layout(get(name,
                                                    envir = source_kept), ...),
