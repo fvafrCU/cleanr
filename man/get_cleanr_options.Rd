@@ -10,7 +10,7 @@ get_cleanr_options(..., remove_names = FALSE, flatten_list = TRUE)
 gco(..., remove_names = FALSE, flatten_list = TRUE)
 }
 \arguments{
-\item{...}{see \code{\link{getOption}}/}
+\item{...}{See \code{\link{getOption}}.}
 
 \item{remove_names}{[boolean(1)]\cr Remove the names?}
 

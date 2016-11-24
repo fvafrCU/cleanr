@@ -16,12 +16,8 @@ NULL
 #'   \item not have lines too wide and
 #'   \item explicitly \code{\link{return}} an object.
 #' }
-#' At least this is what I think. Well, some others too.
-#' Most of the functions test whether their requirement is met (some layout
-#' feature such as number of arguments, nesting depth, line width is not greater
-#' than the maximum given). 
 #'
-#' In case of a fail the functions \code{\link{throw}} a
+#' In case of a fail all \code{\link{function_checks}} \code{\link{throw}} a
 #' condition of class c("cleanr", "error", "condition").
 #'
 #' @section Warning: \code{\link{check_return}} just \code{\link{grep}}s for a
@@ -52,7 +48,7 @@ NULL
 
 #' @rdname function_checks
 #' @param max_arguments The maximum number of arguments accepted. 
-#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 #' \code{FALSE} to disable the check.
 #' @export
 check_num_arguments <- function(object,
@@ -70,6 +66,8 @@ check_num_arguments <- function(object,
 
 #' @rdname function_checks
 #' @param max_nesting_depth The maximum nesting depth accepted.
+#' Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
+#' \code{FALSE} to disable the check.
 #' @export
 check_nesting_depth <- function(object,
                                 max_nesting_depth = gco("max_nesting_depth")) {
@@ -99,7 +97,7 @@ check_nesting_depth <- function(object,
 
 #' @rdname function_checks
 #' @param max_lines The maximum number of lines accepted.
-#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 #' \code{FALSE} to disable the check.
 
 #' @export
@@ -117,7 +115,7 @@ check_num_lines <- function(object, max_lines = gco("max_lines")) {
 
 #' @rdname function_checks
 #' @param max_lines_of_code The maximum number of lines of code accepted.
-#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 #' \code{FALSE} to disable the check.
 #' @export
 check_num_lines_of_code <- function(object,
@@ -141,7 +139,7 @@ check_num_lines_of_code <- function(object,
 
 #' @rdname function_checks
 #' @param max_line_width The maximum line width accepted.
-#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 #' \code{FALSE} to disable the check.
 #' @export
 check_line_width <- function(object,
@@ -165,8 +163,8 @@ check_line_width <- function(object,
 }
 
 #' @rdname function_checks
-#' @param check_return See \code{\link{check_function_layout}}
-#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' @param check_return 
+#' Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 #' \code{FALSE} to disable the check.
 #' @export
 check_return <- function(object,
@@ -196,15 +194,13 @@ check_return <- function(object,
 #'   \item mot have too many lines and
 #'   \item not have lines too wide.
 #' }
-#' At least this is what I think. Well, some others too.
 #'
-#' All of the functions test whether their requirement is met.
-#' In case of a fail all \code{\link{throw}} a
+#' In case of a fail all \code{\link{file_checks}} \code{\link{throw}} a
 #' condition of class c("cleanr", "error", "condition").
 #'
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @param path The path to the file to be checked.
+#' @param path Path to the file to be checked.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @name file_checks
 #' @examples
@@ -217,7 +213,7 @@ NULL
 
 #' @rdname file_checks
 #' @param max_file_width The maximum line width accepted.
-#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 #' \code{FALSE} to disable the check.
 #' @export
 check_file_width <- function(path,
@@ -242,7 +238,7 @@ check_file_width <- function(path,
 
 #' @rdname file_checks
 #' @param max_file_length The maximum number of lines accepted.
-#' Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+#' Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 #' \code{FALSE} to disable the check.
 #' @export
 check_file_length <- function(path,

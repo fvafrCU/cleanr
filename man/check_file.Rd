@@ -7,7 +7,7 @@
 check_file(path, ...)
 }
 \arguments{
-\item{path}{The path to file, e.g. "checks.R".}
+\item{path}{Path to the file to be checked.}
 
 \item{...}{Arguments to be passed to \code{\link{check_functions_in_file}} or
 \code{\link{check_file_layout}}.}
@@ -16,7 +16,7 @@ check_file(path, ...)
 invisible(TRUE), but see \emph{Details}.
 }
 \description{
-run all \code{\link{check_functions_in_file}} and
+Run \code{\link{check_functions_in_file}} and
 \code{\link{check_file_layout}} on a file.
 }
 \details{

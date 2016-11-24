@@ -28,25 +28,26 @@ Should have been sourced with keep.source = TRUE (see
 \code{\link{get_function_body}}).}
 
 \item{max_arguments}{The maximum number of arguments accepted. 
-Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 \code{FALSE} to disable the check.}
 
-\item{max_nesting_depth}{The maximum nesting depth accepted.}
+\item{max_nesting_depth}{The maximum nesting depth accepted.
+Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
+\code{FALSE} to disable the check.}
 
 \item{max_lines}{The maximum number of lines accepted.
-Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 \code{FALSE} to disable the check.}
 
 \item{max_lines_of_code}{The maximum number of lines of code accepted.
-Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 \code{FALSE} to disable the check.}
 
 \item{max_line_width}{The maximum line width accepted.
-Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 \code{FALSE} to disable the check.}
 
-\item{check_return}{See \code{\link{check_function_layout}}
-Set (preferably via \code{\link{set_cleanr_options}} to \code{NULL} or
+\item{check_return}{Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 \code{FALSE} to disable the check.}
 }
 \value{
@@ -63,13 +64,9 @@ A function should have a clear layout, it should
   \item not have lines too wide and
   \item explicitly \code{\link{return}} an object.
 }
-At least this is what I think. Well, some others too.
-Most of the functions test whether their requirement is met (some layout
-feature such as number of arguments, nesting depth, line width is not greater
-than the maximum given).
 }
 \details{
-In case of a fail the functions \code{\link{throw}} a
+In case of a fail all \code{\link{function_checks}} \code{\link{throw}} a
 condition of class c("cleanr", "error", "condition").
 }
 \section{Warning}{

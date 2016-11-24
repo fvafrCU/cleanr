@@ -7,7 +7,7 @@
 check_functions_in_file(path, ...)
 }
 \arguments{
-\item{path}{A path to a file, e.g. "checks.R".}
+\item{path}{Path to the file to be checked.}
 
 \item{...}{Argments to be passed to \code{\link{check_function_layout}}.}
 }
@@ -15,7 +15,7 @@ check_functions_in_file(path, ...)
 invisible(TRUE), but see \emph{Details}.
 }
 \description{
-run all \code{\link{check_function_layout}} on a file.
+Run \code{\link{check_function_layout}} on all functions defined in a file.
 }
 \details{
 The functions catches the messages of "cleanr"-conditions

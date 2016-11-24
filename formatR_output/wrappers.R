@@ -3,7 +3,7 @@ NULL
 
 #' Check a Function's Layout
 #'
-#' run all \code{\link{function_checks}} on a function.
+#' Run all \code{\link{function_checks}} on a function.
 #'
 #' The functions catches the messages of "cleanr"-conditions
 #' \code{\link{throw}}n by \code{\link{function_checks}} and, if it caught any,
@@ -70,13 +70,14 @@ check_function_layout <- function(object,
 
 #' Check a File's Layout
 #'
-#' Check for number of lines and width of lines.
+#' Run all \code{\link{file_checks}} on a file.
 #'
-#' In case of a fail the function \code{\link{throw}}s a
-#' condition of class c("cleanr", "error", "condition").
+#' The function catches the messages of "cleanr"-conditions \code{\link{throw}}n
+#' by \code{\link{file_checks}} and, if it caught any, \code{\link{throw}}s
+#' them.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @param path A path to a file, e.g. "checks.R".
+#' @param path Path to the file to be checked.
 #' @param max_file_length See \code{\link{check_file_length}}.
 #' @param max_file_width See \code{\link{check_file_width}}.
 #' @return invisible(TRUE), but see \emph{Details}.
@@ -108,14 +109,14 @@ check_file_layout <- function(path,
 
 #' Check All Functions Defined in a File
 #'
-#' run all \code{\link{check_function_layout}} on a file.
+#' Run \code{\link{check_function_layout}} on all functions defined in a file.
 #'
 #' The functions catches the messages of "cleanr"-conditions
 #' \code{\link{throw}}n by \code{\link{check_function_layout}} and,
 #' if it caught any, \code{\link{throw}}s them.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @param path A path to a file, e.g. "checks.R".
+#' @param path Path to the file to be checked.
 #' @param ... Argments to be passed to \code{\link{check_function_layout}}.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @export
@@ -148,7 +149,7 @@ check_functions_in_file <- function(path, ...) {
 
 #' Check a File
 #'
-#' run all \code{\link{check_functions_in_file}} and
+#' Run \code{\link{check_functions_in_file}} and
 #' \code{\link{check_file_layout}} on a file.
 #'
 #' The function catches the messages of "cleanr"-conditions \code{\link{throw}}n
@@ -157,7 +158,7 @@ check_functions_in_file <- function(path, ...) {
 #' caught any, \code{\link{throw}}s them.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @param path The path to file, e.g. "checks.R".
+#' @param path Path to the file to be checked.
 #' @param ... Arguments to be passed to \code{\link{check_functions_in_file}} or
 #' \code{\link{check_file_layout}}.
 #' @return invisible(TRUE), but see \emph{Details}.
@@ -214,17 +215,17 @@ check_file <- function(path, ...) {
 
 #' Check a Directory
 #'
-#' run all \code{\link{check_file}} on the files in a directory.
+#' Run \code{\link{check_file}} on files in a directory.
 #'
-#' The functions catches the messages of "cleanr"-conditions
+#' The function catches the messages of "cleanr"-conditions
 #' \code{\link{throw}}n by \code{\link{check_file}} and, if it caught any,
 #' \code{\link{throw}}s them.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @param path A path to a directory to be checked, e.g. "R/".
+#' @param path Path to the directory to be checked.
 #' @param pattern A pattern to search files with, see \code{\link{list.files}}.
 #' @param recursive Search the directory recursively?
-#' See \code{\link{list.files}}.
+#' Passed to \code{\link{list.files}}.
 #' @param ... Arguments to be passed to \code{\link{check_file}}.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @export

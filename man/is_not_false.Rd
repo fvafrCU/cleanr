@@ -11,7 +11,8 @@ is_not_false(object, null_is_false = TRUE, ...)
 
 \item{null_is_false}{[boolean(1)]\cr Should NULL be treated as FALSE?}
 
-\item{...}{Parameters passed to \code{\link{exists}}. See Details.}
+\item{...}{Parameters passed to \code{\link{exists}}. See Details and
+Examples.}
 }
 \value{
 TRUE if the object is set to something different than FALSE, FALSE
@@ -22,12 +23,19 @@ Sometimes you need to know whether or not an object exists and is not set to
 FALSE (and possibly not NULL).
 }
 \details{
-The ellispis was implemented to enable RUnit testing. I do not know of any
-other use.
+Pass an environment if you call the function elsewhere than from
+\code{\link{.GlobalEnv}}.
 }
 \examples{
 a  <- 1
 is_not_false(a)
+f <- function() {
+    a <- NULL
+    should_be_true <- ! is_not_false(a, null_is_false = TRUE, 
+                                      where = environment())
+    return(should_be_true)
+}
+print(f())
 }
 \author{
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>

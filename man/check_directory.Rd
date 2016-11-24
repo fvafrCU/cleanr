@@ -7,12 +7,12 @@
 check_directory(path, pattern = "\\\\.[rR]$", recursive = FALSE, ...)
 }
 \arguments{
-\item{path}{A path to a directory to be checked, e.g. "R/".}
+\item{path}{Path to the directory to be checked.}
 
 \item{pattern}{A pattern to search files with, see \code{\link{list.files}}.}
 
 \item{recursive}{Search the directory recursively?
-See \code{\link{list.files}}.}
+Passed to \code{\link{list.files}}.}
 
 \item{...}{Arguments to be passed to \code{\link{check_file}}.}
 }
@@ -20,10 +20,10 @@ See \code{\link{list.files}}.}
 invisible(TRUE), but see \emph{Details}.
 }
 \description{
-run all \code{\link{check_file}} on the files in a directory.
+Run \code{\link{check_file}} on files in a directory.
 }
 \details{
-The functions catches the messages of "cleanr"-conditions
+The function catches the messages of "cleanr"-conditions
 \code{\link{throw}}n by \code{\link{check_file}} and, if it caught any,
 \code{\link{throw}}s them.
 }

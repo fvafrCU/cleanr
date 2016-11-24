@@ -9,7 +9,7 @@ check_file_layout(path,
   max_file_width = get_cleanr_options("max_file_width"))
 }
 \arguments{
-\item{path}{A path to a file, e.g. "checks.R".}
+\item{path}{Path to the file to be checked.}
 
 \item{max_file_length}{See \code{\link{check_file_length}}.}
 
@@ -19,11 +19,12 @@ check_file_layout(path,
 invisible(TRUE), but see \emph{Details}.
 }
 \description{
-Check for number of lines and width of lines.
+Run all \code{\link{file_checks}} on a file.
 }
 \details{
-In case of a fail the function \code{\link{throw}}s a
-condition of class c("cleanr", "error", "condition").
+The function catches the messages of "cleanr"-conditions \code{\link{throw}}n
+by \code{\link{file_checks}} and, if it caught any, \code{\link{throw}}s
+them.
 }
 \examples{
 print(check_file_layout(system.file("source", "R", "checks.R",

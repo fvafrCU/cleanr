@@ -11,7 +11,7 @@ Building cleanr ----------------------------------------------------------------
 * installing the package to process help pages
 * creating vignettes ... OK
 Warning: ‘inst/doc’ files
-    ‘cleanr_Introduction.Rmd’, ‘cleanr_Introduction.html’,  ‘cleanr_Introduction.R’
+    ‘cleanr_Introduction.Rmd’, ‘cleanr_Introduction.html’
   ignored as vignettes have been rebuilt.
   Run R CMD build with --no-build-vignettes to prevent rebuilding.
 * checking for LF line-endings in source and make files
@@ -25,7 +25,7 @@ _R_CHECK_FORCE_SUGGESTS_          : FALSE
 Checking cleanr ----------------------------------------------------------------
   --as-cran --timings --no-manual 
 
-* using R Under development (unstable) (2016-11-13 r71655)
+* using R Under development (unstable) (2016-11-10 r71645)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’

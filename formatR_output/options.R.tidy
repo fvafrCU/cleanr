@@ -5,7 +5,7 @@
 #' \pkg{cleanr} loads a couple of options as defaults for its 
 #' functions.
 #' The defaults are stored in a list element of \code{\link{options}}.
-#' All checks (see code{\link{function_checks}} and \code{\link{file_checks}}
+#' All checks (see \code{\link{function_checks}} and \code{\link{file_checks}})
 #' can be disabled by setting the corresponding option list item to \code{NULL}
 #' or \code{FALSE}.
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
@@ -14,10 +14,10 @@
 #' options won't get overridden. Just ignore that argument.
 #' @param reset [boolean(1)]\cr Reset all \pkg{cleanr} options to the package's
 #' defaults?
-#' @param ... see \code{\link{options}}. See \code{\link{function_checks}} and
+#' @param ... See \code{\link{options}}. See \code{\link{function_checks}} and
 #' \code{\link{file_checks}} for options to be set with \pkg{cleanr}.
-#' Use \code{\link{get_cleanr_options}} to get the current values. Current
-#' defaults are:
+#' Use \code{\link{get_cleanr_options}} to get the current values.
+#' \pkg{cleanr}'s standard defaults are:
 #' \Sexpr[results=verbatim]{cat(paste(names(cleanr::gco()), 
 #'                                    cleanr::gco(flatten_list = FALSE),
 #'                                    sep = '=', collapse = '\n'))}
@@ -76,7 +76,7 @@ set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
 #' A convenience function for \code{\link{getOption}}.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
-#' @param ... see \code{\link{getOption}}/
+#' @param ... See \code{\link{getOption}}.
 #' @param remove_names [boolean(1)]\cr Remove the names?
 #' @param flatten_list [boolean(1)]\cr Return a vetcor?
 #' @return a (possibly named) list or a vector.

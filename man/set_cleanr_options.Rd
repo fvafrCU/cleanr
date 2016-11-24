@@ -7,10 +7,10 @@
 set_cleanr_options(..., reset = FALSE, overwrite = TRUE)
 }
 \arguments{
-\item{...}{see \code{\link{options}}. See \code{\link{function_checks}} and
+\item{...}{See \code{\link{options}}. See \code{\link{function_checks}} and
 \code{\link{file_checks}} for options to be set with \pkg{cleanr}.
-Use \code{\link{get_cleanr_options}} to get the current values. Current
-defaults are:
+Use \code{\link{get_cleanr_options}} to get the current values.
+\pkg{cleanr}'s standard defaults are:
 \Sexpr[results=verbatim]{cat(paste(names(cleanr::gco()), 
                                    cleanr::gco(flatten_list = FALSE),
                                    sep = "=", collapse = "\n"))}}
@@ -32,7 +32,7 @@ A convenience function for \code{\link{options}}.
 \pkg{cleanr} loads a couple of options as defaults for its 
 functions.
 The defaults are stored in a list element of \code{\link{options}}.
-All checks (see code{\link{function_checks}} and \code{\link{file_checks}}
+All checks (see \code{\link{function_checks}} and \code{\link{file_checks}})
 can be disabled by setting the corresponding option list item to \code{NULL}
 or \code{FALSE}.
 }

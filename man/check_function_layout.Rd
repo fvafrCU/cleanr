@@ -31,7 +31,7 @@ check_function_layout(object,
 invisible(TRUE), but see \emph{Details}.
 }
 \description{
-run all \code{\link{function_checks}} on a function.
+Run all \code{\link{function_checks}} on a function.
 }
 \details{
 The functions catches the messages of "cleanr"-conditions

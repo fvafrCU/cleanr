@@ -27,12 +27,14 @@ looking for a static code analyzer, check out lintr
 Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
 }
 \seealso{
-packages
+Packages
 \pkg{codetools}
 (\url{https://cran.r-project.org/package=codetools}),
-and
 \pkg{formatR}
 (\url{https://cran.r-project.org/package=formatR}).
+and
+\pkg{lintr}
+(\url{https://cran.r-project.org/package=lintr}).
 }
 \keyword{package}
 

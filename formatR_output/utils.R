@@ -3,19 +3,27 @@
 #' Sometimes you need to know whether or not an object exists and is not set to
 #' FALSE (and possibly not NULL).
 #' 
-#' The ellispis was implemented to enable RUnit testing. I do not know of any
-#' other use.
+#' Pass an environment if you call the function elsewhere than from
+#' \code{\link{.GlobalEnv}}.
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @param object The object to be tested.
 #' @param null_is_false [boolean(1)]\cr Should NULL be treated as FALSE?
-#' @param ... Parameters passed to \code{\link{exists}}. See Details.
+#' @param ... Parameters passed to \code{\link{exists}}. See Details and
+#' Examples.
 #' @return TRUE if the object is set to something different than FALSE, FALSE
 #' otherwhise.
 #' @export
 #' @examples
 #' a  <- 1
 #' is_not_false(a)
+#' f <- function() {
+#'     a <- NULL
+#'     should_be_true <- ! is_not_false(a, null_is_false = TRUE, 
+#'                                       where = environment())
+#'     return(should_be_true)
+#' }
+#' print(f())
 is_not_false <- function(object, null_is_false = TRUE, ...) {
     checkmate::qassert(null_is_false, "B1")
     condition <- exists(deparse(substitute(object)), ...)
