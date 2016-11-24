@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to cleanr"
 author: "Andreas Dominik Cullmann"
-date: 2016-11-24, 16:54:59
+date: 2016-11-24, 17:00:37
 bibliography: biblio.bib
 output: rmarkdown::html_vignette
 vignette: >
@@ -61,7 +61,9 @@ print(tools::assertCondition(cleanr::check_directory(directory,
 ```
 You can reset options using the convenience function:
 ```{r}
-cleanr::set_cleanr_options(max_file_width = 78)
+cleanr::set_cleanr_options(max_file_width = 78, 
+                           max_lines = 35,
+                           max_lines_of_code = 25)
 ```
 ```{r}
 print(tools::assertCondition(cleanr::check_directory(directory), 

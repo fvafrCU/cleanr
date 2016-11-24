@@ -69,7 +69,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">An Introduction to cleanr</h1>
 <h4 class="author"><em>Andreas Dominik Cullmann</em></h4>
-<h4 class="date"><em>2016-11-24, 16:54:59</em></h4>
+<h4 class="date"><em>2016-11-24, 17:00:37</em></h4>
 
 
 
@@ -126,7 +126,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 45 counts 80 characters.
 ## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 49 counts 80 characters.&gt;</code></pre>
 <p>You can reset options using the convenience function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cleanr::<span class="kw">set_cleanr_options</span>(<span class="dt">max_file_width =</span> <span class="dv">78</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cleanr::<span class="kw">set_cleanr_options</span>(<span class="dt">max_file_width =</span> <span class="dv">78</span>, 
+                           <span class="dt">max_lines =</span> <span class="dv">35</span>,
+                           <span class="dt">max_lines_of_code =</span> <span class="dv">25</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(tools::<span class="kw">assertCondition</span>(cleanr::<span class="kw">check_directory</span>(directory), 
                              <span class="kw">c</span>(<span class="st">&quot;cleanr&quot;</span>, <span class="st">&quot;error&quot;</span>,  <span class="st">&quot;condition&quot;</span>))
 )</code></pre></div>
@@ -135,14 +137,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit   /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 17 counts 79 characters.
 ## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 41 counts 80 characters.
 ## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 45 counts 80 characters.
-## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 49 counts 80 characters.&gt;
+## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 49 counts 80 characters.
+##  /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r  get(name, envir = source_kept)  found 28 lines of code, max_lines_of_code was 25&gt;
 ## 
 ## [[2]]
 ## &lt;cleanr in cleanr::check_directory(directory): /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit   /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/checks.r: line 3 counts 80 characters.
 ## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit   /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 17 counts 79 characters.
 ## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 41 counts 80 characters.
 ## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 45 counts 80 characters.
-## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 49 counts 80 characters.&gt;</code></pre>
+## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r: line 49 counts 80 characters.
+##  /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/utils.r  get(name, envir = source_kept)  found 28 lines of code, max_lines_of_code was 25&gt;</code></pre>
 <div class="references">
 <h1 id="references" class="unnumbered">References</h1>
 <div id="ref-KR">
