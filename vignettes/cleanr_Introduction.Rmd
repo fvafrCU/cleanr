@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to cleanr"
 author: "Andreas Dominik Cullmann"
-date: 2016-11-25, 12:51:55
+date: 2016-11-25, 15:59:24
 bibliography: biblio.bib
 output: rmarkdown::html_vignette
 vignette: >
@@ -119,5 +119,40 @@ print(tools::assertCondition(suppressWarnings(cleanr::check_functions_in_file(pa
 *check_file* runs the file and function layout checks on a file and 
 *check_directory* runs them on all files (matching a given pattern) in a 
 directory.
+```{r}
+print(suppressWarnings(cleanr::check_file(path)))
+```
+
+```{r}
+path <- system.file("tests", "runit", package = "cleanr")
+print(suppressWarnings(cleanr::check_directory(path,
+                                               check_return = FALSE)))
+```
+To run *cleanr* on its own codes, we need to load its internal functions first:
+```{r}
+path <- system.file("source", "R", package = "cleanr")
+cleanr::load_internal_functions("cleanr")
+print(tools::assertCondition(suppressWarnings(cleanr::check_directory(path)), 
+                       c("cleanr", "error",  "condition"))
+)
+```
+# Disabling checks
+To disable any check, set the corresponding option or argument to ```NULL``` or 
+```FALSE```. To completely disable all checks use:
+```{r}
+co <- get_cleanr_options(flatten_list = FALSE)
+co <- lapply(co, function(x) x == FALSE)
+options("cleanr" = list(cleanr = co))
+get_cleanr_options() 
+```
+Now run on any directory, ```check_directory``` will always return ```TRUE```:
+```{r}
+path <- system.file("source", "R", package = "cleanr")
+cleanr::load_internal_functions("cleanr")
+print(cleanr::check_directory(path)) 
+```
+
+
+
 
 # References

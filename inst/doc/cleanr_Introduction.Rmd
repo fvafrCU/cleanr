@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to cleanr"
 author: "Andreas Dominik Cullmann"
-date: 2016-11-25, 12:12:02
+date: 2016-11-25, 15:59:24
 bibliography: biblio.bib
 output: rmarkdown::html_vignette
 vignette: >
@@ -30,8 +30,6 @@ Note that i&szlig;t's *not* a static code analyser like
 # A first example
 ```{r, echo = FALSE}
 cleanr::set_cleanr_options(reset = TRUE)
-cleanr::set_cleanr_options(check_return = FALSE)
-
 ```
 You can use *cleanr* to check the layout of a file:
 ```{r}
@@ -74,5 +72,87 @@ print(tools::assertCondition(cleanr::check_file_layout(path),
                              c("cleanr", "error",  "condition"))
 )
 ```
+
+# Checking for File Layout
+Files too long or too wide are hard to read.
+You can check for a file's layout, i.e. for it's lines' width and for the number 
+of it's lines.
+You have already seen how to check for file layout:
+```{r}
+cleanr::set_cleanr_options(reset = TRUE)
+path <- system.file("source", "R", "checks.R", package = "cleanr")
+print(cleanr::check_file_layout(path)) 
+```
+
+We override some option by argument:
+```{r}
+print(tools::assertCondition(cleanr::check_file_layout(path, 
+                                                       max_file_length = 100), 
+                             c("cleanr", "error",  "condition"))
+)
+```
+
+
+# Checking for Function Layout
+Functions should
+ - not have too many arguments,
+ - not have nestings too deep,
+ - neither have too many lines nor
+ - have too many lines of code,
+ - not have lines too wide and
+ - explicitly return an object.
+You can check all functions defined in a file:
+```{r}
+print(suppressWarnings(cleanr::check_functions_in_file(path)))
+```
+And again we override some option by argument:
+
+```{r}
+print(tools::assertCondition(suppressWarnings(cleanr::check_functions_in_file(path,
+                                                                        max_num_arguments = 1)), 
+                       c("cleanr", "error",  "condition"))
+)
+```
+
+# Checking for File and Function Layout 
+*cleanr* comes with to wrappers to check for file and function layout in one go:
+*check_file* runs the file and function layout checks on a file and 
+*check_directory* runs them on all files (matching a given pattern) in a 
+directory.
+```{r}
+print(suppressWarnings(cleanr::check_file(path)))
+```
+
+```{r}
+path <- system.file("tests", "runit", package = "cleanr")
+print(suppressWarnings(cleanr::check_directory(path,
+                                               check_return = FALSE)))
+```
+To run *cleanr* on its own codes, we need to load its internal functions first:
+```{r}
+path <- system.file("source", "R", package = "cleanr")
+cleanr::load_internal_functions("cleanr")
+print(tools::assertCondition(suppressWarnings(cleanr::check_directory(path)), 
+                       c("cleanr", "error",  "condition"))
+)
+```
+# Disabling checks
+To disable any check, set the corresponding option or argument to ```NULL``` or 
+```FALSE```. To completely disable all checks use:
+```{r}
+co <- get_cleanr_options(flatten_list = FALSE)
+co <- lapply(co, function(x) x == FALSE)
+options("cleanr" = list(cleanr = co))
+get_cleanr_options() 
+```
+Now run on any directory, ```check_directory``` will always return ```TRUE```:
+```{r}
+path <- system.file("source", "R", package = "cleanr")
+cleanr::load_internal_functions("cleanr")
+print(cleanr::check_directory(path)) 
+```
+
+
+
 
 # References
