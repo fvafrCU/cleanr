@@ -1,6 +1,7 @@
 test_num_arguments <- function() {
     RUnit::checkTrue(cleanr::check_num_arguments(apply))
-    RUnit::checkException(cleanr::check_num_arguments(apply, max_arguments = 1))
+    RUnit::checkException(cleanr::check_num_arguments(apply,
+                                                      max_num_arguments = 1))
 }
 
 test_check_return <- function() {

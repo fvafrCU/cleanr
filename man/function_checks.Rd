@@ -10,7 +10,7 @@
 \alias{function_checks}
 \title{Function Checks}
 \usage{
-check_num_arguments(object, max_arguments = gco("max_arguments"))
+check_num_arguments(object, max_num_arguments = gco("max_num_arguments"))
 
 check_nesting_depth(object, max_nesting_depth = gco("max_nesting_depth"))
 
@@ -27,7 +27,7 @@ check_return(object, check_return = gco("check_return"))
 Should have been sourced with keep.source = TRUE (see
 \code{\link{get_function_body}}).}
 
-\item{max_arguments}{The maximum number of arguments accepted. 
+\item{max_num_arguments}{The maximum number of arguments accepted. 
 Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 \code{FALSE} to disable the check.}
 

@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to cleanr"
 author: "Andreas Dominik Cullmann"
-date: 2016-11-24, 17:00:37
+date: 2016-11-25, 12:12:02
 bibliography: biblio.bib
 output: rmarkdown::html_vignette
 vignette: >
@@ -9,7 +9,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-# 
+# The Intro to the Intro
 Coding is an art, but most of the code we write is more or less dreadful.
 Many tried to teach us how to write code less dreadful, be it implicitly as
 @KR did,
@@ -27,46 +27,50 @@ many lines, too wide lines, too many arguments or nestings too deep.
 Note that i&szlig;t's *not* a static code analyser like 
 [lintr]( https://CRAN.R-project.org/package=lintr).
 
-
+# A first example
 ```{r, echo = FALSE}
 cleanr::set_cleanr_options(reset = TRUE)
 cleanr::set_cleanr_options(check_return = FALSE)
 
 ```
-You can use \pkg{cleanr} to check all files in a directory:
+You can use *cleanr* to check the layout of a file:
 ```{r}
-directory <- system.file("tests", "runit", package = "cleanr")
-print(cleanr::check_directory(directory))
+path <- system.file("tests", "runit", "wrappers.r", package = "cleanr")
+print(cleanr::check_file_layout(path))
 ```
-Okay, looks good.
-\pkg{cleanr} is controlled by a list of options named "cleanr". You can retrieve 
+Okay, looks good. Let's make it look worse.  
+
+# Options
+*cleanr* is controlled by a list of options named "cleanr". You can retrieve 
 it either via ```options("cleanr")``` or via a convenience function:
 ```{r}
 cleanr::get_cleanr_options(flatten_list = FALSE)
 ```
+
+## Arguments to Check Functions
 You can change any of those options on the fly (leaving the options set 
                                                 untouched). 
 The real life
 ```{r, eval = FALSE}
-cleanr::check_directory(directory, max_file_width = 79)
+cleanr::check_file_layout(path, max_file_width = 79)
 ```
 produces conditions that would stop this vignette from getting compiled, this is
 why we here assert these conditions:
 
 ```{r}
-print(tools::assertCondition(cleanr::check_directory(directory, 
+print(tools::assertCondition(cleanr::check_file_layout(path, 
                                                      max_file_width = 79), 
                              c("cleanr", "error",  "condition"))
 )
 ```
-You can reset options using the convenience function:
+## Setting Options
+You can set options using the convenience function:
 ```{r}
-cleanr::set_cleanr_options(max_file_width = 78, 
-                           max_lines = 35,
-                           max_lines_of_code = 25)
+cleanr::set_cleanr_options(max_file_width = 75, 
+                           max_file_length = 20)
 ```
 ```{r}
-print(tools::assertCondition(cleanr::check_directory(directory), 
+print(tools::assertCondition(cleanr::check_file_layout(path), 
                              c("cleanr", "error",  "condition"))
 )
 ```

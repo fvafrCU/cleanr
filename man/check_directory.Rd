@@ -31,7 +31,7 @@ The function catches the messages of "cleanr"-conditions
 # load internal functions first.
 load_internal_functions("cleanr")
 print(check_directory(system.file("source", "R", package = "cleanr"),
-                      max_arguments = 7, max_file_width = 90,
+                      max_num_arguments = 7, max_file_width = 90,
                       check_return = FALSE))
 }
 \author{

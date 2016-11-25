@@ -7,7 +7,7 @@
 check_function_layout(object,
   max_lines_of_code = get_cleanr_options("max_lines_of_code"),
   max_lines = get_cleanr_options("max_lines"),
-  max_arguments = get_cleanr_options("max_arguments"),
+  max_num_arguments = get_cleanr_options("max_num_arguments"),
   max_nesting_depth = get_cleanr_options("max_nesting_depth"),
   max_line_width = get_cleanr_options("max_line_width"),
   check_return = get_cleanr_options("check_return"))
@@ -19,7 +19,7 @@ check_function_layout(object,
 
 \item{max_lines}{See \code{\link{check_num_lines}}.}
 
-\item{max_arguments}{See \code{\link{check_num_arguments}}.}
+\item{max_num_arguments}{See \code{\link{check_num_arguments}}.}
 
 \item{max_nesting_depth}{See \code{\link{check_nesting_depth}}.}
 
