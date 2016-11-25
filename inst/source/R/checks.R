@@ -58,7 +58,7 @@ check_num_arguments <- function(object,
         checkmate::qassert(max_num_arguments, "N1")
         num_arguments <- length(formals(object))
         if (num_arguments > max_num_arguments)
-            throw(paste("found", num_arguments, 
+            throw(paste("found", num_arguments,
                         "arguments, max_num_arguments was", max_num_arguments))
     }
     return(invisible(TRUE))

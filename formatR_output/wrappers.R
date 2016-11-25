@@ -13,7 +13,7 @@ NULL
 #' @param object The function to be checked.
 #' @param max_lines_of_code See \code{\link{check_num_lines_of_code}}.
 #' @param max_lines See \code{\link{check_num_lines}}.
-#' @param max_arguments See \code{\link{check_num_arguments}}.
+#' @param max_num_arguments See \code{\link{check_num_arguments}}.
 #' @param max_nesting_depth See \code{\link{check_nesting_depth}}.
 #' @param max_line_width See \code{\link{check_line_width}}.
 #' @param check_return See \code{\link{check_return}}.
@@ -25,8 +25,8 @@ check_function_layout <- function(object,
                                   max_lines_of_code =
                                   get_cleanr_options("max_lines_of_code"),
                                   max_lines = get_cleanr_options("max_lines"),
-                                  max_arguments =
-                                  get_cleanr_options("max_arguments"),
+                                  max_num_arguments =
+                                  get_cleanr_options("max_num_arguments"),
                                   max_nesting_depth =
                                   get_cleanr_options("max_nesting_depth"),
                                   max_line_width =
@@ -36,7 +36,7 @@ check_function_layout <- function(object,
                                   ) {
     findings <- NULL
     finding <- tryCatch(check_num_arguments(object,
-                                   max_arguments = max_arguments),
+                                   max_num_arguments = max_num_arguments),
                           cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
     finding <- tryCatch(check_nesting_depth(object,
@@ -232,7 +232,7 @@ check_file <- function(path, ...) {
 #' # load internal functions first.
 #' load_internal_functions("cleanr")
 #' print(check_directory(system.file("source", "R", package = "cleanr"),
-#'                       max_arguments = 7, max_file_width = 90,
+#'                       max_num_arguments = 7, max_file_width = 90,
 #'                       check_return = FALSE))
 check_directory <- function(path, pattern = "\\.[rR]$", recursive = FALSE,
                             ...) {

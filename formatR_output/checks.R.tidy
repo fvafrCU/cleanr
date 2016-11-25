@@ -47,18 +47,18 @@ NULL
 
 
 #' @rdname function_checks
-#' @param max_arguments The maximum number of arguments accepted. 
+#' @param max_num_arguments The maximum number of arguments accepted. 
 #' Set (preferably via \code{\link{set_cleanr_options}}) to \code{NULL} or
 #' \code{FALSE} to disable the check.
 #' @export
-check_num_arguments <- function(object, max_arguments = gco("max_arguments")) {
-    if (is_not_false(max_arguments, where = environment())) {
+check_num_arguments <- function(object, max_num_arguments = gco("max_num_arguments")) {
+    if (is_not_false(max_num_arguments, where = environment())) {
         checkmate::checkFunction(object)
-        checkmate::qassert(max_arguments, "N1")
+        checkmate::qassert(max_num_arguments, "N1")
         num_arguments <- length(formals(object))
-        if (num_arguments > max_arguments) 
-            throw(paste("found", num_arguments, "arguments, max_arguments was", 
-                max_arguments))
+        if (num_arguments > max_num_arguments) 
+            throw(paste("found", num_arguments, "arguments, max_num_arguments was", 
+                max_num_arguments))
     }
     return(invisible(TRUE))
 }

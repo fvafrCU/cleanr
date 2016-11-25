@@ -1,6 +1,6 @@
 formatR_output/options.R.tidy 46 1 style lines should not be more than 80 characters.     defaults <- list(max_file_width = 80, max_file_length = 300, max_lines = 65,  list(c(1, 81)) line_length_linter
 formatR_output/options.R.tidy 46 81 style Trailing whitespace is superfluous.     defaults <- list(max_file_width = 80, max_file_length = 300, max_lines = 65,  list(c(81, 81)) trailing_whitespace_linter
-formatR_output/options.R.tidy 47 74 style Trailing whitespace is superfluous.         max_lines_of_code = 50, max_arguments = 5, max_nesting_depth = 3,  list(c(74, 74)) trailing_whitespace_linter
+formatR_output/options.R.tidy 47 78 style Trailing whitespace is superfluous.         max_lines_of_code = 50, max_num_arguments = 5, max_nesting_depth = 3,  list(c(78, 78)) trailing_whitespace_linter
 formatR_output/options.R.tidy 50 47 style Trailing whitespace is superfluous.     if (is.null(getOption("cleanr")) || reset)  list(c(47, 47)) trailing_whitespace_linter
 formatR_output/options.R.tidy 56 42 style Trailing whitespace is superfluous.             if (length(option_list) == 0)  list(c(42, 42)) trailing_whitespace_linter
 formatR_output/options.R.tidy 59 38 style Trailing whitespace is superfluous.             if (any(is_option_unset))  list(c(38, 38)) trailing_whitespace_linter

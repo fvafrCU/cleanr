@@ -25,7 +25,7 @@
 #' @export
 #' @examples
 #' # R.C. Martin's Clean Code recommends monadic argument lists.
-#' set_cleanr_options(max_arguments = 1)
+#' set_cleanr_options(max_num_arguments = 1)
 #' # R.C. Martin's Clean Code recommends functions less than 20 lines long.
 #' set_cleanr_options(max_lines = 30, max_lines_of_code = 20)
 #' # same as above:
@@ -44,7 +44,7 @@ set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
     checkmate::qassert(reset, "B1")
     checkmate::qassert(overwrite, "B1")
     defaults <- list(max_file_width = 80, max_file_length = 300, max_lines = 65, 
-        max_lines_of_code = 50, max_arguments = 5, max_nesting_depth = 3, 
+        max_lines_of_code = 50, max_num_arguments = 5, max_nesting_depth = 3, 
         max_line_width = 80, check_return = TRUE)
     option_list <- list(...)
     if (is.null(getOption("cleanr")) || reset) 

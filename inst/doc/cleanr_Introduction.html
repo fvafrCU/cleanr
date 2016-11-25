@@ -69,7 +69,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">An Introduction to cleanr</h1>
 <h4 class="author"><em>Andreas Dominik Cullmann</em></h4>
-<h4 class="date"><em>2016-11-25, 11:59:27</em></h4>
+<h4 class="date"><em>2016-11-25, 12:12:02</em></h4>
 
 
 
@@ -103,7 +103,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## $max_lines_of_code
 ## [1] 50
 ## 
-## $max_arguments
+## $max_num_arguments
 ## [1] 5
 ## 
 ## $max_nesting_depth
@@ -115,19 +115,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## $check_return
 ## [1] FALSE</code></pre>
 <div id="arguments-to-check-functions" class="section level2">
-<h2>Arguments to check functions</h2>
+<h2>Arguments to Check Functions</h2>
 <p>You can change any of those options on the fly (leaving the options set untouched). The real life</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cleanr::<span class="kw">check_file_layout</span>(path, <span class="dt">max_file_width =</span> <span class="dv">76</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cleanr::<span class="kw">check_file_layout</span>(path, <span class="dt">max_file_width =</span> <span class="dv">79</span>)</code></pre></div>
 <p>produces conditions that would stop this vignette from getting compiled, this is why we here assert these conditions:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(tools::<span class="kw">assertCondition</span>(cleanr::<span class="kw">check_file_layout</span>(path, 
-                                                     <span class="dt">max_file_width =</span> <span class="dv">76</span>), 
+                                                     <span class="dt">max_file_width =</span> <span class="dv">79</span>), 
                              <span class="kw">c</span>(<span class="st">&quot;cleanr&quot;</span>, <span class="st">&quot;error&quot;</span>,  <span class="st">&quot;condition&quot;</span>))
 )</code></pre></div>
 <pre><code>## [[1]]
-## &lt;cleanr in cleanr::check_file_layout(path, max_file_width = 76): /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/wrappers.r: line 49 counts 77 characters.&gt;
+## &lt;cleanr in cleanr::check_file_layout(path, max_file_width = 79): /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/wrappers.r: line 6 counts 80 characters.&gt;
 ## 
 ## [[2]]
-## &lt;cleanr in cleanr::check_file_layout(path, max_file_width = 76): /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/wrappers.r: line 49 counts 77 characters.&gt;</code></pre>
+## &lt;cleanr in cleanr::check_file_layout(path, max_file_width = 79): /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/wrappers.r: line 6 counts 80 characters.&gt;</code></pre>
+</div>
+<div id="setting-options" class="section level2">
+<h2>Setting Options</h2>
 <p>You can set options using the convenience function:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cleanr::<span class="kw">set_cleanr_options</span>(<span class="dt">max_file_width =</span> <span class="dv">75</span>, 
                            <span class="dt">max_file_length =</span> <span class="dv">20</span>)</code></pre></div>
@@ -135,12 +138,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
                              <span class="kw">c</span>(<span class="st">&quot;cleanr&quot;</span>, <span class="st">&quot;error&quot;</span>,  <span class="st">&quot;condition&quot;</span>))
 )</code></pre></div>
 <pre><code>## [[1]]
-## &lt;cleanr in cleanr::check_file_layout(path): /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/wrappers.r: line 6 counts 76 characters.
+## &lt;cleanr in cleanr::check_file_layout(path): /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/wrappers.r: line 6 counts 80 characters.
 ## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/wrappers.r: line 49 counts 77 characters.
 ## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/wrappers.r: 50 lines in file.&gt;
 ## 
 ## [[2]]
-## &lt;cleanr in cleanr::check_file_layout(path): /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/wrappers.r: line 6 counts 76 characters.
+## &lt;cleanr in cleanr::check_file_layout(path): /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/wrappers.r: line 6 counts 80 characters.
 ## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/wrappers.r: line 49 counts 77 characters.
 ## /home/qwer/svn/R/r-devel/build/library/cleanr/tests/runit/wrappers.r: 50 lines in file.&gt;</code></pre>
 <div class="references">

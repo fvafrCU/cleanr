@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to cleanr"
 author: "Andreas Dominik Cullmann"
-date: 2016-11-25, 12:12:02
+date: 2016-11-25, 12:21:00
 bibliography: biblio.bib
 output: rmarkdown::html_vignette
 vignette: >
@@ -74,5 +74,16 @@ print(tools::assertCondition(cleanr::check_file_layout(path),
                              c("cleanr", "error",  "condition"))
 )
 ```
+
+# Checking for file layout
+You have already seen how to check for file layout:
+```{r}
+cleanr::set_cleanr_options(max_file_width = 75, 
+                           max_file_length = 20)
+print(tools::assertCondition(cleanr::check_file_layout(path), 
+                             c("cleanr", "error",  "condition"))
+)
+```
+
 
 # References

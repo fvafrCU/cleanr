@@ -86,7 +86,7 @@ runit:
 
 .PHONY: cleanr
 cleanr:
-	${Rscript} --vanilla -e 'cleanr::load_internal_functions("cleanr"); cleanr::check_directory("R/", max_arguments = 7, check_return = FALSE)'
+	${Rscript} --vanilla -e 'cleanr::load_internal_functions("cleanr"); cleanr::check_directory("R/", max_num_arguments = 7, check_return = FALSE)'
 
 .PHONY: lintr
 lintr:

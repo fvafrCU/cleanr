@@ -1,5 +1,7 @@
-formatR_output/checks.R.tidy 59 43 style Trailing whitespace is superfluous.         if (num_arguments > max_arguments)  list(c(43, 43)) trailing_whitespace_linter
-formatR_output/checks.R.tidy 60 80 style Trailing whitespace is superfluous.             throw(paste("found", num_arguments, "arguments, max_arguments was",  list(c(80, 80)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 54 1 style lines should not be more than 80 characters. check_num_arguments <- function(object, max_num_arguments = gco("max_num_arguments")) { list(c(1, 87)) line_length_linter
+formatR_output/checks.R.tidy 59 47 style Trailing whitespace is superfluous.         if (num_arguments > max_num_arguments)  list(c(47, 47)) trailing_whitespace_linter
+formatR_output/checks.R.tidy 60 1 style lines should not be more than 80 characters.             throw(paste("found", num_arguments, "arguments, max_num_arguments was",  list(c(1, 84)) line_length_linter
+formatR_output/checks.R.tidy 60 84 style Trailing whitespace is superfluous.             throw(paste("found", num_arguments, "arguments, max_num_arguments was",  list(c(84, 84)) trailing_whitespace_linter
 formatR_output/checks.R.tidy 71 1 style lines should not be more than 80 characters. check_nesting_depth <- function(object, max_nesting_depth = gco("max_nesting_depth")) { list(c(1, 87)) line_length_linter
 formatR_output/checks.R.tidy 77 59 style Trailing whitespace is superfluous.         if (!any(grepl("}", function_body, fixed = TRUE)))  list(c(59, 59)) trailing_whitespace_linter
 formatR_output/checks.R.tidy 79 77 style Trailing whitespace is superfluous.         braces <- paste(gsub("\\", "", gsub("[^\\{\\}]", "", function_body),  list(c(77, 77)) trailing_whitespace_linter

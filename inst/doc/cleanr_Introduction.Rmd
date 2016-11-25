@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to cleanr"
 author: "Andreas Dominik Cullmann"
-date: 2016-11-25, 11:59:27
+date: 2016-11-25, 12:12:02
 bibliography: biblio.bib
 output: rmarkdown::html_vignette
 vignette: >
@@ -47,22 +47,23 @@ it either via ```options("cleanr")``` or via a convenience function:
 cleanr::get_cleanr_options(flatten_list = FALSE)
 ```
 
-## Arguments to check functions
+## Arguments to Check Functions
 You can change any of those options on the fly (leaving the options set 
                                                 untouched). 
 The real life
 ```{r, eval = FALSE}
-cleanr::check_file_layout(path, max_file_width = 76)
+cleanr::check_file_layout(path, max_file_width = 79)
 ```
 produces conditions that would stop this vignette from getting compiled, this is
 why we here assert these conditions:
 
 ```{r}
 print(tools::assertCondition(cleanr::check_file_layout(path, 
-                                                     max_file_width = 76), 
+                                                     max_file_width = 79), 
                              c("cleanr", "error",  "condition"))
 )
 ```
+## Setting Options
 You can set options using the convenience function:
 ```{r}
 cleanr::set_cleanr_options(max_file_width = 75, 
