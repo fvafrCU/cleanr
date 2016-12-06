@@ -1,2 +1,2 @@
 - consider using a documented option defaults object.
-- finish vignette
+- enhance vignette ... how?

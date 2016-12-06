@@ -69,7 +69,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">An Introduction to cleanr</h1>
 <h4 class="author"><em>Andreas Dominik Cullmann</em></h4>
-<h4 class="date"><em>2016-11-25, 15:59:24</em></h4>
+<h4 class="date"><em>2016-12-06, 22:36:00</em></h4>
 
 
 
@@ -77,7 +77,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1>The Intro to the Intro</h1>
 <p>Coding is an art, but most of the code we write is more or less dreadful. Many tried to teach us how to write code less dreadful, be it implicitly as <span class="citation">Kernighan and Ritchie (<a href="#ref-KR">1988</a>)</span> did, be it explicitly as <span class="citation">Martin (<a href="#ref-cc">2008</a>)</span> did.</p>
 <p>If you are concerned about your coding style, you will probably want to lint your codes with <a href="https://CRAN.R-project.org/package=lintr">lintr</a> or even reformat it using <a href="https://CRAN.R-project.org/package=formatR">formatR</a>.</p>
-<p>This package tries to help you with your code`s layout: it checks our code for files too long or wide, functions with too many lines, too wide lines, too many arguments or nestings too deep. Note that ißt’s <em>not</em> a static code analyser like <a href="https://CRAN.R-project.org/package=lintr">lintr</a>.</p>
+<p>This package tries to help you with your code`s layout: it checks our code for files too long or wide, functions with too many lines, too wide lines, too many arguments or nestings too deep. Note that it’s <em>not</em> a static code analyser like <a href="https://CRAN.R-project.org/package=lintr">lintr</a>.</p>
 </div>
 <div id="a-first-example" class="section level1">
 <h1>A first example</h1>
@@ -150,7 +150,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="checking-for-file-layout" class="section level1">
 <h1>Checking for File Layout</h1>
-<p>Files too long or too wide are hard to read. You can check for a file’s layout, i.e. for it’s lines’ width and for the number of it’s lines. You have already seen how to check for file layout:</p>
+<p>Files too long or too wide are hard to read. You can check for a file’s layout, i.e. for its lines’ width and for the number of its lines. You have already seen how to check for file layout:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cleanr::<span class="kw">set_cleanr_options</span>(<span class="dt">reset =</span> <span class="ot">TRUE</span>)
 path &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;source&quot;</span>, <span class="st">&quot;R&quot;</span>, <span class="st">&quot;checks.R&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;cleanr&quot;</span>)
 <span class="kw">print</span>(cleanr::<span class="kw">check_file_layout</span>(path)) </code></pre></div>
@@ -168,7 +168,16 @@ path &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span cla
 </div>
 <div id="checking-for-function-layout" class="section level1">
 <h1>Checking for Function Layout</h1>
-<p>Functions should - not have too many arguments, - not have nestings too deep, - neither have too many lines nor - have too many lines of code, - not have lines too wide and - explicitly return an object. You can check all functions defined in a file:</p>
+<p>Functions should</p>
+<ul>
+<li>not have too many arguments,</li>
+<li>not have nestings too deep,</li>
+<li>neither have too many lines nor</li>
+<li>have too many lines of code,</li>
+<li>not have lines too wide and</li>
+<li>explicitly return an object.</li>
+</ul>
+<p>You can check all functions defined in a file:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw">suppressWarnings</span>(cleanr::<span class="kw">check_functions_in_file</span>(path)))</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>And again we override some option by argument:</p>
@@ -198,7 +207,7 @@ path &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span cla
 </div>
 <div id="checking-for-file-and-function-layout" class="section level1">
 <h1>Checking for File and Function Layout</h1>
-<p><em>cleanr</em> comes with to wrappers to check for file and function layout in one go: <em>check_file</em> runs the file and function layout checks on a file and <em>check_directory</em> runs them on all files (matching a given pattern) in a directory.</p>
+<p><em>cleanr</em> comes with wrappers to check for file and function layout in one go: <em>check_file</em> runs the file and function layout checks on a file and <em>check_directory</em> runs them on all files (matching a given pattern) in a directory.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw">suppressWarnings</span>(cleanr::<span class="kw">check_file</span>(path)))</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">path &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;tests&quot;</span>, <span class="st">&quot;runit&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;cleanr&quot;</span>)
@@ -221,7 +230,26 @@ cleanr::<span class="kw">load_internal_functions</span>(<span class="st">&quot;c
 </div>
 <div id="disabling-checks" class="section level1">
 <h1>Disabling checks</h1>
-<p>To disable any check, set the corresponding option or argument to <code>NULL</code> or <code>FALSE</code>. To completely disable all checks use:</p>
+<p>To disable any check, set the corresponding option or argument to <code>NULL</code> or <code>FALSE</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cleanr::<span class="kw">set_cleanr_options</span>(<span class="dt">reset =</span> <span class="ot">TRUE</span>)
+cleanr::<span class="kw">load_internal_functions</span>(<span class="st">&quot;cleanr&quot;</span>)
+path &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;source&quot;</span>, <span class="st">&quot;R&quot;</span>, <span class="st">&quot;wrappers.R&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;cleanr&quot;</span>)
+
+<span class="co"># will produce a condition:</span>
+r &lt;-<span class="st"> </span>tools::<span class="kw">assertCondition</span>(cleanr::<span class="kw">check_functions_in_file</span>(path, 
+                                                            <span class="dt">check_return =</span> <span class="ot">FALSE</span>))
+<span class="kw">print</span>(r)</code></pre></div>
+<pre><code>## [[1]]
+## &lt;cleanr in cleanr::check_functions_in_file(path, check_return = FALSE): /home/qwer/svn/R/r-devel/build/library/cleanr/source/R/wrappers.R  get(name, envir = source_kept)  found 7 arguments, max_num_arguments was 5&gt;
+## 
+## [[2]]
+## &lt;cleanr in cleanr::check_functions_in_file(path, check_return = FALSE): /home/qwer/svn/R/r-devel/build/library/cleanr/source/R/wrappers.R  get(name, envir = source_kept)  found 7 arguments, max_num_arguments was 5&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># set argument to disable the check causing the condition:</span>
+r &lt;-<span class="st"> </span>cleanr::<span class="kw">check_functions_in_file</span>(path, <span class="dt">check_return =</span> <span class="ot">FALSE</span>, 
+                                     <span class="dt">max_num_arguments =</span> <span class="ot">FALSE</span>)
+<span class="kw">print</span>(r)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>To completely disable all checks use:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">co &lt;-<span class="st"> </span><span class="kw">get_cleanr_options</span>(<span class="dt">flatten_list =</span> <span class="ot">FALSE</span>)
 co &lt;-<span class="st"> </span><span class="kw">lapply</span>(co, function(x) x ==<span class="st"> </span><span class="ot">FALSE</span>)
 <span class="kw">options</span>(<span class="st">&quot;cleanr&quot;</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">cleanr =</span> co))
