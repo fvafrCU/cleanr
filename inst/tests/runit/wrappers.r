@@ -3,7 +3,7 @@ test_files <- function() {
                                      package = "cleanr"))
     )
     RUnit::checkTrue(check_file(system.file("source", "R", "wrappers.R",
-                                     package = "cleanr"), max_num_arguments = 7)
+                                     package = "cleanr"), max_num_arguments = 8)
     )
     RUnit::checkException(check_file(system.file("source", "R",
                                                      "wrappers.R",
@@ -38,7 +38,7 @@ test_directories <- function() {
     )
     RUnit::checkTrue(check_directory(system.file("source", "R",
                                                      package = "cleanr"),
-                    max_num_arguments = 7, max_file_width = 100,
+                    max_num_arguments = 8, max_file_width = 100,
                     check_return = FALSE)
     )
 }
@@ -48,3 +48,9 @@ test_functions_in_file <- function() {
     RUnit::checkTrue(check_functions_in_file(file))
     RUnit::checkException(check_functions_in_file(file, max_line_width = 10))
 }
+test_function_layout <- function() {
+    RUnit::checkTrue(check_function_layout(check_line_width))
+    RUnit::checkException(check_function_layout(check_line_width, 
+                                                max_line_width = 10))
+}
+

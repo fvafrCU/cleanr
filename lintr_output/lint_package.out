@@ -1,1 +1,8 @@
-Congratulations: no lints found.
+inst/source/R/wrappers.R 141 73 style Trailing whitespace is superfluous.                                                    envir = source_kept),  list(c(73, 73)) trailing_whitespace_linter
+inst/source/R/wrappers.R 141 73 style Trailing whitespace is superfluous.                                                    envir = source_kept),  list(c(73, 73)) trailing_whitespace_linter
+inst/source/R/wrappers.R 211 68 style Trailing whitespace is superfluous.     arguments_to_use <- arguments_to_use[names(arguments_to_use) !=  list(c(68, 68)) trailing_whitespace_linter
+inst/source/R/wrappers.R 211 68 style Trailing whitespace is superfluous.     arguments_to_use <- arguments_to_use[names(arguments_to_use) !=  list(c(68, 68)) trailing_whitespace_linter
+inst/tests/runit/wrappers.r 53 66 style Trailing whitespace is superfluous.     RUnit::checkException(check_function_layout(check_line_width,  list(c(66, 66)) trailing_whitespace_linter
+inst/tests/runit/wrappers.r 53 66 style Trailing whitespace is superfluous.     RUnit::checkException(check_function_layout(check_line_width,  list(c(66, 66)) trailing_whitespace_linter
+inst/tests/runit/wrappers.r 56 1 style Trailing blank lines are superfluous.  NULL trailing_blank_lines_linter
+inst/tests/runit/wrappers.r 56 1 style Trailing blank lines are superfluous.  NULL trailing_blank_lines_linter

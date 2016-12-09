@@ -4,7 +4,7 @@
 \alias{check_function_layout}
 \title{Check a Function's Layout}
 \usage{
-check_function_layout(object,
+check_function_layout(object, function_name = NULL,
   max_lines_of_code = get_cleanr_options("max_lines_of_code"),
   max_lines = get_cleanr_options("max_lines"),
   max_num_arguments = get_cleanr_options("max_num_arguments"),
@@ -14,6 +14,11 @@ check_function_layout(object,
 }
 \arguments{
 \item{object}{The function to be checked.}
+
+\item{function_name}{The name to be used for reporting. If NULL, it is
+substituted from the object given. Argument is mainly there to pass name for
+functions retrieved via \code{\link{get}} in the wrapper function
+\code{\link{check_functions_in_file}}.}
 
 \item{max_lines_of_code}{See \code{\link{check_num_lines_of_code}}.}
 

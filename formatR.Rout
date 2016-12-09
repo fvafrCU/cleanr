@@ -15,7 +15,7 @@ working on R/utils.R
 no lints found.
 
 working on R/wrappers.R
-no lints found.
+Warning: 2 lints found! See formatR_output/wrappers.R.lints.
 
 working on R/zzz.R
 no lints found.

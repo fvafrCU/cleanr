@@ -1,2 +1,3 @@
 - consider using a documented option defaults object.
 - enhance vignette ... how?
+- clean up the 'massacre' in check_file

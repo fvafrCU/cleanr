@@ -11,6 +11,10 @@ NULL
 #'
 #' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
 #' @param object The function to be checked.
+#' @param function_name The name to be used for reporting. If NULL, it is
+#' substituted from the object given. Argument is mainly there to pass name for
+#' functions retrieved via \code{\link{get}} in the wrapper function
+#' \code{\link{check_functions_in_file}}.
 #' @param max_lines_of_code See \code{\link{check_num_lines_of_code}}.
 #' @param max_lines See \code{\link{check_num_lines}}.
 #' @param max_num_arguments See \code{\link{check_num_arguments}}.
@@ -21,7 +25,7 @@ NULL
 #' @export
 #' @examples
 #' print(check_function_layout(check_num_lines))
-check_function_layout <- function(object,
+check_function_layout <- function(object, function_name = NULL,
                                   max_lines_of_code =
                                   get_cleanr_options("max_lines_of_code"),
                                   max_lines = get_cleanr_options("max_lines"),
@@ -61,7 +65,9 @@ check_function_layout <- function(object,
     findings <- c(findings, finding)
     findings <- tidy_findings(findings)
     if (! is.null(findings)) {
-        function_name <- deparse(substitute(object))
+        if (is.null(function_name)) {
+            function_name <- deparse(substitute(object))
+        }
         throw(paste(function_name, names(findings),
                     findings, sep = " ", collapse = "\n"))
     }
@@ -98,7 +104,6 @@ check_file_layout <- function(path,
     finding <- tryCatch(check_file_length(path,
                                    max_file_length = max_file_length),
                           cleanr = function(e) return(e[["message"]]))
-
     findings <- c(findings, finding)
     findings <- tidy_findings(findings)
     if (! is.null(findings)) {
@@ -133,7 +138,8 @@ check_functions_in_file <- function(path, ...) {
         if (is.function(get(name))) {
             finding <-
                 tryCatch(check_function_layout(get(name,
-                                                   envir = source_kept), ...),
+                                                   envir = source_kept), 
+                                               function_name = name, ...),
                          cleanr = function(e) return(e[["message"]]))
             findings <- c(findings, finding)
         }
@@ -201,6 +207,9 @@ check_file <- function(path, ...) {
                             names(check_functions_defaults)]
     # use only non-empty arguments
     arguments_to_use <- arguments_to_use[arguments_to_use != ""]
+    # TODO: I remove function_name to keep it from being passed via the ellipsis
+    arguments_to_use <- arguments_to_use[names(arguments_to_use) != 
+                                         "function_name"]
     finding <- tryCatch(do.call("check_functions_in_file", arguments_to_use),
                         cleanr = function(e) return(e[["message"]]))
     findings <- c(findings, finding)
@@ -232,7 +241,7 @@ check_file <- function(path, ...) {
 #' # load internal functions first.
 #' load_internal_functions("cleanr")
 #' print(check_directory(system.file("source", "R", package = "cleanr"),
-#'                       max_num_arguments = 7, max_file_width = 90,
+#'                       max_num_arguments = 8, max_file_width = 90,
 #'                       check_return = FALSE))
 check_directory <- function(path, pattern = "\\.[rR]$", recursive = FALSE,
                             ...) {

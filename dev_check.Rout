@@ -11,12 +11,12 @@ Building cleanr ----------------------------------------------------------------
 * installing the package to process help pages
 * creating vignettes ... OK
 Warning: ‘inst/doc’ files
-    ‘cleanr_Introduction.Rmd’, ‘cleanr_Introduction.html’,  ‘cleanr_Introduction.R’
+    ‘cleanr_Introduction.Rmd’, ‘cleanr_Introduction.html’
   ignored as vignettes have been rebuilt.
   Run R CMD build with --no-build-vignettes to prevent rebuilding.
 * checking for LF line-endings in source and make files
 * checking for empty or unneeded directories
-* building ‘cleanr_1.0.0.tar.gz’
+* building ‘cleanr_1.1.0.tar.gz’
 
 Setting env vars ---------------------------------------------------------------
 _R_CHECK_CRAN_INCOMING_USE_ASPELL_: TRUE
@@ -31,7 +31,7 @@ Checking cleanr ----------------------------------------------------------------
 * using options ‘--no-manual --as-cran’
 * checking for file ‘cleanr/DESCRIPTION’ ... OK
 * checking extension type ... Package
-* this is package ‘cleanr’ version ‘1.0.0’
+* this is package ‘cleanr’ version ‘1.1.0’
 * package encoding: UTF-8
 * checking package namespace information ... OK
 * checking package dependencies ... OK

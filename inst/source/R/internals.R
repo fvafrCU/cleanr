@@ -24,7 +24,7 @@ get_function_body <- function(object) {
     checkmate::checkFunction(object)
     checkmate::checkFunction(object)
     captured_function <- utils::capture.output(object)
-    # if the function is not defined in the global envirnoment, the envirnoment
+    # if the function is not defined in the global environment, the environment
     # will be added to capture.output()
     lines_in_function <- captured_function[! grepl("<environment:\\.*",
                                                    captured_function)]
