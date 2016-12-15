@@ -10,7 +10,7 @@
 #' So we have to do it all over after sourcing with keep.source = TRUE (in
 #' \code{\link{check_functions_in_file}}).
 #'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param object The function from which to extract the body. \cr Should have
 #' been sourced with keep.source = TRUE.
 #' @return [character(n)]\cr the function body's lines.
@@ -57,7 +57,7 @@ get_function_body <- function(object) {
 #'
 #' We use this condition as an error dedictated to \pkg{cleanr}.
 #'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @keywords internal
 #' @param message_string The message to be thrown.
 #' @param system_call The call to be thrown.
@@ -87,7 +87,7 @@ throw <- function(message_string, system_call = sys.call(-1), ...) {
 #' TRUE for a check passed or a character holding a conditions message. This
 #' function deletes the TRUEs.
 #'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param findings a character vector with possibly some elements reading "TRUE"
 #' or a vector of TRUEs.
 #' @return a character vector without any element reading "TRUE" or NULL.

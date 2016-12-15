@@ -9,7 +9,7 @@ NULL
 #' \code{\link{throw}}n by \code{\link{function_checks}} and, if it caught any,
 #' \code{\link{throw}}s them.
 #'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param object The function to be checked.
 #' @param function_name The name to be used for reporting. If NULL, it is
 #' substituted from the object given. Argument is mainly there to pass name for
@@ -82,7 +82,7 @@ check_function_layout <- function(object, function_name = NULL,
 #' by \code{\link{file_checks}} and, if it caught any, \code{\link{throw}}s
 #' them.
 #'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param path Path to the file to be checked.
 #' @param max_file_length See \code{\link{check_file_length}}.
 #' @param max_file_width See \code{\link{check_file_width}}.
@@ -120,7 +120,7 @@ check_file_layout <- function(path,
 #' \code{\link{throw}}n by \code{\link{check_function_layout}} and,
 #' if it caught any, \code{\link{throw}}s them.
 #'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param path Path to the file to be checked.
 #' @param ... Argments to be passed to \code{\link{check_function_layout}}.
 #' @return invisible(TRUE), but see \emph{Details}.
@@ -162,7 +162,7 @@ check_functions_in_file <- function(path, ...) {
 #' and, if it
 #' caught any, \code{\link{throw}}s them.
 #'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param path Path to the file to be checked.
 #' @param ... Arguments to be passed to \code{\link{check_functions_in_file}} or
 #' \code{\link{check_file_layout}}.
@@ -229,7 +229,7 @@ check_file <- function(path, ...) {
 #' \code{\link{throw}}n by \code{\link{check_file}} and, if it caught any,
 #' \code{\link{throw}}s them.
 #'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param path Path to the directory to be checked.
 #' @param pattern A pattern to search files with, see \code{\link{list.files}}.
 #' @param recursive Search the directory recursively?
