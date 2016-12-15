@@ -24,7 +24,7 @@ looking for a static code analyzer, check out lintr
 \url{https://github.com/jimhester/lintr}).
 }
 \author{
-Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
+Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 \seealso{
 Packages

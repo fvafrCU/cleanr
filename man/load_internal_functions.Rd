@@ -28,7 +28,7 @@ environment.
 load_internal_functions("cleanr")
 }
 \author{
-Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
+Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 \seealso{
 \code{\link[codetools:checkUsageEnv]{checkUsageEnv in codetools}}.

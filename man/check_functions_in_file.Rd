@@ -27,6 +27,6 @@ print(check_functions_in_file(system.file("source", "R", "utils.R",
                                     package = "cleanr")))
 }
 \author{
-Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
+Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 

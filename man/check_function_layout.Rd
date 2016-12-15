@@ -47,6 +47,6 @@ The functions catches the messages of "cleanr"-conditions
 print(check_function_layout(check_num_lines))
 }
 \author{
-Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
+Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 

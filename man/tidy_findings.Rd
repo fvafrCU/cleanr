@@ -28,7 +28,7 @@ findings <- c("some signal caught", rep("TRUE", 3))
 cleanr:::tidy_findings(findings)
 }
 \author{
-Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
+Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 \keyword{internal}
 

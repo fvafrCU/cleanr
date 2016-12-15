@@ -34,6 +34,6 @@ get_cleanr_options(flatten_list = TRUE, remove_names = TRUE)
 get_cleanr_options(c("max_lines", "max_lines_of_code"))
 }
 \author{
-Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
+Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 

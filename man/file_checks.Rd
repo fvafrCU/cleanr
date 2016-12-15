@@ -44,6 +44,6 @@ print(check_file_length(system.file("source", "R", "checks.R",
                                     max_file_length = 300))
 }
 \author{
-Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
+Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 

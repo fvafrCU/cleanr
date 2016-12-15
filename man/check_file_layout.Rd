@@ -31,6 +31,6 @@ print(check_file_layout(system.file("source", "R", "checks.R",
                                     package = "cleanr")))
 }
 \author{
-Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
+Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 

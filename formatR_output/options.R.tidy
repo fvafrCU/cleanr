@@ -8,7 +8,7 @@
 #' All checks (see \code{\link{function_checks}} and \code{\link{file_checks}})
 #' can be disabled by setting the corresponding option list item to \code{NULL}
 #' or \code{FALSE}.
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param overwrite [boolean(1)]\cr Overwrite options already set? Is set to
 #' \code{FALSE} on package loading to ensure your previously set \pkg{cleanr}
 #' options won't get overridden. Just ignore that argument.
@@ -75,7 +75,7 @@ set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
 #'
 #' A convenience function for \code{\link{getOption}}.
 #'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param ... See \code{\link{getOption}}.
 #' @param remove_names [boolean(1)]\cr Remove the names?
 #' @param flatten_list [boolean(1)]\cr Return a vetcor?

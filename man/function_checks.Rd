@@ -89,6 +89,6 @@ print(check_return(check_return))
 print(check_line_width(check_line_width, max_line_width = 90))
 }
 \author{
-Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
+Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 

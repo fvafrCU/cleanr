@@ -23,7 +23,7 @@
 #' \pkg{lintr}
 #' (\url{https://cran.r-project.org/package=lintr}).
 #'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @name cleanr-package
 #' @aliases cleanr-package
 #' @docType package

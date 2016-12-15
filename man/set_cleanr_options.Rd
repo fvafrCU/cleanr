@@ -55,6 +55,6 @@ set_cleanr_options(reset = TRUE)
 get_cleanr_options(flatten_list = TRUE)
 }
 \author{
-Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
+Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 

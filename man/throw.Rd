@@ -27,7 +27,7 @@ We use this condition as an error dedictated to \pkg{cleanr}.
 tryCatch(cleanr:::throw("Hello error!"), cleanr = function(e) return(e))
 }
 \author{
-Dominik Cullmann, <dominik.cullmann@forst.bwl.de>
+Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 \keyword{internal}
 

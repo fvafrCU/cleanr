@@ -28,7 +28,7 @@ NULL
 #' semicolon.
 #' It just checks if you use \code{\link{return}} at all.
 #'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param object The function to be checked.
 #' Should have been sourced with keep.source = TRUE (see
 #' \code{\link{get_function_body}}).
@@ -185,7 +185,7 @@ check_return <- function(object, check_return = gco("check_return")) {
 #' condition of class c('cleanr', 'error', 'condition').
 #'
 #'
-#' @author Dominik Cullmann, <dominik.cullmann@@forst.bwl.de>
+#' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param path Path to the file to be checked.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @name file_checks
