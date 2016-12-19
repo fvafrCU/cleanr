@@ -16,9 +16,10 @@ if (requireNamespace("RUnit", quietly = TRUE)) {
     html_file <- file.path(path, paste0(package_suite[["name"]], ".html"))
     RUnit::printHTMLProtocol(test_result, fileName = html_file)
     if (interactive()) utils::browseURL(paste0("file:", html_file))
-    if (test_result[[name]][["nErr"]] + test_result[[name]][["nFail"]]) {
+    if (test_result[[name]][["nErr"]] + test_result[[name]][["nFail"]] == 0) {
         message("\n========\nRUnit test result is:")
         print(test_result)
+    } else {
         message("========\n")
         stop("RUnit failed")
     }

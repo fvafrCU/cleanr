@@ -1,7 +1,7 @@
 Package: cleanr
 Type: Package
 Title: Helps You to Code Cleaner
-Version: 1.1.0
+Version: 1.1.1
 Authors@R: person(given = c("Andreas", "Dominik"), family = "Cullmann",
     email = "adc-r@arcor.de", role = c("aut","cre"))
 Description: Check your R code for some of the most common layout flaws.
