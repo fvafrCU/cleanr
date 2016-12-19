@@ -138,7 +138,7 @@ check_functions_in_file <- function(path, ...) {
         if (is.function(get(name))) {
             finding <-
                 tryCatch(check_function_layout(get(name,
-                                                   envir = source_kept), 
+                                                   envir = source_kept),
                                                function_name = name, ...),
                          cleanr = function(e) return(e[["message"]]))
             findings <- c(findings, finding)
@@ -208,7 +208,7 @@ check_file <- function(path, ...) {
     # use only non-empty arguments
     arguments_to_use <- arguments_to_use[arguments_to_use != ""]
     # TODO: I remove function_name to keep it from being passed via the ellipsis
-    arguments_to_use <- arguments_to_use[names(arguments_to_use) != 
+    arguments_to_use <- arguments_to_use[names(arguments_to_use) !=
                                          "function_name"]
     finding <- tryCatch(do.call("check_functions_in_file", arguments_to_use),
                         cleanr = function(e) return(e[["message"]]))

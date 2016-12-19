@@ -50,7 +50,6 @@ test_functions_in_file <- function() {
 }
 test_function_layout <- function() {
     RUnit::checkTrue(check_function_layout(check_line_width))
-    RUnit::checkException(check_function_layout(check_line_width, 
+    RUnit::checkException(check_function_layout(check_line_width,
                                                 max_line_width = 10))
 }
-
