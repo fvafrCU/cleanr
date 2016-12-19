@@ -20,7 +20,8 @@ dev: dev_test_change dev_check
 dev_test:
 	rm ${temp_file} || TRUE; \
 	${Rscript} --vanilla -e 'devtools::test()' >  ${temp_file} 2>&1; \
-	sed -n -e '/^DONE.*/q;p' < ${temp_file} > dev_test.Rout 
+	sed -n -e '/^DONE.*/q;p' < ${temp_file} | \
+	sed -e "s# /.*\(${PKGNAME}\)# \1#" > dev_test.Rout 
 
 dev_check: runit
 	rm ${temp_file} || TRUE; \
