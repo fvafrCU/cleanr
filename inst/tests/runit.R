@@ -20,7 +20,7 @@ if (requireNamespace("RUnit", quietly = TRUE)) {
         message("\n========\nRUnit test result is:")
         print(test_result)
         message("========\n")
-        stop("RUnit failed")
+        warning("RUnit failed")
     }
 
     # Coverage inspection
