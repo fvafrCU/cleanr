@@ -3,8 +3,10 @@
 language: R
 sudo: false
 cache: packages
+r_packages:
+    - RUnit
 r_github_packages:
-  - jimhester/covr
+    - jimhester/covr
 
 after_success:
-  - Rscript -e 'covr::codecov(path = ".", function_exclusions = "\\.onLoad")'
+    - Rscript -e 'covr::codecov(path = ".", function_exclusions = "\\.onLoad")'
