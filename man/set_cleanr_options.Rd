@@ -13,7 +13,7 @@ Use \code{\link{get_cleanr_options}} to get the current values.
 \pkg{cleanr}'s standard defaults are:
 \Sexpr[results=verbatim]{cat(paste(names(cleanr::gco()), 
                                    cleanr::gco(flatten_list = FALSE),
-                                   sep = "=", collapse = "\n"))}}
+                                   sep = "=", collapse = "\n"), "\n")}}
 
 \item{reset}{[boolean(1)]\cr Reset all \pkg{cleanr} options to the package's
 defaults?}
