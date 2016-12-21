@@ -21,7 +21,11 @@ if (requireNamespace("RUnit", quietly = TRUE)) {
         print(test_result)
     } else {
         message("========\n")
-        stop("RUnit failed")
+        if (Sys.info()["nodename"] == "foobar") {
+            stop("RUnit failed!")
+        } else {
+            warning("RUnit failed!")
+        }
     }
 
     # Coverage inspection
