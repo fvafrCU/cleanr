@@ -15,7 +15,7 @@ R.C. Martin in \cite{Clean Code: A Handbook of Agile Software Craftsmanship}
 did.
 
 So we should check our code for files too long or wide, functions with too
-many lines, too wide lines, too many arguments or nestings too deep.
+many lines, too wide lines, too many arguments or too many levels of nesting.
 }
 \note{
 This is not a static code analyzer like pylint or the like. If you're

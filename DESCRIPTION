@@ -11,7 +11,8 @@ Description: Check your R code for some of the most common layout flaws.
     explicitly as R.C. Martin (2008) <ISBN:0-13-235088-2> in
     'Clean Code: A Handbook of Agile Software Craftsmanship' did.
     So we should check our code for files too long or wide, functions with too
-    many lines, too wide lines, too many arguments or nestings too deep.
+    many lines, too wide lines, too many arguments or too many levels of 
+    nesting.
     Note: This is not a static code analyzer like pylint or the like. Checkout
     https://github.com/jimhester/lintr instead.
 Depends:

@@ -9,7 +9,7 @@
 #' did.
 #'
 #' So we should check our code for files too long or wide, functions with too
-#' many lines, too wide lines, too many arguments or nestings too deep.
+#' many lines, too wide lines, too many arguments or too many levels of nesting.
 #' @note This is not a static code analyzer like pylint or the like. If you're
 #' looking for a static code analyzer, check out lintr
 #' (\url{https://cran.r-project.org/package=lintr} or

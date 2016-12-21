@@ -10,7 +10,7 @@ NULL
 #' A function should have a clear layout, it should
 #' \itemize{
 #'   \item not have too many arguments,
-#'   \item not have nestings too deep,
+#'   \item not have too many levels of nesting,
 #'   \item neither have too many lines nor
 #'   \item have too many lines of code,
 #'   \item not have lines too wide and

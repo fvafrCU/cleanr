@@ -69,7 +69,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">An Introduction to cleanr</h1>
 <h4 class="author"><em>Andreas Dominik Cullmann</em></h4>
-<h4 class="date"><em>2016-12-06, 22:39:43</em></h4>
+<h4 class="date"><em>2016-12-21, 10:04:22</em></h4>
 
 
 
@@ -77,7 +77,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1>The Intro to the Intro</h1>
 <p>Coding is an art, but most of the code we write is more or less dreadful. Many tried to teach us how to write code less dreadful, be it implicitly as <span class="citation">Kernighan and Ritchie (<a href="#ref-KR">1988</a>)</span> did, be it explicitly as <span class="citation">Martin (<a href="#ref-cc">2008</a>)</span> did.</p>
 <p>If you are concerned about your coding style, you will probably want to lint your codes with <a href="https://CRAN.R-project.org/package=lintr">lintr</a> or even reformat it using <a href="https://CRAN.R-project.org/package=formatR">formatR</a>.</p>
-<p>This package tries to help you with your code`s layout: it checks our code for files too long or wide, functions with too many lines, too wide lines, too many arguments or nestings too deep. Note that it’s <em>not</em> a static code analyser like <a href="https://CRAN.R-project.org/package=lintr">lintr</a>.</p>
+<p>This package tries to help you with your code`s layout: it checks our code for files too long or wide, functions with too many lines, too wide lines, too many arguments or too many levels of nesting. Note that it’s <em>not</em> a static code analyser like <a href="https://CRAN.R-project.org/package=lintr">lintr</a>.</p>
 </div>
 <div id="a-first-example" class="section level1">
 <h1>A first example</h1>
@@ -171,7 +171,7 @@ path &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span cla
 <p>Functions should</p>
 <ul>
 <li>not have too many arguments,</li>
-<li>not have nestings too deep,</li>
+<li>not have too many levels of nesting,</li>
 <li>neither have too many lines nor</li>
 <li>have too many lines of code,</li>
 <li>not have lines too wide and</li>

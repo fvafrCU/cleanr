@@ -1,7 +1,7 @@
 ---
 title: "An Introduction to cleanr"
 author: "Andreas Dominik Cullmann"
-date: 2016-12-06, 22:39:43
+date: 2016-12-21, 10:04:22
 bibliography: biblio.bib
 output: rmarkdown::html_vignette
 vignette: >
@@ -23,7 +23,7 @@ reformat it using [formatR](https://CRAN.R-project.org/package=formatR).
 
 This package tries to help you with your code`s layout:
 it checks our code for files too long or wide, functions with too
-many lines, too wide lines, too many arguments or nestings too deep.
+many lines, too wide lines, too many arguments or too many levels of nesting.
 Note that it's *not* a static code analyser like 
 [lintr]( https://CRAN.R-project.org/package=lintr).
 
@@ -97,7 +97,7 @@ print(tools::assertCondition(cleanr::check_file_layout(path,
 Functions should
 
  - not have too many arguments,
- - not have nestings too deep,
+ - not have too many levels of nesting,
  - neither have too many lines nor
  - have too many lines of code,
  - not have lines too wide and
