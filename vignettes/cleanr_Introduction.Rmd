@@ -1,11 +1,11 @@
 ---
 title: "An Introduction to cleanr"
 author: "Andreas Dominik Cullmann"
-date: 2016-12-21, 10:04:22
+date: 2017-01-05, 11:43:15
 bibliography: biblio.bib
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{An Introduction to cleanr}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
