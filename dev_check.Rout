@@ -25,7 +25,7 @@ _R_CHECK_FORCE_SUGGESTS_          : FALSE
 Checking cleanr ----------------------------------------------------------------
   --as-cran --timings --no-manual 
 
-* using R Under development (unstable) (2016-12-19 r71819)
+* using R Under development (unstable) (2017-01-13 r71966)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
