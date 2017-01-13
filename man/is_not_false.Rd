@@ -16,7 +16,7 @@ Examples.}
 }
 \value{
 TRUE if the object is set to something different than FALSE, FALSE
-otherwhise.
+otherwise.
 }
 \description{
 Sometimes you need to know whether or not an object exists and is not set to

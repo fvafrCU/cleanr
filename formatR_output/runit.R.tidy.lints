@@ -1,16 +1,14 @@
 formatR_output/runit.R.tidy 5 1 style Trailing whitespace is superfluous.      list(c(1, 4)) trailing_whitespace_linter
 formatR_output/runit.R.tidy 9 73 style Trailing whitespace is superfluous.     package_suite <- RUnit::defineTestSuite(name, dirs = file.path(path,  list(c(73, 73)) trailing_whitespace_linter
 formatR_output/runit.R.tidy 11 1 style Trailing whitespace is superfluous.      list(c(1, 4)) trailing_whitespace_linter
-formatR_output/runit.R.tidy 16 23 style Trailing whitespace is superfluous.     if (interactive())  list(c(23, 23)) trailing_whitespace_linter
-formatR_output/runit.R.tidy 18 74 style Trailing whitespace is superfluous.     if (test_result[[name]][["nErr"]] + test_result[[name]][["nFail"]] ==  list(c(74, 74)) trailing_whitespace_linter
+formatR_output/runit.R.tidy 18 1 style Trailing whitespace is superfluous.      list(c(1, 4)) trailing_whitespace_linter
+formatR_output/runit.R.tidy 22 78 style Trailing whitespace is superfluous.     tryCatch(RUnit::inspect(check_file(system.file("source", "R", "checks.R",  list(c(78, 78)) trailing_whitespace_linter
+formatR_output/runit.R.tidy 24 80 style Trailing whitespace is superfluous.     tryCatch(RUnit::inspect(check_file(system.file("source", "R", "wrappers.R",  list(c(80, 80)) trailing_whitespace_linter
+formatR_output/runit.R.tidy 26 71 style Trailing whitespace is superfluous.     tryCatch(RUnit::inspect(check_directory(system.file("source", "R",  list(c(71, 71)) trailing_whitespace_linter
 formatR_output/runit.R.tidy 30 1 style Trailing whitespace is superfluous.      list(c(1, 4)) trailing_whitespace_linter
-formatR_output/runit.R.tidy 34 78 style Trailing whitespace is superfluous.     tryCatch(RUnit::inspect(check_file(system.file("source", "R", "checks.R",  list(c(78, 78)) trailing_whitespace_linter
-formatR_output/runit.R.tidy 36 80 style Trailing whitespace is superfluous.     tryCatch(RUnit::inspect(check_file(system.file("source", "R", "wrappers.R",  list(c(80, 80)) trailing_whitespace_linter
-formatR_output/runit.R.tidy 38 71 style Trailing whitespace is superfluous.     tryCatch(RUnit::inspect(check_directory(system.file("source", "R",  list(c(71, 71)) trailing_whitespace_linter
-formatR_output/runit.R.tidy 42 1 style Trailing whitespace is superfluous.      list(c(1, 4)) trailing_whitespace_linter
-formatR_output/runit.R.tidy 44 23 style Trailing whitespace is superfluous.     if (interactive())  list(c(23, 23)) trailing_whitespace_linter
-formatR_output/runit.R.tidy 46 1 style Trailing whitespace is superfluous.      list(c(1, 4)) trailing_whitespace_linter
-formatR_output/runit.R.tidy 50 1 style lines should not be more than 80 characters.             opening_braces_only <- grepl("\\s*\\{\\s*", function_track_info[["src"]]) list(c(1, 85)) line_length_linter
-formatR_output/runit.R.tidy 51 1 style lines should not be more than 80 characters.             closing_braces_only <- grepl("\\s*\\}\\s*", function_track_info[["src"]]) list(c(1, 85)) line_length_linter
-formatR_output/runit.R.tidy 54 40 style Trailing whitespace is superfluous.             if (any(statements_missed))  list(c(40, 40)) trailing_whitespace_linter
-formatR_output/runit.R.tidy 56 1 style Trailing whitespace is superfluous.              list(c(1, 12)) trailing_whitespace_linter
+formatR_output/runit.R.tidy 32 23 style Trailing whitespace is superfluous.     if (interactive())  list(c(23, 23)) trailing_whitespace_linter
+formatR_output/runit.R.tidy 34 1 style Trailing whitespace is superfluous.      list(c(1, 4)) trailing_whitespace_linter
+formatR_output/runit.R.tidy 38 1 style lines should not be more than 80 characters.             opening_braces_only <- grepl("\\s*\\{\\s*", function_track_info[["src"]]) list(c(1, 85)) line_length_linter
+formatR_output/runit.R.tidy 39 1 style lines should not be more than 80 characters.             closing_braces_only <- grepl("\\s*\\}\\s*", function_track_info[["src"]]) list(c(1, 85)) line_length_linter
+formatR_output/runit.R.tidy 42 40 style Trailing whitespace is superfluous.             if (any(statements_missed))  list(c(40, 40)) trailing_whitespace_linter
+formatR_output/runit.R.tidy 44 1 style Trailing whitespace is superfluous.              list(c(1, 12)) trailing_whitespace_linter

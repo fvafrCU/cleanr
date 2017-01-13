@@ -9,7 +9,7 @@ check_functions_in_file(path, ...)
 \arguments{
 \item{path}{Path to the file to be checked.}
 
-\item{...}{Argments to be passed to \code{\link{check_function_layout}}.}
+\item{...}{Arguments to be passed to \code{\link{check_function_layout}}.}
 }
 \value{
 invisible(TRUE), but see \emph{Details}.

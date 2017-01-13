@@ -21,9 +21,9 @@ NULL
 #' condition of class c("cleanr", "error", "condition").
 #'
 #' @section Warning: \code{\link{check_return}} just \code{\link{grep}}s for a
-#' for a line starting with a \code{\link{return}} statemtent (ah, see the code
+#' for a line starting with a \code{\link{return}} statement (ah, see the code
 #' for the real thing).
-#' This doesn't ensure that \emph{all} \code{\link{return}} paths from the
+#' This does not ensure that \emph{all} \code{\link{return}} paths from the
 #' function are explicit and it may miss a \code{\link{return}} path after a
 #' semicolon.
 #' It just checks if you use \code{\link{return}} at all.

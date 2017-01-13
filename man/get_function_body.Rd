@@ -19,7 +19,7 @@ been sourced with keep.source = TRUE.}
 }
 \details{
 If we want to check a function as it is coded in a file, we need to get the
-orginial thing as coded in the file, no optimized version.
+original thing as coded in the file, no optimized version.
 In \code{\link{sys.source}} and \code{\link{source}}, keep.source = FALSE
 seems to use \code{\link{body}}.
 So we have to do it all over after sourcing with keep.source = TRUE (in

@@ -8,7 +8,7 @@ tidy_findings(findings)
 }
 \arguments{
 \item{findings}{a character vector with possibly some elements reading "TRUE"
-or a vector of TRUEs.}
+or a vector of TRUES.}
 }
 \value{
 a character vector without any element reading "TRUE" or NULL.
@@ -21,7 +21,7 @@ remove TRUE converted to class character from findings.
 \code{\link{check_functions_in_file}} and
 \code{\link{check_function_layout}} all collect tryCatch to collect either
 TRUE for a check passed or a character holding a conditions message. This
-function deletes the TRUEs.
+function deletes the TRUES.
 }
 \examples{
 findings <- c("some signal caught", rep("TRUE", 3))

@@ -4,7 +4,7 @@
 #' \emph{Details}).
 #'
 #' If we want to check a function as it is coded in a file, we need to get the
-#' orginial thing as coded in the file, no optimized version.
+#' original thing as coded in the file, no optimized version.
 #' In \code{\link{sys.source}} and \code{\link{source}}, keep.source = FALSE
 #' seems to use \code{\link{body}}.
 #' So we have to do it all over after sourcing with keep.source = TRUE (in
@@ -55,14 +55,14 @@ get_function_body <- function(object) {
 #'
 #' throws a condition of class c("cleanr", "error", "condition").
 #'
-#' We use this condition as an error dedictated to \pkg{cleanr}.
+#' We use this condition as an error dedicated to \pkg{cleanr}.
 #'
 #' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @keywords internal
 #' @param message_string The message to be thrown.
 #' @param system_call The call to be thrown.
 #' @param ... Arguments to be passed to \code{\link{structure}}.
-#' @return FALSE. But it doesn't return anything, it stops with a
+#' @return FALSE. But it does not return anything, it stops with a
 #' condition of class c("cleanr", "error", "condition").
 #' @keywords internal
 #' @examples
@@ -85,11 +85,11 @@ throw <- function(message_string, system_call = sys.call(-1), ...) {
 #' \code{\link{check_functions_in_file}} and
 #' \code{\link{check_function_layout}} all collect tryCatch to collect either
 #' TRUE for a check passed or a character holding a conditions message. This
-#' function deletes the TRUEs.
+#' function deletes the TRUES.
 #'
 #' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param findings a character vector with possibly some elements reading "TRUE"
-#' or a vector of TRUEs.
+#' or a vector of TRUES.
 #' @return a character vector without any element reading "TRUE" or NULL.
 #' @keywords internal
 #' @examples

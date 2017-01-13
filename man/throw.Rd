@@ -14,14 +14,14 @@ throw(message_string, system_call = sys.call(-1), ...)
 \item{...}{Arguments to be passed to \code{\link{structure}}.}
 }
 \value{
-FALSE. But it doesn't return anything, it stops with a
+FALSE. But it does not return anything, it stops with a
 condition of class c("cleanr", "error", "condition").
 }
 \description{
 throws a condition of class c("cleanr", "error", "condition").
 }
 \details{
-We use this condition as an error dedictated to \pkg{cleanr}.
+We use this condition as an error dedicated to \pkg{cleanr}.
 }
 \examples{
 tryCatch(cleanr:::throw("Hello error!"), cleanr = function(e) return(e))

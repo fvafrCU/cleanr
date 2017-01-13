@@ -83,7 +83,7 @@ set_cleanr_options <- function(..., reset = FALSE, overwrite = TRUE) {
 #' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param ... See \code{\link{getOption}}.
 #' @param remove_names [boolean(1)]\cr Remove the names?
-#' @param flatten_list [boolean(1)]\cr Return a vetcor?
+#' @param flatten_list [boolean(1)]\cr Return a vector?
 #' @return a (possibly named) list or a vector.
 #' @export
 #' @examples

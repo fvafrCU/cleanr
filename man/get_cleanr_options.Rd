@@ -14,7 +14,7 @@ gco(..., remove_names = FALSE, flatten_list = TRUE)
 
 \item{remove_names}{[boolean(1)]\cr Remove the names?}
 
-\item{flatten_list}{[boolean(1)]\cr Return a vetcor?}
+\item{flatten_list}{[boolean(1)]\cr Return a vector?}
 }
 \value{
 a (possibly named) list or a vector.

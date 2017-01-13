@@ -13,9 +13,13 @@ Rscript := Rscript-devel
 all: install_bare dev_check dev_test dev_vignettes crancheck utils
 
 # devtools
-dev_all: dev_test dev_check
+dev_all: dev_test dev dev_vignettes
 
-dev: dev_test_change dev_check
+
+dev: dev_check dev_spell
+
+dev_spell: roxy 
+	${Rscript} --vanilla -e 'devtools::spell_check(ignore = c("github" , "https", "lintr", "pylint", "Kernighan", "jimhester", "Cullmann", "adc", "arcor", "de", "tryCatch"))' || true
 
 dev_test:
 	rm ${temp_file} || TRUE; \

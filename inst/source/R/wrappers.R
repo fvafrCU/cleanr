@@ -122,7 +122,7 @@ check_file_layout <- function(path,
 #'
 #' @author Andreas Dominik Cullmann, <adc-r@@arcor.de>
 #' @param path Path to the file to be checked.
-#' @param ... Argments to be passed to \code{\link{check_function_layout}}.
+#' @param ... Arguments to be passed to \code{\link{check_function_layout}}.
 #' @return invisible(TRUE), but see \emph{Details}.
 #' @export
 #' @examples

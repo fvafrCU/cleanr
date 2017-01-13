@@ -12,7 +12,7 @@
 #' @param ... Parameters passed to \code{\link{exists}}. See Details and
 #' Examples.
 #' @return TRUE if the object is set to something different than FALSE, FALSE
-#' otherwhise.
+#' otherwise.
 #' @export
 #' @examples
 #' a  <- 1

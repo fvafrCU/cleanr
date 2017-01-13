@@ -15,18 +15,8 @@ if (requireNamespace("RUnit", quietly = TRUE)) {
     RUnit::printTextProtocol(test_result, showDetails = TRUE)
     html_file <- file.path(path, paste0(package_suite[["name"]], ".html"))
     RUnit::printHTMLProtocol(test_result, fileName = html_file)
-    if (interactive()) utils::browseURL(paste0("file:", html_file))
-    if (test_result[[name]][["nErr"]] + test_result[[name]][["nFail"]] == 0) {
-        message("\n========\nRUnit test result is:")
-        print(test_result)
-    } else {
-        message("========\n")
-        if (Sys.info()["nodename"] == "foobar") {
-            stop("RUnit failed!")
-        } else {
-            warning("RUnit failed!")
-        }
-    }
+    message("\n========\nRUnit test result is:")
+    print(test_result)
 
     # Coverage inspection
     track <- RUnit::tracker()
