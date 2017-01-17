@@ -18,3 +18,4 @@ formatR_output
 ^README\.Rmd$
 ^README-.*\.png$
 ^git_hooks/$
+^cran-comments\.md$
