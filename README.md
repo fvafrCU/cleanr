@@ -16,6 +16,7 @@ or, after installation, the help page:
 
 
 ```r
+options(pager = "/bin/cat")
 help("cleanr-package", package = "cleanr")
 ```
 

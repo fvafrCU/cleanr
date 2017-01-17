@@ -20,7 +20,8 @@ knitr::opts_chunk$set(
 Please read the [vignette](http://htmlpreview.github.io/?https://github.com/fvafrCU/cleanr/blob/master/inst/doc/cleanr_Introduction.html)
 or, after installation, the help page:
 
-```{r, eval = FALSE}
+```{r, results = "hide"}
+options(pager = "/bin/cat")
 help("cleanr-package", package = "cleanr")
 ```
 
