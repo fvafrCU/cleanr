@@ -35,6 +35,12 @@ dev_check: runit
 dev_vignettes:
 	${Rscript} --vanilla -e 'devtools::build_vignettes()'
 
+dev_release:
+	${Rscript} --vanilla -e 'devtools::release()'
+
+dev_devel:
+	${Rscript} --vanilla -e 'devtools::use_dev_version()'
+
 # R CMD 
 craninstall: crancheck
 	${R} --vanilla CMD INSTALL  ${PKGNAME}_${PKGVERS}.tar.gz
