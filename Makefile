@@ -19,7 +19,7 @@ dev_all: dev_test dev dev_vignettes
 dev: dev_check dev_spell
 
 dev_spell: roxy 
-	${Rscript} --vanilla -e 'devtools::spell_check(ignore = c("github" , "https", "lintr", "pylint", "Kernighan", "jimhester", "Cullmann", "adc", "arcor", "de", "tryCatch"))' || true
+	${Rscript} --vanilla -e 'spell <- devtools::spell_check(ignore = c("github" , "https", "lintr", "pylint", "Kernighan", "jimhester", "Cullmann", "adc", "arcor", "de", "tryCatch")); if (length(spell) > 0) {print(spell); stop("spell check failed")} '
 
 dev_test:
 	rm ${temp_file} || TRUE; \
@@ -125,5 +125,5 @@ demo:
 
 .PHONY: dependencies
 dependencies:
-	${Rscript} --vanilla -e 'deps <-c("covr", "knitr", "devtools", "rmarkdown", "RUnit", "checkmate", "roxygen2", "lintr"); for (dep in deps) {if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/")}'
+	${Rscript} --vanilla -e 'deps <-c("covr", "knitr", "devtools", "rmarkdown", "RUnit", "checkmate", "roxygen2", "lintr", "hunspell"); for (dep in deps) {if (! require(dep, character.only = TRUE)) install.packages(dep, repos = "https://cran.uni-muenster.de/")}'
 
