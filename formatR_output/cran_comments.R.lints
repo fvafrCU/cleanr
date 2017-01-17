@@ -1,0 +1,6 @@
+formatR_output/cran_comments.R 12 1 style lines should not be more than 80 characters.     cat("\n# Package ", pkg$package, pkg$version, file = comments_file, "\n", append = FALSE) list(c(1, 93)) line_length_linter
+formatR_output/cran_comments.R 20 13 style Commented code should be removed.     cat("\n## Test  environments ", "\n", file = comments_file, append = TRUE) list(c(13, 78)) commented_code_linter
+formatR_output/cran_comments.R 21 1 style lines should not be more than 80 characters.     cat("-", paste(here[here != ""], collapse = "\n  "), "\n", file = comments_file, append = TRUE) list(c(1, 99)) line_length_linter
+formatR_output/cran_comments.R 22 1 style lines should not be more than 80 characters.     cat("-", paste(travis[travis != ""], collapse = "\n  "), "\n", file = comments_file, append = TRUE) list(c(1, 103)) line_length_linter
+formatR_output/cran_comments.R 24 13 style Commented code should be removed.     cat("\n## R CMD check results\n", file = comments_file, append = TRUE) list(c(13, 74)) commented_code_linter
+formatR_output/cran_comments.R 26 1 style lines should not be more than 80 characters.     cat(grep("^[0-9]* errors \\|", check, value = TRUE), "\n", file = comments_file, append = TRUE) list(c(1, 99)) line_length_linter

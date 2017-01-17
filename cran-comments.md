@@ -1,3 +1,8 @@
+Dear CRAN Team,
+this is a new version of package cleanr.
+I have done some spell checking and fixed a buggy vignette title.
+Best, 
+Dominik 
 
 # Package  cleanr 1.1.3 
 

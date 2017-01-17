@@ -19,3 +19,5 @@ formatR_output
 ^README-.*\.png$
 ^git_hooks/$
 ^cran-comments\.md$
+^revdep$
+^git_hooks$
