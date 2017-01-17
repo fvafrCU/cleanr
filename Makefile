@@ -112,6 +112,10 @@ remove:
 	 ${R} --vanilla CMD REMOVE  ${PKGNAME}
 
 # specifics
+
+README.md: README.Rmd
+	${Rscript} --vanilla -e 'knitr::knit("README.Rmd")'
+
 .PHONY: demo
 demo:
 	# R CMD BATCH  demo/${rpackage}.r ## Rscript doesn't load
