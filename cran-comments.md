@@ -16,4 +16,18 @@ Dominik
 - win-builder (devel) 
 
 ## R CMD check results
-0 errors | 0 warnings | 0 notes 
+0 errors | 0 warnings | 1 note 
+checking CRAN incoming feasibility ... NOTE
+Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
+
+Possibly mis-spelled words in DESCRIPTION:
+  Kernighan (9:11)
+  Ritchie (9:31)
+  pylint (16:51)
+
+Package has help file(s) containing install/render-stage \Sexpr{} expressions but no prebuilt PDF manual.
+
+### On Notes:
+- Kernighan, Ritchie and pylint seem to be unknown to aspell.
+- I use an Sexpr in a roxygen comment, it renders fine.
+

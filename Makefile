@@ -29,7 +29,7 @@ dev_test:
 
 dev_check: runit
 	rm ${temp_file} || TRUE; \
-	${Rscript} --vanilla -e 'devtools::check()' > ${temp_file} 2>&1; \
+	${Rscript} --vanilla -e 'devtools::check(cran = TRUE, check_version = TRUE)' > ${temp_file} 2>&1; \
 	grep -v ".*'/" ${temp_file} | grep -v ".*‘/" > dev_check.Rout 
 
 dev_vignettes:
@@ -59,6 +59,7 @@ install_bare: build_bare
 
 check_bare: build_bare runit
 	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
+		_R_CHECK_CRAN_INCOMING_USE_ASPELL_=TRUE && \
         ${R} --vanilla CMD check --no-examples ${PKGNAME}_${PKGVERS}.tar.gz && \
         printf '===== run\n\tmake install\n!!\n'
 

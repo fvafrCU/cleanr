@@ -9,7 +9,8 @@ provide_cran_comments <- function(comments_file = "cran-comments.md",
                                   check_log = "dev_check.Rout",
                                   travis_raw_log = travis_copy) {
     pkg <- devtools::as.package(".")
-    cat("\n# Package ", pkg$package, pkg$version, file = comments_file, "\n", append = FALSE)
+    cat("\n# Package ", pkg$package, pkg$version, file = comments_file, "\n", 
+        append = FALSE)
     travis <- unlist(strsplit(travis_raw_log, "\n"))
     session <- sessionInfo()
     here <- c("",
@@ -18,11 +19,15 @@ provide_cran_comments <- function(comments_file = "cran-comments.md",
               paste0("Running under: ", session$running))
 
     cat("\n## Test  environments ", "\n", file = comments_file, append = TRUE)
-    cat("-", paste(here[here != ""], collapse = "\n  "), "\n", file = comments_file, append = TRUE)
-    cat("-", paste(travis[travis != ""], collapse = "\n  "), "\n", file = comments_file, append = TRUE)
+    cat("-", paste(here[here != ""], collapse = "\n  "), "\n", 
+        file = comments_file, append = TRUE)
+    cat("-", paste(travis[travis != ""], collapse = "\n  "), "\n", 
+        file = comments_file, append = TRUE)
     cat("- win-builder (devel)", "\n", file = comments_file, append = TRUE)
     cat("\n## R CMD check results\n", file = comments_file, append = TRUE)
     check <- readLines(check_log)
-    cat(grep("^[0-9]* errors \\|", check, value = TRUE), "\n", file = comments_file, append = TRUE)
+    cat(check[seq.int(from = grep("^[0-9]* errors \\|", check), 
+                      to = length(check))],
+        "\n" , file = comments_file, append = TRUE, sep = "\n")
     return(invisible(NULL))
 }
