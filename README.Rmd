@@ -1,9 +1,12 @@
 ---
-output: github_document
+output:
+  md_document:
+    variant: markdown_github
 ---
 [![Build Status](https://travis-ci.org/fvafrCU/cleanr.svg?branch=master)](https://travis-ci.org/fvafrCU/cleanr)
 [![Coverage Status](https://codecov.io/github/fvafrCU/cleanr/coverage.svg?branch=master)](https://codecov.io/github/fvafrCU/cleanr?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/cleanr)](https://cran.r-project.org/package=cleanr)
+
 # cleanr
 Check your R code for some of the most common layout flaws.
 
@@ -17,8 +20,10 @@ knitr::opts_chunk$set(
 )
 ```
 ## Introduction
-Please read the [vignette](http://htmlpreview.github.io/?https://github.com/fvafrCU/cleanr/blob/master/inst/doc/cleanr_Introduction.html)
-or, after installation, the help page:
+Please read the vignette. Either [the version on github](http://htmlpreview.github.io/?https://github.com/fvafrCU/cleanr/blob/master/inst/doc/cleanr_Introduction.html)
+or [the one released on cran](https://cran.r-project.org/web/packages/cleanr/vignettes/cleanr_Introduction.html).
+
+Or, after installation, the help page:
 
 ```{r, results = "hide"}
 options(pager = "/bin/cat")
