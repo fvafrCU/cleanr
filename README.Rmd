@@ -25,16 +25,16 @@ or [the one released on cran](https://cran.r-project.org/web/packages/cleanr/vig
 
 Or, after installation, the help page:
 
-```{r, results = "hide"}
+```{r}
 options(pager = "/bin/cat")
 help("cleanr-package", package = "cleanr")
 ```
 
 ## Installation
 You can install cleanr from github with:
-```{r, eval = FALSE}
+```{r, eval = TRUE, results = "hide", message = FALSE}
 if (! require("devtools")) install.packages("devtools")
-devtools::install_github("fvafrCU/cleanr")
+devtools::install_github("fvafrCU/cleanr", quiet = TRUE)
 ```
 
 ## cleanr is a fork 
