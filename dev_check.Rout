@@ -16,7 +16,7 @@ Warning: ‘inst/doc’ files
   Run R CMD build with --no-build-vignettes to prevent rebuilding.
 * checking for LF line-endings in source and make files
 * checking for empty or unneeded directories
-* building ‘cleanr_1.1.3.tar.gz’
+* building ‘cleanr_1.1.3.9000.tar.gz’
 
 Setting env vars ---------------------------------------------------------------
 _R_CHECK_CRAN_INCOMING_USE_ASPELL_: TRUE
@@ -31,15 +31,12 @@ Checking cleanr ----------------------------------------------------------------
 * using options ‘--no-manual --as-cran’
 * checking for file ‘cleanr/DESCRIPTION’ ... OK
 * checking extension type ... Package
-* this is package ‘cleanr’ version ‘1.1.3’
+* this is package ‘cleanr’ version ‘1.1.3.9000’
 * package encoding: UTF-8
-* checking CRAN incoming feasibility ...Warning: unable to access index for repository https://bioconductor.org/packages/3.5/data/annotation/src/contrib:
-  cannot download all files
-Warning in url(sprintf("%s/src/contrib/PACKAGES.gz", u), "rb") :
-  URL 'https://bioconductor.org/packages/3.5/data/annotation/src/contrib/PACKAGES.gz': status was '404 Not Found'
-NB: need Internet access to use CRAN incoming checks
- NOTE
+* checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
+
+Version contains large components (1.1.3.9000)
 
 Possibly mis-spelled words in DESCRIPTION:
   Kernighan (9:11)
@@ -48,9 +45,7 @@ Possibly mis-spelled words in DESCRIPTION:
 
 Package has help file(s) containing install/render-stage \Sexpr{} expressions but no prebuilt PDF manual.
 * checking package namespace information ... OK
-* checking package dependencies ...Warning: unable to access index for repository https://bioconductor.org/packages/3.5/data/annotation/src/contrib:
-  cannot download all files
- OK
+* checking package dependencies ... OK
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
@@ -109,6 +104,8 @@ R CMD check results
 0 errors | 0 warnings | 1 note 
 checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Andreas Dominik Cullmann <adc-r@arcor.de>’
+
+Version contains large components (1.1.3.9000)
 
 Possibly mis-spelled words in DESCRIPTION:
   Kernighan (9:11)

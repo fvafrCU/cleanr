@@ -1,6 +1,7 @@
-formatR_output/cran_comments.R 12 1 style lines should not be more than 80 characters.     cat("\n# Package ", pkg$package, pkg$version, file = comments_file, "\n", append = FALSE) list(c(1, 93)) line_length_linter
-formatR_output/cran_comments.R 20 13 style Commented code should be removed.     cat("\n## Test  environments ", "\n", file = comments_file, append = TRUE) list(c(13, 78)) commented_code_linter
-formatR_output/cran_comments.R 21 1 style lines should not be more than 80 characters.     cat("-", paste(here[here != ""], collapse = "\n  "), "\n", file = comments_file, append = TRUE) list(c(1, 99)) line_length_linter
-formatR_output/cran_comments.R 22 1 style lines should not be more than 80 characters.     cat("-", paste(travis[travis != ""], collapse = "\n  "), "\n", file = comments_file, append = TRUE) list(c(1, 103)) line_length_linter
-formatR_output/cran_comments.R 24 13 style Commented code should be removed.     cat("\n## R CMD check results\n", file = comments_file, append = TRUE) list(c(13, 74)) commented_code_linter
-formatR_output/cran_comments.R 26 1 style lines should not be more than 80 characters.     cat(grep("^[0-9]* errors \\|", check, value = TRUE), "\n", file = comments_file, append = TRUE) list(c(1, 99)) line_length_linter
+formatR_output/cran_comments.R 12 78 style Trailing whitespace is superfluous.     cat("\n# Package ", pkg$package, pkg$version, file = comments_file, "\n",  list(c(78, 78)) trailing_whitespace_linter
+formatR_output/cran_comments.R 21 13 style Commented code should be removed.     cat("\n## Test  environments ", "\n", file = comments_file, append = TRUE) list(c(13, 78)) commented_code_linter
+formatR_output/cran_comments.R 22 63 style Trailing whitespace is superfluous.     cat("-", paste(here[here != ""], collapse = "\n  "), "\n",  list(c(63, 63)) trailing_whitespace_linter
+formatR_output/cran_comments.R 24 67 style Trailing whitespace is superfluous.     cat("-", paste(travis[travis != ""], collapse = "\n  "), "\n",  list(c(67, 67)) trailing_whitespace_linter
+formatR_output/cran_comments.R 27 13 style Commented code should be removed.     cat("\n## R CMD check results\n", file = comments_file, append = TRUE) list(c(13, 74)) commented_code_linter
+formatR_output/cran_comments.R 29 64 style Trailing whitespace is superfluous.     cat(check[seq.int(from = grep("^[0-9]* errors \\|", check),  list(c(64, 64)) trailing_whitespace_linter
+formatR_output/cran_comments.R 31 14 style Commas should never have a space before.         "\n" , file = comments_file, append = TRUE, sep = "\n") list(13:14) commas_linter

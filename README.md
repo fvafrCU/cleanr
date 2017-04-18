@@ -15,7 +15,7 @@ Check your R code for some of the most common layout flaws.
 
 ## Introduction
 Please read the vignette. Either [the version on github](http://htmlpreview.github.io/?https://github.com/fvafrCU/cleanr/blob/master/inst/doc/cleanr_Introduction.html)
-or [the one released on cran](https://cran.r-project.org/web/packages/cleanr/vignettes/cleanr_Introduction.html).
+or the one released on [cran](https://cran.r-project.org/package=cleanr).
 
 Or, after installation, the help page:
 
