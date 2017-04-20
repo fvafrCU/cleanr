@@ -11,8 +11,7 @@ provide_cran_comments <- function(comments_file = "cran-comments.md", check_log 
     cat("\n# Package ", pkg$package, pkg$version, file = comments_file, 
         "\n", append = FALSE)
     travis <- unlist(strsplit(travis_raw_log, "\n"))
-    session <- session
-fo()
+    session <- sessionInfo()
     here <- c("", session$R.version$version.string, paste0("Platform: ", 
         session$platform), paste0("Running under: ", session$running))
     

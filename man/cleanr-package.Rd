@@ -31,7 +31,7 @@ Packages
 \pkg{codetools}
 (\url{https://cran.r-project.org/package=codetools}),
 \pkg{formatR}
-(\url{https://cran.r-project.org/package=formatR}).
+(\url{https://cran.r-project.org/package=formatR})
 and
 \pkg{lintr}
 (\url{https://cran.r-project.org/package=lintr}).

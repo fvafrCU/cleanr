@@ -1,5 +1,6 @@
 Updating cleanr documentation
 Loading cleanr
+Writing cleanr-package.Rd
 Setting env vars ---------------------------------------------------------------
 CFLAGS  : -Wall -pedantic
 CXXFLAGS: -Wall -pedantic
@@ -25,7 +26,7 @@ _R_CHECK_FORCE_SUGGESTS_          : FALSE
 Checking cleanr ----------------------------------------------------------------
   --as-cran --timings --no-manual 
 
-* using R Under development (unstable) (2017-01-13 r71966)
+* using R Under development (unstable) (2016-12-20 r71827)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
 * using options ‘--no-manual --as-cran’
