@@ -69,7 +69,7 @@ looking for a static code analyzer, check out lintr
 <span class="pkg">codetools</span>
 (<a href="https://cran.r-project.org/package=codetools">https://cran.r-project.org/package=codetools</a>),
 <span class="pkg">formatR</span>
-(<a href="https://cran.r-project.org/package=formatR">https://cran.r-project.org/package=formatR</a>).
+(<a href="https://cran.r-project.org/package=formatR">https://cran.r-project.org/package=formatR</a>)
 and
 <span class="pkg">lintr</span>
 (<a href="https://cran.r-project.org/package=lintr">https://cran.r-project.org/package=lintr</a>).
