@@ -57,4 +57,3 @@ get_cleanr_options(flatten_list = TRUE)
 \author{
 Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
-

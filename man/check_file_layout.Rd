@@ -33,4 +33,3 @@ print(check_file_layout(system.file("source", "R", "checks.R",
 \author{
 Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
-

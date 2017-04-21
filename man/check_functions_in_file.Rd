@@ -29,4 +29,3 @@ print(check_functions_in_file(system.file("source", "R", "utils.R",
 \author{
 Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
-

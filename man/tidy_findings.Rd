@@ -31,4 +31,3 @@ cleanr:::tidy_findings(findings)
 Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 \keyword{internal}
-

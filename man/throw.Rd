@@ -30,4 +30,3 @@ tryCatch(cleanr:::throw("Hello error!"), cleanr = function(e) return(e))
 Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 \keyword{internal}
-

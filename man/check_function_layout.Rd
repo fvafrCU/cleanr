@@ -49,4 +49,3 @@ print(check_function_layout(check_num_lines))
 \author{
 Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
-

@@ -23,9 +23,6 @@ looking for a static code analyzer, check out lintr
 (\url{https://cran.r-project.org/package=lintr} or
 \url{https://github.com/jimhester/lintr}).
 }
-\author{
-Andreas Dominik Cullmann, <adc-r@arcor.de>
-}
 \seealso{
 Packages
 \pkg{codetools}
@@ -36,5 +33,7 @@ and
 \pkg{lintr}
 (\url{https://cran.r-project.org/package=lintr}).
 }
+\author{
+Andreas Dominik Cullmann, <adc-r@arcor.de>
+}
 \keyword{package}
-

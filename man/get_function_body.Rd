@@ -35,4 +35,3 @@ utils::capture.output(body(set_cleanr_options))[4:6]
 Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
 \keyword{internal}
-

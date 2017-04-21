@@ -32,4 +32,3 @@ print(check_file(system.file("source", "R", "utils.R",
 \author{
 Andreas Dominik Cullmann, <adc-r@arcor.de>
 }
-
