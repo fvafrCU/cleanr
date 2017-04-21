@@ -10,7 +10,7 @@ formatR_script := utils/formatR.R
 R := R-devel
 Rscript := Rscript-devel
 
-all: install_bare dev_check dev_test dev_vignettes crancheck utils
+all: install_bare dev_check dev_test dev_vignettes crancheck utils 
 
 # devtools
 dev_all: dev_test dev dev_vignettes
@@ -27,7 +27,7 @@ dev_test:
 	sed -n -e '/^DONE.*/q;p' < ${temp_file} | \
 	sed -e "s# /.*\(${PKGNAME}\)# \1#" > dev_test.Rout 
 
-dev_check: runit
+dev_check: runit README.md
 	rm ${temp_file} || TRUE; \
 	${Rscript} --vanilla -e 'devtools::check(cran = TRUE, check_version = TRUE)' > ${temp_file} 2>&1; \
 	grep -v ".*'/" ${temp_file} | grep -v ".*‘/" > dev_check.Rout 
@@ -57,7 +57,7 @@ install: check
 install_bare: build_bare 
 	${R} --vanilla CMD INSTALL  ${PKGNAME}_${PKGVERS}.tar.gz 
 
-check_bare: build_bare runit
+check_bare: build_bare runit README.md
 	export _R_CHECK_FORCE_SUGGESTS_=TRUE && \
 		_R_CHECK_CRAN_INCOMING_USE_ASPELL_=TRUE && \
         ${R} --vanilla CMD check --no-examples ${PKGNAME}_${PKGVERS}.tar.gz && \
@@ -71,7 +71,7 @@ check: build runit
 build_bare: 
 	${R} --vanilla CMD build ../${PKGSRC}
 
-build: roxy 
+build: roxy README.md
 	${R} --vanilla CMD build ../${PKGSRC}
 
 direct_check:  

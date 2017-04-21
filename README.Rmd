@@ -24,16 +24,15 @@ Please read the vignette. Either [the version on github](http://htmlpreview.gith
 or the one released on [cran](https://cran.r-project.org/package=cleanr).
 
 Or, after installation, the help page:
-
-```{r, results='asis', echo = FALSE, comment = ""}
-print_help <- function(topic, package = NULL) {  
-  help_file = utils:::.getHelpFile(help(topic, package = (package)))
-  captured <- capture.output(html=tools:::Rd2HTML(help_file))
-  captured <- c("<blockquote>", captured, "</blockquote>")
+```{r, eval = FALSE}
+help("excerptr-package", package = "excerptr")
+```
+```{r, echo = FALSE}
+  package <- "excerptr"
+  topic <- "excerptr-package"
+  help_file <- utils:::.getHelpFile(help(topic, package = (package)))
+  captured <- gsub('_\b', '',  capture.output(tools:::Rd2txt(help_file) ))
   cat(captured, sep="\n")
-  return(invisible(captured))
-}
-print_help(topic = "cleanr-package", package = "cleanr")
 ```
 
 ## Installation

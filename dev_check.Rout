@@ -1,21 +1,5 @@
 Updating cleanr documentation
 Loading cleanr
-Updating roxygen version in /home/qwer/git/cyclops/fvafrcu/cleanr/DESCRIPTION
-Writing is_not_false.Rd
-Writing load_internal_functions.Rd
-Writing get_function_body.Rd
-Writing throw.Rd
-Writing tidy_findings.Rd
-Writing function_checks.Rd
-Writing file_checks.Rd
-Writing cleanr-package.Rd
-Writing set_cleanr_options.Rd
-Writing get_cleanr_options.Rd
-Writing check_function_layout.Rd
-Writing check_file_layout.Rd
-Writing check_functions_in_file.Rd
-Writing check_file.Rd
-Writing check_directory.Rd
 Setting env vars ---------------------------------------------------------------
 CFLAGS  : -Wall -pedantic
 CXXFLAGS: -Wall -pedantic
