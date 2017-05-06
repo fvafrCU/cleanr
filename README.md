@@ -20,26 +20,44 @@ or the one released on [cran](https://cran.r-project.org/package=cleanr).
 Or, after installation, the help page:
 
 ```r
-help("excerptr-package", package = "excerptr")
+help("cleanr-package", package = "cleanr")
 ```
 
 ```
-#> Excerpt Structuring Comments from Your Code File and Set a Table of
-#> Contents
+#> Helps You to Code Cleaner
 #> 
 #> Description:
 #> 
-#>      This is just an R interface to the python package excerpts (<URL:
-#>      https://pypi.python.org/pypi/excerpts>).
+#>      Check your R code for some of the most common layout flaws.
 #> 
 #> Details:
 #> 
-#>      You will probably only want to use 'excerptr', see there for a
-#>      usage example.
+#>      Many tried to teach us how to write code less dreadful, be it
+#>      implicitly as B. W. Kernighan and D. M. Ritchie in The C
+#>      Programming Language did, be it explicitly as R.C. Martin in Clean
+#>      Code: A Handbook of Agile Software Craftsmanship did.
+#> 
+#>      So we should check our code for files too long or wide, functions
+#>      with too many lines, too wide lines, too many arguments or too
+#>      many levels of nesting.
+#> 
+#> Note:
+#> 
+#>      This is not a static code analyzer like pylint or the like. If
+#>      you're looking for a static code analyzer, check out lintr (<URL:
+#>      https://cran.r-project.org/package=lintr> or <URL:
+#>      https://github.com/jimhester/lintr>).
 #> 
 #> Author(s):
 #> 
 #>      Andreas Dominik Cullmann, <adc-r@arcor.de>
+#> 
+#> See Also:
+#> 
+#>      Packages 'codetools' (<URL:
+#>      https://cran.r-project.org/package=codetools>), 'formatR' (<URL:
+#>      https://cran.r-project.org/package=formatR>) and 'lintr' (<URL:
+#>      https://cran.r-project.org/package=lintr>).
 ```
 
 ## Installation

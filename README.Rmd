@@ -25,11 +25,11 @@ or the one released on [cran](https://cran.r-project.org/package=cleanr).
 
 Or, after installation, the help page:
 ```{r, eval = FALSE}
-help("excerptr-package", package = "excerptr")
+help("cleanr-package", package = "cleanr")
 ```
 ```{r, echo = FALSE}
-  package <- "excerptr"
-  topic <- "excerptr-package"
+  package <- "cleanr"
+  topic <- "cleanr-package"
   help_file <- utils:::.getHelpFile(help(topic, package = (package)))
   captured <- gsub('_\b', '',  capture.output(tools:::Rd2txt(help_file) ))
   cat(captured, sep="\n")
