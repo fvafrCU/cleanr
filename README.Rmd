@@ -6,6 +6,8 @@ output:
 [![Build Status](https://travis-ci.org/fvafrCU/cleanr.svg?branch=master)](https://travis-ci.org/fvafrCU/cleanr)
 [![Coverage Status](https://codecov.io/github/fvafrCU/cleanr/coverage.svg?branch=master)](https://codecov.io/github/fvafrCU/cleanr?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/cleanr)](https://cran.r-project.org/package=cleanr)
+[![RStudio_downloads_monthly](http://cranlogs.r-pkg.org/badges/cleanr)](http://cran.rstudio.com/web/packages/cleanr/index.html)
+[![RStudio_downloads_total](http://cranlogs.r-pkg.org/badges/grand-total/cleanr)](http://cran.rstudio.com/web/packages/cleanr/index.html)
 
 # cleanr
 Check your R code for some of the most common layout flaws.
