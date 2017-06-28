@@ -5,9 +5,9 @@ output:
 ---
 [![Build Status](https://travis-ci.org/fvafrCU/cleanr.svg?branch=master)](https://travis-ci.org/fvafrCU/cleanr)
 [![Coverage Status](https://codecov.io/github/fvafrCU/cleanr/coverage.svg?branch=master)](https://codecov.io/github/fvafrCU/cleanr?branch=master)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/cleanr)](https://cran.r-project.org/package=cleanr)
-[![RStudio_downloads_monthly](http://cranlogs.r-pkg.org/badges/cleanr)](http://cran.rstudio.com/web/packages/cleanr/index.html)
-[![RStudio_downloads_total](http://cranlogs.r-pkg.org/badges/grand-total/cleanr)](http://cran.rstudio.com/web/packages/cleanr/index.html)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/cleanr)](https://cran.r-project.org/package=cleanr)
+[![RStudio_downloads_monthly](https://cranlogs.r-pkg.org/badges/cleanr)](https://cran.rstudio.com/web/packages/cleanr/index.html)
+[![RStudio_downloads_total](https://cranlogs.r-pkg.org/badges/grand-total/cleanr)](https://cran.rstudio.com/web/packages/cleanr/index.html)
 
 # cleanr
 Check your R code for some of the most common layout flaws.
@@ -16,7 +16,7 @@ Check your R code for some of the most common layout flaws.
 
 
 ## Introduction
-Please read the vignette. Either [the version on github](http://htmlpreview.github.io/?https://github.com/fvafrCU/cleanr/blob/master/inst/doc/cleanr_Introduction.html)
+Please read the vignette. Either [the version on github](https://htmlpreview.github.io/?https://github.com/fvafrCU/cleanr/blob/master/inst/doc/cleanr_Introduction.html)
 or the one released on [cran](https://cran.r-project.org/package=cleanr).
 
 Or, after installation, the help page:
