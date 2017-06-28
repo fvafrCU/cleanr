@@ -1,13 +1,8 @@
----
-output:
-  md_document:
-    variant: markdown_github
----
 [![Build Status](https://travis-ci.org/fvafrCU/cleanr.svg?branch=master)](https://travis-ci.org/fvafrCU/cleanr)
 [![Coverage Status](https://codecov.io/github/fvafrCU/cleanr/coverage.svg?branch=master)](https://codecov.io/github/fvafrCU/cleanr?branch=master)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/cleanr)](https://cran.r-project.org/package=cleanr)
-[![RStudio_downloads_monthly](https://cranlogs.r-pkg.org/badges/cleanr)](https://cran.r-project.org/package=index.html)
-[![RStudio_downloads_total](https://cranlogs.r-pkg.org/badges/grand-total/cleanr)](https://cran.r-project.org/package=index.html)
+[![RStudio_downloads_monthly](https://cranlogs.r-pkg.org/badges/cleanr)](https://cran.r-project.org/package=cleanr)
+[![RStudio_downloads_total](https://cranlogs.r-pkg.org/badges/grand-total/cleanr)](https://cran.r-project.org/package=cleanr)
 
 # cleanr
 Check your R code for some of the most common layout flaws.
