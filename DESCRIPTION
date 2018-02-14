@@ -16,7 +16,7 @@ Description: Check your R code for some of the most common layout flaws.
     Note: This is not a static code analyzer like pylint or the like. Checkout
     https://github.com/jimhester/lintr instead.
 Depends:
-    R (>= 3.3.1)
+    R (>= 3.3.0)
 License: BSD_2_clause + file LICENSE
 URL: https://github.com/fvafrCU/cleanr
 Imports:
