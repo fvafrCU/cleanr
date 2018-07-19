@@ -1,4 +1,4 @@
-image: rocker/r-ver:latest
+image: rocker/verse:latest
 before_script:
     - cat /etc/apt/sources.list
     - apt-get update && apt-get upgrade -y && apt-get -y install libssl-dev libxml2-dev
