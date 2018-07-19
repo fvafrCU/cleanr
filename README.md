@@ -1,3 +1,5 @@
+[![pipeline status](https://gitlab.com/fvafrcu/cleanr/badges/master/pipeline.svg)](https://gitlab.com/fvafrcu/cleanr/commits/master)    
+[![coverage report](https://gitlab.com/fvafrcu/cleanr/badges/master/coverage.svg)](https://gitlab.com/fvafrcu/cleanr/commits/master)
 [![Build Status](https://travis-ci.org/fvafrCU/cleanr.svg?branch=master)](https://travis-ci.org/fvafrCU/cleanr)
 [![Coverage Status](https://codecov.io/github/fvafrCU/cleanr/coverage.svg?branch=master)](https://codecov.io/github/fvafrCU/cleanr?branch=master)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/cleanr)](https://cran.r-project.org/package=cleanr)
@@ -53,7 +55,7 @@ help("cleanr-package", package = "cleanr")
 #> 
 #>      Packages 'codetools' (<URL:
 #>      https://cran.r-project.org/package=codetools>), 'formatR' (<URL:
-#>      https://cran.r-project.org/package=formatR>) and 'lintr' (<URL:
+#>      https://cran.r-project.org/package=formatR>). and 'lintr' (<URL:
 #>      https://cran.r-project.org/package=lintr>).
 ```
 
