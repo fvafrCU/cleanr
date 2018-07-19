@@ -1,4 +1,4 @@
-image: rocker/r-devel:latest
+image: rocker/r-ver:latest
 before_script:
     - cat /etc/apt/sources.list
     - apt-get update && apt-get upgrade -y && apt-get -y install libssl-dev libxml2-dev
@@ -13,6 +13,6 @@ test:
     - R CMD check "${PKG_FILE_NAME}"  --as-cran 
     
 job1:
-  script: R --vanilla -e 'covr::package_coverage()'
+  script: R --vanilla -e 'install.packages("covr", repos = "https://cloud.r-project.org/"); covr::package_coverage()'
   coverage: '/^.*\s*Coverage:\s*\d+.\d+\%$/'
 
