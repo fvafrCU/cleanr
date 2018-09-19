@@ -1,6 +1,0 @@
-formatR_output/utils.R.tidy 35 19 style Trailing whitespace is superfluous.     if (condition)  list(c(19, 19)) trailing_whitespace_linter
-formatR_output/utils.R.tidy 62 1 style lines should not be more than 80 characters.     is_exported_name_function <- vapply(exported_names, function(x) is.function(get(x)),  list(c(1, 89)) line_length_linter
-formatR_output/utils.R.tidy 62 89 style Trailing whitespace is superfluous.     is_exported_name_function <- vapply(exported_names, function(x) is.function(get(x)),  list(c(89, 89)) trailing_whitespace_linter
-formatR_output/utils.R.tidy 67 1 style lines should not be more than 80 characters.     is_package_name_function <- vapply(package_names, function(x) is.function(get(x,  list(c(1, 85)) line_length_linter
-formatR_output/utils.R.tidy 67 85 style Trailing whitespace is superfluous.     is_package_name_function <- vapply(package_names, function(x) is.function(get(x,  list(c(85, 85)) trailing_whitespace_linter
-formatR_output/utils.R.tidy 72 77 style Trailing whitespace is superfluous.         assign(name, get(name, envir = package_namespace, inherits = FALSE),  list(c(77, 77)) trailing_whitespace_linter
